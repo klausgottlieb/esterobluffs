@@ -1,0 +1,24 @@
+name: Update station data
+# Low-maintenance: only git + python3 (no versioned marketplace actions to deprecate).
+on:
+  schedule:
+    - cron: "*/5 * * * *"    # GitHub's cron floor is 5 min and is best-effort; Tempest itself updates ~1 min
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      WEATHERFLOW_TOKEN: ${{ secrets.WEATHERFLOW_TOKEN }}
+      TEMPEST_STATION_ID: ${{ secrets.TEMPEST_STATION_ID }}
+    steps:
+      - name: Get the repo
+        run: git clone --depth 1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" repo
+      - name: Fetch + commit if changed
+        working-directory: repo
+        run: |
+          python3 fetch_station.py station-data.json
+          git config user.name  "station-bot"
+          git config user.email "station-bot@users.noreply.github.com"
+          git diff --quiet -- station-data.json || { git add station-data.json; git commit -m "data: station $(date -u +%FT%TZ)"; git push; }
