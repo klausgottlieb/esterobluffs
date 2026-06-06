@@ -55,16 +55,33 @@ def main():
             "station": STATION, "name": NAME, "hilo": [], "curve": []}
     try:
         hilo = fetch(common(begin, end_hilo, interval="hilo"))
+        if "predictions" not in hilo:
+            print("hilo response had no 'predictions':", str(hilo)[:300], file=sys.stderr)
         for p in hilo.get("predictions", []):
             data["hilo"].append({"t": p["t"], "type": p["type"], "ft": round(float(p["v"]), 2)})
     except Exception as e:
         print("hilo fetch failed:", e, file=sys.stderr)
     try:
         curve = fetch(common(begin, end_curve, interval="30"))   # 30-minute steps
+        if "predictions" not in curve:
+            print("curve response had no 'predictions':", str(curve)[:300], file=sys.stderr)
         for p in curve.get("predictions", []):
             data["curve"].append({"t": p["t"], "ft": round(float(p["v"]), 2)})
     except Exception as e:
         print("curve fetch failed:", e, file=sys.stderr)
+
+    # If NOAA's high/low list came back empty but we have a curve, derive highs and
+    # lows from the curve's own peaks and troughs so the file is always self-sufficient.
+    if not data["hilo"] and len(data["curve"]) >= 3:
+        c = data["curve"]
+        for i in range(1, len(c) - 1):
+            a, b, d = c[i-1]["ft"], c[i]["ft"], c[i+1]["ft"]
+            if b >= a and b > d:
+                data["hilo"].append({"t": c[i]["t"], "type": "H", "ft": b})
+            elif b <= a and b < d:
+                data["hilo"].append({"t": c[i]["t"], "type": "L", "ft": b})
+        if data["hilo"]:
+            print("derived", len(data["hilo"]), "hilo points from curve (NOAA hilo was empty)")
 
     if not data["hilo"] and not data["curve"]:
         print("No tide data retrieved; leaving previous file untouched.", file=sys.stderr)

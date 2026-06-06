@@ -420,14 +420,17 @@ function renderTide(tdRaw, live){
   let dayCv=td.curve.filter(p=>p.t.toDateString()===now.toDateString());
   if(dayCv.length<4)dayCv=td.curve.slice(0,49);
   drawTideCurve(dayCv);
+  // Highs/lows: prefer NOAA's official list; if it's empty, derive from the curve's
+  // own peaks and troughs (same data drawing the chart labels).
+  const hl = (td.hilo && td.hilo.length) ? td.hilo : extractHiLo(td.curve);
   // table: next events from ~now forward
-  const up=td.hilo.filter(e=>e.t>=new Date(now.getTime()-45*60000)).slice(0,8);
+  const up=hl.filter(e=>e.t>=new Date(now.getTime()-45*60000)).slice(0,8);
   document.getElementById('tideRows').innerHTML = up.length? up.map(e=>
     `<tr><td>${dayLabel(e.t)} ${fmtHM(e.t)}</td><td class="${e.type==='L'?'lo':'hi'}">${e.type==='L'?'Low':'High'}</td><td>${e.ft.toFixed(1)} ft</td></tr>`).join('')
     : '<tr><td colspan="3">No predictions available.</td></tr>';
   // tide-pool window: next upcoming low at/below threshold
-  const nextLow = td.hilo.find(e=>e.type==='L'&&e.t>=new Date(now.getTime()-30*60000)&&e.ft<=POOL_FT)
-                || td.hilo.find(e=>e.type==='L'&&e.t>=now);
+  const nextLow = hl.find(e=>e.type==='L'&&e.t>=new Date(now.getTime()-30*60000)&&e.ft<=POOL_FT)
+                || hl.find(e=>e.type==='L'&&e.t>=now);
   const pe=document.getElementById('tidePool');
   if(nextLow){const w0=new Date(nextLow.t.getTime()-60*60000),w1=new Date(nextLow.t.getTime()+60*60000);
     const great=nextLow.ft<=POOL_GREAT_FT, ok=nextLow.ft<=POOL_FT;
