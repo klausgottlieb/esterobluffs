@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estero Bluffs — Coastal Conditions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#f7f3ea; --card:#fff; --border:#cbbfa8; --ink:#13242f; --muted:#3d4f59;
+    --sea:#0a5f78; --land:#8a4c12; --ok:#1d7a45; --warn:#9a3b12; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:20px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Atkinson Hyperlegible",-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6;padding:30px 22px 56px}
+  .wrap{max-width:1080px;margin:0 auto}
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    border-bottom:3px solid var(--ink);padding-bottom:18px}
+  .kicker{font-size:.85rem;letter-spacing:.5px;color:var(--sea);font-weight:700}
+  h1{font-size:2.3rem;font-weight:700;line-height:1.1;margin:2px 0 4px}
+  .loc{font-size:1rem;color:var(--muted)}
+  .stamp{text-align:right;font-size:1rem;color:var(--muted);line-height:1.7}
+  .badge{display:inline-block;font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:8px;border:2px solid}
+  .badge.live{color:var(--ok);border-color:#9cc7ad;background:#eaf6ee}
+  .badge.demo{color:#7a4a00;border-color:#d99a3c;background:#ffe7c2}
+  section{margin-top:30px}
+  .sec-h{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .sec-h .bar{width:8px;height:30px;border-radius:4px}
+  .sec-h h2{font-size:1.55rem;font-weight:700}
+  .sec-h .who{font-size:1rem;color:var(--muted)}
+  .land .bar{background:var(--land)} .sea .bar{background:var(--sea)}
+  .land h2{color:var(--land)} .sea h2{color:var(--sea)}
+  .src{font-size:.95rem;color:var(--muted);margin:0 0 12px 20px}
+  .card{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:20px 22px}
+  .hero{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+  @media(max-width:720px){.hero{grid-template-columns:1fr}}
+  .bigtemp{font-size:5rem;font-weight:700;line-height:.9}
+  .bigtemp .d{font-size:2rem;color:var(--land);vertical-align:super}
+  .herometa{font-size:1.15rem} .herometa div{margin:3px 0}
+  .windbox{text-align:center}
+  .windbox .ws{font-size:2.2rem;font-weight:700}
+  .windbox .wu{font-size:1rem;color:var(--land);font-weight:700}
+  .windbox .wd{font-size:1rem;color:var(--muted)}
+  /* the derived surface-conditions banner: the one place local wind adds value */
+  .surface{margin-top:18px;border:2px solid var(--border);border-left:10px solid var(--sea);
+    border-radius:12px;padding:16px 18px;background:#eef6f8}
+  .surface .q{font-size:1.7rem;font-weight:700}
+  .surface .d{font-size:1.15rem;margin-top:2px}
+  .surface .note{font-size:.95rem;color:var(--muted);margin-top:6px}
+  .surface.onshore{border-left-color:var(--warn);background:#fbefe8}
+  .surface.offshore{border-left-color:var(--ok);background:#eef7f0}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:16px}
+  .tile{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:16px 18px}
+  .tile .lab{font-size:1.05rem;font-weight:700;color:var(--muted)}
+  .tile .v{font-size:2.3rem;font-weight:700;line-height:1.05;margin-top:6px}
+  .tile .v .u{font-size:1.1rem;color:var(--sea);font-weight:700}
+  .tile.l .v .u{color:var(--land)}
+  .tile .sub{font-size:1rem;color:var(--muted);margin-top:4px}
+  .nowlines{margin-top:18px;display:grid;gap:12px}
+  .nowline{border-left:6px solid var(--sea);background:#eef6f8;border-radius:8px;padding:12px 16px}
+  .nowline.fc{border-left-color:var(--land);background:#fbf1e3}
+  .nowline .l{font-size:.95rem;font-weight:700;color:var(--muted)}
+  .nowline .t{font-size:1.2rem;margin-top:2px}
+  .nowline .note{font-size:.9rem;color:var(--muted);margin-top:4px}
+  .composite{margin-top:18px;border:2px solid var(--border);border-left:8px solid var(--sea);
+    border-radius:12px;background:#eef6f8;padding:16px 18px;font-size:1.1rem}
+  .composite b{font-weight:700}
+  #oceanband{width:100%;height:90px;display:block;border-radius:12px;border:2px solid var(--border)}
+  .wavecap{font-size:1.05rem;color:var(--muted);margin-top:8px}.wavecap b{color:var(--ink)}
+  footer{margin-top:34px;border-top:2px solid var(--border);padding-top:16px;font-size:1rem;color:var(--muted);line-height:1.7}
+  footer b{color:var(--ink);font-weight:700}
+  .svgwrap text{font-family:"Atkinson Hyperlegible",sans-serif}
+  .slabel{font-size:.9rem;font-weight:700;color:var(--muted);margin-bottom:4px}
+  .bandbtn{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;text-align:left;border-radius:12px}
+  .bandbtn:focus-visible{outline:3px solid var(--sea);outline-offset:3px}
+  .bandhint{display:inline-block;margin-top:8px;font-size:1.05rem;font-weight:700;color:var(--sea)}
+  .modal{position:fixed;inset:0;background:rgba(19,36,47,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+  .modal.open{display:flex}
+  .modal-card{background:var(--card);border:2px solid var(--border);border-radius:16px;max-width:1000px;width:100%;max-height:92vh;overflow:auto;padding:20px 22px}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+  .modal-head h3{font-size:1.4rem;font-weight:700;color:var(--sea)}
+  .modal-close{font-size:1rem;font-weight:700;color:var(--ink);background:#f1ead9;border:2px solid var(--border);border-radius:10px;padding:8px 14px;cursor:pointer}
+  .modal-close:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+  #decompCanvas{width:100%;height:auto;display:block;background:#fff;border:2px solid var(--border);border-radius:12px}
+  .modal p.exp{font-size:1.05rem;color:var(--muted);margin-top:10px;line-height:1.6}
+  .nav{position:sticky;top:0;z-index:40;background:#fff;border-bottom:2px solid var(--border)}
+  .navin{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 22px;flex-wrap:wrap}
+  .brand{font-weight:700;font-size:1.3rem;color:var(--ink);text-decoration:none;margin-right:auto}
+  .navmenu{display:flex;align-items:center;gap:4px}
+  .navmenu a{color:var(--ink);text-decoration:none;font-weight:700;font-size:1rem;padding:10px 12px;border-radius:8px}
+  .navmenu a:hover,.navmenu a:focus-visible{background:#f1ead9}
+  .navmenu a[aria-current=page]{color:var(--sea);text-decoration:underline}
+  .navmenu a.cta{background:var(--sea);color:#fff;padding:10px 16px}
+  .navmenu a.cta:hover,.navmenu a.cta:focus-visible{background:#0a4f63}
+  .navtoggle{display:none;font:inherit;font-weight:700;font-size:1rem;background:#f1ead9;border:2px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;min-height:44px}
+  @media(max-width:720px){
+    .navtoggle{display:block;margin-left:auto}
+    .navmenu{display:none;flex-direction:column;align-items:stretch;width:100%;gap:4px;margin-top:8px}
+    .navmenu.open{display:flex}
+    .navmenu a{padding:13px 12px;min-height:44px;display:flex;align-items:center}
+    .navmenu a.cta{justify-content:center}
+  }
+  @media(max-width:600px){
+    body{padding:16px 14px 40px}
+    h1{font-size:1.85rem}
+    .bigtemp{font-size:3.4rem}
+    .surface .q{font-size:1.4rem}
+    .hero{gap:14px}
+    .tiles{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+    .modal{padding:10px}
+    .modal-card{padding:14px}
+    .stamp{text-align:left}
+  }
+  .verdict{border:2px solid var(--border);border-left:10px solid var(--sea);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:1.15rem}
+  .verdict .vnote{display:block;font-size:.92rem;color:var(--muted);margin-top:6px}
+  .v-calm{border-left-color:#1d7a45;background:#eef7f0}
+  .v-mod{border-left-color:#0a5f78;background:#eef6f8}
+  .v-lively{border-left-color:#b5651d;background:#fbf1e3}
+  .v-rough{border-left-color:#9a3b12;background:#fbefe8}
+  .v-danger{border-left-color:#b02a2a;background:#fbe9e9}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="navin">
+  <a class="brand" href="index.html">Estero&nbsp;Bluffs</a>
+  <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navmenu">&#9776; Menu</button>
+  <div class="navmenu" id="navmenu">
+    <a href="index.html" aria-current="page">Conditions</a>
+    <a href="the-park.html">The Park</a>
+    <a href="cayucos.html">Cayucos</a>
+    <a class="cta" href="stay.html">Stay at Bluff House</a>
+  </div>
+</div></nav>
+<div class="wrap">
+  <header>
+    <div>
+      <p class="kicker">LIVE FROM BLUFF HOUSE · CAYUCOS</p>
+      <h1>Coastal Conditions</h1>
+      <p class="loc">Cayucos, California</p>
+    </div>
+    <div class="stamp">
+      <span class="badge demo" id="prov">loading…</span><br>
+      <span id="clock">—</span><br>
+      <span id="online" class="" >&nbsp;</span>
+    </div>
+  </header>
+
+  <!-- HYPERLOCAL -->
+  <section aria-labelledby="h-station">
+    <div class="sec-h land"><span class="bar"></span><h2 id="h-station">Bluff House Station, Cayucos</h2>
+      <span class="who">· WeatherFlow Tempest station at the bluff</span></div>
+    <p class="src" id="stationSrc"></p>
+    <div class="card">
+      <div class="hero">
+        <div class="bigtemp"><span id="airf">—</span><span class="d">°F</span></div>
+        <div class="herometa">
+          <div><b>Feels like <span id="feels">—</span>°F</b></div>
+          <div>Humidity <span id="hum">—</span>% &nbsp;·&nbsp; Dew point <span id="dew">—</span>°</div>
+          <div>Pressure <span id="pres">—</span> mb (<span id="ptrend">—</span>)</div>
+        </div>
+        <div class="windbox">
+          <div class="svgwrap" id="stationRose" role="img" aria-label="Local wind direction"></div>
+          <div class="ws"><span id="wmph">—</span> <span class="wu">mph</span></div>
+          <div class="wd" id="wdesc">—</div>
+        </div>
+      </div>
+      <div class="nowlines">
+        <div class="nowline"><div class="l">Right now (estimated from the station)</div>
+          <div class="t" id="nowText">—</div>
+          <div class="note">Computed from humidity, dew point, and wind. Not a forecast.</div></div>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile l"><div class="lab">UV index</div><div class="v" id="uv">—</div><div class="sub">Highest near noon</div></div>
+      <div class="tile l"><div class="lab">Sunlight</div><div class="v"><span id="solar">—</span><span class="u"> W/m²</span></div><div class="sub" id="solarSub"></div></div>
+      <div class="tile l"><div class="lab">Rain today</div><div class="v"><span id="rain">—</span><span class="u"> in</span></div><div class="sub" id="rainSub"></div></div>
+      <div class="tile l"><div class="lab">Wind gust</div><div class="v"><span id="gust">—</span><span class="u"> mph</span></div><div class="sub" id="gustSub"></div></div>
+      <div class="tile l"><div class="lab">Lightning</div><div class="v" id="ltg">—</div><div class="sub" id="ltgSub"></div></div>
+    </div>
+  </section>
+
+  <!-- OCEAN -->
+  <section aria-labelledby="h-ocean">
+    <div class="sec-h sea"><span class="bar"></span><h2 id="h-ocean">Ocean Conditions</h2>
+      <span class="who">· nearshore waves combined with marine wind</span></div>
+    <p class="src" id="oceanSrc"></p>
+
+    <!-- THE NEW PIECE: surface conditions, the one thing local wind genuinely improves -->
+    <div class="surface" id="surface">
+      <div class="slabel">Surface (wind effect on the water, not wave size)</div>
+      <div class="q" id="surfQ">—</div>
+      <div class="d" id="surfD">—</div>
+      <div class="note" id="surfNote"></div>
+    </div>
+
+    <div style="margin-top:16px">
+      <button id="bandBtn" class="bandbtn" aria-haspopup="dialog" aria-controls="decompModal">
+        <canvas id="oceanband" width="2160" height="180" role="img" aria-label="Animated illustration of rolling waves"></canvas>
+        <span class="bandhint">Tap to see these waves broken into their parts &#9656;</span>
+      </button>
+      <p class="wavecap" id="waveCap"></p>
+      <div class="verdict" id="waveVerdict"></div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="lab">Wave height</div><div class="v"><span id="hs">—</span><span class="u"> ft</span></div><div class="sub" id="hsSub"></div></div>
+      <div class="tile"><div class="lab">Time between big waves</div><div class="v"><span id="dpd">—</span><span class="u"> sec</span></div><div class="sub">Dominant period</div></div>
+      <div class="tile"><div class="lab">Swell</div><div class="v"><span id="swh">—</span><span class="u"> ft</span></div><div class="sub" id="swSub"></div></div>
+      <div class="tile"><div class="lab">Wind chop</div><div class="v"><span id="wwh">—</span><span class="u"> ft</span></div><div class="sub" id="wwSub"></div></div>
+      <div class="tile"><div class="lab">Wind over the water</div><div class="v"><span id="mwind">—</span><span class="u"> kt</span></div><div class="sub" id="mwindSub"></div></div>
+      <div class="card windbox" style="padding:12px"><div class="svgwrap" id="oceanRose" role="img" aria-label="Swell direction"></div>
+        <div class="wd" id="swellDir" style="margin-top:6px"></div></div>
+    </div>
+
+    <div class="composite" id="composite"></div>
+  </section>
+
+    <div class="modal" id="decompModal" role="dialog" aria-modal="true" aria-labelledby="decompTitle">
+    <div class="modal-card">
+      <div class="modal-head"><h3 id="decompTitle">How today&#39;s waves add up</h3>
+        <button class="modal-close" id="decompClose">Close &#10005;</button></div>
+      <canvas id="decompCanvas" width="1900" height="1040" role="img" aria-label="Wave decomposition into swell and wind-sea sine waves"></canvas>
+      <p class="exp">The dark line at the bottom is the sea surface. It is the sum of the swell and the wind chop shown above it. Where the swell crests line up, they stack into a set; the orange line is the energy envelope. Built from the current swell and wind-sea readings, so it changes with conditions.</p>
+    </div>
+  </div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const D2R=Math.PI/180;
+const REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Shoreline: direction the Cayucos coast faces (out to open sea), derived from the
+   Estero Bay trend (Morro Rock to Point Estero ~333deg, so seaward normal ~250deg WSW).
+   TUNE: open a satellite view at the station, draw the shoreline tangent, take its
+   azimuth, subtract 90 (seaward side). */
+const OFFSHORE_NORMAL_DEG = 250;
+/* Where the two JSON feeds live. Empty = same folder. For decoupled hosting set to your
+   GitHub Pages base, e.g. "https://USER.github.io/estero-data/". */
+const DATA_BASE = "";
+
+const PT=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+const compass=d=>(d==null?"—":PT[Math.round(((d%360)+360)%360/22.5)%16]);
+const angDiff=(a,b)=>{let d=Math.abs(((a-b)%360+540)%360-180);return d;};
+
+/* ---- the derived "surface conditions at the bluff" ---- */
+function surfaceConditions(windFrom, windMph){
+  if(windFrom==null||windMph==null) return {cls:'cross',q:'—',d:'',note:''};
+  const off = angDiff(windFrom, OFFSHORE_NORMAL_DEG);   // 0 = straight onshore
+  let cls = off<50 ? 'onshore' : off>130 ? 'offshore' : 'cross';
+  let windPhrase = cls==='onshore'?'onshore wind':cls==='offshore'?'offshore wind':'cross-shore wind';
+  let tex = windMph<4?'glassy':windMph<12?'light texture':windMph<20?'bumpy surface':'rough surface';
+  let q;
+  if(cls==='offshore') q = windMph<12?'Clean':'Clean but windy';
+  else if(cls==='onshore') q = windMph<6?'Mostly smooth':windMph<14?'Choppy':'Blown out';
+  else q = windMph<10?'Fair':'Bumpy';
+  let chop = (cls==='onshore'&&windMph>=14)?' Local wind chop building on top of the swell.':'';
+  return {cls, q, d: cap(windPhrase)+', '+tex+'.', note:'Wind from '+compass(windFrom)+' against a shore that faces '+compass(OFFSHORE_NORMAL_DEG)+'.'+chop};
+}
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+
+/* ---- sensor-derived "right now" line (no invented prose) ---- */
+function deriveNow(s){
+  if(s.air_f==null) return '—';
+  const spread=(s.air_f!=null&&s.dew_f!=null)?s.air_f-s.dew_f:99;
+  const m = (s.humidity>=95&&spread<=2)?'Fog at the bluff edge':
+            (s.humidity>=85&&spread<=5)?'Marine layer, patchy fog possible':
+            (s.humidity>=80)?'Damp, low cloud':
+            (s.solar_wm2>500)?'Bright and clear':'Partly cloudy';
+  const w = (s.wind_mph<1?'Calm':s.wind_mph<8?'Light':s.wind_mph<19?'Moderate':'Fresh');
+  const off=angDiff(s.wind_dir,OFFSHORE_NORMAL_DEG);
+  const sh = off<50?'onshore breeze':off>130?'offshore breeze':'cross-shore breeze';
+  return m+'. '+w+' '+sh+'.';
+}
+
+/* ---- compass ---- */
+function rose(id, fromDeg, color){
+  const sz=130,c=sz/2,R=50; let s=`<svg width="${sz}" height="${sz}" viewBox="0 0 ${sz} ${sz}">`;
+  s+=`<circle cx="${c}" cy="${c}" r="${R}" fill="none" stroke="#cbbfa8" stroke-width="2"/>`;
+  [['N',0],['E',90],['S',180],['W',270]].forEach(([t,d])=>{const a=(d-90)*D2R,rr=R-15;
+    s+=`<text x="${c+rr*Math.cos(a)}" y="${c+rr*Math.sin(a)+6}" fill="#3d4f59" font-size="15" font-weight="700" text-anchor="middle">${t}</text>`;});
+  if(fromDeg!=null){const fa=(fromDeg-90)*D2R,fx=c+R*Math.cos(fa),fy=c+R*Math.sin(fa);
+    s+=`<line x1="${fx}" y1="${fy}" x2="${c}" y2="${c}" stroke="${color}" stroke-width="4"/>`;
+    s+=`<circle cx="${fx}" cy="${fy}" r="5" fill="${color}"/>`;}
+  s+=`<circle cx="${c}" cy="${c}" r="4" fill="#fff" stroke="${color}" stroke-width="2.5"/></svg>`;
+  document.getElementById(id).innerHTML=s;
+}
+
+/* ---- demo fallbacks ---- */
+const DEMO_OCEAN={wave:{provenance:"NDBC buoy 46215 (raw offshore)",name:"Estero Bluffs nearshore",
+  wvht_ft:5.2,wvht_m:1.6,dpd_s:17,apd_s:9.1,mwd_deg:206,partition_measured:true,
+  swh_ft:4.3,swp_s:17,swd_deg:206,wwh_ft:3.0,wwp_s:8,wwd_deg:292,steepness:"AVERAGE"},
+  wind:{station:"PSLC1",wspd_kt:10,wdir_deg:315},updated:null};
+const DEMO_STATION={station:{name:"Bluff House Station Cayucos"},time:null,
+  air_f:57,feels_f:56,dew_f:53,humidity:88,wind_mph:7,gust_mph:13,lull_mph:4,wind_dir:298,
+  pressure_mb:1018.9,pressure_trend:"falling",uv:2,solar_wm2:165,rain_in_today:0.0,
+  lightning_count:0,lightning_mi:null};
+
+let CUR_WAVE=DEMO_OCEAN.wave; let DECOMP_OPEN=false;
+const fmtTime=iso=>{if(!iso)return'—';try{return new Date(iso).toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});}catch(e){return iso;}};
+const setT=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=(v==null?'—':v);};
+
+let LIVE_STATION=false, LIVE_OCEAN=false;
+
+function applyStation(s, live){
+  setT('airf',s.air_f); setT('feels',s.feels_f); setT('hum',s.humidity); setT('dew',s.dew_f);
+  setT('pres',s.pressure_mb); setT('ptrend',s.pressure_trend||'—');
+  setT('wmph',s.wind_mph); setT('wdesc','from '+compass(s.wind_dir)+(s.gust_mph?' · gust '+s.gust_mph:''));
+  setT('uv',s.uv!=null?Math.round(s.uv):'—');
+  setT('solar',s.solar_wm2); document.getElementById('solarSub').textContent=s.solar_wm2>500?'Sunny':'Overcast / thin cloud';
+  setT('rain',s.rain_in_today!=null?s.rain_in_today.toFixed(2):'—'); document.getElementById('rainSub').textContent=(s.rain_in_today>0?'Wet':'Dry');
+  setT('gust',s.gust_mph); document.getElementById('gustSub').textContent=s.lull_mph!=null?('Calmest '+s.lull_mph+' mph'):'';
+  setT('ltg',s.lightning_count?s.lightning_count:'None');
+  document.getElementById('ltgSub').textContent=s.lightning_count?('Nearest '+(s.lightning_mi||'?')+' mi'):'No strikes';
+  document.getElementById('nowText').textContent=deriveNow(s);
+  rose('stationRose', s.wind_dir, '#8a4c12');
+  document.getElementById('stationSrc').textContent='Source: '+(s.station?s.station.name:'Tempest')+(s.time?' · observed '+fmtTime(s.time):'')+(live?'':' · sample');
+  LIVE_STATION=live; return s;
+}
+
+function classifyWaves(ft){
+  if(ft==null) return {key:'mod',label:'-',gloss:''};
+  if(ft<1)  return {key:'calm',  label:'Flat and calm',  gloss:'Glassy water with little or no surf.'};
+  if(ft<2)  return {key:'calm',  label:'Small and mellow',gloss:'Gentle surf. Generally easygoing.'};
+  if(ft<4)  return {key:'mod',   label:'Moderate',        gloss:'Noticeable surf and energy in the water.'};
+  if(ft<6)  return {key:'lively',label:'Lively',          gloss:'Strong surf. Best for confident, experienced water users.'};
+  if(ft<9)  return {key:'rough', label:'Big and rough',   gloss:'Powerful, hazardous surf. Experienced people only.'};
+  return       {key:'danger', label:'Dangerous',       gloss:'Very large, dangerous seas. Stay out of the water.'};
+}
+function applyOcean(o, live){
+  const w=o.wave||{}, wd=o.wind||{};
+  CUR_WAVE=w; if(DECOMP_OPEN) decompPrep();
+  setT('hs',w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—'); document.getElementById('hsSub').textContent=(w.wvht_m!=null?w.wvht_m.toFixed(1)+' m':'');
+  setT('dpd',w.dpd_s!=null?Math.round(w.dpd_s):'—');
+  setT('swh',w.swh_ft!=null?w.swh_ft.toFixed(1):'—'); document.getElementById('swSub').textContent=(w.swp_s?('@ '+Math.round(w.swp_s)+' s · from '+compass(w.swd_deg!=null?w.swd_deg:w.mwd_deg)):'');
+  setT('wwh',w.wwh_ft!=null?w.wwh_ft.toFixed(1):'—'); document.getElementById('wwSub').textContent=(w.wwp_s?('@ '+Math.round(w.wwp_s)+' s · from '+compass(w.wwd_deg)):'partition n/a');
+  setT('mwind',wd.wspd_kt!=null?Math.round(wd.wspd_kt):'—'); document.getElementById('mwindSub').textContent='from '+compass(wd.wdir_deg)+(wd.station?' ('+wd.station+')':'');
+  const swdir=(w.swd_deg!=null?w.swd_deg:w.mwd_deg);
+  rose('oceanRose', swdir, '#0a5f78'); document.getElementById('swellDir').innerHTML='swell from <b>'+compass(swdir)+'</b>';
+  document.getElementById('waveCap').innerHTML='<b>Waves '+(w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—')+' ft, every '+(w.dpd_s!=null?Math.round(w.dpd_s):'—')+' seconds</b>, from the '+compass(swdir)+'.';
+  const vv=classifyWaves(w.wvht_ft); const ve=document.getElementById('waveVerdict');
+  ve.className='verdict v-'+vv.key;
+  ve.innerHTML='<b>'+vv.label+'.</b> '+vv.gloss+'<span class="vnote">Describes open-water wave size only. It does not reflect rip currents, shorebreak, or local hazards.</span>';
+  document.getElementById('oceanSrc').textContent='Source: '+(w.provenance||'—')+(o.updated?' · '+fmtTime(o.updated):'');
+  document.getElementById('composite').innerHTML='<b>Where this comes from.</b> Wave numbers: '+(w.provenance||'—')+
+    '. Wind over the water: '+(wd.station||'PSLC1')+' (Port San Luis), the nearest reporting anemometer.';
+  LIVE_OCEAN=live; return {swdir, wind:wd};
+}
+
+function updateSurface(swdir, windFrom, windMph){
+  const r=surfaceConditions(windFrom, windMph);
+  const el=document.getElementById('surface'); el.className='surface '+r.cls;
+  document.getElementById('surfQ').textContent=r.q;
+  document.getElementById('surfD').textContent=r.d;
+  document.getElementById('surfNote').textContent=r.note;
+}
+
+function badge(){
+  const b=document.getElementById('prov');
+  if(LIVE_STATION&&LIVE_OCEAN){b.className='badge live';b.textContent='Live';}
+  else{b.className='badge demo';b.textContent='Sample data';}
+  document.getElementById('online').innerHTML = LIVE_STATION?'<span style="color:#1d7a45;font-weight:700">● Station online</span>':'&nbsp;';
+}
+
+/* ---- load both feeds; the surface line needs BOTH (swell dir + local wind) ---- */
+let _o=null,_s=null;
+function recompute(){
+  if(_s) applyStation(_s.d,_s.live);
+  let oc = _o?applyOcean(_o.d,_o.live):applyOcean(DEMO_OCEAN,false);
+  const wf = _s? _s.d.wind_dir : DEMO_STATION.wind_dir;
+  const wm = _s? _s.d.wind_mph : DEMO_STATION.wind_mph;
+  updateSurface(oc.swdir, wf, wm);
+  document.getElementById('clock').textContent=fmtTime(new Date().toISOString());
+  badge();
+  document.getElementById('foot').innerHTML='Local weather: WeatherFlow Tempest “Bluff House Station Cayucos.” '+
+    'Ocean: CDIP MOP nearshore point (or NDBC buoy 46215 fallback) plus NDBC PSLC1 wind. '+
+    (LIVE_STATION&&LIVE_OCEAN?'':'<b>Showing sample data — feeds not reachable.</b>')+'<br><span style="font-size:.9rem">Tempest is a trademark of its respective owner. This page is independent and not affiliated with or endorsed by the manufacturer.</span>'+'<br>&copy; '+(new Date().getFullYear())+' Estero Bluffs, LLC. All rights reserved.'+'<br><span style="font-size:.9rem">Conditions shown are automated estimates from third-party sensors and models, provided for general information only. They may be delayed, inaccurate, or unavailable. Always use your own judgment and official sources such as the National Weather Service, lifeguards, and the U.S. Coast Guard before any decision on or near the water. Do not rely on this page for safety. Estero Bluffs, LLC accepts no liability for any reliance on this information.</span>';
+}
+function load(url, set){
+  return fetch(url+'?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json();})
+    .then(d=>{set({d,live:true});}).catch(()=>{ /* keep demo */ });
+}
+function init(){
+  _s={d:DEMO_STATION,live:false}; _o={d:DEMO_OCEAN,live:false}; recompute();
+  Promise.all([
+    load(DATA_BASE+'station-data.json', v=>{_s=v;}),
+    load(DATA_BASE+'ocean-data.json', v=>{_o=v;})
+  ]).then(recompute);
+  setInterval(()=>load(DATA_BASE+'station-data.json',v=>{_s=v;}).then(recompute), 60*1000);   // station ~1 min
+  setInterval(()=>load(DATA_BASE+'ocean-data.json',v=>{_o=v;}).then(recompute), 5*60*1000);    // ocean ~5 min
+}
+/* ---- nav toggle (mobile) ---- */
+(function(){var t=document.getElementById('navtoggle'),m=document.getElementById('navmenu');
+ if(t&&m)t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});})();
+
+/* ---- clickable decomposition modal (responsive; built from the live partition) ---- */
+const modal=document.getElementById('decompModal');
+const dc=document.getElementById('decompCanvas'), dx=dc.getContext('2d');
+let DW=950,DH=520,DPLOTX=150,DPLOTW=780,DWm=1400,DPPM=0.557,dlaneY=[80,160,240],dsumY=405,DFS=13,DSMALL=false;
+let DCOMPS=[],DSUM=0,DPPV=40;
+function layoutDecomp(){
+  const cssW=Math.max(dc.clientWidth||(dc.parentElement?dc.parentElement.clientWidth:900)||900,260);
+  DSMALL=cssW<520; DW=cssW; DH=Math.round(Math.max(360,Math.min(cssW*0.62,560)));
+  const dpr=window.devicePixelRatio||1;
+  dc.width=Math.round(DW*dpr); dc.height=Math.round(DH*dpr); dc.style.height=DH+'px';
+  dx.setTransform(dpr,0,0,dpr,0,0);
+  DPLOTX=DSMALL?86:150; DPLOTW=DW-DPLOTX-14; DWm=DSMALL?900:1400; DPPM=DPLOTW/DWm; DFS=DSMALL?11:13;
+  const top=DH*0.15, sp=DH*0.155; dlaneY=[top,top+sp,top+2*sp]; dsumY=DH*0.82;
+}
+function decompComps(w){
+  const swp=w.swp_s||w.dpd_s||16, wwp=w.wwp_s||w.apd_s||8;
+  const swh=(w.swh_ft!=null?w.swh_ft:(w.wvht_ft||4)*0.8);
+  const wwh=(w.wwh_ft!=null?w.wwh_ft:(w.wvht_ft||4)*0.4);
+  const GG=9.81,TP=Math.PI*2;
+  const cs=[{label:'Swell (long)',T:swp+1.5,a:swh/2,col:'#0a5f78'},
+            {label:'Swell (short)',T:Math.max(swp-1.5,3),a:swh/2,col:'#2e7d32'},
+            {label:'Wind chop',T:wwp,a:Math.max(wwh,0.3),col:'#b5651d'}];
+  cs.forEach(c=>{c.w=TP/c.T;c.L=GG*c.T*c.T/TP;c.k=TP/c.L;c.c=GG*c.T/TP;});
+  return cs;
+}
+function decompPrep(){DCOMPS=decompComps(CUR_WAVE);DSUM=DCOMPS.reduce((s,c)=>s+c.a,0);
+  const mx=Math.max.apply(null,DCOMPS.map(c=>c.a).concat(0.1));
+  DPPV=Math.min((DH*0.06)/mx,(DH*0.15)/Math.max(DSUM,0.1));}
+function dtag(c,y){dx.textAlign='left';dx.fillStyle=c.col;dx.font='700 '+DFS+'px "Atkinson Hyperlegible"';
+  dx.fillText(c.label,10,y-14);dx.fillStyle='#3d4f59';dx.font='400 '+(DFS-2)+'px "Atkinson Hyperlegible"';
+  dx.fillText(c.T.toFixed(1)+' s \u00b7 '+Math.round(c.L)+' m',10,y+4);}
+function dcurve(c,y,t){dx.strokeStyle='#cbbfa8';dx.lineWidth=1;dx.beginPath();dx.moveTo(DPLOTX,y);dx.lineTo(DPLOTX+DPLOTW,y);dx.stroke();
+  dx.strokeStyle=c.col;dx.lineWidth=2;dx.beginPath();
+  for(let p=0;p<=DPLOTW;p+=2){const xx=p/DPPM,e=c.a*Math.cos(c.k*xx-c.w*t);const X=DPLOTX+p,Y=y-e*DPPV;p?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();}
+function drawDecomp(t){dx.clearRect(0,0,DW,DH);if(!DCOMPS.length)return;
+  const opX=DPLOTX-16;
+  dx.fillStyle='#3d4f59';dx.textAlign='center';dx.font='700 '+(DFS+6)+'px "Atkinson Hyperlegible"';
+  dx.fillText('+',opX,(dlaneY[0]+dlaneY[1])/2+5);dx.fillText('+',opX,(dlaneY[1]+dlaneY[2])/2+5);
+  dx.font='700 '+(DFS+8)+'px "Atkinson Hyperlegible"';dx.fillText('=',opX,(dlaneY[2]+dsumY)/2+6);
+  DCOMPS.forEach((c,i)=>{dtag(c,dlaneY[i]);dcurve(c,dlaneY[i],t);});
+  dx.fillStyle='#13242f';dx.textAlign='left';dx.font='700 '+DFS+'px "Atkinson Hyperlegible"';dx.fillText('Sea surface',10,dsumY-DH*0.13);
+  dx.fillStyle='#c2410c';dx.font='400 '+(DFS-2)+'px "Atkinson Hyperlegible"';dx.fillText('orange = envelope (sets)',10,dsumY-DH*0.13+16);
+  dx.strokeStyle='#cbbfa8';dx.lineWidth=1;dx.beginPath();dx.moveTo(DPLOTX,dsumY);dx.lineTo(DPLOTX+DPLOTW,dsumY);dx.stroke();
+  const N=Math.floor(DPLOTW/2)+1,eA=new Float32Array(N),vA=new Float32Array(N);let mxE=0,mxX=DPLOTX;
+  for(let i=0;i<N;i++){const xx=i*2/DPPM;let cc=0,ss=0;for(const c of DCOMPS){const ph=c.k*xx-c.w*t;cc+=c.a*Math.cos(ph);ss+=c.a*Math.sin(ph);}eA[i]=cc;vA[i]=Math.sqrt(cc*cc+ss*ss);if(vA[i]>mxE){mxE=vA[i];mxX=DPLOTX+i*2;}}
+  dx.setLineDash([5,4]);dx.strokeStyle='#c2410c';dx.lineWidth=1.6;
+  dx.beginPath();for(let i=0;i<N;i++){const X=DPLOTX+i*2,Y=dsumY-vA[i]*DPPV;i?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();
+  dx.beginPath();for(let i=0;i<N;i++){const X=DPLOTX+i*2,Y=dsumY+vA[i]*DPPV;i?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();dx.setLineDash([]);
+  dx.strokeStyle='#13242f';dx.lineWidth=2.4;dx.beginPath();for(let i=0;i<N;i++){const X=DPLOTX+i*2,Y=dsumY-eA[i]*DPPV;i?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();
+  dx.fillStyle='#c2410c';dx.font='700 '+(DFS-1)+'px "Atkinson Hyperlegible"';dx.textAlign='center';dx.fillText('SET',mxX,dsumY-mxE*DPPV-6);}
+let decompRAF=null;
+function onDecompResize(){if(DECOMP_OPEN){layoutDecomp();decompPrep();if(REDUCE)drawDecomp(0);}}
+function openDecomp(){DECOMP_OPEN=true;modal.classList.add('open');layoutDecomp();decompPrep();
+  document.getElementById('decompClose').focus();window.addEventListener('resize',onDecompResize);
+  if(REDUCE){drawDecomp(0);}else{let last=performance.now(),T=0;(function l(n){if(!DECOMP_OPEN)return;const dt=Math.min((n-last)/1000,.05);last=n;T+=dt*1.2;drawDecomp(T);decompRAF=requestAnimationFrame(l);})(performance.now());}}
+function closeDecomp(){DECOMP_OPEN=false;modal.classList.remove('open');if(decompRAF)cancelAnimationFrame(decompRAF);window.removeEventListener('resize',onDecompResize);document.getElementById('bandBtn').focus();}
+document.getElementById('bandBtn').addEventListener('click',openDecomp);
+document.getElementById('decompClose').addEventListener('click',closeDecomp);
+modal.addEventListener('click',e=>{if(e.target===modal)closeDecomp();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&DECOMP_OPEN)closeDecomp();});
+
+init();
+
+/* ---- decorative wave band (frozen for reduced motion) ---- */
+const cv=document.getElementById('oceanband'),x=cv.getContext('2d');
+const W=1080,H=90,DPR=2;x.scale(DPR,DPR);
+const C=[{a:13,k:2*Math.PI/520,w:2*Math.PI/9},{a:8,k:2*Math.PI/300,w:2*Math.PI/6.5},{a:4,k:2*Math.PI/130,w:2*Math.PI/3.4}];
+function frame(t){x.clearRect(0,0,W,H);const base=H*0.55;
+  const g=x.createLinearGradient(0,base-22,0,H);g.addColorStop(0,'#4a9bb5');g.addColorStop(.55,'#1f6f8c');g.addColorStop(1,'#0c3b4e');
+  x.beginPath();x.moveTo(0,H);for(let p=0;p<=W;p+=3){let e=0;for(const c of C)e+=c.a*Math.cos(c.k*p-c.w*t);x.lineTo(p,base-e);}x.lineTo(W,H);x.closePath();x.fillStyle=g;x.fill();
+  x.beginPath();for(let p=0;p<=W;p+=3){let e=0;for(const c of C)e+=c.a*Math.cos(c.k*p-c.w*t);p?x.lineTo(p,base-e):x.moveTo(p,base-e);}x.strokeStyle='rgba(255,255,255,.7)';x.lineWidth=2;x.stroke();}
+if(REDUCE)frame(0); else{let last=performance.now(),T=0;(function l(n){const dt=Math.min((n-last)/1000,.05);last=n;T+=dt*1.2;frame(T);requestAnimationFrame(l);})(performance.now());}
+</script>
+</body>
+</html>

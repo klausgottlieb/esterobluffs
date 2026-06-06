@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Park — Estero Bluffs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+ :root{--bg:#f7f3ea;--card:#fff;--border:#cbbfa8;--ink:#13242f;--muted:#3d4f59;--sea:#0a5f78}
+ *{box-sizing:border-box;margin:0;padding:0} html{font-size:20px}
+ body{background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+ .nav{position:sticky;top:0;z-index:40;background:#fff;border-bottom:2px solid var(--border)}
+ .navin{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 22px;flex-wrap:wrap}
+ .brand{font-weight:700;font-size:1.3rem;color:var(--ink);text-decoration:none;margin-right:auto}
+ .navmenu{display:flex;align-items:center;gap:4px}
+ .navmenu a{color:var(--ink);text-decoration:none;font-weight:700;font-size:1rem;padding:10px 12px;border-radius:8px}
+ .navmenu a:hover,.navmenu a:focus-visible{background:#f1ead9}
+ .navmenu a[aria-current=page]{color:var(--sea);text-decoration:underline}
+ .navmenu a.cta{background:var(--sea);color:#fff;padding:10px 16px}
+ .navtoggle{display:none;font:inherit;font-weight:700;font-size:1rem;background:#f1ead9;border:2px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;min-height:44px}
+ @media(max-width:720px){.navtoggle{display:block;margin-left:auto}.navmenu{display:none;flex-direction:column;align-items:stretch;width:100%;gap:4px;margin-top:8px}.navmenu.open{display:flex}.navmenu a{padding:13px 12px;min-height:44px;display:flex;align-items:center}.navmenu a.cta{justify-content:center}}
+ .wrap{max-width:760px;margin:0 auto;padding:48px 22px 40px}
+ .kicker{font-size:.85rem;letter-spacing:.5px;color:var(--sea);font-weight:700}
+ h1{font-size:2.2rem;font-weight:700;margin:4px 0 14px}
+ p{font-size:1.15rem;margin:0 0 14px;max-width:60ch}
+ .soon{display:inline-block;font-size:.8rem;font-weight:700;color:#7a4a00;background:#ffe7c2;border:2px solid #d99a3c;padding:4px 10px;border-radius:8px;margin-bottom:18px}
+ .btn{display:inline-block;background:var(--sea);color:#fff;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;min-height:44px}
+ .back{display:inline-block;margin-top:22px;color:var(--sea);font-weight:700;text-decoration:none}
+ footer{max-width:760px;margin:0 auto;padding:0 22px 50px;font-size:1rem;color:var(--muted);line-height:1.6}
+</style></head><body>
+<nav class="nav"><div class="navin">
+ <a class="brand" href="index.html">Estero&nbsp;Bluffs</a>
+ <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navmenu">&#9776; Menu</button>
+ <div class="navmenu" id="navmenu">
+  <a href="index.html">Conditions</a>
+  <a href="the-park.html" aria-current="page">The Park</a>
+  <a href="cayucos.html">Cayucos</a>
+  <a class="cta" href="stay.html">Stay at Bluff House</a>
+ </div>
+</div></nav>
+<div class="wrap">
+ <p class="kicker">ESTERO BLUFFS STATE PARK</p>
+ <h1>Estero Bluffs State Park</h1>
+ <span class="soon">Coming soon</span>
+ <p>A guide to the bluff-top trails, tidepools, and wildlife of the state park that wraps the north side of Cayucos, just steps from Bluff House. Trail notes, tide timing, and the best spots for whale and otter watching are on the way.</p>
+ <a class="back" href="index.html">&#8592; Back to live conditions</a>
+</div>
+<footer>&copy; <span id="yr"></span> Estero Bluffs, LLC. &middot; Cayucos, California<br>
+<span style="font-size:.9rem">Information on this site is provided for general purposes only and may be inaccurate or out of date. Use your own judgment and official sources before relying on it. Estero Bluffs, LLC accepts no liability for reliance on this information.</span></footer>
+<script>(function(){var t=document.getElementById('navtoggle'),m=document.getElementById('navmenu');
+ if(t&&m)t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+ var y=document.getElementById('yr'); if(y)y.textContent=new Date().getFullYear();})();</script>
+</body></html>
