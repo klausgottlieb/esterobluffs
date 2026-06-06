@@ -19,4 +19,5 @@ jobs:
           python3 fetch_tide.py tide-data.json
           git config user.name  "tide-bot"
           git config user.email "tide-bot@users.noreply.github.com"
-          git diff --quiet -- tide-data.json || { git add tide-data.json; git commit -m "data: tide $(date -u +%FT%TZ)"; git push; }
+          git add tide-data.json
+          git diff --cached --quiet || { git commit -m "data: tide $(date -u +%FT%TZ)"; git push; }
