@@ -1,15 +1,21 @@
 name: Update ocean data
+# Low-maintenance: no versioned marketplace actions, only git + python3 (never deprecate).
 on:
   schedule:
-    - cron: "*/15 * * * *"   # buoy/MOP update ~every 30 min; 15 is comfortably inside that
+    - cron: "*/15 * * * *"   # buoy updates ~every 30 min; 15 is comfortably inside that
   workflow_dispatch: {}
-permissions: { contents: write }
+permissions:
+  contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: python3 fetch_ocean.py ocean-data.json
-      - run: |
-          git config user.name "ocean-bot"; git config user.email "ocean-bot@users.noreply.github.com"
+      - name: Get the repo
+        run: git clone --depth 1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" repo
+      - name: Fetch + commit if changed
+        working-directory: repo
+        run: |
+          python3 fetch_ocean.py ocean-data.json
+          git config user.name  "ocean-bot"
+          git config user.email "ocean-bot@users.noreply.github.com"
           git diff --quiet -- ocean-data.json || { git add ocean-data.json; git commit -m "data: ocean $(date -u +%FT%TZ)"; git push; }
