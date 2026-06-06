@@ -442,7 +442,7 @@ function renderTide(tdRaw, live){
     pe.className='tidepool'+(ok?'':' ');
   } else {document.getElementById('tidePoolQ').textContent='Tide predictions loading';document.getElementById('tidePoolD').textContent='';}
   document.getElementById('tideSrc').textContent =
-    'Source: NOAA tide predictions, Port San Luis (9412110)'+(td.updated?' · updated '+fmtTime(td.updated):' · sample data');
+    'Source: NOAA tide predictions, Port San Luis (9412110)'+(td.updated?'. Computed in advance by NOAA; refreshed daily.':' · sample data');
   LIVE_TIDE=!!live;
 }
 
