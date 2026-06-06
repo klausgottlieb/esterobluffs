@@ -2,7 +2,7 @@ name: Update station data
 # Low-maintenance: only git + python3 (no versioned marketplace actions to deprecate).
 on:
   schedule:
-    - cron: "*/5 * * * *"    # GitHub's cron floor is 5 min and is best-effort; Tempest itself updates ~1 min
+    - cron: "*/15 * * * *"   # GitHub throttles high-frequency crons hard; */15 fires far more reliably than */5, and 15-min-old air temp/wind at a rental is invisible to a guest
   workflow_dispatch: {}
 permissions:
   contents: write

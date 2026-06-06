@@ -2,7 +2,7 @@ name: Update ocean data
 # Low-maintenance: no versioned marketplace actions, only git + python3 (never deprecate).
 on:
   schedule:
-    - cron: "*/15 * * * *"   # buoy updates ~every 30 min; 15 is comfortably inside that
+    - cron: "*/30 * * * *"   # buoy itself updates ~every 30 min, so faster fetches just re-pull the same numbers; */30 is throttled far less than */5 and fires closer to on time
   workflow_dispatch: {}
 permissions:
   contents: write

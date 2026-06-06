@@ -1,0 +1,22 @@
+name: Update tide data
+# Tide predictions are astronomical and published well ahead, so once a day is plenty
+# and never stale. Low-maintenance: only git + python3, no versioned marketplace actions.
+on:
+  schedule:
+    - cron: "20 9 * * *"     # ~01:20 Pacific daily (09:20 UTC); best-effort, exact time doesn't matter
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        run: git clone --depth 1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" repo
+      - name: Fetch + commit if changed
+        working-directory: repo
+        run: |
+          python3 fetch_tide.py tide-data.json
+          git config user.name  "tide-bot"
+          git config user.email "tide-bot@users.noreply.github.com"
+          git diff --quiet -- tide-data.json || { git add tide-data.json; git commit -m "data: tide $(date -u +%FT%TZ)"; git push; }
