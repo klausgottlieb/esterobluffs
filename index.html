@@ -187,14 +187,7 @@
       <span class="who">· nearshore waves combined with marine wind</span></div>
     <p class="src" id="oceanSrc"></p>
 
-    <!-- THE NEW PIECE: surface conditions, the one thing local wind genuinely improves -->
-    <div class="surface" id="surface">
-      <div class="slabel">Surface (wind effect on the water, not wave size)</div>
-      <div class="q" id="surfQ">—</div>
-      <div class="d" id="surfD">—</div>
-      <div class="note" id="surfNote"></div>
-    </div>
-
+    <!-- Wave size and its hazard rating lead: this is the safety-relevant fact for swimmers, surfers, and small craft. -->
     <div style="margin-top:16px">
       <button id="bandBtn" class="bandbtn" aria-haspopup="dialog" aria-controls="decompModal">
         <canvas id="oceanband" width="2160" height="180" role="img" aria-label="Animated illustration of rolling waves"></canvas>
@@ -202,6 +195,14 @@
       </button>
       <p class="wavecap" id="waveCap"></p>
       <div class="verdict" id="waveVerdict"></div>
+    </div>
+
+    <!-- Surface texture follows: how wind is grooming the water, secondary to size. -->
+    <div class="surface" id="surface">
+      <div class="slabel">Surface (wind effect on the water, not wave size)</div>
+      <div class="q" id="surfQ">—</div>
+      <div class="d" id="surfD">—</div>
+      <div class="note" id="surfNote"></div>
     </div>
 
     <div class="tiles">
