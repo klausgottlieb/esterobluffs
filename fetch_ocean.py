@@ -22,7 +22,6 @@ Usage:
 import json, sys, datetime, urllib.request
 
 WAVE_BUOY = "46215"
-WIND_STN  = "PSLC1"
 MOP_ID    = ""        # <-- set to confirmed Cayucos MOP id, e.g. "SL063"; empty = buoy fallback
 MOP_CGI   = "https://cdip.ucsd.edu/data_access/mop_data_access.cdip"
 NDBC      = "https://www.ndbc.noaa.gov/data/realtime2/"
@@ -149,11 +148,23 @@ def build_buoy():
             "wwh_m":spec.get("wwh"),"wwh_ft":m_ft(spec.get("wwh")),"wwp_s":spec.get("wwp"),"wwd_deg":spec.get("wwd"),
             "steepness":spec.get("steep")}
 
+# Ordered wind sources: nearest first. PSLC1 (6 nm, most representative) is a
+# tide station whose anemometer drops out often; 46011 (open-ocean Santa Maria)
+# reports wind reliably and backstops the gap. Whichever supplies a reading is
+# the one named on the page.
+WIND_SOURCES = [("PSLC1","Port San Luis, CA"), ("46011","Santa Maria, CA (open ocean)")]
+
 def build_wind():
-    try: w = buoy_std(fetch(NDBC+WIND_STN+".txt"))
-    except Exception: return {}
-    return {"station":WIND_STN,"name":"Port San Luis, CA","time":w.get("time"),
-            "wspd_kt":ms_kt(w.get("wspd")),"gst_kt":ms_kt(w.get("gst")),"wdir_deg":w.get("wdir")}
+    last = {}
+    for stn, name in WIND_SOURCES:
+        try: w = buoy_std(fetch(NDBC+stn+".txt"))
+        except Exception: continue
+        rec = {"station":stn,"name":name,"time":w.get("time"),
+               "wspd_kt":ms_kt(w.get("wspd")),"gst_kt":ms_kt(w.get("gst")),
+               "wdir_deg":w.get("wdir")}
+        if rec["wspd_kt"] is not None: return rec   # got a real wind, use it
+        last = rec                                   # remember, keep trying
+    return last                                      # all blank: honest dash, nearest label
 
 def build():
     wave = build_mop() or build_buoy() or {"provenance":"unavailable","partition_measured":False}
