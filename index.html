@@ -487,8 +487,10 @@ function applyOcean(o, live){
   ve.className='verdict v-'+vv.key;
   ve.innerHTML='<b>'+vv.label+'.</b> '+vv.gloss+'<span class="vnote">Describes open-water wave size only. It does not reflect rip currents, shorebreak, or local hazards.</span>';
   document.getElementById('oceanSrc').textContent='Source: '+(w.provenance||'—')+(o.updated?' · '+fmtTime(o.updated):'');
+  const WINDLABEL={PSLC1:'Port San Luis, the nearest anemometer',
+    '46011':'Santa Maria open-ocean buoy, used when Port San Luis is offline'};
   document.getElementById('composite').innerHTML='<b>Where this comes from.</b> Wave numbers: '+(w.provenance||'—')+
-    '. Wind over the water: '+(wd.station||'PSLC1')+' (Port San Luis), the nearest reporting anemometer.';
+    '. Wind over the water: '+(wd.station||'—')+(WINDLABEL[wd.station]?' ('+WINDLABEL[wd.station]+')':'')+'.';
   LIVE_OCEAN=live; return {swdir, wind:wd};
 }
 
