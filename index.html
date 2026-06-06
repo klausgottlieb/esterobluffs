@@ -51,6 +51,28 @@
   .surface .note{font-size:.95rem;color:var(--muted);margin-top:6px}
   .surface.onshore{border-left-color:var(--warn);background:#fbefe8}
   .surface.offshore{border-left-color:var(--ok);background:#eef7f0}
+  /* station provenance photo */
+  .stationfig{margin:6px 0 18px;border-radius:14px;overflow:hidden;border:2px solid var(--border);background:#dfe6e8}
+  .stationfig img{display:block;width:100%;height:auto}
+  .stationfig figcaption{font-size:.95rem;color:var(--muted);padding:8px 14px;background:var(--card)}
+  /* the two-effects bridge line in the ocean section */
+  .windbridge{margin:2px 0 14px;font-size:1.02rem;color:var(--ink);line-height:1.5}
+  .windbridge b{color:var(--sea)}
+  /* tides */
+  .tidewrap{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px}
+  .tidecurve{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:10px 6px 4px}
+  .tidecurve svg{display:block;width:100%;height:auto}
+  .tidepool{border:2px solid var(--border);border-left:10px solid var(--ok);border-radius:12px;
+    padding:14px 18px;background:#eef7f0;margin-top:2px}
+  .tidepool .q{font-size:1.35rem;font-weight:700}
+  .tidepool .d{font-size:1.08rem;margin-top:3px}
+  .tidepool .note{font-size:.95rem;color:var(--muted);margin-top:7px}
+  .tidetable{width:100%;border-collapse:collapse;font-size:1.05rem}
+  .tidetable th,.tidetable td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
+  .tidetable th{color:var(--muted);font-weight:700}
+  .tidetable .lo{font-weight:700;color:var(--sea)}
+  .tidetable .hi{color:var(--ink)}
+  .tidetable caption{text-align:left;color:var(--muted);font-size:.95rem;padding:4px 12px 10px}
   .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:16px}
   .tile{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:16px 18px}
   .tile .lab{font-size:1.05rem;font-weight:700;color:var(--muted)}
@@ -152,6 +174,11 @@
     <div class="sec-h land"><span class="bar"></span><h2 id="h-station">Bluff House Station, Cayucos</h2>
       <span class="who">· WeatherFlow Tempest station at the bluff</span></div>
     <p class="src" id="stationSrc"></p>
+    <figure class="stationfig">
+      <img src="station-cayucos.jpg" loading="lazy" width="1600" height="1080"
+           alt="The WeatherFlow Tempest weather station mounted on a pole on the flat roof of Bluff House in Cayucos, with the Pacific Ocean and breaking surf in the background and a cypress tree to the left.">
+      <figcaption>The Tempest station on the roof of Bluff House. The readings below come from this sensor, on this roof, over this water.</figcaption>
+    </figure>
     <div class="card">
       <div class="hero">
         <div class="bigtemp"><span id="airf">—</span><span class="d">°F</span></div>
@@ -186,6 +213,7 @@
     <div class="sec-h sea"><span class="bar"></span><h2 id="h-ocean">Ocean Conditions</h2>
       <span class="who">· nearshore waves combined with marine wind</span></div>
     <p class="src" id="oceanSrc"></p>
+    <p class="windbridge">Wind works on the water two ways. Out at sea, over hours and miles, it <b>builds the waves</b> you see here; the buoy measures the finished result, so wave size already reflects the wind that made it. Right at the bluff, local wind <b>grooms the surface</b>, smoothing or roughening it without changing the wave size.</p>
 
     <!-- Wave size and its hazard rating lead: this is the safety-relevant fact for swimmers, surfers, and small craft. -->
     <div style="margin-top:16px">
@@ -197,9 +225,9 @@
       <div class="verdict" id="waveVerdict"></div>
     </div>
 
-    <!-- Surface texture follows: how wind is grooming the water, secondary to size. -->
+    <!-- Surface texture follows: how the LOCAL bluff wind (Bluff House Station) grooms the water, secondary to size. -->
     <div class="surface" id="surface">
-      <div class="slabel">Surface (wind effect on the water, not wave size)</div>
+      <div class="slabel">Water surface right now &middot; local wind at Bluff House Station (affects texture, not wave size)</div>
       <div class="q" id="surfQ">—</div>
       <div class="d" id="surfD">—</div>
       <div class="note" id="surfNote"></div>
@@ -216,6 +244,30 @@
     </div>
 
     <div class="composite" id="composite"></div>
+  </section>
+
+  <!-- TIDES -->
+  <section aria-labelledby="h-tide">
+    <div class="sec-h sea"><span class="bar"></span><h2 id="h-tide">Tides &amp; Tide Pooling</h2>
+      <span class="who">&middot; NOAA predictions, Port San Luis</span></div>
+    <p class="src" id="tideSrc"></p>
+
+    <div class="tidepool" id="tidePool">
+      <div class="q" id="tidePoolQ">&mdash;</div>
+      <div class="d" id="tidePoolD"></div>
+      <div class="note">Low tide, roughly an hour either side, exposes the pools at Estero Bluffs. Watch the incoming tide and sneaker waves, and keep off slick rock. Never turn your back on the ocean.</div>
+    </div>
+
+    <div class="tidewrap">
+      <div class="tidecurve" id="tideCurve" role="img" aria-label="Tide curve for today"></div>
+      <div>
+        <table class="tidetable" id="tideTable">
+          <caption>Upcoming highs and lows (heights in feet above the average lowest tides, MLLW)</caption>
+          <thead><tr><th>When</th><th>Tide</th><th>Height</th></tr></thead>
+          <tbody id="tideRows"><tr><td colspan="3">&mdash;</td></tr></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
     <div class="modal" id="decompModal" role="dialog" aria-modal="true" aria-labelledby="decompTitle">
@@ -302,7 +354,95 @@ let CUR_WAVE=DEMO_OCEAN.wave; let DECOMP_OPEN=false;
 const fmtTime=iso=>{if(!iso)return'—';try{return new Date(iso).toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});}catch(e){return iso;}};
 const setT=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=(v==null?'—':v);};
 
-let LIVE_STATION=false, LIVE_OCEAN=false;
+let LIVE_STATION=false, LIVE_OCEAN=false, LIVE_TIDE=false;
+
+/* ===== TIDES ===== */
+const POOL_FT = 2.0;          // at/below this predicted low (ft MLLW), pools are working
+const POOL_GREAT_FT = 0.0;    // minus tide: especially good
+function parseLocal(s){ if(s instanceof Date) return s; const m=String(s).split(/[-: ]+/).map(Number);
+  return new Date(m[0],(m[1]||1)-1,m[2]||1,m[3]||0,m[4]||0); }
+const fmtHM=d=>d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}).replace(' ','').toLowerCase();
+function dayLabel(d){const n=new Date(),t0=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  const dd=new Date(d.getFullYear(),d.getMonth(),d.getDate()),k=Math.round((dd-t0)/864e5);
+  return k===0?'Today':k===1?'Tomorrow':d.toLocaleDateString([],{weekday:'short'});}
+const hod=d=>d.getHours()+d.getMinutes()/60;
+function extractHiLo(cv){const o=[];for(let i=1;i<cv.length-1;i++){const a=cv[i-1].ft,b=cv[i].ft,c=cv[i+1].ft;
+  if(b>=a&&b>c)o.push({t:cv[i].t,type:'H',ft:b}); else if(b<=a&&b<c)o.push({t:cv[i].t,type:'L',ft:b});}return o;}
+function buildDemoTide(){const n=new Date(),start=new Date(n.getFullYear(),n.getMonth(),n.getDate()-1);
+  const H=t=>2.9+1.7*Math.cos(2*Math.PI*((t-2)/12.42))+0.45*Math.cos(2*Math.PI*((t-9)/23.93));
+  const cv=[];for(let i=0;i<=3*48;i++){const d=new Date(start.getTime()+i*30*60000);
+    cv.push({t:d,ft:+H((d-start)/36e5).toFixed(2)});}
+  return {updated:null,station:"9412110",name:"Port San Luis, CA",hilo:extractHiLo(cv),curve:cv};}
+function normTide(td){if(!td)return td;
+  return {...td,curve:(td.curve||[]).map(p=>({t:parseLocal(p.t),ft:+(p.ft!=null?p.ft:p.v)})),
+                hilo:(td.hilo||[]).map(p=>({t:parseLocal(p.t),type:p.type,ft:+(p.ft!=null?p.ft:p.v)}))};}
+
+function drawTideCurve(cv){
+  if(!cv.length){document.getElementById('tideCurve').innerHTML='';return;}
+  const W=720,Hh=220,L=46,R=706,T=22,B=176;
+  let lo=Math.min(...cv.map(p=>p.ft)),hi=Math.max(...cv.map(p=>p.ft));
+  const pad=Math.max(0.4,(hi-lo)*0.12);lo-=pad;hi+=pad;
+  const X=h=>L+(h/24)*(R-L), Y=f=>B-((f-lo)/(hi-lo))*(B-T);
+  let pts=cv.map(p=>[X(hod(p.t)),Y(p.ft)]);
+  let line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+  let area=line+` L ${R} ${B} L ${L} ${B} Z`;
+  let s=`<svg viewBox="0 0 ${W} ${Hh}" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible,system-ui,sans-serif">`;
+  // hour gridlines
+  [0,6,12,18,24].forEach(h=>{const x=X(h);s+=`<line x1="${x}" y1="${T}" x2="${x}" y2="${B}" stroke="#e7ddc9" stroke-width="1"/>`;
+    const lab=h===0?'12a':h===6?'6a':h===12?'12p':h===18?'6p':'12a';
+    if(h<24)s+=`<text x="${x}" y="${B+18}" fill="#3d4f59" font-size="13" text-anchor="middle">${lab}</text>`;});
+  // MLLW zero line if in range
+  if(lo<0&&hi>0){const zy=Y(0);s+=`<line x1="${L}" y1="${zy}" x2="${R}" y2="${zy}" stroke="#9a3b12" stroke-width="1.2" stroke-dasharray="5 4"/>`+
+    `<text x="${R}" y="${zy-5}" fill="#9a3b12" font-size="12" text-anchor="end">0 ft (MLLW)</text>`;}
+  s+=`<path d="${area}" fill="#0a5f78" fill-opacity="0.14"/><path d="${line}" fill="none" stroke="#0a5f78" stroke-width="3"/>`;
+  // hi/lo markers for the drawn day
+  extractHiLo(cv).forEach(e=>{const x=X(hod(e.t)),y=Y(e.ft);
+    s+=`<circle cx="${x}" cy="${y}" r="4.5" fill="${e.type==='L'?'#0a5f78':'#13242f'}"/>`+
+       `<text x="${x}" y="${e.type==='L'?y+20:y-10}" fill="#13242f" font-size="13" font-weight="700" text-anchor="middle">${e.ft.toFixed(1)}</text>`+
+       `<text x="${x}" y="${e.type==='L'?y+35:y-25}" fill="#3d4f59" font-size="12" text-anchor="middle">${fmtHM(e.t)}</text>`;});
+  // now marker (only if "now" falls within the drawn day)
+  const now=new Date(), sameDay=cv.some(p=>p.t.toDateString()===now.toDateString());
+  if(sameDay){const nh=hod(now),x=X(nh);
+    // interpolate height at now
+    let ny=null;for(let i=1;i<cv.length;i++){if(hod(cv[i].t)>=nh&&cv[i].t.toDateString()===now.toDateString()){
+      const a=cv[i-1],b=cv[i],f=(nh-hod(a.t))/((hod(b.t)-hod(a.t))||1);ny=Y(a.ft+(b.ft-a.ft)*f);break;}}
+    s+=`<line x1="${x}" y1="${T}" x2="${x}" y2="${B}" stroke="#1d7a45" stroke-width="2"/>`;
+    if(ny!=null)s+=`<circle cx="${x}" cy="${ny}" r="5" fill="#1d7a45"/>`;
+    s+=`<text x="${x}" y="${T-6}" fill="#1d7a45" font-size="12" font-weight="700" text-anchor="middle">now</text>`;}
+  s+='</svg>';
+  document.getElementById('tideCurve').innerHTML=s;
+}
+
+function renderTide(tdRaw, live){
+  const td=normTide(tdRaw); if(!td||!td.curve.length)return;
+  const now=new Date();
+  // curve for the viewer's current day (fall back to first 48 samples)
+  let dayCv=td.curve.filter(p=>p.t.toDateString()===now.toDateString());
+  if(dayCv.length<4)dayCv=td.curve.slice(0,49);
+  drawTideCurve(dayCv);
+  // table: next events from ~now forward
+  const up=td.hilo.filter(e=>e.t>=new Date(now.getTime()-45*60000)).slice(0,8);
+  document.getElementById('tideRows').innerHTML = up.length? up.map(e=>
+    `<tr><td>${dayLabel(e.t)} ${fmtHM(e.t)}</td><td class="${e.type==='L'?'lo':'hi'}">${e.type==='L'?'Low':'High'}</td><td>${e.ft.toFixed(1)} ft</td></tr>`).join('')
+    : '<tr><td colspan="3">No predictions available.</td></tr>';
+  // tide-pool window: next upcoming low at/below threshold
+  const nextLow = td.hilo.find(e=>e.type==='L'&&e.t>=new Date(now.getTime()-30*60000)&&e.ft<=POOL_FT)
+                || td.hilo.find(e=>e.type==='L'&&e.t>=now);
+  const pe=document.getElementById('tidePool');
+  if(nextLow){const w0=new Date(nextLow.t.getTime()-60*60000),w1=new Date(nextLow.t.getTime()+60*60000);
+    const great=nextLow.ft<=POOL_GREAT_FT, ok=nextLow.ft<=POOL_FT;
+    document.getElementById('tidePoolQ').textContent =
+      (great?'Excellent tide pooling ':ok?'Good tide pooling ':'Next low tide ')+dayLabel(nextLow.t).toLowerCase();
+    document.getElementById('tidePoolD').innerHTML =
+      'Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b>. Best window roughly '+fmtHM(w0)+' to '+fmtHM(w1)+'.'+
+      (great?' A minus tide, the rock shelf is well exposed.':ok?'':' A modest low, pools are only partly exposed.');
+    pe.className='tidepool'+(ok?'':' ');
+  } else {document.getElementById('tidePoolQ').textContent='Tide predictions loading';document.getElementById('tidePoolD').textContent='';}
+  document.getElementById('tideSrc').textContent =
+    'Source: NOAA tide predictions, Port San Luis (9412110)'+(td.updated?' · updated '+fmtTime(td.updated):' · sample data');
+  LIVE_TIDE=!!live;
+}
+
 
 function applyStation(s, live){
   setT('airf',s.air_f); setT('feels',s.feels_f); setT('hum',s.humidity); setT('dew',s.dew_f);
@@ -364,18 +504,19 @@ function badge(){
   document.getElementById('online').innerHTML = LIVE_STATION?'<span style="color:#1d7a45;font-weight:700">● Station online</span>':'&nbsp;';
 }
 
-/* ---- load both feeds; the surface line needs BOTH (swell dir + local wind) ---- */
-let _o=null,_s=null;
+/* ---- load all feeds; the surface line needs BOTH (swell dir + local wind) ---- */
+let _o=null,_s=null,_t=null;
 function recompute(){
   if(_s) applyStation(_s.d,_s.live);
   let oc = _o?applyOcean(_o.d,_o.live):applyOcean(DEMO_OCEAN,false);
+  renderTide(_t?_t.d:buildDemoTide(), _t?_t.live:false);
   const wf = _s? _s.d.wind_dir : DEMO_STATION.wind_dir;
   const wm = _s? _s.d.wind_mph : DEMO_STATION.wind_mph;
   updateSurface(oc.swdir, wf, wm);
   document.getElementById('clock').textContent=fmtTime(new Date().toISOString());
   badge();
   document.getElementById('foot').innerHTML='Local weather: WeatherFlow Tempest “Bluff House Station Cayucos.” '+
-    'Ocean: CDIP MOP nearshore point (or NDBC buoy 46215 fallback) plus NDBC PSLC1 wind. '+
+    'Ocean: CDIP MOP nearshore point (or NDBC buoy 46215 fallback) plus NDBC PSLC1 wind. Tides: NOAA predictions, Port San Luis. '+
     (LIVE_STATION&&LIVE_OCEAN?'':'<b>Showing sample data — feeds not reachable.</b>')+'<br><span style="font-size:.9rem">Tempest is a trademark of its respective owner. This page is independent and not affiliated with or endorsed by the manufacturer.</span>'+'<br>&copy; '+(new Date().getFullYear())+' Estero Bluffs, LLC. All rights reserved.'+'<br><span style="font-size:.9rem">Conditions shown are automated estimates from third-party sensors and models, provided for general information only. They may be delayed, inaccurate, or unavailable. Always use your own judgment and official sources such as the National Weather Service, lifeguards, and the U.S. Coast Guard before any decision on or near the water. Do not rely on this page for safety. Estero Bluffs, LLC accepts no liability for any reliance on this information.</span>';
 }
 function load(url, set){
@@ -386,10 +527,13 @@ function init(){
   _s={d:DEMO_STATION,live:false}; _o={d:DEMO_OCEAN,live:false}; recompute();
   Promise.all([
     load(DATA_BASE+'station-data.json', v=>{_s=v;}),
-    load(DATA_BASE+'ocean-data.json', v=>{_o=v;})
+    load(DATA_BASE+'ocean-data.json', v=>{_o=v;}),
+    load(DATA_BASE+'tide-data.json', v=>{_t=v;})
   ]).then(recompute);
   setInterval(()=>load(DATA_BASE+'station-data.json',v=>{_s=v;}).then(recompute), 60*1000);   // station ~1 min
   setInterval(()=>load(DATA_BASE+'ocean-data.json',v=>{_o=v;}).then(recompute), 5*60*1000);    // ocean ~5 min
+  setInterval(()=>load(DATA_BASE+'tide-data.json',v=>{_t=v;}).then(recompute), 60*60*1000);    // tide ~hourly (predictions rarely change)
+  setInterval(recompute, 60*1000);  // keep the "now" marker and clock moving
 }
 /* ---- nav toggle (mobile) ---- */
 (function(){var t=document.getElementById('navtoggle'),m=document.getElementById('navmenu');
