@@ -1,0 +1,15 @@
+name: Update ocean data
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # buoy/MOP update ~every 30 min; 15 is comfortably inside that
+  workflow_dispatch: {}
+permissions: { contents: write }
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 fetch_ocean.py ocean-data.json
+      - run: |
+          git config user.name "ocean-bot"; git config user.email "ocean-bot@users.noreply.github.com"
+          git diff --quiet -- ocean-data.json || { git add ocean-data.json; git commit -m "data: ocean $(date -u +%FT%TZ)"; git push; }
