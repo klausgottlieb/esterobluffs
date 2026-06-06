@@ -21,4 +21,13 @@ jobs:
           python3 fetch_station.py station-data.json
           git config user.name  "station-bot"
           git config user.email "station-bot@users.noreply.github.com"
-          git diff --quiet -- station-data.json || { git add station-data.json; git commit -m "data: station $(date -u +%FT%TZ)"; git push; }
+          git add station-data.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: station $(date -u +%FT%TZ)"
+            for i in 1 2 3 4 5; do
+              git push && break
+              echo "push rejected, rebasing on moved remote (attempt $i)"
+              git pull --rebase --autostash origin main
+              sleep $((RANDOM % 4 + 1))
+            done
+          fi

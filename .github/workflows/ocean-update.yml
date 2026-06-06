@@ -18,4 +18,13 @@ jobs:
           python3 fetch_ocean.py ocean-data.json
           git config user.name  "ocean-bot"
           git config user.email "ocean-bot@users.noreply.github.com"
-          git diff --quiet -- ocean-data.json || { git add ocean-data.json; git commit -m "data: ocean $(date -u +%FT%TZ)"; git push; }
+          git add ocean-data.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: ocean $(date -u +%FT%TZ)"
+            for i in 1 2 3 4 5; do
+              git push && break
+              echo "push rejected, rebasing on moved remote (attempt $i)"
+              git pull --rebase --autostash origin main
+              sleep $((RANDOM % 4 + 1))
+            done
+          fi
