@@ -231,7 +231,7 @@
       <div class="slabel">Wave size right now &middot; open-water height, not local hazards</div>
       <div class="q" id="vQ">—</div>
       <div class="d" id="vD"></div>
-      <div class="note">Describes open-water wave size only. It does not reflect rip currents, shorebreak, or local hazards.</div>
+      <div class="note">Shown as the everyday term, with the official Douglas sea-state classification in parentheses. Describes open-water wave size only; it does not reflect rip currents, shorebreak, or local hazards.</div>
     </div>
     <div class="surface" id="surface">
       <div class="slabel">Water surface right now &middot; local wind at Bluff House Station (affects texture, not wave size)</div>
@@ -489,6 +489,19 @@ function classifyWaves(ft){
   if(ft<9)  return {key:'rough', label:'Big and rough',   gloss:'Powerful, hazardous surf. Experienced people only.'};
   return       {key:'danger', label:'Dangerous',       gloss:'Very large, dangerous seas. Stay out of the water.'};
 }
+function douglas(m){
+  // WMO sea-state code / Douglas scale, by significant wave height (m).
+  if(m==null) return null;
+  if(m<0.10) return 'Calm';
+  if(m<0.50) return 'Smooth';
+  if(m<1.25) return 'Slight';
+  if(m<2.50) return 'Moderate';
+  if(m<4.0)  return 'Rough';
+  if(m<6.0)  return 'Very rough';
+  if(m<9.0)  return 'High';
+  if(m<14.0) return 'Very high';
+  return 'Phenomenal';
+}
 function applyOcean(o, live, local){
   const w=o.wave||{}, wd=o.wind||{};
   CUR_WAVE=w; if(DECOMP_OPEN) decompPrep();
@@ -517,9 +530,9 @@ function applyOcean(o, live, local){
   const swdir=(w.swd_deg!=null?w.swd_deg:w.mwd_deg);
   rose('oceanRose', swdir, '#0a5f78'); document.getElementById('swellDir').innerHTML='swell from <b>'+compass(swdir)+'</b>';
   document.getElementById('waveCap').innerHTML='<b>Waves '+(w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—')+' ft, every '+(w.dpd_s!=null?Math.round(w.dpd_s):'—')+' seconds</b>, from the '+compass(swdir)+'.';
-  const vv=classifyWaves(w.wvht_ft);
+  const vv=classifyWaves(w.wvht_ft); const dg=douglas(w.wvht_m);
   document.getElementById('waveVerdict').className='surface v-'+vv.key;
-  setT('vQ', vv.label); setT('vD', vv.gloss);
+  setT('vQ', vv.label+(dg?' ('+dg+')':'')); setT('vD', vv.gloss);
   document.getElementById('oceanSrc').textContent='Source: '+(w.provenance||'—')+(o.updated?' · '+fmtTime(o.updated):'');
   const WINDLABEL={PSLC1:'Port San Luis, the nearest anemometer',
     '46011':'Santa Maria open-ocean buoy, used when Port San Luis is offline'};
