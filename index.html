@@ -238,9 +238,9 @@
     <div class="tiles">
       <div class="tile"><div class="lab">Wave height</div><div class="v"><span id="hs">—</span><span class="u"> ft</span></div><div class="sub" id="hsSub"></div></div>
       <div class="tile"><div class="lab">Time between big waves</div><div class="v"><span id="dpd">—</span><span class="u"> sec</span></div><div class="sub">Dominant period</div></div>
-      <div class="tile"><div class="lab">Swell</div><div class="v"><span id="swh">—</span><span class="u"> ft</span></div><div class="sub" id="swSub"></div></div>
-      <div class="tile"><div class="lab">Wind chop</div><div class="v"><span id="wwh">—</span><span class="u"> ft</span></div><div class="sub" id="wwSub"></div></div>
-      <div class="tile"><div class="lab">Wind over the water</div><div class="v"><span id="mwind">—</span><span class="u"> kt</span></div><div class="sub" id="mwindSub"></div></div>
+      <div class="tile" id="swCard"><div class="lab">Swell</div><div class="v"><span id="swh">—</span><span class="u"> ft</span></div><div class="sub" id="swSub"></div></div>
+      <div class="tile" id="wwCard"><div class="lab">Wind chop</div><div class="v"><span id="wwh">—</span><span class="u"> ft</span></div><div class="sub" id="wwSub"></div></div>
+      <div class="tile"><div class="lab">Wind over the water</div><div class="v"><span id="mwind">—</span><span class="u" id="mwindU"> kt</span></div><div class="sub" id="mwindSub"></div></div>
       <div class="card windbox" style="padding:12px"><div class="svgwrap" id="oceanRose" role="img" aria-label="Swell direction"></div>
         <div class="wd" id="swellDir" style="margin-top:6px"></div></div>
     </div>
@@ -475,14 +475,31 @@ function classifyWaves(ft){
   if(ft<9)  return {key:'rough', label:'Big and rough',   gloss:'Powerful, hazardous surf. Experienced people only.'};
   return       {key:'danger', label:'Dangerous',       gloss:'Very large, dangerous seas. Stay out of the water.'};
 }
-function applyOcean(o, live){
+function applyOcean(o, live, local){
   const w=o.wave||{}, wd=o.wind||{};
   CUR_WAVE=w; if(DECOMP_OPEN) decompPrep();
   setT('hs',w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—'); document.getElementById('hsSub').textContent=(w.wvht_m!=null?w.wvht_m.toFixed(1)+' m':'');
   setT('dpd',w.dpd_s!=null?Math.round(w.dpd_s):'—');
-  setT('swh',w.swh_ft!=null?w.swh_ft.toFixed(1):'—'); document.getElementById('swSub').textContent=(w.swp_s?('@ '+Math.round(w.swp_s)+' s · from '+compass(w.swd_deg!=null?w.swd_deg:w.mwd_deg)):'');
-  setT('wwh',w.wwh_ft!=null?w.wwh_ft.toFixed(1):'—'); document.getElementById('wwSub').textContent=(w.wwp_s?('@ '+Math.round(w.wwp_s)+' s · from '+compass(w.wwd_deg)):'partition n/a');
-  setT('mwind',wd.wspd_kt!=null?Math.round(wd.wspd_kt):'—'); document.getElementById('mwindSub').textContent='from '+compass(wd.wdir_deg)+(wd.station?' ('+wd.station+')':'');
+  // Swell and Wind chop need a MEASURED sea/swell split. The buoy provides it; the
+  // CDIP nearshore model returns one combined height, so hide these cards under MOP.
+  const partition = !!w.partition_measured;
+  document.getElementById('swCard').style.display = partition ? '' : 'none';
+  document.getElementById('wwCard').style.display = partition ? '' : 'none';
+  if(partition){
+    setT('swh',w.swh_ft!=null?w.swh_ft.toFixed(1):'—'); document.getElementById('swSub').textContent=(w.swp_s?('@ '+Math.round(w.swp_s)+' s · from '+compass(w.swd_deg!=null?w.swd_deg:w.mwd_deg)):'');
+    setT('wwh',w.wwh_ft!=null?w.wwh_ft.toFixed(1):'—'); document.getElementById('wwSub').textContent=(w.wwp_s?('@ '+Math.round(w.wwp_s)+' s · from '+compass(w.wwd_deg)):'');
+  }
+  // Wind over the water: prefer the Bluff House Station (the nearest read on the wind
+  // actually working the inshore water); fall back to a marine buoy only if it is down.
+  let usingLocal=false;
+  if(local && local.mph!=null){
+    usingLocal=true;
+    setT('mwind',Math.round(local.mph)); document.getElementById('mwindU').textContent=' mph';
+    document.getElementById('mwindSub').textContent='from '+compass(local.dir)+' (Bluff House Station)';
+  } else {
+    setT('mwind',wd.wspd_kt!=null?Math.round(wd.wspd_kt):'—'); document.getElementById('mwindU').textContent=' kt';
+    document.getElementById('mwindSub').textContent='from '+compass(wd.wdir_deg)+(wd.station?' ('+wd.station+')':'');
+  }
   const swdir=(w.swd_deg!=null?w.swd_deg:w.mwd_deg);
   rose('oceanRose', swdir, '#0a5f78'); document.getElementById('swellDir').innerHTML='swell from <b>'+compass(swdir)+'</b>';
   document.getElementById('waveCap').innerHTML='<b>Waves '+(w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—')+' ft, every '+(w.dpd_s!=null?Math.round(w.dpd_s):'—')+' seconds</b>, from the '+compass(swdir)+'.';
@@ -496,8 +513,10 @@ function applyOcean(o, live){
   const waveExplain = isMop
     ? 'The waves come from the CDIP nearshore model (the Coastal Data Information Program at Scripps Institution of Oceanography), which takes the swell that offshore buoys measure and transforms it to the water right off Bluff House, accounting for how the coastline bends, shallows, and shelters each swell. If that model is briefly unavailable, the page falls back to the raw offshore buoy and labels it as such.'
     : 'The CDIP nearshore model for this spot is briefly unavailable, so these are raw readings from offshore buoy 46215, which can read higher than what reaches the bluffs. The page returns to the nearshore model automatically once it is back.';
-  document.getElementById('composite').innerHTML='<b>Where this comes from.</b> Wave numbers: '+(w.provenance||'—')+'. '+waveExplain+
-    ' Wind over the water: '+(wd.station||'—')+(WINDLABEL[wd.station]?' ('+WINDLABEL[wd.station]+')':'')+'.';
+  const windSrc = usingLocal
+    ? 'Wind over the water: the Bluff House Station at the bluff, the nearest reading to the wind working the water you can see.'
+    : 'Wind over the water: '+(wd.station||'—')+(WINDLABEL[wd.station]?' ('+WINDLABEL[wd.station]+')':'')+' (the bluff station is briefly unavailable, so this is the nearest marine buoy).';
+  document.getElementById('composite').innerHTML='<b>Where this comes from.</b> Wave numbers: '+(w.provenance||'—')+'. '+waveExplain+' '+windSrc;
   LIVE_OCEAN=live; return {swdir, wind:wd};
 }
 
@@ -547,7 +566,8 @@ let _o=null,_s=null,_t=null;
 function recompute(){
   renderSun();
   if(_s) applyStation(_s.d,_s.live);
-  let oc = _o?applyOcean(_o.d,_o.live):applyOcean(DEMO_OCEAN,false);
+  const localWind = _s ? {mph:_s.d.wind_mph, dir:_s.d.wind_dir} : {mph:DEMO_STATION.wind_mph, dir:DEMO_STATION.wind_dir};
+  let oc = _o?applyOcean(_o.d,_o.live,localWind):applyOcean(DEMO_OCEAN,false,localWind);
   renderTide(_t?_t.d:buildDemoTide(), _t?_t.live:false);
   const wf = _s? _s.d.wind_dir : DEMO_STATION.wind_dir;
   const wm = _s? _s.d.wind_mph : DEMO_STATION.wind_mph;
@@ -555,7 +575,7 @@ function recompute(){
   document.getElementById('clock').textContent=fmtTime(new Date().toISOString());
   badge();
   document.getElementById('foot').innerHTML='Local weather: WeatherFlow Tempest “Bluff House Station Cayucos.” '+
-    'Ocean: CDIP MOP nearshore point (or NDBC buoy 46215 fallback) plus NDBC PSLC1 wind. Tides: NOAA predictions, Port San Luis. '+
+    'Ocean: CDIP MOP nearshore point (or NDBC buoy 46215 fallback). Wind over the water from the Bluff House Station (or a marine buoy if it is down). Tides: NOAA predictions, Port San Luis. '+
     (LIVE_STATION&&LIVE_OCEAN?'':'<b>Showing sample data — feeds not reachable.</b>')+'<br><span style="font-size:.9rem">Tempest is a trademark of its respective owner. This page is independent and not affiliated with or endorsed by the manufacturer.</span>'+'<br>&copy; '+(new Date().getFullYear())+' Estero Bluffs, LLC. All rights reserved.'+'<br><span style="font-size:.9rem">Conditions shown are automated estimates from third-party sensors and models, provided for general information only. They may be delayed, inaccurate, or unavailable. Always use your own judgment and official sources such as the National Weather Service, lifeguards, and the U.S. Coast Guard before any decision on or near the water. Do not rely on this page for safety. Estero Bluffs, LLC accepts no liability for any reliance on this information.</span>';
 }
 function load(url, set){
