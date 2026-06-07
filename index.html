@@ -137,13 +137,12 @@
     .modal-card{padding:14px}
     .stamp{text-align:left}
   }
-  .verdict{border:2px solid var(--border);border-left:10px solid var(--sea);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:1.15rem}
-  .verdict .vnote{display:block;font-size:.92rem;color:var(--muted);margin-top:6px}
   .v-calm{border-left-color:#1d7a45;background:#eef7f0}
   .v-mod{border-left-color:#0a5f78;background:#eef6f8}
   .v-lively{border-left-color:#b5651d;background:#fbf1e3}
   .v-rough{border-left-color:#9a3b12;background:#fbefe8}
   .v-danger{border-left-color:#b02a2a;background:#fbe9e9}
+  .subh{font-size:1.2rem;font-weight:700;color:var(--ink);margin:22px 0 8px}
 </style>
 </head>
 <body>
@@ -224,10 +223,16 @@
         <span class="bandhint">Tap to see these waves broken into their parts &#9656;</span>
       </button>
       <p class="wavecap" id="waveCap"></p>
-      <div class="verdict" id="waveVerdict"></div>
     </div>
 
-    <!-- Surface texture follows: how the LOCAL bluff wind (Bluff House Station) grooms the water, secondary to size. -->
+    <h3 class="subh">Surf Conditions</h3>
+    <!-- Wave SIZE verdict and surface TEXTURE: a matched pair, identical shape. -->
+    <div class="surface" id="waveVerdict">
+      <div class="slabel">Wave size right now &middot; open-water height, not local hazards</div>
+      <div class="q" id="vQ">—</div>
+      <div class="d" id="vD"></div>
+      <div class="note">Describes open-water wave size only. It does not reflect rip currents, shorebreak, or local hazards.</div>
+    </div>
     <div class="surface" id="surface">
       <div class="slabel">Water surface right now &middot; local wind at Bluff House Station (affects texture, not wave size)</div>
       <div class="q" id="surfQ">—</div>
@@ -304,14 +309,23 @@ const angDiff=(a,b)=>{let d=Math.abs(((a-b)%360+540)%360-180);return d;};
 function surfaceConditions(windFrom, windMph){
   if(windFrom==null||windMph==null) return {cls:'cross',q:'—',d:'',note:''};
   const off = angDiff(windFrom, OFFSHORE_NORMAL_DEG);   // 0 = straight onshore
-  let cls = off<50 ? 'onshore' : off>130 ? 'offshore' : 'cross';
-  let windPhrase = cls==='onshore'?'onshore wind':cls==='offshore'?'offshore wind':'cross-shore wind';
-  let tex = windMph<4?'glassy':windMph<12?'light texture':windMph<20?'bumpy surface':'rough surface';
-  let q;
-  if(cls==='offshore') q = windMph<12?'Clean':'Clean but windy';
-  else if(cls==='onshore') q = windMph<6?'Mostly smooth':windMph<14?'Choppy':'Blown out';
-  else q = windMph<10?'Fair':'Bumpy';
-  let chop = (cls==='onshore'&&windMph>=14)?' Local wind chop building on top of the swell.':'';
+  const cls = off<50 ? 'onshore' : off>130 ? 'offshore' : 'cross';
+  const windPhrase = cls==='onshore'?'onshore wind':cls==='offshore'?'offshore wind':'cross-shore wind';
+  // Headline (q) and texture phrase (tex) are drawn from ONE band set, so the
+  // word and the sentence can never disagree.
+  let q, tex;
+  if(cls==='offshore'){
+    if(windMph<12){ q='Clean'; tex='grooming the faces clean'; }
+    else { q='Clean but windy'; tex='clean but breezy'; }
+  } else if(cls==='onshore'){
+    if(windMph<6){ q='Mostly smooth'; tex='only a light texture'; }
+    else if(windMph<14){ q='Choppy'; tex='a choppy surface'; }
+    else { q='Blown out'; tex='a rough, wind-blown surface'; }
+  } else {
+    if(windMph<10){ q='Fair'; tex='a little texture'; }
+    else { q='Bumpy'; tex='a bumpy surface'; }
+  }
+  const chop = (cls==='onshore'&&windMph>=14)?' Local wind chop building on top of the swell.':'';
   return {cls, q, d: cap(windPhrase)+', '+tex+'.', note:'Wind from '+compass(windFrom)+' against a shore that faces '+compass(OFFSHORE_NORMAL_DEG)+'.'+chop};
 }
 const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
@@ -503,9 +517,9 @@ function applyOcean(o, live, local){
   const swdir=(w.swd_deg!=null?w.swd_deg:w.mwd_deg);
   rose('oceanRose', swdir, '#0a5f78'); document.getElementById('swellDir').innerHTML='swell from <b>'+compass(swdir)+'</b>';
   document.getElementById('waveCap').innerHTML='<b>Waves '+(w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—')+' ft, every '+(w.dpd_s!=null?Math.round(w.dpd_s):'—')+' seconds</b>, from the '+compass(swdir)+'.';
-  const vv=classifyWaves(w.wvht_ft); const ve=document.getElementById('waveVerdict');
-  ve.className='verdict v-'+vv.key;
-  ve.innerHTML='<b>'+vv.label+'.</b> '+vv.gloss+'<span class="vnote">Describes open-water wave size only. It does not reflect rip currents, shorebreak, or local hazards.</span>';
+  const vv=classifyWaves(w.wvht_ft);
+  document.getElementById('waveVerdict').className='surface v-'+vv.key;
+  setT('vQ', vv.label); setT('vD', vv.gloss);
   document.getElementById('oceanSrc').textContent='Source: '+(w.provenance||'—')+(o.updated?' · '+fmtTime(o.updated):'');
   const WINDLABEL={PSLC1:'Port San Luis, the nearest anemometer',
     '46011':'Santa Maria open-ocean buoy, used when Port San Luis is offline'};
