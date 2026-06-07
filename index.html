@@ -91,7 +91,7 @@
   .composite{margin-top:18px;border:2px solid var(--border);border-left:8px solid var(--sea);
     border-radius:12px;background:#eef6f8;padding:16px 18px;font-size:1.1rem}
   .composite b{font-weight:700}
-  #oceanband{width:100%;height:90px;display:block;border-radius:12px;border:2px solid var(--border)}
+  #oceanband{width:100%;height:210px;display:block;border-radius:12px;border:2px solid var(--border)}
   .wavecap{font-size:1.05rem;color:var(--muted);margin-top:8px}.wavecap b{color:var(--ink)}
   footer{margin-top:34px;border-top:2px solid var(--border);padding-top:16px;font-size:1rem;color:var(--muted);line-height:1.7}
   footer b{color:var(--ink);font-weight:700}
@@ -219,7 +219,7 @@
     <!-- Wave size and its hazard rating lead: this is the safety-relevant fact for swimmers, surfers, and small craft. -->
     <div style="margin-top:16px">
       <button id="bandBtn" class="bandbtn" aria-haspopup="dialog" aria-controls="decompModal">
-        <canvas id="oceanband" width="2160" height="180" role="img" aria-label="Animated illustration of rolling waves"></canvas>
+        <canvas id="oceanband" width="2160" height="300" role="img" aria-label="Cross-section of the current sea surface, drawn to a feet scale"></canvas>
         <span class="bandhint">Tap to see these waves broken into their parts &#9656;</span>
       </button>
       <p class="wavecap" id="waveCap"></p>
@@ -639,41 +639,62 @@ function layoutDecomp(){
   DPLOTX=DSMALL?86:150; DPLOTW=DW-DPLOTX-14; DWm=DSMALL?900:1400; DPPM=DPLOTW/DWm; DFS=DSMALL?11:13;
   const top=DH*0.15, sp=DH*0.155; dlaneY=[top,top+sp,top+2*sp]; dsumY=DH*0.82;
 }
+const WAVE_FS_FT = 6;   // fixed vertical scale: +/-6 ft of surface elevation (12 ft crest-to-trough capacity), shared by both views
+const WAVE_WIN_S = 48;   // fixed horizontal window in SECONDS, shared by both views. Time is the honest x-axis for waves: crest spacing = period, and there is no false height-vs-distance pixel comparison.
 function decompComps(w){
   const swp=w.swp_s||w.dpd_s||16, wwp=w.wwp_s||w.apd_s||8;
   const swh=(w.swh_ft!=null?w.swh_ft:(w.wvht_ft||4)*0.8);
-  const wwh=(w.wwh_ft!=null?w.wwh_ft:(w.wvht_ft||4)*0.4);
+  const wwh=(w.wwh_ft!=null?w.wwh_ft:(w.wvht_ft||4)*0.2);
   const GG=9.81,TP=Math.PI*2;
   const cs=[{label:'Swell (long)',T:swp+1.5,a:swh/2,col:'#0a5f78'},
             {label:'Swell (short)',T:Math.max(swp-1.5,3),a:swh/2,col:'#2e7d32'},
             {label:'Wind chop',T:wwp,a:Math.max(wwh,0.3),col:'#b5651d'}];
-  cs.forEach(c=>{c.w=TP/c.T;c.L=GG*c.T*c.T/TP;c.k=TP/c.L;c.c=GG*c.T/TP;});
+  // Normalize amplitudes so the combined SIGNIFICANT height equals the live wave
+  // height: Hs = 4*sqrt(sum a^2/2) = 2.83*sqrt(sum a^2). c.aft is the display
+  // amplitude in FEET, so both views render to a real feet scale and agree.
+  const Hs=(w.wvht_ft!=null?w.wvht_ft:4);
+  const sumsq=cs.reduce((s,c)=>s+c.a*c.a,0)||1;
+  const g=Hs/(2.83*Math.sqrt(sumsq));
+  cs.forEach(c=>{c.aft=c.a*g; c.w=TP/c.T; c.L=GG*c.T*c.T/TP; c.k=TP/c.L;});
   return cs;
 }
-function decompPrep(){DCOMPS=decompComps(CUR_WAVE);DSUM=DCOMPS.reduce((s,c)=>s+c.a,0);
-  const mx=Math.max.apply(null,DCOMPS.map(c=>c.a).concat(0.1));
-  DPPV=Math.min((DH*0.06)/mx,(DH*0.15)/Math.max(DSUM,0.1));}
+function decompPrep(){DCOMPS=decompComps(CUR_WAVE);
+  DPPV=(DH*0.135)/WAVE_FS_FT;                                  // px per FOOT, fixed scale
+  DPPM=DPLOTW/WAVE_WIN_S;}                                     // px per SECOND, fixed time window
 function dtag(c,y){dx.textAlign='left';dx.fillStyle=c.col;dx.font='700 '+DFS+'px "Atkinson Hyperlegible"';
   dx.fillText(c.label,10,y-14);dx.fillStyle='#3d4f59';dx.font='400 '+(DFS-2)+'px "Atkinson Hyperlegible"';
   dx.fillText(c.T.toFixed(1)+' s \u00b7 '+Math.round(c.L)+' m',10,y+4);}
 function dcurve(c,y,t){dx.strokeStyle='#cbbfa8';dx.lineWidth=1;dx.beginPath();dx.moveTo(DPLOTX,y);dx.lineTo(DPLOTX+DPLOTW,y);dx.stroke();
   dx.strokeStyle=c.col;dx.lineWidth=2;dx.beginPath();
-  for(let p=0;p<=DPLOTW;p+=2){const xx=p/DPPM,e=c.a*Math.cos(c.k*xx-c.w*t);const X=DPLOTX+p,Y=y-e*DPPV;p?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();}
+  for(let p=0;p<=DPLOTW;p+=2){const xx=p/DPPM,e=c.aft*Math.cos(c.w*(xx-t));const X=DPLOTX+p,Y=y-e*DPPV;p?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();}
 function drawDecomp(t){dx.clearRect(0,0,DW,DH);if(!DCOMPS.length)return;
   const opX=DPLOTX-16;
   dx.fillStyle='#3d4f59';dx.textAlign='center';dx.font='700 '+(DFS+6)+'px "Atkinson Hyperlegible"';
   dx.fillText('+',opX,(dlaneY[0]+dlaneY[1])/2+5);dx.fillText('+',opX,(dlaneY[1]+dlaneY[2])/2+5);
   dx.font='700 '+(DFS+8)+'px "Atkinson Hyperlegible"';dx.fillText('=',opX,(dlaneY[2]+dsumY)/2+6);
+  // horizontal time scale: label the seconds axis (crest spacing = period)
+  const dsby=Math.max(dlaneY[0]-26,14);
+  dx.fillStyle='#3d4f59';dx.textAlign='left';dx.font='600 '+(DFS-2)+'px "Atkinson Hyperlegible"';dx.fillText('time \u2192 (each gridline 10 s)',DPLOTX,dsby+4);
+  for(let sec=10;sec<WAVE_WIN_S;sec+=10){const X=DPLOTX+sec*DPPM;dx.strokeStyle='rgba(120,120,120,.13)';dx.lineWidth=1;dx.beginPath();dx.moveTo(X,dlaneY[0]-8);dx.lineTo(X,dsumY+DH*0.135);dx.stroke();}
   DCOMPS.forEach((c,i)=>{dtag(c,dlaneY[i]);dcurve(c,dlaneY[i],t);});
   dx.fillStyle='#13242f';dx.textAlign='left';dx.font='700 '+DFS+'px "Atkinson Hyperlegible"';dx.fillText('Sea surface',10,dsumY-DH*0.13);
   dx.fillStyle='#c2410c';dx.font='400 '+(DFS-2)+'px "Atkinson Hyperlegible"';dx.fillText('orange = envelope (sets)',10,dsumY-DH*0.13+16);
-  dx.strokeStyle='#cbbfa8';dx.lineWidth=1;dx.beginPath();dx.moveTo(DPLOTX,dsumY);dx.lineTo(DPLOTX+DPLOTW,dsumY);dx.stroke();
+  // Fixed feet scale: gridlines + still-water baseline (matches the main display).
+  const Hs=(CUR_WAVE.wvht_ft!=null?CUR_WAVE.wvht_ft:4);
+  dx.textAlign='right';dx.font='600 '+(DFS-2)+'px "Atkinson Hyperlegible"';
+  [6,4,2].forEach(e=>[1,-1].forEach(s=>{const y=dsumY-s*e*DPPV;dx.strokeStyle='rgba(120,120,120,.16)';dx.lineWidth=1;dx.beginPath();dx.moveTo(DPLOTX,y);dx.lineTo(DPLOTX+DPLOTW,y);dx.stroke();dx.fillStyle='#6b7780';dx.fillText(e,DPLOTX-6,y+4);}));
+  dx.strokeStyle='rgba(80,80,80,.5)';dx.setLineDash([4,4]);dx.beginPath();dx.moveTo(DPLOTX,dsumY);dx.lineTo(DPLOTX+DPLOTW,dsumY);dx.stroke();dx.setLineDash([]);
+  dx.fillStyle='#6b7780';dx.fillText('0',DPLOTX-6,dsumY+4);
   const N=Math.floor(DPLOTW/2)+1,eA=new Float32Array(N),vA=new Float32Array(N);let mxE=0,mxX=DPLOTX;
-  for(let i=0;i<N;i++){const xx=i*2/DPPM;let cc=0,ss=0;for(const c of DCOMPS){const ph=c.k*xx-c.w*t;cc+=c.a*Math.cos(ph);ss+=c.a*Math.sin(ph);}eA[i]=cc;vA[i]=Math.sqrt(cc*cc+ss*ss);if(vA[i]>mxE){mxE=vA[i];mxX=DPLOTX+i*2;}}
+  for(let i=0;i<N;i++){const xx=i*2/DPPM;let cc=0,ss=0;for(const c of DCOMPS){const ph=c.w*(xx-t);cc+=c.aft*Math.cos(ph);ss+=c.aft*Math.sin(ph);}eA[i]=cc;vA[i]=Math.sqrt(cc*cc+ss*ss);if(vA[i]>mxE){mxE=vA[i];mxX=DPLOTX+i*2;}}
   dx.setLineDash([5,4]);dx.strokeStyle='#c2410c';dx.lineWidth=1.6;
   dx.beginPath();for(let i=0;i<N;i++){const X=DPLOTX+i*2,Y=dsumY-vA[i]*DPPV;i?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();
   dx.beginPath();for(let i=0;i<N;i++){const X=DPLOTX+i*2,Y=dsumY+vA[i]*DPPV;i?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();dx.setLineDash([]);
   dx.strokeStyle='#13242f';dx.lineWidth=2.4;dx.beginPath();for(let i=0;i<N;i++){const X=DPLOTX+i*2,Y=dsumY-eA[i]*DPPV;i?dx.lineTo(X,Y):dx.moveTo(X,Y);}dx.stroke();
+  // Caliper: significant wave height, the same number shown on the main display.
+  const ccx=DPLOTX+DPLOTW-30,cyT=dsumY-(Hs/2)*DPPV,cyB=dsumY+(Hs/2)*DPPV;
+  dx.strokeStyle='#13242f';dx.lineWidth=1.6;dx.beginPath();dx.moveTo(ccx,cyT);dx.lineTo(ccx,cyB);dx.moveTo(ccx-4,cyT+6);dx.lineTo(ccx,cyT);dx.lineTo(ccx+4,cyT+6);dx.moveTo(ccx-4,cyB-6);dx.lineTo(ccx,cyB);dx.lineTo(ccx+4,cyB-6);dx.stroke();
+  dx.fillStyle='#13242f';dx.font='700 '+DFS+'px "Atkinson Hyperlegible"';dx.textAlign='right';dx.fillText(Hs.toFixed(1)+' ft',ccx-6,dsumY-2);
   dx.fillStyle='#c2410c';dx.font='700 '+(DFS-1)+'px "Atkinson Hyperlegible"';dx.textAlign='center';dx.fillText('SET',mxX,dsumY-mxE*DPPV-6);}
 let decompRAF=null;
 function onDecompResize(){if(DECOMP_OPEN){layoutDecomp();decompPrep();if(REDUCE)drawDecomp(0);}}
@@ -688,14 +709,59 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&DECOMP_OPEN)closeDe
 
 init();
 
-/* ---- decorative wave band (frozen for reduced motion) ---- */
+/* ---- main wave band: live, fixed feet scale, responsive + crisp (frozen for reduced motion) ---- */
 const cv=document.getElementById('oceanband'),x=cv.getContext('2d');
-const W=1080,H=90,DPR=2;x.scale(DPR,DPR);
-const C=[{a:13,k:2*Math.PI/520,w:2*Math.PI/9},{a:8,k:2*Math.PI/300,w:2*Math.PI/6.5},{a:4,k:2*Math.PI/130,w:2*Math.PI/3.4}];
-function frame(t){x.clearRect(0,0,W,H);const base=H*0.55;
-  const g=x.createLinearGradient(0,base-22,0,H);g.addColorStop(0,'#4a9bb5');g.addColorStop(.55,'#1f6f8c');g.addColorStop(1,'#0c3b4e');
-  x.beginPath();x.moveTo(0,H);for(let p=0;p<=W;p+=3){let e=0;for(const c of C)e+=c.a*Math.cos(c.k*p-c.w*t);x.lineTo(p,base-e);}x.lineTo(W,H);x.closePath();x.fillStyle=g;x.fill();
-  x.beginPath();for(let p=0;p<=W;p+=3){let e=0;for(const c of C)e+=c.a*Math.cos(c.k*p-c.w*t);p?x.lineTo(p,base-e):x.moveTo(p,base-e);}x.strokeStyle='rgba(255,255,255,.7)';x.lineWidth=2;x.stroke();}
+let BW=1040,BH=210;
+function layoutBand(){
+  const cssW=Math.max(cv.clientWidth||(cv.parentElement?cv.parentElement.clientWidth:1040)||1040,260),cssH=210;
+  const dpr=window.devicePixelRatio||1;
+  cv.width=Math.round(cssW*dpr);cv.height=Math.round(cssH*dpr);cv.style.height=cssH+'px';
+  x.setTransform(dpr,0,0,dpr,0,0);BW=cssW;BH=cssH;
+}
+function frame(t){
+  x.clearRect(0,0,BW,BH);
+  const comps=decompComps(CUR_WAVE),Hs=CUR_WAVE.wvht_ft,F=15;
+  const GUT=54,x0=GUT,plotW=BW-GUT-16,top=28,bot=BH-14,mid=(top+bot)/2;
+  const ppf=(bot-top)/(2*WAVE_FS_FT),pps=plotW/WAVE_WIN_S;
+  // feet gridlines (y)
+  x.textAlign='right';x.font='600 '+F+'px "Atkinson Hyperlegible"';
+  [6,4,2].forEach(e=>[1,-1].forEach(s=>{const y=mid-s*e*ppf;x.strokeStyle='rgba(120,120,120,.18)';x.lineWidth=1;x.beginPath();x.moveTo(x0,y);x.lineTo(x0+plotW,y);x.stroke();x.fillStyle='#586169';x.fillText(e,GUT-7,y+5);}));
+  // time gridlines (x) every 10 s, behind the water
+  for(let sec=10;sec<WAVE_WIN_S;sec+=10){const X=x0+sec*pps;x.strokeStyle='rgba(120,120,120,.18)';x.lineWidth=1;x.beginPath();x.moveTo(X,top);x.lineTo(X,bot);x.stroke();}
+  // still-water line
+  x.strokeStyle='rgba(70,70,70,.55)';x.setLineDash([5,5]);x.beginPath();x.moveTo(x0,mid);x.lineTo(x0+plotW,mid);x.stroke();x.setLineDash([]);
+  x.fillStyle='#586169';x.textAlign='right';x.fillText('0',GUT-7,mid+5);
+  x.save();x.translate(15,mid);x.rotate(-Math.PI/2);x.textAlign='center';x.font='600 '+(F-1)+'px "Atkinson Hyperlegible"';x.fillStyle='#586169';x.fillText('feet',0,0);x.restore();
+  // surface vs TIME, to scale
+  const surf=p=>{const tau=p/pps;let e=0;for(const c of comps)e+=c.aft*Math.cos(c.w*(tau-t));return mid-e*ppf;};
+  const g=x.createLinearGradient(0,mid-WAVE_FS_FT*ppf,0,bot);g.addColorStop(0,'#4a9bb5');g.addColorStop(.55,'#1f6f8c');g.addColorStop(1,'#0c3b4e');
+  x.beginPath();x.moveTo(x0,bot);for(let p=0;p<=plotW;p+=2)x.lineTo(x0+p,surf(p));x.lineTo(x0+plotW,bot);x.closePath();x.fillStyle=g;x.fill();
+  x.beginPath();for(let p=0;p<=plotW;p+=2){const Y=surf(p);p?x.lineTo(x0+p,Y):x.moveTo(x0+p,Y);}x.strokeStyle='rgba(255,255,255,.8)';x.lineWidth=2.5;x.stroke();
+  // x-axis time labels along the top
+  x.fillStyle='#586169';x.font='600 '+F+'px "Atkinson Hyperlegible"';x.textAlign='center';
+  for(let sec=10;sec<WAVE_WIN_S;sec+=10)x.fillText(sec+'s',x0+sec*pps,16);
+  x.textAlign='left';x.font='600 '+(F-1)+'px "Atkinson Hyperlegible"';x.fillText('time \u2192',x0,16);
+  // still-water label
+  x.textAlign='left';x.font='600 '+(F-3)+'px "Atkinson Hyperlegible"';x.fillStyle='#586169';x.fillText('still water',x0+6,mid-7);
+  // caliper: wave height, trough to crest — text on a cream chip (always its own background); line haloed
+  if(Hs!=null){const cx=x0+plotW-32,cT=mid-(Hs/2)*ppf,cB=mid+(Hs/2)*ppf;
+    const cal=()=>{x.beginPath();x.moveTo(cx,cT);x.lineTo(cx,cB);x.moveTo(cx-5,cT+7);x.lineTo(cx,cT);x.lineTo(cx+5,cT+7);x.moveTo(cx-5,cB-7);x.lineTo(cx,cB);x.lineTo(cx+5,cB-7);};
+    x.lineJoin='round';x.lineCap='round';
+    x.strokeStyle='rgba(255,255,255,.9)';x.lineWidth=5;cal();x.stroke();
+    x.strokeStyle='#0b1f29';x.lineWidth=2;cal();x.stroke();
+    const big='700 '+(F+5)+'px "Atkinson Hyperlegible"',small='600 '+(F-4)+'px "Atkinson Hyperlegible"';
+    x.font=big;const w1=x.measureText(Hs.toFixed(1)+' ft').width;
+    x.font=small;const w2=x.measureText('trough to crest').width;
+    const padX=9,padY=7,gap=3,h1=F+5,h2=F-4,chipW=Math.max(w1,w2)+padX*2,chipH=h1+gap+h2+padY*2;
+    const cR=cx-12,cL=cR-chipW,cTp=mid-chipH/2,cBp=mid+chipH/2,rr=8;
+    x.beginPath();x.moveTo(cL+rr,cTp);x.lineTo(cR-rr,cTp);x.quadraticCurveTo(cR,cTp,cR,cTp+rr);x.lineTo(cR,cBp-rr);x.quadraticCurveTo(cR,cBp,cR-rr,cBp);x.lineTo(cL+rr,cBp);x.quadraticCurveTo(cL,cBp,cL,cBp-rr);x.lineTo(cL,cTp+rr);x.quadraticCurveTo(cL,cTp,cL+rr,cTp);x.closePath();
+    x.fillStyle='rgba(246,241,230,.97)';x.fill();x.strokeStyle='#cbbfa8';x.lineWidth=1;x.stroke();
+    x.textAlign='right';x.fillStyle='#0b1f29';x.font=big;x.fillText(Hs.toFixed(1)+' ft',cR-padX,cTp+padY+h1-4);
+    x.fillStyle='#586169';x.font=small;x.fillText('trough to crest',cR-padX,cTp+padY+h1+gap+h2-4);
+    x.lineWidth=1;}
+}
+layoutBand();
+window.addEventListener('resize',()=>{layoutBand();if(REDUCE)frame(0);});
 if(REDUCE)frame(0); else{let last=performance.now(),T=0;(function l(n){const dt=Math.min((n-last)/1000,.05);last=n;T+=dt*1.2;frame(T);requestAnimationFrame(l);})(performance.now());}
 </script>
 </body>
