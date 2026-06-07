@@ -3,27 +3,32 @@
 fetch_ocean.py -- writes ocean-data.json for the Estero Bluffs page.
 
 Wave source, in order of preference:
-  1. CDIP MOP nearshore point (transformed to the coast: refraction + shoaling).
-     Accessed via the mop_data_access.cdip CGI (plain text, no netCDF needed).
-  2. Fallback: NDBC buoy 46215 (Diablo Canyon) .txt + .spec  -- the raw offshore buoy.
-Wind: NDBC PSLC1 (Port San Luis), the nearest reporting anemometer.
+  1. CDIP MOP nearshore point (the offshore wave field transformed to this coast:
+     refraction, shoaling, island/headland blocking). Read from CDIP's THREDDS
+     server over OPeNDAP's plain-text ASCII service, so NO netCDF library is
+     needed -- just stdlib HTTP + text parsing.
+  2. Fallback: NDBC buoy 46215 (Diablo Canyon) .txt + .spec -- the raw offshore buoy.
+Wind: NDBC PSLC1 (Port San Luis) with 46011 (Santa Maria) as backup.
 
-MOP is OFF until you set MOP_ID below to the confirmed point off Cayucos:
-  - Open the CDIP MOP map, click the alongshore point nearest the bluff, read its
-    5-char ID (San Luis Obispo county -> "SL" prefix, numbered south->north).
-  - Set MOP_ID, then run:  python3 fetch_ocean.py --probe
-    to print the raw CGI response so the parser can be confirmed against reality.
-Until then the script runs on buoy 46215 and labels the data accordingly.
+MOP is OFF until you set MOP_ID below to the point off the bluffs:
+  - Open CDIP's MOP map (https://cdip.ucsd.edu/mops/), find Estero Bluffs / north
+    Cayucos, click the nearshore alongshore point, read its 5-char id. San Luis
+    Obispo county points start with "SL" (e.g. SL567), numbered south -> north.
+  - Set MOP_ID below, then confirm it before relying on it:
+        python3 fetch_ocean.py --probe SL567
+    which prints that point's latest modeled wave height, period, and direction.
+If MOP is unset or fails for any reason, the script silently falls back to buoy
+46215 and labels the data "raw offshore". It can never break the page.
 
 Usage:
   python3 fetch_ocean.py [ocean-data.json]
-  python3 fetch_ocean.py --probe        # dump raw MOP response for the set MOP_ID
+  python3 fetch_ocean.py --probe [SLxxx]   # check a MOP point's latest values
 """
-import json, sys, datetime, urllib.request
+import json, sys, datetime, urllib.request, re
 
 WAVE_BUOY = "46215"
-MOP_ID    = ""        # <-- set to confirmed Cayucos MOP id, e.g. "SL063"; empty = buoy fallback
-MOP_CGI   = "https://cdip.ucsd.edu/data_access/mop_data_access.cdip"
+MOP_ID    = "SL405"   # CDIP MOP alongshore point directly off Bluff House (by transect); empty = buoy fallback
+MOP_BASE  = "https://thredds.cdip.ucsd.edu/thredds/dodsC/cdip/model/MOP_alongshore/"
 NDBC      = "https://www.ndbc.noaa.gov/data/realtime2/"
 UA        = {"User-Agent": "esterobluffs-ocean/1.0"}
 
@@ -72,59 +77,51 @@ def buoy_spec(text):
     return {"swh":num(g(6)),"swp":num(g(7)),"wwh":num(g(8)),"wwp":num(g(9)),
             "swd":tdir(g(10)),"wwd":tdir(g(11)),"steep":(g(12) if g(12) not in MISSING else None)}
 
-# ---- CDIP MOP (preferred). Tolerant parser: handles XML or whitespace-column text. ----
-def mop_fetch_raw(tag):
-    # tag: 'mp' bulk params, 'ss' sea/swell 2-band params. '1' = last 1 day.
-    return fetch("%s?%s+%s+1" % (MOP_CGI, MOP_ID, tag))
+# ---- CDIP MOP (preferred): read the nearshore point from THREDDS via OPeNDAP's
+# ---- plain-text ASCII service. Stdlib only, no netCDF library. ----
+def mop_url(suffix):
+    return "%s%s_nowcast.nc%s" % (MOP_BASE, MOP_ID, suffix)
 
-def _floats(s):
-    out=[]
-    for tok in s.replace(",", " ").split():
-        try: out.append(float(tok))
-        except ValueError: pass
-    return out
+def _ascii_value(body, var):
+    """Pull the numeric value that follows 'var[...]' in an OPeNDAP .ascii body."""
+    m = re.search(re.escape(var) + r"\[[^\]]*\]\s*([-\d.][\d.eE+\-]*)", body)
+    if not m: return None
+    try: return float(m.group(1))
+    except ValueError: return None
 
-def mop_parse_latest(raw_mp, raw_ss):
-    """Best-effort: return dict with hs_m,tp_s,dp_deg and swell/sea split.
-    NOTE: written to the documented CGI interface but UNVERIFIED against a live
-    response from the build sandbox. Run --probe and adjust column indices if needed."""
-    import xml.etree.ElementTree as ET
-    res = {}
-    # Try XML first
-    def try_xml(raw, keys):
-        try:
-            root = ET.fromstring(raw)
-            last = list(root.iter())[-1] if len(list(root.iter())) else None
-            # collect attrib floats from the last record-like element
-            for el in root.iter():
-                a = el.attrib
-                for k in keys:
-                    if k in a and num(a[k]) is not None:
-                        res.setdefault(k, num(a[k]))
-            return bool(res)
-        except Exception:
-            return False
-    used_xml = try_xml(raw_mp, ["Hs","Tp","Dp"])
-    if not used_xml:
-        # whitespace fallback: take last non-empty data line, last numbers as Hs Tp Dp (order varies!)
-        data_lines=[ln for ln in raw_mp.splitlines() if _floats(ln)]
-        if data_lines:
-            vals=_floats(data_lines[-1])
-            # heuristic: time columns first; the trailing values carry params.
-            # CONFIRM order with --probe; placeholder assumes ... Hs Tp Dp at the end.
-            if len(vals)>=3:
-                res["Hs"], res["Tp"], res["Dp"] = vals[-3], vals[-2], vals[-1]
-    return res or None
+def mop_latest():
+    """Latest modeled Hs (m), Tp (s), Dp (deg) for MOP_ID. Returns None on any
+    problem so the caller falls back to the offshore buoy. Two small requests:
+    the .dds gives the time-dimension length; the .ascii gives the last sample."""
+    if not MOP_ID: return None
+    dds = fetch(mop_url(".dds"))
+    m = re.search(r"waveTime\s*=\s*(\d+)", dds)
+    if not m: return None
+    i = int(m.group(1)) - 1
+    if i < 0: return None
+    q = ",".join("%s[%d:1:%d]" % (v, i, i) for v in ("waveHs","waveTp","waveDp","waveTime"))
+    body = fetch(mop_url(".ascii?" + q))
+    # use only the data section (after the dashed separator) when present
+    parts = re.split(r"-{10,}", body)
+    body = parts[-1] if len(parts) > 1 else body
+    hs = _ascii_value(body, "waveHs")
+    if hs is None: return None
+    t = _ascii_value(body, "waveTime")
+    iso = None
+    if t is not None:
+        try: iso = datetime.datetime.fromtimestamp(t, datetime.timezone.utc).isoformat()
+        except Exception: iso = None
+    return {"Hs": hs, "Tp": _ascii_value(body,"waveTp"), "Dp": _ascii_value(body,"waveDp"), "time": iso}
 
 def build_mop():
     if not MOP_ID: return None
     try:
-        mp = mop_fetch_raw("mp"); ss = mop_fetch_raw("ss")
-        p = mop_parse_latest(mp, ss)
+        p = mop_latest()
         if not p or p.get("Hs") is None: return None
         hs = p["Hs"]
-        return {"provenance":"CDIP MOP %s (transformed nearshore)"%MOP_ID,
-                "wvht_m":hs,"wvht_ft":m_ft(hs),
+        return {"provenance":"CDIP MOP %s (modeled nearshore)"%MOP_ID,
+                "time":p.get("time"),
+                "wvht_m":round(hs,2),"wvht_ft":m_ft(hs),
                 "dpd_s":p.get("Tp"),"apd_s":None,"mwd_deg":p.get("Dp"),
                 "partition_measured":False}
     except Exception:
@@ -173,10 +170,26 @@ def build():
             "wind":build_wind()}
 
 def main():
+    global MOP_ID
     if "--probe" in sys.argv:
-        if not MOP_ID: print("MOP_ID not set."); return
-        print("=== mp ===\n"+mop_fetch_raw("mp")[:1500])
-        print("\n=== ss ===\n"+mop_fetch_raw("ss")[:1500]); return
+        cand = next((a for a in sys.argv[1:] if a.upper().startswith("SL") or (a[:1].isalpha() and a[-1:].isdigit() and not a.startswith("-"))), None)
+        if cand: MOP_ID = cand
+        if not MOP_ID:
+            print("Give a point id, e.g.:  python3 fetch_ocean.py --probe SL567"); return
+        print("Probing CDIP MOP point %s ..." % MOP_ID)
+        try:
+            p = mop_latest()
+        except Exception as e:
+            print("FAILED to read MOP point:", e); return
+        if not p:
+            print("No data parsed. Check the id is correct (5 chars, e.g. SL567) and that the point exists."); return
+        print("latest modeled values for %s:" % MOP_ID)
+        print("  wave height: %.2f m (%.1f ft)" % (p["Hs"], p["Hs"]*M_TO_FT))
+        print("  peak period: %s s" % p.get("Tp"))
+        print("  direction:   %s deg" % p.get("Dp"))
+        print("  time (UTC):  %s" % p.get("time"))
+        print("If those look like your spot, set MOP_ID = \"%s\" at the top and deploy." % MOP_ID)
+        return
     out_path = next((a for a in sys.argv[1:] if not a.startswith("-")), "ocean-data.json")
     data = build()
     json.dump(data, open(out_path,"w"), indent=2)
