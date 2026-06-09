@@ -143,6 +143,12 @@
   .v-lively{border-left-color:#b5651d;background:#fbf1e3}
   .v-rough{border-left-color:#9a3b12;background:#fbefe8}
   .v-danger{border-left-color:#b02a2a;background:#fbe9e9}
+  /* Surf push has its OWN ramp: deepening sea-blue = more energy, NOT the hazard
+     red of the wave-size verdict. Big surf is the good day, not a warning. */
+  .f-weak{border-left-color:#8bb0bd;background:#f1f6f8}
+  .f-fun{border-left-color:#3f8aa3;background:#eef6f8}
+  .f-solid{border-left-color:#0a5f78;background:#e7f1f4}
+  .f-heavy{border-left-color:#06414f;background:#dfeef2}
   .subh{font-size:1.2rem;font-weight:700;color:var(--ink);margin:22px 0 8px}
   /* the two derived "feel" reads — surf push and ride — shown as a matched pair */
   .surfacepair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
@@ -552,10 +558,10 @@ function seaForceRead(w){
   const T=w.dpd_s;
   if(H==null||!T) return null;
   const P=0.49*H*H*T;
-  if(P<3)   return {P,key:'calm',  word:'Weak',  clause:'little push behind the waves'};
-  if(P<10)  return {P,key:'mod',   word:'Fun',   clause:'moderate energy \u2014 playful surf'};
-  if(P<25)  return {P,key:'lively',word:'Solid', clause:'real push \u2014 powerful surf'};
-  return          {P,key:'rough', word:'Heavy', clause:'heavy energy \u2014 for experienced surfers'};
+  if(P<3)   return {P,key:'weak', word:'Weak',  clause:'little push behind the waves'};
+  if(P<10)  return {P,key:'fun',  word:'Fun',   clause:'moderate energy \u2014 playful surf'};
+  if(P<25)  return {P,key:'solid',word:'Solid', clause:'real push \u2014 powerful surf'};
+  return          {P,key:'heavy',word:'Heavy', clause:'heavy energy \u2014 for experienced surfers'};
 }
 function applyOcean(o, live, local){
   const w=o.wave||{}, wd=o.wind||{};
@@ -592,7 +598,7 @@ function applyOcean(o, live, local){
   document.getElementById('rideVerdict').className='surface'+(ride?' v-'+ride.key:'');
   setT('rideQ', ride?ride.word:'—'); setT('rideD', ride?ride.clause:'');
   const force=seaForceRead(w);
-  document.getElementById('forceVerdict').className='surface'+(force?' v-'+force.key:'');
+  document.getElementById('forceVerdict').className='surface'+(force?' f-'+force.key:'');
   setT('forceQ', force?force.word:'—'); setT('forceD', force?force.clause:'');
   document.getElementById('oceanSrc').textContent='Source: '+(w.provenance||'—')+(o.updated?' · '+fmtTime(o.updated):'');
   const WINDLABEL={PSLC1:'Port San Luis, the nearest anemometer',
