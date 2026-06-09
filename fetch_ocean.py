@@ -24,7 +24,7 @@ Usage:
   python3 fetch_ocean.py [ocean-data.json]
   python3 fetch_ocean.py --probe [SLxxx]   # check a MOP point's latest values
 """
-import json, sys, datetime, urllib.request, re
+import json, sys, os, datetime, urllib.request, re
 
 WAVE_BUOY = "46215"
 MOP_ID    = "SL405"   # CDIP MOP alongshore point directly off Bluff House (by transect); empty = buoy fallback
@@ -169,6 +169,70 @@ def build():
             "wave":{"name":"Estero Bluffs nearshore","lat":35.4492,"lon":-120.9160, **wave},
             "wind":build_wind()}
 
+# ============================================================================
+# 12-HOUR WAVE-TREND HISTORY
+# Appends one trend point per NEW wave observation (keyed on the wave's own
+# 'time', not the fetch time), so ocean-history.json changes -- and therefore
+# commits -- only when the buoy/model actually advances. Trims to 12 hours.
+# Stored P and S use the same formulas the web page uses, so they can't drift.
+# ============================================================================
+HISTORY_PATH  = "ocean-history.json"
+HISTORY_HOURS = 12
+
+def _energy_kw(hs_m, tp_s):
+    # Sea Force: wave power, P = 0.49 * H^2 * T  (kW per metre of crest).
+    if hs_m is None or not tp_s:
+        return None
+    return round(0.49 * hs_m * hs_m * tp_s, 2)
+
+def _steepness(hs_m, tp_s):
+    # Steepness: S = H / L, deep-water wavelength L = 1.56 * T^2.
+    if hs_m is None or not tp_s:
+        return None
+    return round(hs_m / (1.56 * tp_s * tp_s), 5)
+
+def update_history(data, path=HISTORY_PATH, hours=HISTORY_HOURS):
+    wave  = data.get("wave") or {}
+    wtime = wave.get("time")
+    hs    = wave.get("wvht_m")
+    tp    = wave.get("dpd_s")
+    if not wtime or hs is None or not tp:
+        return  # nothing usable this run; leave history untouched
+
+    point = {"t": wtime,
+             "P": _energy_kw(hs, tp),
+             "S": _steepness(hs, tp),
+             "hs_ft": wave.get("wvht_ft"),
+             "tp_s": tp}
+
+    hist = []
+    if os.path.exists(path):
+        try:
+            with open(path) as f:
+                hist = json.load(f)
+            if not isinstance(hist, list):
+                hist = []
+        except Exception:
+            hist = []
+
+    # dedupe on observation time: replace if same obs re-fetched, else append
+    if hist and hist[-1].get("t") == wtime:
+        hist[-1] = point
+    else:
+        hist.append(point)
+
+    # trim to the rolling window
+    cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=hours)
+    def _keep(p):
+        try:
+            return datetime.datetime.fromisoformat(p["t"]) >= cutoff
+        except Exception:
+            return True
+    hist = [p for p in hist if _keep(p)]
+
+    with open(path, "w") as f:
+        json.dump(hist, f, indent=2)
+
 def main():
     global MOP_ID
     if "--probe" in sys.argv:
@@ -192,6 +256,7 @@ def main():
         return
     out_path = next((a for a in sys.argv[1:] if not a.startswith("-")), "ocean-data.json")
     data = build()
+    update_history(data)
     json.dump(data, open(out_path,"w"), indent=2)
     print("wrote", out_path); print(json.dumps(data, indent=2))
 
