@@ -272,6 +272,7 @@
       <div class="q" id="vQ">—</div>
       <div class="d" id="vD"></div>
       <div class="fig" id="waveFig"></div>
+      <div class="fig" id="waveOffshore" style="display:none"></div>
       <div class="note">Shown as the everyday term, with the official Douglas sea-state classification in parentheses. Describes open-water wave size only; it does not reflect rip currents, shorebreak, or local hazards.</div>
     </div>
 
@@ -725,6 +726,17 @@ function applyOcean(o, live, local){
     (w.mwd_deg!=null?'from '+compass(w.mwd_deg):null),
     (fmtAsOf(w.time)?'as of '+fmtAsOf(w.time):null)
   ].filter(Boolean).join('  \u00b7  '));
+  // secondary: the measured offshore buoy reading (fresher, before it reaches the bluff)
+  const off=o.wave_offshore, offEl=document.getElementById('waveOffshore');
+  if(offEl){
+    if(off && off.wvht_ft!=null){
+      offEl.style.display='';
+      offEl.textContent='offshore, measured: '+off.wvht_ft.toFixed(1)+' ft'
+        +(off.dpd_s?' @ '+Math.round(off.dpd_s)+' s':'')
+        +(off.mwd_deg!=null?' from '+compass(off.mwd_deg):'')
+        +(fmtAsOf(off.time)?'  \u00b7  as of '+fmtAsOf(off.time):'');
+    } else { offEl.style.display='none'; offEl.textContent=''; }
+  }
   const ride=steepnessRead(w);
   document.getElementById('rideVerdict').className='surface'+(ride?' v-'+ride.key:'');
   setT('rideQ', ride?ride.word:'—'); setT('rideD', ride?ride.clause:'');
