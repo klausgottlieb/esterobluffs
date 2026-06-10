@@ -116,9 +116,14 @@
   .sk-now{font-family:ui-monospace,Menlo,monospace;color:var(--muted);font-size:.85rem}
   .sk-trend{margin-left:auto;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
   .t-steady{color:#1d7a45}.t-up{color:#0a5f78}.t-down{color:#8a8f93}
-  .sk{height:70px}
+  .sk{min-height:70px}
   .sk-svg{width:100%;height:70px;display:block}
   .sk-empty{height:70px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem}
+  .sk-plot{position:relative;height:70px}
+  .sk-yl{position:absolute;left:3px;font-size:.66rem;color:var(--muted);font-variant-numeric:tabular-nums;
+         background:var(--card);padding:0 3px;border-radius:3px;line-height:1.15}
+  .sk-ymax{top:0}.sk-ymin{bottom:0}
+  .sk-xaxis{display:flex;justify-content:space-between;font-size:.64rem;color:var(--muted);margin-top:2px;padding:0 3px}
   .trend-note{font-size:.82rem;color:var(--muted);margin-top:8px}
   .bandbtn{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;text-align:left;border-radius:12px}
   .bandbtn:focus-visible{outline:3px solid var(--sea);outline-offset:3px}
@@ -636,12 +641,14 @@ function _trendWord(vals, kind){
   if(kind==='force') return rel>0?{txt:'building',cls:'t-up'}:{txt:'easing',cls:'t-down'};
   return rel>0?{txt:'steepening',cls:'t-up'}:{txt:'smoothing',cls:'t-down'};
 }
-function _spark(series, color){    // series: [{tx(ms), v}] on a 12h time axis, right edge = now
+function _spark(series, color, fmt){    // series: [{tx(ms), v}] on a 12h time axis, right edge = now
   const W=300,H=70,pad=6, now=Date.now(), span=TREND_HOURS*3600*1000;
   const pts=series.filter(p=>p.tx!=null && p.v!=null && p.tx>=now-span).sort((a,b)=>a.tx-b.tx);
   if(pts.length<2) return '<div class="sk-empty">building the 12-hour history\u2026</div>';
-  let mn=Math.min.apply(null,pts.map(p=>p.v)), mx=Math.max.apply(null,pts.map(p=>p.v));
-  if(mx-mn<1e-9){ const pad2=Math.max(Math.abs(mn)*0.5,1e-6); mx=mn+pad2; mn=mn-pad2; }
+  const vals=pts.map(p=>p.v);
+  const rawMn=Math.min.apply(null,vals), rawMx=Math.max.apply(null,vals);   // TRUE range for the labels
+  let mn=rawMn, mx=rawMx;
+  if(mx-mn<1e-9){ const pad2=Math.max(Math.abs(mn)*0.5,1e-6); mx=mn+pad2; mn=mn-pad2; }   // pad only for drawing
   const vspan=mx-mn;
   const x=t=>pad+(W-2*pad)*(1-(now-t)/span);   // now at right, 12h ago at left
   const y=v=>pad+(H-2*pad)*(1-(v-mn)/vspan);
@@ -650,17 +657,23 @@ function _spark(series, color){    // series: [{tx(ms), v}] on a 12h time axis, 
   const lx=x(pts[pts.length-1].tx).toFixed(1), ly=y(pts[pts.length-1].v).toFixed(1);
   const area=d+' L'+lx+','+(H-pad)+' L'+x(pts[0].tx).toFixed(1)+','+(H-pad)+' Z';
   let dots=''; for(const p of pts) dots+='<circle cx="'+x(p.tx).toFixed(1)+'" cy="'+y(p.v).toFixed(1)+'" r="1.8" fill="'+color+'" opacity="0.5"/>';
-  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" class="sk-svg">'
+  const svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" class="sk-svg">'
     +'<path d="'+area+'" fill="'+color+'" opacity="0.10"/>'
     +'<path d="'+d+'" fill="none" stroke="'+color+'" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'
     +dots+'<circle cx="'+lx+'" cy="'+ly+'" r="3.2" fill="'+color+'"/></svg>';
+  const f=fmt||(v=>v);
+  // y labels are the TRUE high/low so a small wiggle on a zoomed auto-scale can't read as a cliff
+  return '<div class="sk-plot">'+svg
+    +'<span class="sk-yl sk-ymax">'+f(rawMx)+'</span>'
+    +'<span class="sk-yl sk-ymin">'+f(rawMn)+'</span></div>'
+    +'<div class="sk-xaxis"><span>12 h ago</span><span>now</span></div>';
 }
 function renderTrends(){
   if(!document.getElementById('trendBox')) return;
   const s=(HIST||[]).map(p=>({tx:_ms(p.t), P:p.P, S:p.S})).filter(p=>p.tx!=null);
   const fS=s.map(p=>({tx:p.tx,v:p.P})), sS=s.map(p=>({tx:p.tx,v:p.S}));
-  document.getElementById('spkForce').innerHTML=_spark(fS,'#0a5f78');
-  document.getElementById('spkRide').innerHTML=_spark(sS,'#9a5b1d');
+  document.getElementById('spkForce').innerHTML=_spark(fS,'#0a5f78', v=>(v>=10?Math.round(v):v.toFixed(1)));
+  document.getElementById('spkRide').innerHTML=_spark(sS,'#9a5b1d', v=>v.toFixed(4));
   const last=s.length?s[s.length-1]:null;
   setT('spkForceNow', last&&last.P!=null?('\u2248 '+(last.P>=10?Math.round(last.P):last.P.toFixed(1))+' kW/m'):'—');
   setT('spkRideNow', last&&last.S!=null?last.S.toFixed(4):'—');
