@@ -164,10 +164,19 @@ def build_wind():
     return last                                      # all blank: honest dash, nearest label
 
 def build():
-    wave = build_mop() or build_buoy() or {"provenance":"unavailable","partition_measured":False}
-    return {"updated":datetime.datetime.now(datetime.timezone.utc).isoformat(),
-            "wave":{"name":"Estero Bluffs nearshore","lat":35.4492,"lon":-120.9160, **wave},
-            "wind":build_wind()}
+    mop  = build_mop()    # modeled nearshore, at the bluff (~2 h behind: hourly model + swell travel time)
+    buoy = build_buoy()   # measured, raw offshore, ~hourly and fresher
+    wave = mop or buoy or {"provenance":"unavailable","partition_measured":False}
+    out = {"updated":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+           "wave":{"name":"Estero Bluffs nearshore","lat":35.4492,"lon":-120.9160, **wave},
+           "wind":build_wind()}
+    # When MOP is the primary, also carry the measured offshore buoy as a secondary
+    # reading: the same swell, measured and fresher, before refraction and shoaling
+    # bring it onto the bluff. Omitted when the buoy is already the primary (MOP down),
+    # so the page never shows the same reading twice.
+    if mop and buoy:
+        out["wave_offshore"] = buoy
+    return out
 
 # ============================================================================
 # 12-HOUR WAVE-TREND HISTORY
