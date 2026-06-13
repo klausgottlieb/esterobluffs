@@ -1,0 +1,22 @@
+name: Update forecast data
+# Low-maintenance: only git + python3 (no versioned marketplace actions to deprecate).
+on:
+  schedule:
+    - cron: "17 * * * *"     # hourly; NWS refreshes ~hourly. :17 to avoid the top-of-hour stampede.
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        run: git clone --depth 1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" repo
+      - name: Fetch + commit if changed
+        working-directory: repo
+        run: |
+          python3 fetch_forecast.py forecast-data.json
+          git config user.name  "forecast-bot"
+          git config user.email "forecast-bot@users.noreply.github.com"
+          git add forecast-data.json
+          git diff --cached --quiet || { git commit -m "data: forecast $(date -u +%FT%TZ)"; git push; }
