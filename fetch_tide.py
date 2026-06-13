@@ -47,14 +47,20 @@ def main():
     # Start one day BEFORE today (UTC) so the viewer's local "today" is always covered,
     # whatever the timezone offset and whenever the daily job last ran.
     today = datetime.datetime.now(datetime.timezone.utc).date()
-    begin = (today - datetime.timedelta(days=1)).strftime("%Y%m%d")
-    end_hilo = (today + datetime.timedelta(days=7)).strftime("%Y%m%d")
+    # High/low list spans +/-3 weeks: the page ranks each daylight low against the
+    # distribution of daytime lows over this window ("low for the season"), so it
+    # needs a seasonal sample, not just the next few days.
+    begin_hilo = (today - datetime.timedelta(days=21)).strftime("%Y%m%d")
+    end_hilo = (today + datetime.timedelta(days=21)).strftime("%Y%m%d")
+    # The 30-minute curve only feeds the chart and the first-light interpolation,
+    # so it stays a tight ~3-day window to keep the file small.
+    begin_curve = (today - datetime.timedelta(days=1)).strftime("%Y%m%d")
     end_curve = (today + datetime.timedelta(days=2)).strftime("%Y%m%d")
 
     data = {"updated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "station": STATION, "name": NAME, "hilo": [], "curve": []}
     try:
-        hilo = fetch(common(begin, end_hilo, interval="hilo"))
+        hilo = fetch(common(begin_hilo, end_hilo, interval="hilo"))
         if "predictions" not in hilo:
             print("hilo response had no 'predictions':", str(hilo)[:300], file=sys.stderr)
         for p in hilo.get("predictions", []):
@@ -62,7 +68,7 @@ def main():
     except Exception as e:
         print("hilo fetch failed:", e, file=sys.stderr)
     try:
-        curve = fetch(common(begin, end_curve, interval="30"))   # 30-minute steps
+        curve = fetch(common(begin_curve, end_curve, interval="30"))   # 30-minute steps
         if "predictions" not in curve:
             print("curve response had no 'predictions':", str(curve)[:300], file=sys.stderr)
         for p in curve.get("predictions", []):
