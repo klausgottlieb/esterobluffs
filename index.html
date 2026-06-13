@@ -52,13 +52,23 @@
   .surface.onshore{border-left-color:var(--warn);background:#fbefe8}
   .surface.offshore{border-left-color:var(--ok);background:#eef7f0}
   /* station provenance photo — compact thumbnail, click to enlarge */
-  .stationfig{display:flex;gap:14px;align-items:center;margin:6px 0 18px;
+  .stationfig{display:block;margin:6px 0 18px;
     border:2px solid var(--border);border-radius:14px;overflow:hidden;background:var(--card)}
-  .stationfig a{flex:0 0 auto;line-height:0;display:block}
-  .stationfig img{display:block;width:168px;height:112px;object-fit:cover}
-  .stationfig figcaption{font-size:.92rem;color:var(--muted);padding:10px 14px 10px 0}
+  .stationfig .sf-row{display:flex;align-items:stretch}
+  .stationfig .sf-photo{flex:0 0 46%;line-height:0;display:block}
+  .stationfig img{display:block;width:100%;height:210px;object-fit:cover}
+  .stationfig .sf-map{flex:1 1 0;min-width:0}
+  .stationfig .sf-map a{display:block;line-height:0;cursor:pointer}
+  .stationfig .sf-map a:focus-visible{outline:3px solid var(--sea);outline-offset:-3px}
+  .stationfig .sf-map svg{display:block;width:100%;height:210px;border:0;border-left:2px solid var(--border);background:#e7e7c8}
+  .stationfig figcaption{font-size:.92rem;color:var(--muted);padding:10px 14px}
   .stationfig .tap{opacity:.7}
-  @media(max-width:520px){.stationfig img{width:118px;height:84px}}
+  @media(max-width:560px){
+    .stationfig .sf-row{flex-direction:column}
+    .stationfig .sf-photo,.stationfig .sf-map{flex:none;width:100%}
+    .stationfig img{height:170px}
+    .stationfig .sf-map svg{height:auto;border-left:0;border-top:2px solid var(--border)}
+  }
   /* the two-effects bridge line in the ocean section */
   .windbridge{margin:2px 0 14px;font-size:1.02rem;color:var(--ink);line-height:1.5}
   .windbridge b{color:var(--sea)}
@@ -71,6 +81,15 @@
   .tidepool .q{font-size:1.15rem;font-weight:700}
   .tidepool .d{font-size:1rem;margin-top:3px}
   .tidepool .note{font-size:.95rem;color:var(--muted);margin-top:7px}
+  .poolinfo{margin-top:10px;font:inherit;font-weight:700;font-size:1rem;color:var(--sea);
+    background:#eef6f8;border:2px solid var(--border);border-radius:10px;padding:9px 15px;cursor:pointer;min-height:44px}
+  .poolinfo:hover,.poolinfo:focus-visible{background:#e0eef2}
+  .poolinfo:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+  .poolguide h4{font-size:1.12rem;font-weight:700;color:var(--sea);margin:16px 0 3px}
+  .poolguide p{font-size:1.05rem;line-height:1.6;margin:4px 0;color:var(--ink)}
+  .poolguide .safety{border:2px solid var(--border);border-left:8px solid var(--warn);
+    background:#fbefe8;border-radius:10px;padding:6px 16px 12px;margin:14px 0}
+  .poolguide .safety h4{color:#9a3b12}
   .tidetable{width:100%;border-collapse:collapse;font-size:1.05rem}
   .tidetable th,.tidetable td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
   .tidetable th{color:var(--muted);font-weight:700}
@@ -214,11 +233,55 @@
       <span class="who">WeatherFlow Tempest station at the bluff</span></div>
     <p class="src" id="stationSrc"></p>
     <figure class="stationfig">
-      <a href="station-cayucos.jpg" target="_blank" rel="noopener" title="Open the full photo">
-        <img src="station-cayucos.jpg" loading="lazy" width="1600" height="1080"
-             alt="The WeatherFlow Tempest weather station mounted on a pole on the flat roof of Bluff House in Cayucos, with the Pacific Ocean and breaking surf in the background and a cypress tree to the left.">
-      </a>
-      <figcaption>The Tempest station on the roof of Bluff House &mdash; the readings below come from this sensor, on this roof, over this water. <span class="tap">Tap to enlarge.</span></figcaption>
+      <div class="sf-row">
+        <a class="sf-photo" href="station-cayucos.jpg" target="_blank" rel="noopener" title="Open the full photo">
+          <img src="station-cayucos.jpg" loading="lazy" width="1600" height="1080"
+               alt="The WeatherFlow Tempest weather station mounted on a pole on the flat roof of Bluff House in Cayucos, with the Pacific Ocean and breaking surf in the background and a cypress tree to the left.">
+        </a>
+        <div class="sf-map">
+          <a class="sf-maplink" href="https://www.google.com/maps/search/?api=1&amp;query=35.4491717,-120.9160165" target="_blank" rel="noopener" title="Open this location in Google Maps to zoom and search">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice" font-family="Verdana,Helvetica,Arial,sans-serif" role="img" aria-label="Illustrative locator map: Bluff House Station sits at the east edge of Estero Bluffs State Park, at the water, next to Cayucos, with the Santa Lucia Range inland of Highway 1.">
+  <defs><linearGradient id="ebOc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aed3df"/><stop offset="1" stop-color="#8bbccb"/></linearGradient>
+  <linearGradient id="ebSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe6cf"/><stop offset="1" stop-color="#e7e7c8"/></linearGradient></defs>
+  <rect x="0" y="0" width="800" height="320" fill="url(#ebSky)"/>
+  <path d="M-5.0,3.7 L3.7,0.7 L12.5,1.2 L21.1,3.7 L29.8,6.2 L38.4,7.6 L47.1,7.8 L55.6,7.8 L64.2,8.7 L72.8,10.8 L81.3,13.3 L89.8,14.9 L98.2,14.4 L106.7,11.6 L115.1,7.9 L123.5,5.2 L131.9,5.3 L140.3,9.3 L148.6,16.6 L156.9,25.3 L165.2,33.3 L173.5,38.9 L181.7,41.7 L189.9,42.4 L198.1,42.2 L206.3,42.1 L214.5,42.4 L222.6,42.4 L230.7,41.2 L238.8,38.1 L246.9,33.3 L254.9,27.8 L263.0,23.2 L271.0,20.9 L279.0,21.4 L286.9,24.0 L294.9,27.0 L302.8,28.9 L310.7,28.6 L318.6,25.9 L326.5,22.0 L334.3,18.2 L342.2,16.1 L350.0,16.1 L357.8,18.1 L365.5,20.8 L373.3,23.4 L381.0,25.0 L388.8,25.8 L396.5,26.5 L404.1,28.3 L411.8,31.7 L419.5,36.7 L427.1,42.5 L434.7,47.8 L442.3,51.4 L449.9,52.7 L457.4,52.1 L465.0,50.8 L472.5,50.0 L480.0,51.0 L486.5,53.6 L492.9,57.3 L499.2,61.6 L505.5,65.5 L511.8,68.2 L518.0,69.5 L524.1,69.1 L530.2,67.5 L536.3,65.2 L542.3,62.7 L548.2,60.6 L554.1,59.1 L560.0,58.0 L565.8,57.2 L571.6,56.2 L577.3,54.8 L583.0,52.7 L588.6,50.1 L594.2,47.1 L599.8,44.3 L605.4,42.3 L610.9,41.4 L616.3,42.0 L621.8,44.1 L627.2,47.5 L632.5,51.8 L637.9,56.4 L643.2,60.6 L648.5,64.0 L653.8,66.3 L659.0,67.2 L664.2,67.0 L669.4,65.9 L674.6,64.5 L679.7,63.0 L684.8,61.9 L690.0,61.5 L695.0,61.8 L700.1,62.8 L705.2,64.2 L710.2,65.9 L715.3,67.5 L720.3,69.0 L725.3,70.1 L730.3,71.1 L735.3,72.0 L740.3,73.2 L745.3,74.9 L750.3,77.3 L755.2,80.5 L760.2,84.5 L765.2,89.0 L770.1,93.6 L775.1,98.0 L780.1,101.6 L785.1,104.1 L790.0,105.1 L795.0,104.6 L800.0,102.7 L805.0,99.7 L805.0,160.0 L800.0,159.2 L795.0,158.4 L790.0,157.6 L785.1,156.8 L780.1,156.0 L775.1,155.1 L770.1,154.3 L765.2,153.5 L760.2,152.7 L755.2,151.8 L750.3,151.0 L745.3,150.1 L740.3,149.3 L735.3,148.4 L730.3,147.6 L725.3,146.7 L720.3,145.9 L715.3,145.0 L710.2,144.1 L705.2,143.3 L700.1,142.4 L695.0,141.5 L690.0,140.6 L684.8,139.7 L679.7,138.8 L674.6,137.9 L669.4,137.0 L664.2,136.1 L659.0,135.2 L653.8,134.2 L648.5,133.3 L643.2,132.4 L637.9,131.5 L632.5,130.5 L627.2,129.6 L621.8,128.6 L616.3,127.6 L610.9,126.7 L605.4,125.7 L599.8,124.7 L594.2,123.8 L588.6,122.8 L583.0,121.8 L577.3,120.8 L571.6,119.8 L565.8,118.8 L560.0,117.8 L554.1,116.7 L548.2,115.7 L542.3,114.7 L536.3,113.6 L530.2,112.6 L524.1,111.5 L518.0,110.5 L511.8,109.4 L505.5,108.3 L499.2,107.3 L492.9,106.2 L486.5,105.1 L480.0,104.0 L472.5,102.7 L465.0,101.4 L457.4,100.1 L449.9,98.9 L442.3,97.6 L434.7,96.4 L427.1,95.1 L419.5,93.9 L411.8,92.7 L404.1,91.5 L396.5,90.3 L388.8,89.1 L381.0,88.0 L373.3,86.8 L365.5,85.7 L357.8,84.5 L350.0,83.4 L342.2,82.3 L334.3,81.2 L326.5,80.1 L318.6,79.0 L310.7,77.9 L302.8,76.9 L294.9,75.8 L286.9,74.8 L279.0,73.7 L271.0,72.7 L263.0,71.7 L254.9,70.7 L246.9,69.8 L238.8,68.8 L230.7,67.8 L222.6,66.9 L214.5,65.9 L206.3,65.0 L198.1,64.1 L189.9,63.2 L181.7,62.3 L173.5,61.5 L165.2,60.6 L156.9,59.7 L148.6,58.9 L140.3,58.1 L131.9,57.3 L123.5,56.5 L115.1,55.7 L106.7,54.9 L98.2,54.1 L89.8,53.4 L81.3,52.7 L72.8,51.9 L64.2,51.2 L55.6,50.5 L47.1,49.8 L38.4,49.2 L29.8,48.5 L21.1,47.9 L12.5,47.2 L3.7,46.6 L-5.0,46.0 Z" fill="#c4c59c"/>
+  <path d="M-5.0,21.0 L3.7,18.9 L12.5,19.6 L21.1,21.8 L29.8,23.5 L38.4,23.8 L47.1,22.8 L55.6,21.8 L64.2,21.8 L72.8,23.4 L81.3,25.7 L89.8,27.5 L98.2,27.5 L106.7,25.4 L115.1,22.2 L123.5,19.7 L131.9,19.8 L140.3,23.3 L148.6,29.6 L156.9,36.8 L165.2,43.0 L173.5,46.6 L181.7,47.4 L189.9,46.2 L198.1,44.5 L206.3,43.5 L214.5,43.4 L222.6,43.8 L230.7,43.5 L238.8,41.8 L246.9,38.8 L254.9,35.4 L263.0,33.0 L271.0,32.7 L279.0,34.9 L286.9,38.7 L294.9,42.5 L302.8,44.8 L310.7,44.3 L318.6,41.2 L326.5,36.7 L334.3,32.3 L342.2,29.5 L350.0,29.2 L357.8,31.0 L365.5,33.9 L373.3,36.9 L381.0,39.2 L388.8,40.9 L396.5,42.5 L404.1,45.0 L411.8,49.0 L419.5,54.1 L427.1,59.6 L434.7,64.2 L442.3,66.5 L449.9,66.2 L457.4,63.7 L465.0,60.3 L472.5,57.4 L480.0,56.5 L486.5,57.5 L492.9,60.0 L499.2,63.5 L505.5,66.9 L511.8,69.6 L518.0,71.1 L524.1,71.4 L530.2,70.7 L536.3,69.5 L542.3,68.3 L548.2,67.5 L554.1,67.2 L560.0,67.4 L565.8,67.6 L571.6,67.6 L577.3,66.8 L583.0,65.2 L588.6,62.9 L594.2,60.0 L599.8,57.2 L605.4,54.9 L610.9,53.8 L616.3,54.1 L621.8,55.9 L627.2,59.1 L632.5,63.2 L637.9,67.7 L643.2,72.1 L648.5,75.8 L653.8,78.4 L659.0,79.9 L664.2,80.4 L669.4,80.1 L674.6,79.5 L679.7,78.9 L684.8,78.7 L690.0,79.1 L695.0,80.2 L700.1,81.7 L705.2,83.6 L710.2,85.5 L715.3,87.1 L720.3,88.3 L725.3,88.9 L730.3,89.2 L735.3,89.2 L740.3,89.3 L745.3,89.8 L750.3,90.8 L755.2,92.6 L760.2,95.1 L765.2,98.2 L770.1,101.4 L775.1,104.5 L780.1,107.0 L785.1,108.5 L790.0,108.8 L795.0,107.8 L800.0,105.6 L805.0,102.5 L805.0,160.0 L800.0,159.2 L795.0,158.4 L790.0,157.6 L785.1,156.8 L780.1,156.0 L775.1,155.1 L770.1,154.3 L765.2,153.5 L760.2,152.7 L755.2,151.8 L750.3,151.0 L745.3,150.1 L740.3,149.3 L735.3,148.4 L730.3,147.6 L725.3,146.7 L720.3,145.9 L715.3,145.0 L710.2,144.1 L705.2,143.3 L700.1,142.4 L695.0,141.5 L690.0,140.6 L684.8,139.7 L679.7,138.8 L674.6,137.9 L669.4,137.0 L664.2,136.1 L659.0,135.2 L653.8,134.2 L648.5,133.3 L643.2,132.4 L637.9,131.5 L632.5,130.5 L627.2,129.6 L621.8,128.6 L616.3,127.6 L610.9,126.7 L605.4,125.7 L599.8,124.7 L594.2,123.8 L588.6,122.8 L583.0,121.8 L577.3,120.8 L571.6,119.8 L565.8,118.8 L560.0,117.8 L554.1,116.7 L548.2,115.7 L542.3,114.7 L536.3,113.6 L530.2,112.6 L524.1,111.5 L518.0,110.5 L511.8,109.4 L505.5,108.3 L499.2,107.3 L492.9,106.2 L486.5,105.1 L480.0,104.0 L472.5,102.7 L465.0,101.4 L457.4,100.1 L449.9,98.9 L442.3,97.6 L434.7,96.4 L427.1,95.1 L419.5,93.9 L411.8,92.7 L404.1,91.5 L396.5,90.3 L388.8,89.1 L381.0,88.0 L373.3,86.8 L365.5,85.7 L357.8,84.5 L350.0,83.4 L342.2,82.3 L334.3,81.2 L326.5,80.1 L318.6,79.0 L310.7,77.9 L302.8,76.9 L294.9,75.8 L286.9,74.8 L279.0,73.7 L271.0,72.7 L263.0,71.7 L254.9,70.7 L246.9,69.8 L238.8,68.8 L230.7,67.8 L222.6,66.9 L214.5,65.9 L206.3,65.0 L198.1,64.1 L189.9,63.2 L181.7,62.3 L173.5,61.5 L165.2,60.6 L156.9,59.7 L148.6,58.9 L140.3,58.1 L131.9,57.3 L123.5,56.5 L115.1,55.7 L106.7,54.9 L98.2,54.1 L89.8,53.4 L81.3,52.7 L72.8,51.9 L64.2,51.2 L55.6,50.5 L47.1,49.8 L38.4,49.2 L29.8,48.5 L21.1,47.9 L12.5,47.2 L3.7,46.6 L-5.0,46.0 Z" fill="#aeb487"/>
+  <path d="M-5.0,21.0 L3.7,18.9 L12.5,19.6 L21.1,21.8 L29.8,23.5 L38.4,23.8 L47.1,22.8 L55.6,21.8 L64.2,21.8 L72.8,23.4 L81.3,25.7 L89.8,27.5 L98.2,27.5 L106.7,25.4 L115.1,22.2 L123.5,19.7 L131.9,19.8 L140.3,23.3 L148.6,29.6 L156.9,36.8 L165.2,43.0 L173.5,46.6 L181.7,47.4 L189.9,46.2 L198.1,44.5 L206.3,43.5 L214.5,43.4 L222.6,43.8 L230.7,43.5 L238.8,41.8 L246.9,38.8 L254.9,35.4 L263.0,33.0 L271.0,32.7 L279.0,34.9 L286.9,38.7 L294.9,42.5 L302.8,44.8 L310.7,44.3 L318.6,41.2 L326.5,36.7 L334.3,32.3 L342.2,29.5 L350.0,29.2 L357.8,31.0 L365.5,33.9 L373.3,36.9 L381.0,39.2 L388.8,40.9 L396.5,42.5 L404.1,45.0 L411.8,49.0 L419.5,54.1 L427.1,59.6 L434.7,64.2 L442.3,66.5 L449.9,66.2 L457.4,63.7 L465.0,60.3 L472.5,57.4 L480.0,56.5 L486.5,57.5 L492.9,60.0 L499.2,63.5 L505.5,66.9 L511.8,69.6 L518.0,71.1 L524.1,71.4 L530.2,70.7 L536.3,69.5 L542.3,68.3 L548.2,67.5 L554.1,67.2 L560.0,67.4 L565.8,67.6 L571.6,67.6 L577.3,66.8 L583.0,65.2 L588.6,62.9 L594.2,60.0 L599.8,57.2 L605.4,54.9 L610.9,53.8 L616.3,54.1 L621.8,55.9 L627.2,59.1 L632.5,63.2 L637.9,67.7 L643.2,72.1 L648.5,75.8 L653.8,78.4 L659.0,79.9 L664.2,80.4 L669.4,80.1 L674.6,79.5 L679.7,78.9 L684.8,78.7 L690.0,79.1 L695.0,80.2 L700.1,81.7 L705.2,83.6 L710.2,85.5 L715.3,87.1 L720.3,88.3 L725.3,88.9 L730.3,89.2 L735.3,89.2 L740.3,89.3 L745.3,89.8 L750.3,90.8 L755.2,92.6 L760.2,95.1 L765.2,98.2 L770.1,101.4 L775.1,104.5 L780.1,107.0 L785.1,108.5 L790.0,108.8 L795.0,107.8 L800.0,105.6 L805.0,102.5" fill="none" stroke="#8f9669" stroke-width="1.1" opacity="0.7"/>
+  <path d="M-5.0,46.0 L3.7,46.6 L12.5,47.2 L21.1,47.9 L29.8,48.5 L38.4,49.2 L47.1,49.8 L55.6,50.5 L64.2,51.2 L72.8,51.9 L81.3,52.7 L89.8,53.4 L98.2,54.1 L106.7,54.9 L115.1,55.7 L123.5,56.5 L131.9,57.3 L140.3,58.1 L148.6,58.9 L156.9,59.7 L165.2,60.6 L173.5,61.5 L181.7,62.3 L189.9,63.2 L198.1,64.1 L206.3,65.0 L214.5,65.9 L222.6,66.9 L230.7,67.8 L238.8,68.8 L246.9,69.8 L254.9,70.7 L263.0,71.7 L271.0,72.7 L279.0,73.7 L286.9,74.8 L294.9,75.8 L302.8,76.9 L310.7,77.9 L318.6,79.0 L326.5,80.1 L334.3,81.2 L342.2,82.3 L350.0,83.4 L357.8,84.5 L365.5,85.7 L373.3,86.8 L381.0,88.0 L388.8,89.1 L396.5,90.3 L404.1,91.5 L411.8,92.7 L419.5,93.9 L427.1,95.1 L432.9,176.7" fill="none" stroke="#5f8a48" stroke-width="2.6"/>
+  <path d="M-5.0,86.0 L2.7,87.3 L10.4,88.6 L18.1,89.9 L25.8,91.3 L33.4,92.6 L41.0,93.9 L48.6,95.3 L56.2,96.6 L63.7,97.9 L71.2,99.3 L78.7,100.7 L86.1,102.0 L93.5,103.4 L100.9,104.8 L108.3,106.2 L115.6,107.5 L122.9,108.9 L130.2,110.3 L137.4,111.7 L144.6,113.1 L151.8,114.5 L159.0,115.9 L166.1,117.3 L173.2,118.7 L180.2,120.1 L187.2,121.6 L194.2,123.0 L201.2,124.4 L208.1,125.8 L215.0,127.2 L221.9,128.7 L228.7,130.1 L235.5,131.5 L242.2,133.0 L249.0,134.4 L255.6,135.8 L262.3,137.3 L268.9,138.7 L275.5,140.1 L282.0,141.6 L288.5,143.0 L295.0,144.4 L301.5,145.9 L307.9,147.3 L314.2,148.7 L320.5,150.1 L326.8,151.6 L333.1,153.0 L339.3,154.4 L345.5,155.9 L351.6,157.3 L357.7,158.7 L363.7,160.1 L369.8,161.5 L375.7,163.0 L381.7,164.4 L387.6,165.8 L393.4,167.2 L399.2,168.6 L405.0,170.0 L412.0,171.7 L419.0,173.4 L425.9,175.1 L432.9,176.7 L439.8,178.4 L446.7,180.0 L453.6,181.7 L460.5,183.3 L467.4,184.9 L474.2,186.5 L481.1,188.1 L487.9,189.7 L494.7,191.3 L501.5,192.9 L508.3,194.4 L515.1,196.0 L521.8,197.5 L528.6,199.1 L535.3,200.6 L542.0,202.1 L548.8,203.7 L555.5,205.2 L562.2,206.7 L568.8,208.2 L575.5,209.7 L582.2,211.1 L588.8,212.6 L595.5,214.1 L602.1,215.5 L608.8,217.0 L615.4,218.4 L622.0,219.9 L628.6,221.3 L635.2,222.7 L641.8,224.2 L648.4,225.6 L654.9,227.0 L661.5,228.4 L668.1,229.8 L674.6,231.2 L681.2,232.6 L687.7,234.0 L694.3,235.3 L700.8,236.7 L707.3,238.1 L713.9,239.4 L720.4,240.8 L726.9,242.1 L733.4,243.5 L740.0,244.8 L746.5,246.2 L753.0,247.5 L759.5,248.8 L766.0,250.1 L772.5,251.5 L779.0,252.8 L785.5,254.1 L792.0,255.4 L798.5,256.7 L805.0,258.0 L805,335 L-5,335 Z" fill="url(#ebOc)"/>
+  <path d="M-5.0,46.0 L3.7,46.6 L12.5,47.2 L21.1,47.9 L29.8,48.5 L38.4,49.2 L47.1,49.8 L55.6,50.5 L64.2,51.2 L72.8,51.9 L81.3,52.7 L89.8,53.4 L98.2,54.1 L106.7,54.9 L115.1,55.7 L123.5,56.5 L131.9,57.3 L140.3,58.1 L148.6,58.9 L156.9,59.7 L165.2,60.6 L173.5,61.5 L181.7,62.3 L189.9,63.2 L198.1,64.1 L206.3,65.0 L214.5,65.9 L222.6,66.9 L230.7,67.8 L238.8,68.8 L246.9,69.8 L254.9,70.7 L263.0,71.7 L271.0,72.7 L279.0,73.7 L286.9,74.8 L294.9,75.8 L302.8,76.9 L310.7,77.9 L318.6,79.0 L326.5,80.1 L334.3,81.2 L342.2,82.3 L350.0,83.4 L357.8,84.5 L365.5,85.7 L373.3,86.8 L381.0,88.0 L388.8,89.1 L396.5,90.3 L404.1,91.5 L411.8,92.7 L419.5,93.9 L427.1,95.1 L432.9,176.7 L425.9,175.1 L419.0,173.4 L412.0,171.7 L405.0,170.0 L399.2,168.6 L393.4,167.2 L387.6,165.8 L381.7,164.4 L375.7,163.0 L369.8,161.5 L363.7,160.1 L357.7,158.7 L351.6,157.3 L345.5,155.9 L339.3,154.4 L333.1,153.0 L326.8,151.6 L320.5,150.1 L314.2,148.7 L307.9,147.3 L301.5,145.9 L295.0,144.4 L288.5,143.0 L282.0,141.6 L275.5,140.1 L268.9,138.7 L262.3,137.3 L255.6,135.8 L249.0,134.4 L242.2,133.0 L235.5,131.5 L228.7,130.1 L221.9,128.7 L215.0,127.2 L208.1,125.8 L201.2,124.4 L194.2,123.0 L187.2,121.6 L180.2,120.1 L173.2,118.7 L166.1,117.3 L159.0,115.9 L151.8,114.5 L144.6,113.1 L137.4,111.7 L130.2,110.3 L122.9,108.9 L115.6,107.5 L108.3,106.2 L100.9,104.8 L93.5,103.4 L86.1,102.0 L78.7,100.7 L71.2,99.3 L63.7,97.9 L56.2,96.6 L48.6,95.3 L41.0,93.9 L33.4,92.6 L25.8,91.3 L18.1,89.9 L10.4,88.6 L2.7,87.3 L-5.0,86.0 Z" fill="#cfe1b6"/>
+  <path d="M434.7,96.4 L442.3,97.6 L449.9,98.9 L457.4,100.1 L465.0,101.4 L472.5,102.7 L480.0,104.0 L486.5,105.1 L492.9,106.2 L499.2,107.3 L505.5,108.3 L511.8,109.4 L518.0,110.5 L524.1,111.5 L530.2,112.6 L536.3,113.6 L542.3,114.7 L548.2,115.7 L554.1,116.7 L560.0,117.8 L565.8,118.8 L571.6,119.8 L577.3,120.8 L583.0,121.8 L588.6,122.8 L594.2,123.8 L599.8,124.7 L605.4,125.7 L610.9,126.7 L616.3,127.6 L621.8,128.6 L627.2,129.6 L632.5,130.5 L637.9,131.5 L643.2,132.4 L648.5,133.3 L653.8,134.2 L659.0,135.2 L664.2,136.1 L669.4,137.0 L674.6,137.9 L679.7,138.8 L684.8,139.7 L690.0,140.6 L695.0,141.5 L700.1,142.4 L705.2,143.3 L710.2,144.1 L715.3,145.0 L720.3,145.9 L725.3,146.7 L730.3,147.6 L735.3,148.4 L740.3,149.3 L745.3,150.1 L750.3,151.0 L755.2,151.8 L760.2,152.7 L765.2,153.5 L770.1,154.3 L775.1,155.1 L780.1,156.0 L785.1,156.8 L790.0,157.6 L795.0,158.4 L800.0,159.2 L805.0,160.0 L805.0,258.0 L805.0,258.0 L798.5,256.7 L792.0,255.4 L785.5,254.1 L779.0,252.8 L772.5,251.5 L766.0,250.1 L759.5,248.8 L753.0,247.5 L746.5,246.2 L740.0,244.8 L733.4,243.5 L726.9,242.1 L720.4,240.8 L713.9,239.4 L707.3,238.1 L700.8,236.7 L694.3,235.3 L687.7,234.0 L681.2,232.6 L674.6,231.2 L668.1,229.8 L661.5,228.4 L654.9,227.0 L648.4,225.6 L641.8,224.2 L635.2,222.7 L628.6,221.3 L622.0,219.9 L615.4,218.4 L608.8,217.0 L602.1,215.5 L595.5,214.1 L588.8,212.6 L582.2,211.1 L575.5,209.7 L568.8,208.2 L562.2,206.7 L555.5,205.2 L548.8,203.7 L542.0,202.1 L535.3,200.6 L528.6,199.1 L521.8,197.5 L515.1,196.0 L508.3,194.4 L501.5,192.9 L494.7,191.3 L487.9,189.7 L481.1,188.1 L474.2,186.5 L467.4,184.9 L460.5,183.3 L453.6,181.7 L446.7,180.0 L439.8,178.4 L432.9,176.7 Z" fill="#e8ddc1"/>
+  <g stroke="#d3c49c" stroke-width="1"><path d="M470,150 L520,214"/><path d="M520,150 L575,222"/><path d="M575,152 L635,230"/><path d="M650,158 L705,240"/><path d="M520,140 L760,210"/><path d="M540,128 L800,196"/></g>
+  <path d="M-5.0,86.0 L2.7,87.3 L10.4,88.6 L18.1,89.9 L25.8,91.3 L33.4,92.6 L41.0,93.9 L48.6,95.3 L56.2,96.6 L63.7,97.9 L71.2,99.3 L78.7,100.7 L86.1,102.0 L93.5,103.4 L100.9,104.8 L108.3,106.2 L115.6,107.5 L122.9,108.9 L130.2,110.3 L137.4,111.7 L144.6,113.1 L151.8,114.5 L159.0,115.9 L166.1,117.3 L173.2,118.7 L180.2,120.1 L187.2,121.6 L194.2,123.0 L201.2,124.4 L208.1,125.8 L215.0,127.2 L221.9,128.7 L228.7,130.1 L235.5,131.5 L242.2,133.0 L249.0,134.4 L255.6,135.8 L262.3,137.3 L268.9,138.7 L275.5,140.1 L282.0,141.6 L288.5,143.0 L295.0,144.4 L301.5,145.9 L307.9,147.3 L314.2,148.7 L320.5,150.1 L326.8,151.6 L333.1,153.0 L339.3,154.4 L345.5,155.9 L351.6,157.3 L357.7,158.7 L363.7,160.1 L369.8,161.5 L375.7,163.0 L381.7,164.4 L387.6,165.8 L393.4,167.2 L399.2,168.6 L405.0,170.0 L412.0,171.7 L419.0,173.4 L425.9,175.1 L432.9,176.7 L439.8,178.4 L446.7,180.0 L453.6,181.7 L460.5,183.3 L467.4,184.9 L474.2,186.5 L481.1,188.1 L487.9,189.7 L494.7,191.3 L501.5,192.9 L508.3,194.4 L515.1,196.0 L521.8,197.5 L528.6,199.1 L535.3,200.6 L542.0,202.1 L548.8,203.7 L555.5,205.2 L562.2,206.7 L568.8,208.2 L575.5,209.7 L582.2,211.1 L588.8,212.6 L595.5,214.1 L602.1,215.5 L608.8,217.0 L615.4,218.4 L622.0,219.9 L628.6,221.3 L635.2,222.7 L641.8,224.2 L648.4,225.6 L654.9,227.0 L661.5,228.4 L668.1,229.8 L674.6,231.2 L681.2,232.6 L687.7,234.0 L694.3,235.3 L700.8,236.7 L707.3,238.1 L713.9,239.4 L720.4,240.8 L726.9,242.1 L733.4,243.5 L740.0,244.8 L746.5,246.2 L753.0,247.5 L759.5,248.8 L766.0,250.1 L772.5,251.5 L779.0,252.8 L785.5,254.1 L792.0,255.4 L798.5,256.7 L805.0,258.0" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M-5.0,46.0 L3.7,46.6 L12.5,47.2 L21.1,47.9 L29.8,48.5 L38.4,49.2 L47.1,49.8 L55.6,50.5 L64.2,51.2 L72.8,51.9 L81.3,52.7 L89.8,53.4 L98.2,54.1 L106.7,54.9 L115.1,55.7 L123.5,56.5 L131.9,57.3 L140.3,58.1 L148.6,58.9 L156.9,59.7 L165.2,60.6 L173.5,61.5 L181.7,62.3 L189.9,63.2 L198.1,64.1 L206.3,65.0 L214.5,65.9 L222.6,66.9 L230.7,67.8 L238.8,68.8 L246.9,69.8 L254.9,70.7 L263.0,71.7 L271.0,72.7 L279.0,73.7 L286.9,74.8 L294.9,75.8 L302.8,76.9 L310.7,77.9 L318.6,79.0 L326.5,80.1 L334.3,81.2 L342.2,82.3 L350.0,83.4 L357.8,84.5 L365.5,85.7 L373.3,86.8 L381.0,88.0 L388.8,89.1 L396.5,90.3 L404.1,91.5 L411.8,92.7 L419.5,93.9 L427.1,95.1 L434.7,96.4 L442.3,97.6 L449.9,98.9 L457.4,100.1 L465.0,101.4 L472.5,102.7 L480.0,104.0 L486.5,105.1 L492.9,106.2 L499.2,107.3 L505.5,108.3 L511.8,109.4 L518.0,110.5 L524.1,111.5 L530.2,112.6 L536.3,113.6 L542.3,114.7 L548.2,115.7 L554.1,116.7 L560.0,117.8 L565.8,118.8 L571.6,119.8 L577.3,120.8 L583.0,121.8 L588.6,122.8 L594.2,123.8 L599.8,124.7 L605.4,125.7 L610.9,126.7 L616.3,127.6 L621.8,128.6 L627.2,129.6 L632.5,130.5 L637.9,131.5 L643.2,132.4 L648.5,133.3 L653.8,134.2 L659.0,135.2 L664.2,136.1 L669.4,137.0 L674.6,137.9 L679.7,138.8 L684.8,139.7 L690.0,140.6 L695.0,141.5 L700.1,142.4 L705.2,143.3 L710.2,144.1 L715.3,145.0 L720.3,145.9 L725.3,146.7 L730.3,147.6 L735.3,148.4 L740.3,149.3 L745.3,150.1 L750.3,151.0 L755.2,151.8 L760.2,152.7 L765.2,153.5 L770.1,154.3 L775.1,155.1 L780.1,156.0 L785.1,156.8 L790.0,157.6 L795.0,158.4 L800.0,159.2 L805.0,160.0" fill="none" stroke="#e7c6bd" stroke-width="6"/>
+  <path d="M-5.0,46.0 L3.7,46.6 L12.5,47.2 L21.1,47.9 L29.8,48.5 L38.4,49.2 L47.1,49.8 L55.6,50.5 L64.2,51.2 L72.8,51.9 L81.3,52.7 L89.8,53.4 L98.2,54.1 L106.7,54.9 L115.1,55.7 L123.5,56.5 L131.9,57.3 L140.3,58.1 L148.6,58.9 L156.9,59.7 L165.2,60.6 L173.5,61.5 L181.7,62.3 L189.9,63.2 L198.1,64.1 L206.3,65.0 L214.5,65.9 L222.6,66.9 L230.7,67.8 L238.8,68.8 L246.9,69.8 L254.9,70.7 L263.0,71.7 L271.0,72.7 L279.0,73.7 L286.9,74.8 L294.9,75.8 L302.8,76.9 L310.7,77.9 L318.6,79.0 L326.5,80.1 L334.3,81.2 L342.2,82.3 L350.0,83.4 L357.8,84.5 L365.5,85.7 L373.3,86.8 L381.0,88.0 L388.8,89.1 L396.5,90.3 L404.1,91.5 L411.8,92.7 L419.5,93.9 L427.1,95.1 L434.7,96.4 L442.3,97.6 L449.9,98.9 L457.4,100.1 L465.0,101.4 L472.5,102.7 L480.0,104.0 L486.5,105.1 L492.9,106.2 L499.2,107.3 L505.5,108.3 L511.8,109.4 L518.0,110.5 L524.1,111.5 L530.2,112.6 L536.3,113.6 L542.3,114.7 L548.2,115.7 L554.1,116.7 L560.0,117.8 L565.8,118.8 L571.6,119.8 L577.3,120.8 L583.0,121.8 L588.6,122.8 L594.2,123.8 L599.8,124.7 L605.4,125.7 L610.9,126.7 L616.3,127.6 L621.8,128.6 L627.2,129.6 L632.5,130.5 L637.9,131.5 L643.2,132.4 L648.5,133.3 L653.8,134.2 L659.0,135.2 L664.2,136.1 L669.4,137.0 L674.6,137.9 L679.7,138.8 L684.8,139.7 L690.0,140.6 L695.0,141.5 L700.1,142.4 L705.2,143.3 L710.2,144.1 L715.3,145.0 L720.3,145.9 L725.3,146.7 L730.3,147.6 L735.3,148.4 L740.3,149.3 L745.3,150.1 L750.3,151.0 L755.2,151.8 L760.2,152.7 L765.2,153.5 L770.1,154.3 L775.1,155.1 L780.1,156.0 L785.1,156.8 L790.0,157.6 L795.0,158.4 L800.0,159.2 L805.0,160.0" fill="none" stroke="#b5432f" stroke-width="2.6"/>
+  <circle cx="435" cy="96" r="10" fill="#fff" stroke="#b5432f" stroke-width="2"/>
+  <text x="435" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#b5432f">1</text>
+  <path d="M778,272 C 680,250 600,226 520,208 C 496,201 472,194 452,190" fill="none" stroke="#caa75e" stroke-width="2.6"/>
+  <text x="540" y="70" font-size="15" font-weight="bold" fill="#6f5b34" letter-spacing="2">SANTA LUCIA RANGE</text>
+  <text x="20" y="120" font-size="14" font-weight="bold" fill="#356b2c">Estero Bluffs</text>
+  <text x="20" y="136" font-size="14" font-weight="bold" fill="#356b2c">State Park</text>
+  <text x="612" y="216" font-size="16" font-weight="bold" fill="#9a7b3c" letter-spacing="2">CAYUCOS</text>
+  <text x="690" y="252" font-size="10" font-style="italic" fill="#8a6f33">N Ocean Ave</text>
+  <text x="150" y="270" font-size="17" font-style="italic" fill="#2f6f88" letter-spacing="3">PACIFIC OCEAN</text>
+  <text x="500" y="254" font-size="11" font-style="italic" fill="#2f6f88">Estero Bay</text>
+  <line x1="476" y1="168" x2="448" y2="186" stroke="#7a4d10" stroke-width="1.3"/>
+  <rect x="476" y="148" width="172" height="24" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#7a4d10" stroke-width="1.3"/>
+  <text x="562" y="165" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f3a26">Bluff House Station</text>
+  <polygon points="448,172 454,187 470,187 457,196 462,212 448,203 434,212 439,196 426,187 442,187" fill="#f0a830" stroke="#7a4d10" stroke-width="1.3"/>
+  <circle cx="448" cy="191" r="2.6" fill="#7a4d10"/>
+  <g transform="translate(52,250)"><polygon points="0,-18 5,5 0,0 -5,5" fill="#3a4a3f"/><text x="0" y="-22" text-anchor="middle" font-size="13" font-weight="bold" fill="#3a4a3f">N</text></g>
+  <text x="14" y="22" font-size="11" font-style="italic" fill="#6b6150">to Cambria</text>
+  <text x="716" y="298" font-size="11" font-style="italic" fill="#6b6150">to Morro Bay</text>
+  <!-- click affordance -->
+  <g><rect x="12" y="280" width="196" height="22" rx="11" fill="#ffffff" fill-opacity="0.9" stroke="#3a4a3f" stroke-opacity="0.35"/>
+     <text x="24" y="295" font-size="12" font-weight="bold" fill="#1f3a26">Open in Google Maps</text>
+     <text x="190" y="295" font-size="12" font-weight="bold" fill="#1f3a26">&#8599;</text></g>
+</svg>
+          </a>
+        </div>
+      </div>
+      <figcaption>The Tempest station on the roof of Bluff House &mdash; the readings below come from this sensor, on this roof, over this water. The star marks its exact spot at 871 North Ocean Avenue &mdash; on the eastern edge of Estero Bluffs State Park, right at the water, next to the town of Cayucos. <span class="tap">Tap the photo to enlarge; tap the map to open it in Google Maps, where you can zoom and search. Illustrative locator, not to scale.</span></figcaption>
     </figure>
     <div class="card">
       <div class="hero">
@@ -346,6 +409,7 @@
       <div class="d" id="tidePoolD"></div>
       <div class="note">Low tide, roughly an hour either side, exposes the pools at Estero Bluffs. Watch the incoming tide and sneaker waves, and keep off slick rock. Never turn your back on the ocean.</div>
     </div>
+    <button id="poolInfoBtn" class="poolinfo" aria-haspopup="dialog" aria-controls="poolModal">&#9432;&nbsp; What makes good tide pooling?</button>
 
     <div class="tidewrap">
       <div class="tidecurve" id="tideCurve" role="img" aria-label="Tide curve for today"></div>
@@ -365,6 +429,32 @@
         <button class="modal-close" id="decompClose">Close &#10005;</button></div>
       <canvas id="decompCanvas" width="1900" height="1040" role="img" aria-label="Wave decomposition into swell and wind-sea sine waves"></canvas>
       <p class="exp">The dark line at the bottom is the sea surface. It is the sum of the swell and the wind chop shown above it. Where the swell crests line up, they stack into a set; the orange line is the energy envelope. Built from the current swell and wind-sea readings, so it changes with conditions.</p>
+    </div>
+  </div>
+    <div class="modal" id="poolModal" role="dialog" aria-modal="true" aria-labelledby="poolGuideTitle">
+    <div class="modal-card">
+      <div class="modal-head"><h3 id="poolGuideTitle">What makes good tide pooling</h3>
+        <button class="modal-close" id="poolClose">Close &#10005;</button></div>
+      <div class="poolguide">
+        <p>Tide pooling means walking the rocky shelf when the ocean pulls back, to find the anemones, sea stars, crabs, urchins and snails that live where the water normally covers. No gear needed &mdash; just timing, footing, and care. Here is how to pick a good day.</p>
+
+        <h4>How low is low enough</h4>
+        <p>Tide height is measured in feet against the average of the lowest daily tides (what tables call MLLW). At Estero Bluffs the rock shelf begins to uncover around <b>+1.5 ft</b>, is <b>well exposed near 0 ft</b>, and on a minus tide below about <b>&minus;1 ft</b> it lies wide open &mdash; that is the rare, special kind worth planning around. Much above +1.5 ft and most of the shelf stays underwater, so there is little to explore.</p>
+
+        <h4>The best season may surprise you</h4>
+        <p>On the California coast the very lowest tides shift between night and day with the season. In late spring and summer the deepest lows fall before dawn or after dark, so the <b>daytime</b> lows are relatively high. The best <b>daytime</b> tide pooling here lands in the cooler months &mdash; roughly fall through early spring &mdash; when the low tides line up with daylight. A summer visit can still catch a workable daytime low; just don&rsquo;t expect the wide-open shelf of a winter minus tide. That is why this page rates a low against what is achievable <i>that</i> time of year, not against a fixed number.</p>
+
+        <h4>It doesn&rsquo;t have to be sunny</h4>
+        <p>A bright day is pleasant, but not required. Overcast or partly cloudy skies are fine &mdash; often <b>better</b>, since less glare on the water lets you see into the pools. What you do want to skip is rain, wind, and rough surf, for comfort and, more importantly, safety.</p>
+
+        <div class="safety">
+          <h4>Stay safe on the rocks</h4>
+          <p>Go near the low tide, about an hour either side. Wear shoes with grip &mdash; wet rock and algae are slippery. Watch the <b>incoming</b> tide so you aren&rsquo;t cut off, and keep an eye seaward for sneaker waves. <b>Never turn your back on the ocean</b>, and keep children within arm&rsquo;s reach on the wet rock.</p>
+        </div>
+
+        <h4>Leave it as you found it</h4>
+        <p>Walk on bare rock, not on living things. Look and photograph, but don&rsquo;t pry animals loose or take them home. A tide pool only stays full of life if everyone leaves it intact.</p>
+      </div>
     </div>
   </div>
   <footer id="foot"></footer>
@@ -456,11 +546,20 @@ const fmtAsOf=iso=>{if(!iso)return null;const d=new Date(iso);if(isNaN(d))return
   return d.toLocaleString([],same?{hour:'2-digit',minute:'2-digit'}:{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});};
 const setT=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=(v==null?'—':v);};
 
-let LIVE_STATION=false, LIVE_OCEAN=false, LIVE_TIDE=false;
+let LIVE_STATION=false, LIVE_OCEAN=false, LIVE_TIDE=false, LIVE_FORECAST=false;
 
 /* ===== TIDES ===== */
-const POOL_FT = 2.0;          // at/below this predicted low (ft MLLW), pools are working
-const POOL_GREAT_FT = 0.0;    // minus tide: especially good
+/* === Tide-pooling thresholds (ft MLLW, Port San Luis datum) ===================
+   TUNE THESE after a field check at the bluff. They are grounded in Central /
+   Southern California rocky-intertidal naturalist guidance (tidepoolers report
+   the shelf life showing from roughly +1 to +1.5 ft, well exposed near 0 ft, and
+   wide open on the locally rare minus tides below about -1 ft), NOT a surveyed
+   Estero Bluffs elevation. The actual shelf could sit a few tenths either way; a
+   single observation at a known predicted height is enough to calibrate. The
+   "What makes good tide pooling" panel explains all of this to visitors. */
+const POOL_WORK    = 1.5;    // at/below this, the shelf is exposed enough to bother
+const POOL_EXPOSED = 0.0;    // at/below this, the shelf is well exposed
+const POOL_WOW     = -1.0;   // at/below this, exceptional — locally rare
 function parseLocal(s){ if(s instanceof Date) return s; const m=String(s).split(/[-: ]+/).map(Number);
   return new Date(m[0],(m[1]||1)-1,m[2]||1,m[3]||0,m[4]||0); }
 const fmtHM=d=>d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}).replace(' ','').toLowerCase();
@@ -470,11 +569,24 @@ function dayLabel(d){const n=new Date(),t0=new Date(n.getFullYear(),n.getMonth()
 const hod=d=>d.getHours()+d.getMinutes()/60;
 function extractHiLo(cv){const o=[];for(let i=1;i<cv.length-1;i++){const a=cv[i-1].ft,b=cv[i].ft,c=cv[i+1].ft;
   if(b>=a&&b>c)o.push({t:cv[i].t,type:'H',ft:b}); else if(b<=a&&b<c)o.push({t:cv[i].t,type:'L',ft:b});}return o;}
-function buildDemoTide(){const n=new Date(),start=new Date(n.getFullYear(),n.getMonth(),n.getDate()-1);
+function buildDemoTide(){const n=new Date(),start=new Date(n.getFullYear(),n.getMonth(),n.getDate()-2);
   const H=t=>2.9+1.7*Math.cos(2*Math.PI*((t-2)/12.42))+0.45*Math.cos(2*Math.PI*((t-9)/23.93));
-  const cv=[];for(let i=0;i<=3*48;i++){const d=new Date(start.getTime()+i*30*60000);
+  const cv=[];for(let i=0;i<=16*48;i++){const d=new Date(start.getTime()+i*30*60000);
     cv.push({t:d,ft:+H((d-start)/36e5).toFixed(2)});}
   return {updated:null,station:"9412110",name:"Port San Luis, CA",hilo:extractHiLo(cv),curve:cv};}
+// Sample forecast for preview / pre-deploy: honest Cayucos rhythm — marine-layer
+// cloud overnight and morning, burning off to a clear afternoon. Real data from
+// NWS (forecast-data.json) replaces this the moment that feed loads.
+function buildDemoForecast(){
+  const skyOf=h=>h<6?85:h<10?70:h<12?45:h<18?15:h<20?40:75;
+  const tempOf=h=>Math.round(55+11*Math.max(0,Math.sin((h-6)/12*Math.PI)));
+  const wordOf=s=>s<=25?'Sunny':s<=55?'Partly Cloudy':s<=80?'Mostly Cloudy':'Overcast';
+  const now=new Date(), base=new Date(now.getFullYear(),now.getMonth(),now.getDate(),now.getHours());
+  const hours=[];
+  for(let i=0;i<60;i++){const d=new Date(base.getTime()+i*3600000),h=d.getHours(),s=skyOf(h);
+    hours.push({t:d.toISOString(),sky:s,pop:0,tempF:tempOf(h),short:wordOf(s)});}
+  return hours;
+}
 function normTide(td){if(!td)return td;
   return {...td,curve:(td.curve||[]).map(p=>({t:parseLocal(p.t),ft:+(p.ft!=null?p.ft:p.v)})),
                 hilo:(td.hilo||[]).map(p=>({t:parseLocal(p.t),type:p.type,ft:+(p.ft!=null?p.ft:p.v)}))};}
@@ -527,6 +639,70 @@ function tideHeightAt(curve,t){
   return null;
 }
 
+// NWS hourly forecast, matched to a tide time. Weather is the least certain of the
+// three tide-pooling factors (coastal cloud forecasts a day out are shaky), so this
+// is advisory wording only and never changes the tide verdict itself.
+let FORECAST=[];   // [{t(ISO), sky(0-100), pop(0-100), tempF, short}]
+function forecastAt(t){
+  if(!t||!FORECAST.length) return null;
+  const tm=t.getTime(); let best=null,bestGap=90*60000;   // accept within 90 min of an hour mark
+  for(const h of FORECAST){
+    const hs=Date.parse(h.t); if(isNaN(hs)) continue;
+    const gap=Math.abs(tm-hs);
+    // prefer the hour bucket that actually contains t; otherwise nearest within 90 min
+    if(tm>=hs && tm<hs+3600000){ best=h; break; }
+    if(gap<bestGap){ best=h; bestGap=gap; }
+  }
+  return best;
+}
+function weatherClause(t){
+  // Never show sample weather beside live sensor data: if the page is otherwise
+  // live but the forecast feed didn't load, stay silent rather than imply a real
+  // forecast. In full demo/preview mode (nothing live), the demo forecast shows.
+  if(!LIVE_FORECAST && (LIVE_STATION||LIVE_OCEAN)) return '';
+  const f=forecastAt(t); if(!f||f.sky==null) return '';   // no forecast reach -> say nothing
+  let word;
+  if(f.sky<=25)      word='sunny';
+  else if(f.sky<=55) word='partly cloudy';
+  else if(f.sky<=80) word='mostly cloudy';
+  else               word='overcast';
+  let c=' The forecast then is <b>'+word+'</b>';
+  if(f.tempF!=null) c+=', around '+Math.round(f.tempF)+'\u00b0F';
+  if(f.pop!=null && f.pop>=30) c+=', with a '+f.pop+'% chance of rain';
+  return c+'.';
+}
+
+/* Rank a daylight low against the season. We sample DAYTIME lows within +/-3
+   weeks of now (the deep summer lows hide before dawn, so ranking against daytime
+   lows is what lets the best daytime low of a summer week still rate well). */
+function pctl(sorted, p){ if(!sorted.length) return null;
+  const i=(sorted.length-1)*p/100, lo=Math.floor(i), hi=Math.ceil(i);
+  return lo===hi?sorted[lo]:sorted[lo]+(sorted[hi]-sorted[lo])*(i-lo); }
+function seasonalLowStats(hilo, now){
+  const win=21*864e5;
+  const day=e=>{const s=sunTimes(BLUFF_LAT,BLUFF_LON,e.t);return !(s.dawn&&s.dusk)||(e.t>=s.dawn&&e.t<=s.dusk);};
+  const hs=hilo.filter(e=>e.type==='L'&&Math.abs(e.t-now)<=win&&day(e)).map(e=>e.ft).sort((a,b)=>a-b);
+  if(hs.length<6) return null;   // too few to rank; caller falls back to absolute thresholds
+  return {p10:pctl(hs,10), p33:pctl(hs,33), n:hs.length};
+}
+/* Grade a daylight low: absolute exposure gate first (does the shelf uncover at
+   all?), then season-relative quality. Likely rain can cap the word, but clouds
+   never do — overcast is fine, even better, for seeing into the pools. */
+function poolVerdict(h, t, stats){
+  const f=(LIVE_FORECAST||!(LIVE_STATION||LIVE_OCEAN))?forecastAt(t):null;
+  const rainy = !!(f && f.pop!=null && f.pop>=40);
+  if(h>POOL_WORK) return {word:'Limited', gloss:'the shelf stays mostly covered at this height', rainy};
+  const exceptional = h<=POOL_WOW || (stats && h<=stats.p10);
+  const good        = h<=POOL_EXPOSED || (stats && h<=stats.p33);
+  let word,gloss;
+  if(exceptional){ word='Excellent'; gloss='among the lowest daylight tides of the season; the shelf is wide open'; }
+  else if(good){   word='Good';      gloss='a low daylight tide for the season; the shelf is exposed'; }
+  else {           word='Fair';      gloss='a workable low, but unremarkable for the season'; }
+  if(rainy && (word==='Excellent'||word==='Good')){ word='Fair'; gloss+=', but rain is likely — you may want another day'; }
+  else if(rainy){ gloss+=', and rain is likely'; }
+  return {word,gloss,rainy};
+}
+
 function renderTide(tdRaw, live){
   const td=normTide(tdRaw); if(!td||!td.curve.length)return;
   const now=new Date();
@@ -542,22 +718,24 @@ function renderTide(tdRaw, live){
   document.getElementById('tideRows').innerHTML = up.length? up.map(e=>
     `<tr><td>${dayLabel(e.t)} ${fmtHM(e.t)}</td><td class="${e.type==='L'?'lo':'hi'}">${e.type==='L'?'Low':'High'}</td><td>${e.ft.toFixed(1)} ft</td></tr>`).join('')
     : '<tr><td colspan="3">No predictions available.</td></tr>';
-  // tide-pool window: next upcoming low at/below threshold — but a low is only
-  // a tide-pooling low if it happens in DAYLIGHT. A -1.2 ft low at 3:40 AM is
-  // not "excellent tide pooling"; it is dark until first light. In that case,
-  // say so, give the tide height at first light, and offer the best daylight low.
+  // --- Tide-pooling verdict ---------------------------------------------------
+  // A low only counts as a pooling window if it falls in DAYLIGHT. We grade the
+  // daylight low by absolute exposure (does the shelf uncover?) AND by how low it
+  // is for the season, so a summer day's best (higher) low can still rate while the
+  // page stays honest that it is not a winter minus tide. See poolVerdict above.
   const inLight=e=>{const s2=sunTimes(BLUFF_LAT,BLUFF_LON,e.t);return !(s2.dawn&&s2.dusk)||(e.t>=s2.dawn&&e.t<=s2.dusk);};
+  const stats=seasonalLowStats(hl, now);
   const lows = hl.filter(e=>e.type==='L'&&e.t>=new Date(now.getTime()-30*60000));
-  const nextLow = lows.find(e=>e.ft<=POOL_FT) || lows[0];
+  const nextLow = lows.find(e=>e.ft<=POOL_WORK) || lows[0];
   const pe=document.getElementById('tidePool');
-  if(nextLow){const w0=new Date(nextLow.t.getTime()-60*60000),w1=new Date(nextLow.t.getTime()+60*60000);
-    const great=nextLow.ft<=POOL_GREAT_FT, ok=nextLow.ft<=POOL_FT;
+  if(nextLow){
+    const w0=new Date(nextLow.t.getTime()-60*60000),w1=new Date(nextLow.t.getTime()+60*60000);
     if(inLight(nextLow)){
-      document.getElementById('tidePoolQ').textContent =
-        (great?'Excellent tide pooling ':ok?'Good tide pooling ':'Next low tide ')+dayLabel(nextLow.t).toLowerCase();
+      const v=poolVerdict(nextLow.ft, nextLow.t, stats);
+      document.getElementById('tidePoolQ').textContent = v.word+' tide pooling '+dayLabel(nextLow.t).toLowerCase();
       document.getElementById('tidePoolD').innerHTML =
-        'Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b>. Best window roughly '+fmtHM(w0)+' to '+fmtHM(w1)+'.'+
-        (great?' A minus tide, the rock shelf is well exposed.':ok?'':' A modest low, pools are only partly exposed.');
+        'Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b> \u2014 '+v.gloss+'. Best window roughly '+fmtHM(w0)+' to '+fmtHM(w1)+'.'+
+        weatherClause(nextLow.t);
     } else {
       const sun=sunTimes(BLUFF_LAT,BLUFF_LON,nextLow.t);
       const preDawn=sun.dawn&&nextLow.t<sun.dawn;
@@ -567,12 +745,13 @@ function renderTide(tdRaw, live){
         'Lowest tide '+dayLabel(nextLow.t).toLowerCase()+' is '+(preDawn?'before first light':'after dark');
       let d='Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b> \u2014 in the dark; stay off the shelf.';
       if(preDawn) d+=' First light is <b>'+fmtHM(sun.dawn)+'</b>'+
-        (hDawn!=null?', when the tide is back to about <b>'+hDawn.toFixed(1)+' ft</b>'+(hDawn<=POOL_FT?' \u2014 still good pooling right at first light.':'.'):'.');
-      if(dayLow) d+=' Best daylight low: <b>'+dayLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(dayLow.t)+'</b> '+dayLabel(dayLow.t).toLowerCase()+
-        (dayLow.ft<=POOL_GREAT_FT?' \u2014 a minus tide, the rock shelf is well exposed.':dayLow.ft<=POOL_FT?' \u2014 a good low, the pools are exposed.':' \u2014 a modest low, pools only partly exposed.');
+        (hDawn!=null?', when the tide is back to about <b>'+hDawn.toFixed(1)+' ft</b>'+(hDawn<=POOL_WORK?' \u2014 still worth a look right at first light.':'.'):'.');
+      if(dayLow){ const v=poolVerdict(dayLow.ft, dayLow.t, stats);
+        d+=' Best daylight low: <b>'+dayLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(dayLow.t)+'</b> '+dayLabel(dayLow.t).toLowerCase()+
+           ' \u2014 '+v.word.toLowerCase()+': '+v.gloss+'.'+weatherClause(dayLow.t); }
       document.getElementById('tidePoolD').innerHTML=d;
     }
-    pe.className='tidepool'+(ok?'':' ');
+    pe.className='tidepool';
   } else {document.getElementById('tidePoolQ').textContent='Tide predictions loading';document.getElementById('tidePoolD').textContent='';}
   document.getElementById('tideSrc').textContent =
     'Source: NOAA tide predictions, Port San Luis (9412110)'+(td.updated?'. Computed in advance by NOAA; refreshed daily.':' · sample data');
@@ -859,19 +1038,23 @@ function load(url, set){
     .then(d=>{set({d,live:true});}).catch(()=>{ /* keep demo */ });
 }
 function init(){
-  _s={d:DEMO_STATION,live:false}; _o={d:DEMO_OCEAN,live:false}; recompute();
+  _s={d:DEMO_STATION,live:false}; _o={d:DEMO_OCEAN,live:false}; FORECAST=buildDemoForecast(); recompute();
   Promise.all([
     load(DATA_BASE+'station-data.json', v=>{_s=v;}),
     load(DATA_BASE+'ocean-data.json', v=>{_o=v;}),
     load(DATA_BASE+'ocean-history.json', v=>{HIST=Array.isArray(v.d)?v.d:[];}),
-    load(DATA_BASE+'tide-data.json', v=>{_t=v;})
+    load(DATA_BASE+'tide-data.json', v=>{_t=v;}),
+    load(DATA_BASE+'forecast-data.json', v=>{if(v.d&&Array.isArray(v.d.hours)&&v.d.hours.length){FORECAST=v.d.hours;LIVE_FORECAST=true;}})
   ]).then(recompute);
   setInterval(()=>load(DATA_BASE+'station-data.json',v=>{_s=v;}).then(recompute), 60*1000);   // station ~1 min
   setInterval(()=>Promise.all([
     load(DATA_BASE+'ocean-data.json',v=>{_o=v;}),
     load(DATA_BASE+'ocean-history.json',v=>{HIST=Array.isArray(v.d)?v.d:[];})
   ]).then(recompute), 5*60*1000);    // ocean + history ~5 min
-  setInterval(()=>load(DATA_BASE+'tide-data.json',v=>{_t=v;}).then(recompute), 60*60*1000);    // tide ~hourly (predictions rarely change)
+  setInterval(()=>Promise.all([
+    load(DATA_BASE+'tide-data.json',v=>{_t=v;}),
+    load(DATA_BASE+'forecast-data.json',v=>{if(v.d&&Array.isArray(v.d.hours)&&v.d.hours.length){FORECAST=v.d.hours;LIVE_FORECAST=true;}})
+  ]).then(recompute), 60*60*1000);    // tide + forecast ~hourly
   setInterval(recompute, 60*1000);  // keep the "now" marker and clock moving
 }
 /* ---- nav toggle (mobile) ---- */
@@ -959,6 +1142,15 @@ document.getElementById('bandBtn').addEventListener('click',openDecomp);
 document.getElementById('decompClose').addEventListener('click',closeDecomp);
 modal.addEventListener('click',e=>{if(e.target===modal)closeDecomp();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&DECOMP_OPEN)closeDecomp();});
+
+/* ---- tide-pooling guide modal ---- */
+const poolModal=document.getElementById('poolModal');
+function openPool(){poolModal.classList.add('open');document.getElementById('poolClose').focus();}
+function closePool(){poolModal.classList.remove('open');document.getElementById('poolInfoBtn').focus();}
+document.getElementById('poolInfoBtn').addEventListener('click',openPool);
+document.getElementById('poolClose').addEventListener('click',closePool);
+poolModal.addEventListener('click',e=>{if(e.target===poolModal)closePool();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&poolModal.classList.contains('open'))closePool();});
 
 init();
 
