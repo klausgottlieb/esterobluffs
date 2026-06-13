@@ -33,21 +33,21 @@
   .land .bar{background:var(--land)} .sea .bar{background:var(--sea)}
   .land h2{color:var(--land)} .sea h2{color:var(--sea)}
   .src{font-size:.95rem;color:var(--muted);margin:0 0 12px 20px}
-  .card{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:20px 22px}
-  .hero{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+  .card{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:14px 16px}
+  .hero{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center}
   @media(max-width:720px){.hero{grid-template-columns:1fr}}
-  .bigtemp{font-size:5rem;font-weight:700;line-height:.9}
-  .bigtemp .d{font-size:2rem;color:var(--land);vertical-align:super}
-  .herometa{font-size:1.15rem} .herometa div{margin:3px 0}
+  .bigtemp{font-size:3.4rem;font-weight:700;line-height:.9}
+  .bigtemp .d{font-size:1.4rem;color:var(--land);vertical-align:super}
+  .herometa{font-size:1rem} .herometa div{margin:2px 0}
   .windbox{text-align:center}
-  .windbox .ws{font-size:2.2rem;font-weight:700}
+  .windbox .ws{font-size:1.6rem;font-weight:700}
   .windbox .wu{font-size:1rem;color:var(--land);font-weight:700}
   .windbox .wd{font-size:1rem;color:var(--muted)}
   /* the derived surface-conditions banner: the one place local wind adds value */
   .surface{margin-top:18px;border:2px solid var(--border);border-left:10px solid var(--sea);
-    border-radius:12px;padding:16px 18px;background:#eef6f8}
-  .surface .q{font-size:1.7rem;font-weight:700}
-  .surface .d{font-size:1.15rem;margin-top:2px}
+    border-radius:12px;padding:12px 14px;background:#eef6f8}
+  .surface .q{font-size:1.3rem;font-weight:700}
+  .surface .d{font-size:1.02rem;margin-top:2px}
   .surface .note{font-size:.95rem;color:var(--muted);margin-top:6px}
   .surface.onshore{border-left-color:var(--warn);background:#fbefe8}
   .surface.offshore{border-left-color:var(--ok);background:#eef7f0}
@@ -68,8 +68,8 @@
   .tidecurve svg{display:block;width:100%;height:auto}
   .tidepool{border:2px solid var(--border);border-left:10px solid var(--ok);border-radius:12px;
     padding:14px 18px;background:#eef7f0;margin-top:2px}
-  .tidepool .q{font-size:1.35rem;font-weight:700}
-  .tidepool .d{font-size:1.08rem;margin-top:3px}
+  .tidepool .q{font-size:1.15rem;font-weight:700}
+  .tidepool .d{font-size:1rem;margin-top:3px}
   .tidepool .note{font-size:.95rem;color:var(--muted);margin-top:7px}
   .tidetable{width:100%;border-collapse:collapse;font-size:1.05rem}
   .tidetable th,.tidetable td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
@@ -79,18 +79,18 @@
   .tidetable caption{text-align:left;color:var(--muted);font-size:.95rem;padding:4px 12px 10px}
   .sunline{font-size:1.05rem;color:var(--ink);line-height:1.5;margin:10px 0 4px}
   .sunline b{color:var(--sea)}
-  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:16px}
-  .tile{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:16px 18px}
-  .tile .lab{font-size:1.05rem;font-weight:700;color:var(--muted)}
-  .tile .v{font-size:2.3rem;font-weight:700;line-height:1.05;margin-top:6px}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+  .tile{background:var(--card);border:2px solid var(--border);border-radius:14px;padding:11px 13px}
+  .tile .lab{font-size:.92rem;font-weight:700;color:var(--muted)}
+  .tile .v{font-size:1.6rem;font-weight:700;line-height:1.05;margin-top:4px}
   .tile .v .u{font-size:1.1rem;color:var(--sea);font-weight:700}
   .tile.l .v .u{color:var(--land)}
-  .tile .sub{font-size:1rem;color:var(--muted);margin-top:4px}
+  .tile .sub{font-size:.88rem;color:var(--muted);margin-top:3px}
   .nowlines{margin-top:18px;display:grid;gap:12px}
   .nowline{border-left:6px solid var(--sea);background:#eef6f8;border-radius:8px;padding:12px 16px}
   .nowline.fc{border-left-color:var(--land);background:#fbf1e3}
   .nowline .l{font-size:.95rem;font-weight:700;color:var(--muted)}
-  .nowline .t{font-size:1.2rem;margin-top:2px}
+  .nowline .t{font-size:1.05rem;margin-top:2px}
   .nowline .note{font-size:.9rem;color:var(--muted);margin-top:4px}
   .composite{margin-top:18px;border:2px solid var(--border);border-left:8px solid var(--sea);
     border-radius:12px;background:#eef6f8;padding:16px 18px;font-size:1.1rem}
@@ -157,8 +157,8 @@
   @media(max-width:600px){
     body{padding:16px 14px 40px}
     h1{font-size:1.85rem}
-    .bigtemp{font-size:3.4rem}
-    .surface .q{font-size:1.4rem}
+    .bigtemp{font-size:2.6rem}
+    .surface .q{font-size:1.2rem}
     .hero{gap:14px}
     .tiles{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
     .modal{padding:10px}
@@ -211,7 +211,7 @@
   <!-- HYPERLOCAL -->
   <section aria-labelledby="h-station">
     <div class="sec-h land"><span class="bar"></span><h2 id="h-station">Bluff House Station, Cayucos</h2>
-      <span class="who">· WeatherFlow Tempest station at the bluff</span></div>
+      <span class="who">WeatherFlow Tempest station at the bluff</span></div>
     <p class="src" id="stationSrc"></p>
     <figure class="stationfig">
       <a href="station-cayucos.jpg" target="_blank" rel="noopener" title="Open the full photo">
@@ -235,7 +235,7 @@
         </div>
       </div>
       <div class="nowlines">
-        <div class="nowline"><div class="l">Right now (estimated from the station)</div>
+        <div class="nowline"><div class="l">Right now &middot; refreshed every five minutes</div>
           <div class="t" id="nowText">—</div>
           <div class="note">Computed from humidity, dew point, and wind. Not a forecast.</div></div>
       </div>
@@ -252,9 +252,9 @@
   <!-- OCEAN -->
   <section aria-labelledby="h-ocean">
     <div class="sec-h sea"><span class="bar"></span><h2 id="h-ocean">Ocean Conditions</h2>
-      <span class="who">· nearshore waves combined with marine wind</span></div>
+      <span class="who">nearshore waves combined with marine wind</span></div>
     <p class="src" id="oceanSrc"></p>
-    <p class="windbridge">Wind works on the water two ways. Out at sea, over hours and miles, it <b>builds the waves</b> you see here; the buoy measures the finished result, so wave size already reflects the wind that made it. Right at the bluff, local wind <b>grooms the surface</b>, smoothing or roughening it without changing the wave size.</p>
+    <p class="windbridge">Wind works on the water two ways. Out at sea, over hours and miles, it <b>builds the waves</b> shown below; an offshore buoy measures the finished result, so wave size already reflects the wind that made it. Right at the bluff, local wind <b>grooms the surface</b>, smoothing or roughening it without changing the wave size.</p>
 
     <!-- Wave size and its hazard rating lead: this is the safety-relevant fact for swimmers, surfers, and small craft. -->
     <div style="margin-top:16px">
@@ -268,7 +268,7 @@
     <h3 class="subh">Surf Conditions</h3>
     <!-- Wave SIZE verdict and surface TEXTURE: a matched pair, identical shape. -->
     <div class="surface" id="waveVerdict">
-      <div class="slabel"><span class="key">Wave size</span> right now &middot; open-water height, not local hazards</div>
+      <div class="slabel"><span class="key">Wave size</span> &middot; latest reading &middot; open-water height, not local hazards</div>
       <div class="q" id="vQ">—</div>
       <div class="d" id="vD"></div>
       <div class="fig" id="waveFig"></div>
@@ -281,18 +281,18 @@
          H/L — long period takes away). A long, easy swell reads high push, easy ride. -->
     <div class="surfacepair">
       <div class="surface" id="forceVerdict">
-        <div class="slabel"><span class="key">Surf push</span> right now &middot; how much energy the swell carries</div>
+        <div class="slabel"><span class="key">Surf push</span> &middot; latest reading &middot; how much energy the swell carries</div>
         <div class="q" id="forceQ">—</div>
         <div class="d" id="forceD"></div>
         <div class="fig" id="forceFig"></div>
         <div class="note">The swell's energy &mdash; what a surfer feels as push at the break. Wave height counts double here, and longer-spaced waves carry more, the reverse of the ride beside it. Tracks what forecasters call <em>wave power</em> (height squared, times the period).</div>
       </div>
       <div class="surface" id="rideVerdict">
-        <div class="slabel"><span class="key">How it rides</span> right now &middot; the feel out on the water</div>
+        <div class="slabel"><span class="key">How it rides</span> &middot; latest reading &middot; the feel out on the water</div>
         <div class="q" id="rideQ">—</div>
         <div class="d" id="rideD"></div>
         <div class="fig" id="rideFig"></div>
-        <div class="note">Steepness &mdash; but not the everyday kind: not how tall the waves are, but how tall they stand against how far apart they run. Long, well-spaced waves ride easy; the same height packed close rides hard. Oceanographers call this <em>wave steepness</em> (wave height divided by wavelength).</div>
+        <div class="note">Steepness &mdash; but not the everyday kind: not how tall the waves are, but how tall they stand against how far apart they run. Long, well-spaced waves ride easy; the same height packed close rides hard. Oceanographers call this <em>wave steepness</em> (wave height divided by wavelength &mdash; a pure ratio, so it carries no unit).</div>
       </div>
     </div>
 
@@ -337,7 +337,7 @@
   <!-- TIDES -->
   <section aria-labelledby="h-tide">
     <div class="sec-h sea"><span class="bar"></span><h2 id="h-tide">Tides &amp; Tide Pooling</h2>
-      <span class="who">&middot; NOAA predictions, Port San Luis</span></div>
+      <span class="who">NOAA predictions, Port San Luis</span></div>
     <p class="src" id="tideSrc"></p>
     <p class="sunline" id="sunLine"></p>
 
@@ -427,7 +427,7 @@ function deriveNow(s){
 
 /* ---- compass ---- */
 function rose(id, fromDeg, color){
-  const sz=130,c=sz/2,R=50; let s=`<svg width="${sz}" height="${sz}" viewBox="0 0 ${sz} ${sz}">`;
+  const sz=104,c=sz/2,R=42; let s=`<svg width="${sz}" height="${sz}" viewBox="0 0 ${sz} ${sz}">`;
   s+=`<circle cx="${c}" cy="${c}" r="${R}" fill="none" stroke="#cbbfa8" stroke-width="2"/>`;
   [['N',0],['E',90],['S',180],['W',270]].forEach(([t,d])=>{const a=(d-90)*D2R,rr=R-15;
     s+=`<text x="${c+rr*Math.cos(a)}" y="${c+rr*Math.sin(a)+6}" fill="#3d4f59" font-size="15" font-weight="700" text-anchor="middle">${t}</text>`;});
@@ -515,6 +515,18 @@ function drawTideCurve(cv){
   document.getElementById('tideCurve').innerHTML=s;
 }
 
+// predicted tide height (ft MLLW) at an arbitrary time, interpolated from the curve
+function tideHeightAt(curve,t){
+  if(!t||!curve||!curve.length) return null;
+  for(let i=1;i<curve.length;i++){
+    if(curve[i].t>=t&&curve[i-1].t<=t){
+      const a=curve[i-1],b=curve[i],f=(t-a.t)/((b.t-a.t)||1);
+      return a.ft+(b.ft-a.ft)*f;
+    }
+  }
+  return null;
+}
+
 function renderTide(tdRaw, live){
   const td=normTide(tdRaw); if(!td||!td.curve.length)return;
   const now=new Date();
@@ -530,17 +542,36 @@ function renderTide(tdRaw, live){
   document.getElementById('tideRows').innerHTML = up.length? up.map(e=>
     `<tr><td>${dayLabel(e.t)} ${fmtHM(e.t)}</td><td class="${e.type==='L'?'lo':'hi'}">${e.type==='L'?'Low':'High'}</td><td>${e.ft.toFixed(1)} ft</td></tr>`).join('')
     : '<tr><td colspan="3">No predictions available.</td></tr>';
-  // tide-pool window: next upcoming low at/below threshold
-  const nextLow = hl.find(e=>e.type==='L'&&e.t>=new Date(now.getTime()-30*60000)&&e.ft<=POOL_FT)
-                || hl.find(e=>e.type==='L'&&e.t>=now);
+  // tide-pool window: next upcoming low at/below threshold — but a low is only
+  // a tide-pooling low if it happens in DAYLIGHT. A -1.2 ft low at 3:40 AM is
+  // not "excellent tide pooling"; it is dark until first light. In that case,
+  // say so, give the tide height at first light, and offer the best daylight low.
+  const inLight=e=>{const s2=sunTimes(BLUFF_LAT,BLUFF_LON,e.t);return !(s2.dawn&&s2.dusk)||(e.t>=s2.dawn&&e.t<=s2.dusk);};
+  const lows = hl.filter(e=>e.type==='L'&&e.t>=new Date(now.getTime()-30*60000));
+  const nextLow = lows.find(e=>e.ft<=POOL_FT) || lows[0];
   const pe=document.getElementById('tidePool');
   if(nextLow){const w0=new Date(nextLow.t.getTime()-60*60000),w1=new Date(nextLow.t.getTime()+60*60000);
     const great=nextLow.ft<=POOL_GREAT_FT, ok=nextLow.ft<=POOL_FT;
-    document.getElementById('tidePoolQ').textContent =
-      (great?'Excellent tide pooling ':ok?'Good tide pooling ':'Next low tide ')+dayLabel(nextLow.t).toLowerCase();
-    document.getElementById('tidePoolD').innerHTML =
-      'Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b>. Best window roughly '+fmtHM(w0)+' to '+fmtHM(w1)+'.'+
-      (great?' A minus tide, the rock shelf is well exposed.':ok?'':' A modest low, pools are only partly exposed.');
+    if(inLight(nextLow)){
+      document.getElementById('tidePoolQ').textContent =
+        (great?'Excellent tide pooling ':ok?'Good tide pooling ':'Next low tide ')+dayLabel(nextLow.t).toLowerCase();
+      document.getElementById('tidePoolD').innerHTML =
+        'Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b>. Best window roughly '+fmtHM(w0)+' to '+fmtHM(w1)+'.'+
+        (great?' A minus tide, the rock shelf is well exposed.':ok?'':' A modest low, pools are only partly exposed.');
+    } else {
+      const sun=sunTimes(BLUFF_LAT,BLUFF_LON,nextLow.t);
+      const preDawn=sun.dawn&&nextLow.t<sun.dawn;
+      const hDawn=preDawn?tideHeightAt(td.curve,sun.dawn):null;
+      const dayLow=lows.find(inLight);
+      document.getElementById('tidePoolQ').textContent =
+        'Lowest tide '+dayLabel(nextLow.t).toLowerCase()+' is '+(preDawn?'before first light':'after dark');
+      let d='Low of <b>'+nextLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(nextLow.t)+'</b> \u2014 in the dark; stay off the shelf.';
+      if(preDawn) d+=' First light is <b>'+fmtHM(sun.dawn)+'</b>'+
+        (hDawn!=null?', when the tide is back to about <b>'+hDawn.toFixed(1)+' ft</b>'+(hDawn<=POOL_FT?' \u2014 still good pooling right at first light.':'.'):'.');
+      if(dayLow) d+=' Best daylight low: <b>'+dayLow.ft.toFixed(1)+' ft</b> at <b>'+fmtHM(dayLow.t)+'</b> '+dayLabel(dayLow.t).toLowerCase()+
+        (dayLow.ft<=POOL_GREAT_FT?' \u2014 a minus tide, the rock shelf is well exposed.':dayLow.ft<=POOL_FT?' \u2014 a good low, the pools are exposed.':' \u2014 a modest low, pools only partly exposed.');
+      document.getElementById('tidePoolD').innerHTML=d;
+    }
     pe.className='tidepool'+(ok?'':' ');
   } else {document.getElementById('tidePoolQ').textContent='Tide predictions loading';document.getElementById('tidePoolD').textContent='';}
   document.getElementById('tideSrc').textContent =
@@ -676,8 +707,13 @@ function renderTrends(){
   document.getElementById('spkForce').innerHTML=_spark(fS,'#0a5f78', v=>(v>=10?Math.round(v):v.toFixed(1)));
   document.getElementById('spkRide').innerHTML=_spark(sS,'#9a5b1d', v=>v.toFixed(4));
   const last=s.length?s[s.length-1]:null;
-  setT('spkForceNow', last&&last.P!=null?('\u2248 '+(last.P>=10?Math.round(last.P):last.P.toFixed(1))+' kW/m'):'—');
-  setT('spkRideNow', last&&last.S!=null?last.S.toFixed(4):'—');
+  // show the SAME numbers as the verdict cards above (live reading), so the page
+  // never displays two slightly different values for one quantity; fall back to history.
+  const liveF=seaForceRead(CUR_WAVE), liveS=steepnessRead(CUR_WAVE);
+  const pNow=liveF?liveF.P:(last?last.P:null);
+  const sNow=(liveS&&liveS.srcLabel==='combined')?liveS.s:(last?last.S:null);
+  setT('spkForceNow', pNow!=null?('\u2248 '+(pNow>=10?Math.round(pNow):pNow.toFixed(1))+' kW/m'):'—');
+  setT('spkRideNow', sNow!=null?sNow.toFixed(4):'—');
   const now=Date.now(), span=TREND_HOURS*3600*1000;
   const win=s.filter(p=>p.tx>=now-span);
   const tf=_trendWord(win.map(p=>p.P).filter(v=>v!=null),'force');
@@ -686,7 +722,7 @@ function renderTrends(){
   e=document.getElementById('spkRideTrend'); e.textContent=tr.txt; e.className='sk-trend '+tr.cls;
   setT('trendNote', win.length<2
     ? 'The 12-hour trend fills in as new wave readings arrive (about hourly).'
-    : win.length+' wave readings over the last 12 h \u00b7 updates when the buoy advances, about hourly.');
+    : win.length+' wave readings over the last 12 h \u00b7 updates when the offshore buoy reports, about hourly.');
 }
 function applyOcean(o, live, local){
   const w=o.wave||{}, wd=o.wind||{};
@@ -716,10 +752,11 @@ function applyOcean(o, live, local){
   const swdir=(w.swd_deg!=null?w.swd_deg:w.mwd_deg);
   rose('oceanRose', swdir, '#0a5f78'); document.getElementById('swellDir').innerHTML='swell from <b>'+compass(swdir)+'</b>';
   document.getElementById('waveCap').innerHTML='<b>Waves '+(w.wvht_ft!=null?w.wvht_ft.toFixed(1):'—')+' ft, every '+(w.dpd_s!=null?Math.round(w.dpd_s):'—')+' seconds</b>, from the '+compass(swdir)+'.';
+  const isMop = /MOP/.test(w.provenance||'');
   const vv=classifyWaves(w.wvht_ft); const dg=douglas(w.wvht_m);
   document.getElementById('waveVerdict').className='surface v-'+vv.key;
   setT('vQ', vv.label+(dg?' ('+dg+')':'')); setT('vD', vv.gloss);
-  setT('waveFig', [
+  setT('waveFig', (isMop?'nearshore model, used here:  ':'offshore buoy, used here:  ')+[
     (w.wvht_ft!=null?w.wvht_ft.toFixed(1)+' ft':null),
     (w.wvht_m!=null?w.wvht_m.toFixed(1)+' m':null),
     (w.dpd_s?'period '+Math.round(w.dpd_s)+' s':null),
@@ -731,7 +768,7 @@ function applyOcean(o, live, local){
   if(offEl){
     if(off && off.wvht_ft!=null){
       offEl.style.display='';
-      offEl.textContent='offshore, measured: '+off.wvht_ft.toFixed(1)+' ft'
+      offEl.textContent='offshore buoy, for comparison: '+off.wvht_ft.toFixed(1)+' ft'
         +(off.dpd_s?' @ '+Math.round(off.dpd_s)+' s':'')
         +(off.mwd_deg!=null?' from '+compass(off.mwd_deg):'')
         +(fmtAsOf(off.time)?'  \u00b7  as of '+fmtAsOf(off.time):'');
@@ -740,15 +777,14 @@ function applyOcean(o, live, local){
   const ride=steepnessRead(w);
   document.getElementById('rideVerdict').className='surface'+(ride?' v-'+ride.key:'');
   setT('rideQ', ride?ride.word:'—'); setT('rideD', ride?ride.clause:'');
-  setT('rideFig', ride?('steepness '+ride.s.toFixed(4)+(ride.srcH!=null?'  \u00b7  '+ride.srcH.toFixed(1)+' ft @ '+ride.srcT+' s '+ride.srcLabel:'')):'');
+  setT('rideFig', ride?('steepness '+ride.s.toFixed(4)+' \u2248 1:'+Math.round(1/ride.s)+(ride.srcH!=null?'  \u00b7  '+ride.srcH.toFixed(1)+' ft @ '+Math.round(ride.srcT)+' s '+ride.srcLabel:'')):'');
   const force=seaForceRead(w);
   document.getElementById('forceVerdict').className='surface'+(force?' f-'+force.key:'');
   setT('forceQ', force?force.word:'—'); setT('forceD', force?force.clause:'');
-  setT('forceFig', force?('\u2248 '+(force.P>=10?Math.round(force.P):force.P.toFixed(1))+' kW/m  \u00b7  '+force.H.toFixed(1)+' m \u00d7 '+force.T+' s'):'');
+  setT('forceFig', force?('\u2248 '+(force.P>=10?Math.round(force.P):force.P.toFixed(1))+' kW/m  \u00b7  from '+(w.wvht_ft!=null?w.wvht_ft.toFixed(1):(force.H/0.3048).toFixed(1))+' ft @ '+Math.round(force.T)+' s'):'');
   document.getElementById('oceanSrc').textContent='Source: '+(w.provenance||'—')+(w.time?' · wave reading '+fmtTime(w.time):'');
   const WINDLABEL={PSLC1:'Port San Luis, the nearest anemometer',
     '46011':'Santa Maria open-ocean buoy, used when Port San Luis is offline'};
-  const isMop = /MOP/.test(w.provenance||'');
   const waveExplain = isMop
     ? 'The waves come from the CDIP nearshore model (the Coastal Data Information Program at Scripps Institution of Oceanography), which takes the swell that offshore buoys measure and transforms it to the water right off Bluff House, accounting for how the coastline bends, shallows, and shelters each swell. If that model is briefly unavailable, the page falls back to the raw offshore buoy and labels it as such.'
     : 'The CDIP nearshore model for this spot is briefly unavailable, so these are raw readings from offshore buoy 46215, which can read higher than what reaches the bluffs. The page returns to the nearshore model automatically once it is back.';
