@@ -3,7 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estero Bluffs — Coastal Conditions</title>
+<title>Cayucos Tide Pooling & Surf — Live Conditions | Estero Bluffs</title>
+<meta name="description" content="Live surf, swell, tide, and tide-pooling conditions for Cayucos and Estero Bluffs State Park, streamed from the Bluff House weather station on the bluff.">
+<link rel="canonical" href="https://esterobluffs.com/">
+<meta name="theme-color" content="#0a5f78">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Cayucos, California">
+<meta name="geo.position" content="35.44917;-120.91602">
+<meta name="ICBM" content="35.44917, -120.91602">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Estero Bluffs">
+<meta property="og:title" content="Cayucos Tide Pooling & Surf — Live Conditions">
+<meta property="og:description" content="Live surf, swell, tide, and tide-pooling conditions for Cayucos and Estero Bluffs State Park, from the Bluff House station on the bluff.">
+<meta property="og:url" content="https://esterobluffs.com/">
+<meta property="og:image" content="https://esterobluffs.com/station-cayucos.jpg">
+<meta property="og:image:alt" content="The Bluff House weather station on the roof above the Cayucos surf.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cayucos Tide Pooling & Surf — Live Conditions">
+<meta name="twitter:description" content="Live surf, swell, tide, and tide-pooling conditions for Cayucos and Estero Bluffs State Park.">
+<meta name="twitter:image" content="https://esterobluffs.com/station-cayucos.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Bluff House",
+  "description": "Oceanfront vacation rental on the bluff at the north end of Cayucos, beside Estero Bluffs State Park.",
+  "url": "https://esterobluffs.com/",
+  "image": "https://esterobluffs.com/station-cayucos.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "871 North Ocean Avenue",
+    "addressLocality": "Cayucos",
+    "addressRegion": "CA",
+    "postalCode": "93430",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 35.44917, "longitude": -120.91602 }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -65,7 +102,13 @@
   .stationfig .tap{opacity:.7}
   .learnmore{display:none;font:inherit;font-weight:700;font-size:.95rem;color:var(--sea);background:none;border:0;padding:6px 0;margin:2px 0 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:40px}
   .learnmore:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+  .jump{display:none}
   @media(max-width:560px){
+    .jump{display:flex;gap:8px;margin:4px 0 18px;flex-wrap:wrap;position:sticky;top:0;z-index:20;
+      background:var(--bg,#fbf7ec);padding:8px 0}
+    .jump button{flex:1 1 auto;font:inherit;font-weight:700;font-size:.92rem;color:var(--sea);
+      background:#eef6f8;border:2px solid var(--border);border-radius:999px;padding:9px 10px;cursor:pointer;min-height:44px}
+    .jump button:active{background:#dcebf0}
     .m-collapse{display:none}
     .m-collapse.open{display:block}
     .learnmore{display:inline-block}
@@ -233,6 +276,13 @@
       <span id="online" class="" >&nbsp;</span>
     </div>
   </header>
+
+
+  <nav class="jump" aria-label="Jump to a section">
+    <button type="button" data-go="h-tide">Tide pooling</button>
+    <button type="button" data-go="h-ocean">Surf &amp; waves</button>
+    <button type="button" data-go="h-station">Right now</button>
+  </nav>
 
   <!-- HYPERLOCAL -->
   <section aria-labelledby="h-station">
@@ -1168,6 +1218,16 @@ document.querySelectorAll('.learnmore').forEach(function(btn){
     btn.textContent = open?'Show less':'Learn more';
   });
 });
+
+/* ---- phone quick-jump bar: scroll to a section ---- */
+document.querySelectorAll('.jump button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.getAttribute('data-go'));
+    var sec=t&&t.closest('section');
+    if(sec){ try{sec.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){sec.scrollIntoView();} }
+  });
+});
+
 
 init();
 
