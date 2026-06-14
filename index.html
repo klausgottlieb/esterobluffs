@@ -63,6 +63,13 @@
   .stationfig .sf-map svg{display:block;width:100%;height:210px;border:0;border-left:2px solid var(--border);background:#e7e7c8}
   .stationfig figcaption{font-size:.92rem;color:var(--muted);padding:10px 14px}
   .stationfig .tap{opacity:.7}
+  .learnmore{display:none;font:inherit;font-weight:700;font-size:.95rem;color:var(--sea);background:none;border:0;padding:6px 0;margin:2px 0 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:40px}
+  .learnmore:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+  @media(max-width:560px){
+    .m-collapse{display:none}
+    .m-collapse.open{display:block}
+    .learnmore{display:inline-block}
+  }
   @media(max-width:560px){
     .stationfig .sf-row{flex-direction:column}
     .stationfig .sf-photo,.stationfig .sf-map{flex:none;width:100%}
@@ -281,7 +288,7 @@
           </a>
         </div>
       </div>
-      <figcaption>The Tempest station on the roof of Bluff House &mdash; the readings below come from this sensor, on this roof, over this water. The star marks its exact spot at 871 North Ocean Avenue &mdash; on the eastern edge of Estero Bluffs State Park, right at the water, next to the town of Cayucos. <span class="tap">Tap the photo to enlarge; tap the map to open it in Google Maps, where you can zoom and search. Illustrative locator, not to scale.</span></figcaption>
+      <figcaption><button type="button" class="learnmore" aria-expanded="false">Learn more</button><span class="m-collapse">The Tempest station on the roof of Bluff House &mdash; the readings below come from this sensor, on this roof, over this water. The star marks its exact spot at 871 North Ocean Avenue &mdash; on the eastern edge of Estero Bluffs State Park, right at the water, next to the town of Cayucos. <span class="tap">Tap the photo to enlarge; tap the map to open it in Google Maps, where you can zoom and search. Illustrative locator, not to scale.</span></span></figcaption>
     </figure>
     <div class="card">
       <div class="hero">
@@ -317,7 +324,7 @@
     <div class="sec-h sea"><span class="bar"></span><h2 id="h-ocean">Ocean Conditions</h2>
       <span class="who">nearshore waves combined with marine wind</span></div>
     <p class="src" id="oceanSrc"></p>
-    <p class="windbridge">Wind works on the water two ways. Out at sea, over hours and miles, it <b>builds the waves</b> shown below; an offshore buoy measures the finished result, so wave size already reflects the wind that made it. Right at the bluff, local wind <b>grooms the surface</b>, smoothing or roughening it without changing the wave size.</p>
+    <button type="button" class="learnmore" aria-expanded="false">Learn more</button><p class="windbridge m-collapse">Wind works on the water two ways. Out at sea, over hours and miles, it <b>builds the waves</b> shown below; an offshore buoy measures the finished result, so wave size already reflects the wind that made it. Right at the bluff, local wind <b>grooms the surface</b>, smoothing or roughening it without changing the wave size.</p>
 
     <!-- Wave size and its hazard rating lead: this is the safety-relevant fact for swimmers, surfers, and small craft. -->
     <div style="margin-top:16px">
@@ -336,7 +343,7 @@
       <div class="d" id="vD"></div>
       <div class="fig" id="waveFig"></div>
       <div class="fig" id="waveOffshore" style="display:none"></div>
-      <div class="note">Shown as the everyday term, with the official Douglas sea-state classification in parentheses. Describes open-water wave size only; it does not reflect rip currents, shorebreak, or local hazards.</div>
+      <button type="button" class="learnmore" aria-expanded="false">Learn more</button><div class="note m-collapse">Shown as the everyday term, with the official Douglas sea-state classification in parentheses. Describes open-water wave size only; it does not reflect rip currents, shorebreak, or local hazards.</div>
     </div>
 
     <!-- Two derived reads from height + period, pulling OPPOSITE ways on period:
@@ -348,14 +355,14 @@
         <div class="q" id="forceQ">—</div>
         <div class="d" id="forceD"></div>
         <div class="fig" id="forceFig"></div>
-        <div class="note">The swell's energy &mdash; what a surfer feels as push at the break. Wave height counts double here, and longer-spaced waves carry more, the reverse of the ride beside it. Tracks what forecasters call <em>wave power</em> (height squared, times the period).</div>
+        <button type="button" class="learnmore" aria-expanded="false">Learn more</button><div class="note m-collapse">The swell's energy &mdash; what a surfer feels as push at the break. Wave height counts double here, and longer-spaced waves carry more, the reverse of the ride beside it. Tracks what forecasters call <em>wave power</em> (height squared, times the period).</div>
       </div>
       <div class="surface" id="rideVerdict">
         <div class="slabel"><span class="key">How it rides</span> &middot; latest reading &middot; the feel out on the water</div>
         <div class="q" id="rideQ">—</div>
         <div class="d" id="rideD"></div>
         <div class="fig" id="rideFig"></div>
-        <div class="note">Steepness &mdash; but not the everyday kind: not how tall the waves are, but how tall they stand against how far apart they run. Long, well-spaced waves ride easy; the same height packed close rides hard. Oceanographers call this <em>wave steepness</em> (wave height divided by wavelength &mdash; a pure ratio, so it carries no unit).</div>
+        <button type="button" class="learnmore" aria-expanded="false">Learn more</button><div class="note m-collapse">Steepness &mdash; but not the everyday kind: not how tall the waves are, but how tall they stand against how far apart they run. Long, well-spaced waves ride easy; the same height packed close rides hard. Oceanographers call this <em>wave steepness</em> (wave height divided by wavelength &mdash; a pure ratio, so it carries no unit).</div>
       </div>
     </div>
 
@@ -394,7 +401,7 @@
         <div class="wd" id="swellDir" style="margin-top:6px"></div></div>
     </div>
 
-    <div class="composite" id="composite"></div>
+    <button type="button" class="learnmore" aria-expanded="false">Learn more</button><div class="composite m-collapse" id="composite"></div>
   </section>
 
   <!-- TIDES -->
@@ -1151,6 +1158,16 @@ document.getElementById('poolInfoBtn').addEventListener('click',openPool);
 document.getElementById('poolClose').addEventListener('click',closePool);
 poolModal.addEventListener('click',e=>{if(e.target===poolModal)closePool();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&poolModal.classList.contains('open'))closePool();});
+
+/* ---- mobile "Learn more" toggles (explanatory prose collapses on phones) ---- */
+document.querySelectorAll('.learnmore').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var body=btn.nextElementSibling; if(!body) return;
+    var open=body.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+    btn.textContent = open?'Show less':'Learn more';
+  });
+});
 
 init();
 
