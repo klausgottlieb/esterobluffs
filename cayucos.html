@@ -115,6 +115,8 @@
  function chip(ev){
   if(ev.date_confirmed&&ev.start){var d=new Date(ev.start);
    return '<span class="cyc-chip date"><span class="m">'+MONTHS[d.getMonth()]+'</span><span class="d">'+d.getDate()+'</span></span>';}
+  if(ev.chip_top||ev.chip_bottom){
+   return '<span class="cyc-chip soft"><span class="m">'+esc(ev.chip_top||'')+'</span><span class="d">'+esc(ev.chip_bottom||'')+'</span></span>';}
   var top,bot;
   if(ev.recurrence==='weekly'){top='Fri';bot='Sat';}
   else if(ev.status==='on_hold'){top='On';bot='hold';}
