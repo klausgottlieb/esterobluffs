@@ -1,0 +1,39 @@
+name: events-update
+
+# Town events move on a scale of days, so a daily build is plenty. This is
+# separate from the Cloudflare-Worker-triggered ocean/station feeds.
+on:
+  schedule:
+    - cron: '17 13 * * *'   # ~06:17 America/Los_Angeles, daily
+  workflow_dispatch:        # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests icalendar
+
+      - name: Build events-data.json
+        run: python build_events.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "events-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- events-data.json; then
+            echo "events-data.json unchanged; nothing to commit"
+          else
+            git add events-data.json
+            git commit -m "events: refresh $(date -u +%FT%TZ)"
+            git push
+          fi
