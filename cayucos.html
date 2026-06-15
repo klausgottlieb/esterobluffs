@@ -25,6 +25,43 @@
  .btn{display:inline-block;background:var(--sea);color:#fff;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:10px;min-height:44px}
  .back{display:inline-block;margin-top:22px;color:var(--sea);font-weight:700;text-decoration:none}
  footer{max-width:760px;margin:0 auto;padding:0 22px 50px;font-size:1rem;color:var(--muted);line-height:1.6}
+ /* ---- events module ---- */
+ #events{margin-top:34px;border-top:2px solid var(--border);padding-top:26px}
+ #events .sec-h{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+ #events .sec-h .bar{width:8px;height:30px;border-radius:4px;background:var(--sea)}
+ #events .sec-h h2{font-size:1.55rem;font-weight:700;color:var(--sea)}
+ .cyc-fresh{font-size:.95rem;color:var(--muted);margin:0 0 16px 20px;max-width:none}
+ .cyc-fresh .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--sea);margin-right:7px;vertical-align:1px}
+ .cyc-fresh .dot.stale{background:#9a3b12}
+ .cyc-toggle{display:inline-flex;gap:8px;margin:0 0 18px}
+ .cyc-toggle button{font:inherit;font-weight:700;font-size:1rem;color:var(--sea);background:#eef6f8;border:2px solid var(--border);border-radius:999px;padding:9px 18px;cursor:pointer;min-height:44px}
+ .cyc-toggle button[aria-pressed=true]{background:var(--sea);color:#fff}
+ .cyc-toggle button:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+ .cyc-list{list-style:none;margin:0;padding:0}
+ .cyc-row{display:flex;gap:16px;align-items:flex-start;padding:16px 2px;border-bottom:1px solid var(--border)}
+ .cyc-row:last-child{border-bottom:0}
+ .cyc-chip{flex:0 0 auto;width:74px;min-height:74px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--card);border:2px solid var(--border);border-radius:12px}
+ .cyc-chip .m{font-size:.85rem;font-weight:700;color:var(--muted);letter-spacing:.3px}
+ .cyc-chip .d{font-size:1.5rem;font-weight:700;line-height:1}
+ .cyc-chip.date{border-color:var(--sea)}
+ .cyc-chip.date .m{color:var(--sea)}
+ .cyc-chip.soft .d{font-size:1rem;font-weight:700;color:var(--muted)}
+ .cyc-body{flex:1;min-width:0}
+ .cyc-title{font-size:1.15rem;font-weight:700;line-height:1.3;max-width:none}
+ .cyc-title a{color:var(--sea);text-decoration:underline;text-underline-offset:3px}
+ .cyc-title a:focus-visible{outline:3px solid var(--sea);outline-offset:2px;border-radius:3px}
+ .cyc-meta{font-size:1rem;color:var(--muted);margin:3px 0 0;max-width:none}
+ .cyc-meta .note{color:#7a4a00;font-weight:700}
+ .cyc-meta .note.hold{color:var(--muted)}
+ .cyc-more{margin-top:18px}
+ .cyc-more button{font:inherit;font-weight:700;font-size:1rem;color:var(--sea);background:#eef6f8;border:2px solid var(--border);border-radius:10px;padding:12px 22px;cursor:pointer;min-height:48px}
+ .cyc-more button:hover{background:#dcebf0}
+ .cyc-more button:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+ .cyc-link{margin:18px 0 0;font-size:1rem;max-width:none}
+ .cyc-link a{color:var(--sea);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+ .cyc-state{padding:18px 2px;font-size:1.05rem;color:var(--muted);max-width:none}
+ .cyc-state a{color:var(--sea);text-decoration:underline}
+ @media(max-width:560px){.cyc-chip{width:64px;min-height:64px}.cyc-chip .d{font-size:1.3rem}}
 </style></head><body>
 <nav class="nav"><div class="navin">
  <a class="brand" href="index.html">Estero&nbsp;Bluffs</a>
@@ -41,6 +78,19 @@
  <h1>Cayucos</h1>
  <span class="soon">Coming soon</span>
  <p>Where to eat, where to walk the pier, and how to spend a day in this small Central Coast beach town. A local guide is in progress.</p>
+
+ <section id="events" aria-labelledby="ev-h">
+  <div class="sec-h"><span class="bar"></span><h2 id="ev-h">Happening in Cayucos</h2></div>
+  <p class="cyc-fresh" id="cyc-fresh"></p>
+  <div class="cyc-toggle" role="group" aria-label="Filter events by area">
+   <button type="button" data-area="cayucos" aria-pressed="true">In town</button>
+   <button type="button" data-area="nearby" aria-pressed="false">Nearby</button>
+  </div>
+  <ul class="cyc-list" id="cyc-list" aria-live="polite"><li class="cyc-state">Loading events&hellip;</li></ul>
+  <div class="cyc-more" id="cyc-more-wrap" hidden></div>
+  <p class="cyc-link"><a href="https://www.cayucoschamber.com/calendar" target="_blank" rel="noopener">Full Cayucos Chamber calendar &#8594;</a></p>
+ </section>
+
  <a class="back" href="index.html">&#8592; Back to live conditions</a>
 </div>
 <footer>&copy; <span id="yr"></span> Estero Bluffs, LLC. &middot; Cayucos, California<br>
@@ -48,4 +98,74 @@
 <script>(function(){var t=document.getElementById('navtoggle'),m=document.getElementById('navmenu');
  if(t&&m)t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});
  var y=document.getElementById('yr'); if(y)y.textContent=new Date().getFullYear();})();</script>
+<script>
+(function(){
+ var EVENTS_URL='events-data.json', VISIBLE=4, SHOW_PAST=0;
+ var listEl=document.getElementById('cyc-list'),
+     moreWrap=document.getElementById('cyc-more-wrap'),
+     freshEl=document.getElementById('cyc-fresh');
+ var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ var data=null, area='cayucos', expanded=false;
+
+ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+ function relTime(iso){if(!iso)return'';var h=(new Date()-new Date(iso))/36e5;if(h<1)return'updated just now';if(h<24)return'updated '+Math.round(h)+' hours ago';return'updated '+Math.round(h/24)+' days ago';}
+ function sortKey(ev){return new Date((ev.start||ev.sort_date)+'T00:00:00');}
+ function isUpcoming(ev){var c=new Date();c.setDate(c.getDate()-SHOW_PAST);c.setHours(0,0,0,0);return sortKey(ev)>=c;}
+
+ function chip(ev){
+  if(ev.date_confirmed&&ev.start){var d=new Date(ev.start);
+   return '<span class="cyc-chip date"><span class="m">'+MONTHS[d.getMonth()]+'</span><span class="d">'+d.getDate()+'</span></span>';}
+  var top,bot;
+  if(ev.recurrence==='weekly'){top='Fri';bot='Sat';}
+  else if(ev.status==='on_hold'){top='On';bot='hold';}
+  else{top='Approx';bot=MONTHS[new Date(ev.sort_date+'T00:00:00').getMonth()];}
+  return '<span class="cyc-chip soft"><span class="m">'+top+'</span><span class="d">'+bot+'</span></span>';
+ }
+ function whenLine(ev){
+  if(ev.date_confirmed&&ev.start)return esc(new Date(ev.start).toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'}));
+  if(ev.recurrence==='weekly')return esc(ev.window||'Most weekends');
+  if(ev.status==='on_hold')return '<span class="note hold">On hold this year. Check before you plan.</span>';
+  return esc(ev.window||'')+' &middot; <span class="note">date to be confirmed</span>';
+ }
+ function row(ev){
+  var t=ev.canonical_url?'<a href="'+esc(ev.canonical_url)+'" target="_blank" rel="noopener">'+esc(ev.title)+'</a>':esc(ev.title);
+  var l2=esc(ev.venue||'')+(ev.summary?(ev.venue?' &middot; ':'')+esc(ev.summary):'');
+  return '<li class="cyc-row">'+chip(ev)+'<div class="cyc-body"><div class="cyc-title">'+t+'</div><div class="cyc-meta">'+whenLine(ev)+'</div>'+(l2?'<div class="cyc-meta">'+l2+'</div>':'')+'</div></li>';
+ }
+ function render(){
+  if(!data)return;
+  var items=(data.events||[]).filter(function(e){return e.area===area;}).filter(isUpcoming).sort(function(a,b){return sortKey(a)-sortKey(b);});
+  if(!items.length){listEl.innerHTML='<li class="cyc-state">Nothing on the calendar in this area right now. The <a href="https://www.cayucoschamber.com/calendar" target="_blank" rel="noopener">Chamber calendar</a> has the latest.</li>';moreWrap.hidden=true;return;}
+  var shown=expanded?items:items.slice(0,VISIBLE);
+  listEl.innerHTML=shown.map(row).join('');
+  if(items.length>VISIBLE){
+   moreWrap.hidden=false;
+   var label=expanded?'Show fewer':'Show '+(items.length-VISIBLE)+' more';
+   moreWrap.innerHTML='<button type="button" aria-expanded="'+expanded+'">'+label+'</button>';
+   moreWrap.querySelector('button').addEventListener('click',function(){expanded=!expanded;render();});
+  }else{moreWrap.hidden=true;}
+ }
+ function renderFresh(){
+  var live=(data.sources||[]).filter(function(s){return s.id!=='seed';});
+  var ok=live.filter(function(s){return s.status==='ok';}).length;
+  var stale=live.some(function(s){return s.status==='stale';});
+  var msg=(ok===0)?'Baseline events shown &middot; live sources connecting':relTime(data.generated_at)+' &middot; '+ok+' of '+live.length+' sources current';
+  freshEl.innerHTML='<span class="dot'+(stale?' stale':'')+'"></span>'+msg;
+ }
+ document.querySelectorAll('.cyc-toggle button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   area=btn.getAttribute('data-area');expanded=false;
+   document.querySelectorAll('.cyc-toggle button').forEach(function(b){b.setAttribute('aria-pressed',b===btn?'true':'false');});
+   render();
+  });
+ });
+ fetch(EVENTS_URL+'?ts='+Date.now(),{cache:'no-store'})
+  .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+  .then(function(json){data=json;renderFresh();render();})
+  .catch(function(){
+   listEl.innerHTML='<li class="cyc-state">The events list did not load. The <a href="https://www.cayucoschamber.com/calendar" target="_blank" rel="noopener">Chamber calendar</a> has what is on.</li>';
+   freshEl.textContent='';
+  });
+})();
+</script>
 </body></html>
