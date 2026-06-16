@@ -1,0 +1,23 @@
+name: library-probe
+
+# Manual, one-time diagnostic. Run it from the Actions tab (Run workflow), then
+# copy the whole log. It commits nothing and touches no site files. Delete this
+# workflow and library_probe.py once the real library fetcher is in place.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run library probe
+        run: python library_probe.py
