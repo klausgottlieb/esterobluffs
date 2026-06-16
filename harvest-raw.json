@@ -1,42 +1,42 @@
 {
-  "harvested_at": "2026-06-15T18:26:45.171103-07:00",
+  "harvested_at": "2026-06-16T14:55:07.094429-07:00",
   "events": [
     {
-      "title": "Cayucos Friday Farmers Market",
+      "title": "Cayucos Friday Farmers' Market",
       "recurrence": "weekly",
       "window": "Every Friday, 10am to 12:30pm, Memorial Day weekend through Labor Day weekend",
       "chip_top": "Fri",
       "chip_bottom": "10am",
       "season_end": "2026-09-07",
-      "venue": "Corner of D Street & Ocean Ave (Vet's Hall parking lot), Cayucos",
+      "venue": "Corner of D St & Ocean Ave, Cayucos Vet's Hall parking lot",
       "area": "cayucos",
       "category": "market",
-      "organizer": "Lola Balestra / Cayucos community",
-      "source_url": "https://highway1roadtrip.com/things-to-do/cayucos-farmers-market/",
-      "summary": "Seasonal open-air market with local produce, plants, flowers, baked goods & more every Friday morning through summer.",
+      "organizer": "Cayucos Farmers' Market",
+      "source_url": "https://www.cayucosshorelineinn.com/things-to-do/cayucos-annual-events",
+      "summary": "Weekly summer market with local produce, plants, flowers & seasonal goods at the Vet's Hall lot near the pier.",
       "confidence": 90
     },
     {
       "title": "Brian Waterbury Memorial Rock to Pier Fun Run & Half Marathon",
       "start": "2026-07-18T08:00:00-07:00",
-      "venue": "Starts at Morro Rock, finishes at Cayucos Pier",
+      "venue": "Cayucos Pier (finish) / Morro Rock (start)",
       "area": "nearby",
       "category": "race",
       "organizer": "Morro Bay Recreation",
       "source_url": "https://runsignup.com/Race/CA/MorroBay/BrianWaterburyMemorialRocktoPierRunandHalfMarathon",
-      "summary": "56th annual beach run on hard-packed sand: 6-mile Rock to Pier (finishes Cayucos Pier) + half marathon out-and-back. All ages welcome.",
+      "summary": "56th annual beach run: 6-mile Fun Run finishes at Cayucos Pier; Half Marathon out-and-back from Morro Rock. All ages welcome.",
       "confidence": 98
     },
     {
-      "title": "Cayucos Antique Street Faire (Fall)",
-      "start": "2026-10-18T09:00:00-07:00",
-      "venue": "Downtown Cayucos, N. Ocean Ave (Cayucos Drive to E Street)",
+      "title": "Cayucos Fall Antique Street Faire",
+      "start": "2026-10-18T07:00:00-07:00",
+      "venue": "Ocean Ave between E St & Cayucos Dr, Downtown Cayucos",
       "area": "cayucos",
-      "category": "festival",
+      "category": "market",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.cayucoschamber.com/antique-faire",
-      "summary": "100+ vendors selling antiques, vintage goods & collectibles along downtown Cayucos. Food court and activity station on-site.",
-      "confidence": 92
+      "summary": "40th edition of the biannual antique faire with 90+ dealer booths, food vendors & live music along Ocean Ave. Free admission.",
+      "confidence": 95
     },
     {
       "title": "35th Annual Cayucos Car Show",
@@ -46,7 +46,7 @@
       "category": "festival",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
-      "summary": "Classic cars fill downtown Cayucos with a live band, beer garden & Lions BBQ. Friday evening check-in party at Nelson's Garage.",
+      "summary": "Classic cars cruise downtown Cayucos with live music, beer garden & Lions BBQ. Friday check-in party at Nelson's Garage.",
       "confidence": 97
     }
   ]
