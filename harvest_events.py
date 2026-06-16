@@ -32,6 +32,7 @@ from zoneinfo import ZoneInfo
 
 PACIFIC = ZoneInfo("America/Los_Angeles")
 RAW = "harvest-raw.json"
+SEED = "seed-events.json"
 OUT = "events-data.json"
 DROP_STATUS = {"on_hold", "cancelled", "postponed", "canceled"}
 
@@ -107,14 +108,18 @@ def floor_events(today):
             for (t, d, v, c, o, s, u) in spec]
 
 
-# ---- harvest ingestion --------------------------------------------------
-def harvested_events(today):
+# ---- ingestion (shared by the web harvest and the curated seed) ---------
+def _ingest(path, source, today):
+    """Parse a raw events file (harvest-raw.json or seed-events.json) into
+    normalized rows tagged with `source`. Handles recurring rows (cadence +
+    season) and single dated rows. Past, undated, and on-hold rows are dropped.
+    A missing file yields an empty list rather than an error."""
     try:
-        with open(RAW, encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             raw = json.load(f)
     except FileNotFoundError:
-        print(f"warning: {RAW} not found -- using fixed dates only", file=sys.stderr)
         return [], None
+    stype = "seed" if source == "seed" else ("fixed" if source == "fixed" else "harvest")
     kept = []
     for e in raw.get("events", []):
         title = (e.get("title") or "").strip()
@@ -133,14 +138,14 @@ def harvested_events(today):
                 except ValueError:
                     pass
             kept.append({
-                "id": "harvest-recurring-" + _slug(title),
+                "id": f"{source}-recurring-" + _slug(title),
                 "title": title, "start": None, "end": None, "all_day": True,
                 "date_confirmed": False, "recurrence": e["recurrence"],
                 "window": e.get("window", ""), "sort_date": today.isoformat(),
                 "chip_top": e.get("chip_top", ""), "chip_bottom": e.get("chip_bottom", ""),
                 "venue": e.get("venue", ""), "area": e.get("area") or "cayucos",
                 "category": e.get("category", "community"), "organizer": e.get("organizer", ""),
-                "source": "harvest", "source_type": "harvest",
+                "source": source, "source_type": stype,
                 "confidence": int(e.get("confidence", 70) or 70), "status": "scheduled",
                 "summary": (e.get("summary", "") or "")[:200],
                 "canonical_url": e.get("source_url") or e.get("canonical_url"),
@@ -164,34 +169,47 @@ def harvested_events(today):
                     time = (t.hour, t.minute)
             except ValueError:
                 pass
-        kept.append(_event(
-            "harvest", title, d, time, e.get("venue", ""),
-            (e.get("area") or "cayucos"), e.get("category", "community"),
-            e.get("organizer", ""), e.get("summary", ""),
-            e.get("source_url") or e.get("canonical_url"),
-            int(e.get("confidence", 70) or 70)))
+        ev = _event(source, title, d, time, e.get("venue", ""),
+                    (e.get("area") or "cayucos"), e.get("category", "community"),
+                    e.get("organizer", ""), e.get("summary", ""),
+                    e.get("source_url") or e.get("canonical_url"),
+                    int(e.get("confidence", 70) or 70))
+        ev["source_type"] = stype
+        kept.append(ev)
     return kept, raw.get("harvested_at")
+
+
+def harvested_events(today):
+    return _ingest(RAW, "harvest", today)
+
+
+def seed_events(today):
+    kept, _ = _ingest(SEED, "seed", today)
+    return kept
 
 
 # ---- merge + diff -------------------------------------------------------
 def build(today):
+    seed = seed_events(today)
     harvest, harvested_at = harvested_events(today)
     floor = floor_events(today)
-    # Harvest wins over the floor if it surfaces the same event.
-    hkeys = {norm_key(e) for e in harvest}
+    # Priority: a curated seed event is never dropped or duplicated; the web
+    # harvest is next; the computed fixed dates are the floor. First writer of a
+    # given (title, date) wins, so seed beats harvest beats fixed. The weekly
+    # harvest can therefore ADD events but can never delete anything in seed.
     merged, seen = [], set()
-    for ev in harvest + floor:
+    for ev in seed + harvest + floor:
         k = norm_key(ev)
         if k in seen:
-            continue
-        if ev["source"] == "fixed" and k in hkeys:
             continue
         seen.add(k)
         merged.append(ev)
     merged.sort(key=lambda e: e.get("start") or e.get("sort_date") or "9999")
     now = dt.datetime.now(PACIFIC)
     sources = [
-        {"id": "harvest", "label": "Cayucos web harvest (reviewed)", "status": "ok",
+        {"id": "seed", "label": "Curated baseline (always kept)", "status": "ok",
+         "last_success": now.isoformat(), "count": len(seed)},
+        {"id": "harvest", "label": "Cayucos web harvest", "status": "ok",
          "last_success": harvested_at or now.isoformat(), "count": len(harvest)},
         {"id": "fixed", "label": "Fixed annual dates", "status": "ok",
          "last_success": now.isoformat(), "count": len(floor)},

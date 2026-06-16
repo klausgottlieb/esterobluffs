@@ -1,0 +1,31 @@
+{
+  "_note": "Curated baseline. These events ALWAYS merge into events-data.json. The weekly web harvester can ADD events to the calendar but can NEVER delete anything listed here. Put events you know are real but that a one-shot web search may miss: recurring seasonal series, club events posted only on a club's own calendar, etc. Recurring rows persist until season_end. Dated rows drop automatically after they pass, so refresh a dated annual entry (like the Home Tour) once a year, or let the harvester pick up the next year's date on its own.",
+  "events": [
+    {
+      "title": "Live music Sundays at Schooners",
+      "recurrence": "weekly",
+      "window": "Sunday evenings, 6 to 8pm, May through October",
+      "chip_top": "Sun",
+      "chip_bottom": "6pm",
+      "season_end": "2026-10-31",
+      "venue": "Schooners, 171 N Ocean Ave",
+      "area": "cayucos",
+      "category": "music",
+      "organizer": "Schooners",
+      "source_url": "https://www.schoonerscayucos.com/live/",
+      "summary": "Free live music on the oceanfront patio on Sunday evenings through October.",
+      "confidence": 90
+    },
+    {
+      "title": "Cayucos Lioness Home Tour",
+      "start": "2026-08-30T10:00:00-07:00",
+      "venue": "Homes around Cayucos",
+      "area": "cayucos",
+      "category": "community",
+      "organizer": "Cayucos Lioness Club",
+      "source_url": "https://www.cayucoslioness.org/2627calendar",
+      "summary": "Annual self-guided home tour fundraiser hosted by the Cayucos Lioness Club.",
+      "confidence": 90
+    }
+  ]
+}
