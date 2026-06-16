@@ -1,0 +1,45 @@
+name: events-update
+
+# Fully automated weekly refresh of the Cayucos events calendar. No human in
+# the loop: discover -> merge -> commit. Runs Monday mornings; also runnable
+# by hand from the Actions tab.
+on:
+  schedule:
+    - cron: '23 13 * * 1'   # ~06:23 America/Los_Angeles, Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Discover events (Anthropic API + web search)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python discover_events.py
+
+      - name: Merge into events-data.json
+        run: python harvest_events.py --write
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "events-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- events-data.json harvest-raw.json; then
+            echo "no change"
+          else
+            git add events-data.json harvest-raw.json
+            git commit -m "events: weekly refresh $(date -u +%FT%TZ)"
+            git push
+          fi
