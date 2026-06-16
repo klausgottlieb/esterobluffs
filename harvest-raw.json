@@ -1,58 +1,53 @@
 {
-  "_note": "Events verified live on real pages this session. Dated rows have a confirmed future date; recurring rows carry a cadence + season. Fixed anchors (Fourth of July, Turkey Trot, Polar Bear Dip) are added by harvest_events.py.",
-  "harvested_at": "2026-06-15T17:00:00-07:00",
+  "harvested_at": "2026-06-15T18:14:55.515847-07:00",
   "events": [
     {
-      "title": "Cayucos Friday Farmers Market",
+      "title": "Cayucos Friday Farmers' Market",
       "recurrence": "weekly",
-      "window": "Every Friday, 10am to 12:30pm, through Labor Day",
+      "window": "Every Friday, 10am–12:30pm, through Labor Day (Sep 7)",
       "chip_top": "Fri",
       "chip_bottom": "10am",
       "season_end": "2026-09-07",
-      "venue": "Corner of D & Ocean Avenue",
+      "venue": "Corner of D Street & Ocean Avenue, Downtown Cayucos",
       "area": "cayucos",
       "category": "market",
-      "organizer": "Cayucos Certified Farmers Market",
-      "source_url": "https://www.slocal.com/explore-the-region/north-coast/cayucos/things-to-do/",
-      "summary": "Local growers and food at D and Ocean Avenue, Friday mornings through Labor Day.",
-      "confidence": 75
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.cayucosshorelineinn.com/things-to-do/cayucos-annual-events",
+      "summary": "Outdoor summer market with local produce, flowers & seasonal fish. Runs Fridays 10am–12:30pm from early June through Labor Day weekend.",
+      "confidence": 90
     },
     {
-      "title": "Live music Sundays at Schooners",
-      "recurrence": "weekly",
-      "window": "Sunday evenings, 6 to 8pm, May through October",
-      "chip_top": "Sun",
-      "chip_bottom": "6pm",
-      "season_end": "2026-10-31",
-      "venue": "Schooners, 171 N Ocean Ave",
-      "area": "cayucos",
-      "category": "music",
-      "organizer": "Schooners",
-      "source_url": "https://www.schoonerscayucos.com/live/",
-      "summary": "Free live music on the oceanfront patio on Sunday evenings through October.",
-      "confidence": 75
-    },
-    {
-      "title": "Brian Waterbury Memorial Rock to Pier Fun Run",
+      "title": "Brian Waterbury Memorial Rock to Pier Fun Run & Rock'n Around the Pier Half Marathon",
       "start": "2026-07-18T08:00:00-07:00",
-      "venue": "Morro Rock to Cayucos Pier",
+      "venue": "Starts at Morro Rock; finishes at Cayucos Pier",
       "area": "nearby",
       "category": "race",
-      "organizer": "City of Morro Bay",
-      "source_url": "https://www.morrobayca.gov/308/Community-Events-Tournaments",
-      "summary": "A 6-mile beach run from Morro Rock that finishes at the Cayucos pier; a half marathon runs the same morning.",
+      "organizer": "Morro Bay Recreation",
+      "source_url": "https://runsignup.com/Race/CA/MorroBay/BrianWaterburyMemorialRocktoPierRunandHalfMarathon",
+      "summary": "56th annual beach run along hard-packed sand from Morro Rock to Cayucos Pier (6 mi) plus a half-marathon option. All ages welcome.",
+      "confidence": 98
+    },
+    {
+      "title": "Cayucos Fall Antique Street Faire",
+      "start": "2026-10-18T07:00:00-07:00",
+      "venue": "N. Ocean Avenue (Cayucos Drive to E Street), Downtown Cayucos",
+      "area": "cayucos",
+      "category": "festival",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.cayucoschamber.com/antique-faire",
+      "summary": "40th edition of this twice-yearly outdoor faire with 100+ dealers selling antiques, vintage & collectibles. Free admission, rain or shine.",
       "confidence": 95
     },
     {
       "title": "35th Annual Cayucos Car Show",
       "start": "2026-11-07T08:00:00-08:00",
-      "venue": "Downtown Cayucos, Ocean Avenue",
+      "venue": "N. Ocean Avenue, Downtown Cayucos",
       "area": "cayucos",
-      "category": "community",
-      "organizer": "Cayucos Chamber",
-      "source_url": "https://www.cayucoschamber.com/carshow",
-      "summary": "Classic cars downtown with a live band, beer garden, and BBQ. Register via 805Tix.",
-      "confidence": 95
+      "category": "festival",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
+      "summary": "Classic cars fill downtown Cayucos for this all-day rain-or-shine show with a live band, beer garden & Lions Club BBQ. Pre-registration required.",
+      "confidence": 97
     }
   ]
 }
