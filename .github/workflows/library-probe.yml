@@ -1,8 +1,10 @@
 name: library-probe
 
-# Manual, one-time diagnostic. Run it from the Actions tab (Run workflow), then
-# copy the whole log. It commits nothing and touches no site files. Delete this
-# workflow and library_probe.py once the real library fetcher is in place.
+# Manual verification run for the library fetcher. Run it from the Actions tab,
+# then copy the whole log. It commits nothing and touches no site files: the
+# fetcher runs in dry-run, so it only PRINTS its parsed events. Once the output
+# looks right, the fetcher gets wired into events-update.yml and this workflow
+# (plus library_probe.py) gets deleted.
 on:
   workflow_dispatch:
 
@@ -19,5 +21,5 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Run library probe
-        run: python library_probe.py
+      - name: Run library fetcher (dry run)
+        run: python fetch_library.py
