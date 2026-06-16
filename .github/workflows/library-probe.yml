@@ -1,12 +1,16 @@
 name: library-probe
 
-# Manual verification run for the library fetcher. Run it from the Actions tab,
-# then copy the whole log. It commits nothing and touches no site files: the
-# fetcher runs in dry-run, so it only PRINTS its parsed events. Once the output
-# looks right, the fetcher gets wired into events-update.yml and this workflow
-# (plus library_probe.py) gets deleted.
+# Manual verification run for the library fetcher. It runs the fetcher in
+# dry-run and commits library-events.json.proposed so the output is visible in
+# the repo file list for review. It does NOT touch anything the live site reads
+# (events-data.json, the merge, the seed). Once the proposed output looks right,
+# the fetcher gets wired into events-update.yml and this workflow, library_probe.py,
+# and library-events.json.proposed all get deleted.
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   probe:
@@ -23,3 +27,20 @@ jobs:
 
       - name: Run library fetcher (dry run)
         run: python fetch_library.py
+
+      - name: Commit the proposed output for review
+        run: |
+          if [ ! -f library-events.json.proposed ]; then
+            echo "no proposed file produced (fetch failed or empty); nothing to commit"
+            exit 0
+          fi
+          git config user.name  "library-probe"
+          git config user.email "actions@users.noreply.github.com"
+          git add library-events.json.proposed
+          if git diff --cached --quiet; then
+            echo "library-events.json.proposed unchanged"
+          else
+            git commit -m "library probe: proposed output $(date -u +%FT%TZ)"
+            git pull --rebase --autostash origin main || true
+            git push origin main || (git pull --rebase --autostash origin main && git push origin main)
+          fi
