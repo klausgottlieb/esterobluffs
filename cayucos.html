@@ -109,11 +109,11 @@
 
  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
  function relTime(iso){if(!iso)return'';var h=(new Date()-new Date(iso))/36e5;if(h<1)return'updated just now';if(h<24)return'updated '+Math.round(h)+' hours ago';return'updated '+Math.round(h/24)+' days ago';}
- function sortKey(ev){return new Date((ev.start||ev.sort_date)+'T00:00:00');}
+ function sortKey(ev){var d=(ev.sort_date||ev.start||'').slice(0,10);return new Date(d+'T00:00:00');}
  function isUpcoming(ev){var c=new Date();c.setDate(c.getDate()-SHOW_PAST);c.setHours(0,0,0,0);return sortKey(ev)>=c;}
 
  function chip(ev){
-  if(ev.date_confirmed&&ev.start){var d=new Date(ev.start);
+  if(ev.date_confirmed&&ev.sort_date){var d=new Date(ev.sort_date+'T00:00:00');
    return '<span class="cyc-chip date"><span class="m">'+MONTHS[d.getMonth()]+'</span><span class="d">'+d.getDate()+'</span></span>';}
   if(ev.chip_top||ev.chip_bottom){
    return '<span class="cyc-chip soft"><span class="m">'+esc(ev.chip_top||'')+'</span><span class="d">'+esc(ev.chip_bottom||'')+'</span></span>';}
@@ -124,7 +124,7 @@
   return '<span class="cyc-chip soft"><span class="m">'+top+'</span><span class="d">'+bot+'</span></span>';
  }
  function whenLine(ev){
-  if(ev.date_confirmed&&ev.start)return esc(new Date(ev.start).toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'}));
+  if(ev.date_confirmed&&ev.sort_date)return esc(new Date(ev.sort_date+'T00:00:00').toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'}));
   if(ev.recurrence==='weekly')return esc(ev.window||'Most weekends');
   if(ev.status==='on_hold')return '<span class="note hold">On hold this year. Check before you plan.</span>';
   return esc(ev.window||'')+' &middot; <span class="note">date to be confirmed</span>';
