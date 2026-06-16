@@ -41,5 +41,8 @@ jobs:
           else
             git add events-data.json harvest-raw.json
             git commit -m "events: weekly refresh $(date -u +%FT%TZ)"
-            git push
+            # Pull any changes that landed while we were working, then push.
+            # Rebase keeps our commit on top; retry once if we still collide.
+            git pull --rebase --autostash origin main || true
+            git push origin main || (git pull --rebase --autostash origin main && git push origin main)
           fi
