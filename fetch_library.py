@@ -49,7 +49,7 @@ EXCLUDE_TITLE = (
     "readers theatre", "knit", "crochet", "tech help", "tech tutor", "3d printer",
     "3-d printer", "board meeting", "friends of the library", "tax-aide", "tax aide",
     "resume", "job help", "esl class", "literacy", "staff", "library closed",
-    "study room", "volunteer",
+    "study room", "volunteer", "booked for lunch",
 )
 
 MONTHS = "January February March April May June July August September October November December".split()

@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
-"""Cayucos events harvester -- merge step.
+"""Cayucos events harvester -- deterministic merge step.
 
-Model
------
-Discovery and extraction happen in Claude Code (see HARVEST.md): it runs the
-searches, fetches each candidate page, and writes verified rows to
-harvest-raw.json. THIS script is the deterministic half. It needs no network:
+This script needs no network. It merges four layers into events-data.json:
 
-  1. adds a small floor of truly fixed-date annual events (computed, never
-     wrong-season, never "TBC");
-  2. merges harvest-raw.json;
-  3. drops anything past, undated, on-hold, or non-Cayucos;
-  4. dedupes and sorts;
-  5. writes events-data.json -- but only after you see a diff and pass --write.
+  1. seed-events.json    -- curated baseline, always kept
+  2. library-events.json -- Cayucos library programming, from fetch_library.py
+  3. harvest-raw.json    -- web harvest, from discover_events.py (Anthropic API + web search)
+  4. computed fixed dates -- a small floor of rule-based annual events
+
+It drops anything past, undated, on-hold, or non-Cayucos, dedupes on
+(title, date), sorts, and writes events-data.json. First writer of a given
+(title, date) wins, so priority is seed > library > harvest > fixed: the weekly
+refresh can ADD events but can never delete anything curated in the seed.
+
+In CI (.github/workflows/events-update.yml) this runs Mondays with --write,
+right after discover_events.py and fetch_library.py produce their input files.
+Run it by hand without --write for a dry run that writes events-data.json.proposed
+so you can review the diff first.
 
 Usage
 -----
   python harvest_events.py           # dry run: print diff, write events-data.json.proposed
   python harvest_events.py --write   # apply: overwrite events-data.json
-
-Promotion path (later, optional): a --discover mode can call the Anthropic API
-with the web_search tool to produce harvest-raw.json headlessly in CI. Not built
-yet -- on-demand with your review comes first.
 """
 from __future__ import annotations
 import argparse
@@ -33,6 +33,7 @@ from zoneinfo import ZoneInfo
 PACIFIC = ZoneInfo("America/Los_Angeles")
 RAW = "harvest-raw.json"
 SEED = "seed-events.json"
+LIBRARY = "library-events.json"
 OUT = "events-data.json"
 DROP_STATUS = {"on_hold", "cancelled", "postponed", "canceled"}
 
@@ -119,7 +120,7 @@ def _ingest(path, source, today):
             raw = json.load(f)
     except FileNotFoundError:
         return [], None
-    stype = "seed" if source == "seed" else ("fixed" if source == "fixed" else "harvest")
+    stype = source if source in ("seed", "fixed", "library") else "harvest"
     kept = []
     for e in raw.get("events", []):
         title = (e.get("title") or "").strip()
@@ -183,6 +184,10 @@ def harvested_events(today):
     return _ingest(RAW, "harvest", today)
 
 
+def library_events(today):
+    return _ingest(LIBRARY, "library", today)
+
+
 def seed_events(today):
     kept, _ = _ingest(SEED, "seed", today)
     return kept
@@ -191,14 +196,16 @@ def seed_events(today):
 # ---- merge + diff -------------------------------------------------------
 def build(today):
     seed = seed_events(today)
+    library, library_at = library_events(today)
     harvest, harvested_at = harvested_events(today)
     floor = floor_events(today)
-    # Priority: a curated seed event is never dropped or duplicated; the web
-    # harvest is next; the computed fixed dates are the floor. First writer of a
-    # given (title, date) wins, so seed beats harvest beats fixed. The weekly
-    # harvest can therefore ADD events but can never delete anything in seed.
+    # Priority: a curated seed event is never dropped or duplicated; the library
+    # feed is next, then the web harvest, then the computed fixed dates as a
+    # floor. First writer of a given (title, date) wins, so the order is
+    # seed > library > harvest > fixed. The weekly refresh can ADD events but
+    # can never delete anything in the seed.
     merged, seen = [], set()
-    for ev in seed + harvest + floor:
+    for ev in seed + library + harvest + floor:
         k = norm_key(ev)
         if k in seen:
             continue
@@ -209,6 +216,8 @@ def build(today):
     sources = [
         {"id": "seed", "label": "Curated baseline (always kept)", "status": "ok",
          "last_success": now.isoformat(), "count": len(seed)},
+        {"id": "library", "label": "Cayucos library programming", "status": "ok",
+         "last_success": library_at or now.isoformat(), "count": len(library)},
         {"id": "harvest", "label": "Cayucos web harvest", "status": "ok",
          "last_success": harvested_at or now.isoformat(), "count": len(harvest)},
         {"id": "fixed", "label": "Fixed annual dates", "status": "ok",
