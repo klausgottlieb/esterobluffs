@@ -1,8 +1,8 @@
 name: events-update
 
 # Fully automated weekly refresh of the Cayucos events calendar. No human in
-# the loop: discover -> merge -> commit. Runs Monday mornings; also runnable
-# by hand from the Actions tab.
+# the loop: discover -> fetch library -> merge -> commit. Runs Monday mornings;
+# also runnable by hand from the Actions tab.
 on:
   schedule:
     - cron: '23 13 * * 1'   # ~06:23 America/Los_Angeles, Mondays
@@ -15,19 +15,22 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install anthropic
+        run: pip install anthropic requests beautifulsoup4
 
       - name: Discover events (Anthropic API + web search)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python discover_events.py
+
+      - name: Fetch library events (deterministic)
+        run: python fetch_library.py --write
 
       - name: Merge into events-data.json
         run: python harvest_events.py --write
@@ -36,10 +39,11 @@ jobs:
         run: |
           git config user.name  "events-bot"
           git config user.email "actions@users.noreply.github.com"
-          if git diff --quiet -- events-data.json harvest-raw.json; then
+          git add events-data.json harvest-raw.json
+          [ -f library-events.json ] && git add library-events.json || true
+          if git diff --cached --quiet; then
             echo "no change"
           else
-            git add events-data.json harvest-raw.json
             git commit -m "events: weekly refresh $(date -u +%FT%TZ)"
             # Pull any changes that landed while we were working, then push.
             # Rebase keeps our commit on top; retry once if we still collide.
