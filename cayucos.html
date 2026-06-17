@@ -82,9 +82,10 @@
  <section id="events" aria-labelledby="ev-h">
   <div class="sec-h"><span class="bar"></span><h2 id="ev-h">Happening in Cayucos</h2></div>
   <p class="cyc-fresh" id="cyc-fresh"></p>
-  <div class="cyc-toggle" role="group" aria-label="Filter events by area">
-   <button type="button" data-area="cayucos" aria-pressed="true">In town</button>
-   <button type="button" data-area="nearby" aria-pressed="false">Nearby</button>
+  <div class="cyc-toggle" role="group" aria-label="Filter events by location">
+   <button type="button" data-tab="cayucos" aria-pressed="true">In town</button>
+   <button type="button" data-tab="Morro Bay" aria-pressed="false" hidden>Morro Bay</button>
+   <button type="button" data-tab="Cambria" aria-pressed="false" hidden>Cambria</button>
   </div>
   <ul class="cyc-list" id="cyc-list" aria-live="polite"><li class="cyc-state">Loading events&hellip;</li></ul>
   <div class="cyc-more" id="cyc-more-wrap" hidden></div>
@@ -105,12 +106,25 @@
      moreWrap=document.getElementById('cyc-more-wrap'),
      freshEl=document.getElementById('cyc-fresh');
  var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
- var data=null, area='cayucos', expanded=false;
+ var data=null, tab='cayucos', expanded=false;
 
  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
  function relTime(iso){if(!iso)return'';var h=(new Date()-new Date(iso))/36e5;if(h<1)return'updated just now';if(h<24)return'updated '+Math.round(h)+' hours ago';return'updated '+Math.round(h/24)+' days ago';}
  function sortKey(ev){var d=(ev.sort_date||ev.start||'').slice(0,10);return new Date(d+'T00:00:00');}
  function isUpcoming(ev){var c=new Date();c.setDate(c.getDate()-SHOW_PAST);c.setHours(0,0,0,0);return sortKey(ev)>=c;}
+ function matchTab(ev,t){
+  // "In town" also catches any nearby event with no town (e.g. Rock to Pier,
+  // which finishes at the Cayucos pier) so nothing is ever orphaned.
+  if(t==='cayucos')return ev.area==='cayucos'||(ev.area==='nearby'&&!ev.town);
+  return ev.town===t;
+ }
+ function townCount(name){return (data&&data.events||[]).filter(function(e){return e.town===name;}).filter(isUpcoming).length;}
+ function showTownTabs(){
+  document.querySelectorAll('.cyc-toggle button[data-tab]').forEach(function(b){
+   var t=b.getAttribute('data-tab');
+   if(t!=='cayucos')b.hidden=townCount(t)===0;
+  });
+ }
 
  function chip(ev){
   if(ev.date_confirmed&&ev.sort_date){var d=new Date(ev.sort_date+'T00:00:00');
@@ -136,7 +150,7 @@
  }
  function render(){
   if(!data)return;
-  var items=(data.events||[]).filter(function(e){return e.area===area;}).filter(isUpcoming).sort(function(a,b){return sortKey(a)-sortKey(b);});
+  var items=(data.events||[]).filter(function(e){return matchTab(e,tab);}).filter(isUpcoming).sort(function(a,b){return sortKey(a)-sortKey(b);});
   if(!items.length){listEl.innerHTML='<li class="cyc-state">Nothing on the calendar in this area right now. The <a href="https://www.cayucoschamber.com/calendar" target="_blank" rel="noopener">Chamber calendar</a> has the latest.</li>';moreWrap.hidden=true;return;}
   var shown=expanded?items:items.slice(0,VISIBLE);
   listEl.innerHTML=shown.map(row).join('');
@@ -156,14 +170,14 @@
  }
  document.querySelectorAll('.cyc-toggle button').forEach(function(btn){
   btn.addEventListener('click',function(){
-   area=btn.getAttribute('data-area');expanded=false;
+   tab=btn.getAttribute('data-tab');expanded=false;
    document.querySelectorAll('.cyc-toggle button').forEach(function(b){b.setAttribute('aria-pressed',b===btn?'true':'false');});
    render();
   });
  });
  fetch(EVENTS_URL+'?ts='+Date.now(),{cache:'no-store'})
   .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
-  .then(function(json){data=json;renderFresh();render();})
+  .then(function(json){data=json;renderFresh();showTownTabs();render();})
   .catch(function(){
    listEl.innerHTML='<li class="cyc-state">The events list did not load. The <a href="https://www.cayucoschamber.com/calendar" target="_blank" rel="noopener">Chamber calendar</a> has what is on.</li>';
    freshEl.textContent='';

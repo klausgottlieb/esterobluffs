@@ -44,7 +44,7 @@ def _slug(text):
 
 
 def _event(source, title, date, time, venue, area, category, organizer,
-           summary, url, confidence):
+           summary, url, confidence, town=None):
     if isinstance(date, str):
         date = dt.date.fromisoformat(date[:10])
     h, m = time if time else (0, 0)
@@ -61,6 +61,7 @@ def _event(source, title, date, time, venue, area, category, organizer,
         "sort_date": date.isoformat(),
         "venue": venue or "",
         "area": area or "cayucos",
+        "town": town,
         "category": category or "community",
         "organizer": organizer or "",
         "source": source,
@@ -73,7 +74,10 @@ def _event(source, title, date, time, venue, area, category, organizer,
 
 
 def norm_key(ev):
-    return (ev["title"].strip().lower(), ev["sort_date"][:10])
+    # Town/area is part of an event's identity, so a same-named event in two
+    # towns on the same day (e.g. a farmers market) is not silently collapsed.
+    place = ev.get("town") or ev.get("area") or "cayucos"
+    return (ev["title"].strip().lower(), ev["sort_date"][:10], place)
 
 
 # ---- deterministic floor: only genuinely rule-based fixed dates ---------
@@ -145,6 +149,7 @@ def _ingest(path, source, today):
                 "window": e.get("window", ""), "sort_date": today.isoformat(),
                 "chip_top": e.get("chip_top", ""), "chip_bottom": e.get("chip_bottom", ""),
                 "venue": e.get("venue", ""), "area": e.get("area") or "cayucos",
+                "town": e.get("town"),
                 "category": e.get("category", "community"), "organizer": e.get("organizer", ""),
                 "source": source, "source_type": stype,
                 "confidence": int(e.get("confidence", 70) or 70), "status": "scheduled",
@@ -174,7 +179,7 @@ def _ingest(path, source, today):
                     (e.get("area") or "cayucos"), e.get("category", "community"),
                     e.get("organizer", ""), e.get("summary", ""),
                     e.get("source_url") or e.get("canonical_url"),
-                    int(e.get("confidence", 70) or 70))
+                    int(e.get("confidence", 70) or 70), town=e.get("town"))
         ev["source_type"] = stype
         kept.append(ev)
     return kept, raw.get("harvested_at")
