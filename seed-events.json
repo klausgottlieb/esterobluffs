@@ -1,5 +1,5 @@
 {
-  "_note": "Curated baseline. These events ALWAYS merge into events-data.json. The weekly web harvester can ADD events to the calendar but can NEVER delete anything listed here. Put events you know are real but that a one-shot web search may miss: recurring seasonal series, club events posted only on a club's own calendar, etc. Recurring rows persist until season_end. Dated rows drop automatically after they pass, so refresh a dated annual entry (like the Home Tour) once a year, or let the harvester pick up the next year's date on its own.",
+  "_note": "Curated baseline. These events ALWAYS merge into events-data.json. The weekly web harvester can ADD events to the calendar but can NEVER delete anything listed here. Put events you know are real but that a one-shot web search may miss: recurring seasonal series, club events posted only on a club's own calendar, etc. Recurring rows persist until season_end. Dated rows drop automatically after they pass, so refresh a dated annual entry (like the Home Tour) once a year, or let the harvester pick up the next year's date on its own. NEARBY festival anchors (area 'nearby' + a town) will NOT be refreshed by the Cayucos web harvester, so re-date them by hand each year after they pass.",
   "events": [
     {
       "title": "Live music Sundays at Schooners",
@@ -26,6 +26,54 @@
       "source_url": "https://www.cayucoslioness.org/2627calendar",
       "summary": "Annual self-guided home tour fundraiser hosted by the Cayucos Lioness Club.",
       "confidence": 90
+    },
+    {
+      "title": "Pinedorado Days",
+      "start": "2026-09-05",
+      "venue": "Pinedorado Grounds & Main Street, Cambria",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "festival",
+      "organizer": "Cambria Lions Club",
+      "source_url": "https://www.cambrialions.org/",
+      "summary": "Cambria's Labor Day weekend tradition, Sept 5 to 7: Saturday morning parade at 9:30, plus BBQ, kiddie rides, live music, and a Sunday car show. ~20 min north.",
+      "confidence": 95
+    },
+    {
+      "title": "Morro Bay Avocado & Margarita Street Festival",
+      "start": "2026-09-12",
+      "venue": "The Embarcadero, Morro Bay",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "festival",
+      "organizer": "Morro Bay Chamber of Commerce",
+      "source_url": "https://avomargfest.com/",
+      "summary": "Waterfront street party on the Embarcadero with avocado dishes, margaritas, live music, and vendors. Ticketed. About 15 minutes south.",
+      "confidence": 95
+    },
+    {
+      "title": "Cambria Scarecrow Festival",
+      "start": "2026-10-01",
+      "venue": "Throughout Cambria, Moonstone Beach & San Simeon",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "festival",
+      "organizer": "Cambria Scarecrow Festival, Inc.",
+      "source_url": "https://cambriascarecrows.com/",
+      "summary": "All October: 200+ handmade scarecrows line the villages and beach of Cambria and San Simeon. Free, self-guided, viewable any time. ~20 min north.",
+      "confidence": 95
+    },
+    {
+      "title": "Cambria Christmas Market",
+      "start": "2026-11-27",
+      "venue": "Cambria Pines Lodge, 2905 Burton Dr, Cambria",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "festival",
+      "organizer": "Cambria Christmas Market",
+      "source_url": "https://www.cambriachristmasmarket.com/",
+      "summary": "Nov 27 to Dec 31: German-style holiday market with 3+ million lights, vendors, food, a train ride, and Santa. Ticketed; closed select nights. ~20 min north.",
+      "confidence": 95
     }
   ]
 }

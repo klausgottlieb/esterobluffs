@@ -66,6 +66,18 @@ EXCLUDE_TITLE = (
     "study room", "volunteer", "booked for lunch",
 )
 
+# Stricter bar for NEARBY branches (Morro Bay, Cambria). A guest will not drive
+# to the next town for routine library drop-in programming, so for nearby
+# branches these titles are dropped (in addition to EXCLUDE_TITLE) and weekly
+# series are skipped entirely, leaving only standout special events. In-town
+# Cayucos is unaffected and keeps the lower bar.
+NEARBY_EXCLUDE = (
+    "storytime", "hora de cuentos", "film friday", "movie", "lego club",
+    "jigsaw puzzle", "sensory play", "nintendo switch", "snap circuits",
+    "paper airplane", "art party", "build it challenge", "book group",
+    "kick-off party", "kick off party",
+)
+
 MONTHS = "January February March April May June July August September October November December".split()
 DATE_RE = re.compile(r"(" + "|".join(MONTHS) + r")\s+(\d{1,2}),\s+(\d{4})")
 TIME_RE = re.compile(r"(\d{1,2})(?::(\d{2}))?\s*([ap])m", re.I)
@@ -137,10 +149,11 @@ def is_family(ages):
     return bool(ages & FAMILY_AGES)
 
 
-def keep(row, loc_match):
-    """family + special: drop routine adult/internal; keep everything else that
-    is clearly an event at this branch's town."""
-    if any(k in row["title"].lower() for k in EXCLUDE_TITLE):
+def keep(row, loc_match, extra_exclude=()):
+    """Drop routine adult/internal series; keep everything else clearly at this
+    branch's town. `extra_exclude` is the stricter nearby denylist."""
+    title = row["title"].lower()
+    if any(k in title for k in EXCLUDE_TITLE) or any(k in title for k in extra_exclude):
         return False
     loc = row["location"].lower()
     if loc and loc_match not in loc and loc_match not in row["aria"].lower():
@@ -155,15 +168,18 @@ def fmt_time(h, m):
 
 
 def build_branch(branch, today):
-    """Fetch and shape one branch's events, stamped with its area and town."""
+    """Fetch and shape one branch's events, stamped with its area and town.
+    Nearby branches clear a stricter bar than in-town Cayucos: routine drop-in
+    titles and weekly series are dropped, leaving only standout special events."""
     name, area, town = branch["name"], branch["area"], branch["town"]
+    is_nearby = area == "nearby"
     organizer = f"SLO County Library, {name} Branch"
     venue_default = f"{name} Library"
 
     rows = parse_cards(fetch_html(branch["id"]))
     dated = []
     for row in rows:
-        if not keep(row, branch["loc_match"]):
+        if not keep(row, branch["loc_match"], NEARBY_EXCLUDE if is_nearby else ()):
             continue
         d, time = parse_date(row)
         if not d or d < today:
@@ -184,6 +200,8 @@ def build_branch(branch, today):
         fam_all = is_family(set().union(*[e["ages"] for e in group]))
 
         if len(group) >= WEEKLY_MIN and len(weekdays) == 1:
+            if is_nearby:
+                continue  # no nearby weekly library series on a day-trip list
             t = sample["time"]
             tstr = fmt_time(*t) if t else ""
             events.append({
