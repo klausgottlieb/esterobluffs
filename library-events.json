@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-06-16T14:55:08.551085-07:00",
+  "harvested_at": "2026-06-17T15:11:55.860121-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -7,13 +7,14 @@
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2026-08-12",
+      "season_end": "2026-08-19",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
+      "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26516",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28752",
       "confidence": 95
     },
     {
@@ -25,6 +26,7 @@
       "season_end": "2026-08-05",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
+      "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
@@ -36,6 +38,7 @@
       "start": "2026-07-11T10:00:00-07:00",
       "venue": "Cayucos Library",
       "area": "cayucos",
+      "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Public event at the Cayucos library branch.",
@@ -47,10 +50,47 @@
       "start": "2026-07-18T10:30:00-07:00",
       "venue": "Cayucos Library Patio at Cayucos Library",
       "area": "cayucos",
+      "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Family event at the Cayucos library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/reptile-ron-ou-27822",
+      "confidence": 90
+    },
+    {
+      "title": "Summer Reading Program: Reptile Ron",
+      "start": "2026-07-15T15:00:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Family event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/summer-reading-program-reptile-ron-27673",
+      "confidence": 90
+    },
+    {
+      "title": "Summer Reading Program: Instrument Petting Zoo",
+      "start": "2026-08-05T15:30:00-07:00",
+      "venue": "Morro Bay Library Patio at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Family event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/instrument-petting-zoo-30343",
+      "confidence": 90
+    },
+    {
+      "title": "Summer Reading Program: Instrument Petting Zoo",
+      "start": "2026-07-11T11:00:00-07:00",
+      "venue": "Cambria Library",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "library",
+      "organizer": "SLO County Library, Cambria Branch",
+      "summary": "Family event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/instrument-petting-zoo-cambria-library-31067",
       "confidence": 90
     }
   ]
