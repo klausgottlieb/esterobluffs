@@ -46,8 +46,8 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; esterobluffs-events/1.0)"}
 # from the probe, then this fetcher covers all three towns.
 BRANCHES = [
     {"id": 76,   "name": "Cayucos",   "area": "cayucos", "town": None,        "loc_match": "cayucos"},
-    {"id": None, "name": "Morro Bay", "area": "nearby",  "town": "Morro Bay", "loc_match": "morro bay"},
-    {"id": None, "name": "Cambria",   "area": "nearby",  "town": "Cambria",   "loc_match": "cambria"},
+    {"id": 81,   "name": "Morro Bay", "area": "nearby",  "town": "Morro Bay", "loc_match": "morro bay"},
+    {"id": 78,   "name": "Cambria",   "area": "nearby",  "town": "Cambria",   "loc_match": "cambria"},
 ]
 
 # Age groups that make an event family-relevant for a vacation-rental audience.
