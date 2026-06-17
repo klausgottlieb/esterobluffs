@@ -1,0 +1,61 @@
+{
+  "harvested_at": "2026-06-17T14:15:18.249867-07:00",
+  "events": [
+    {
+      "title": "Cayucos Library Storytime",
+      "recurrence": "weekly",
+      "window": "Every Wednesday, 10:30am at the Cayucos library",
+      "chip_top": "Wed",
+      "chip_bottom": "10:30am",
+      "season_end": "2026-08-19",
+      "venue": "Cayucos Library Meeting Room at Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Recurring family program at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28752",
+      "confidence": 95
+    },
+    {
+      "title": "Read to a Dog/Programa de lectura con perros",
+      "recurrence": "weekly",
+      "window": "Every Wednesday, 1:30pm at the Cayucos library",
+      "chip_top": "Wed",
+      "chip_bottom": "1:30pm",
+      "season_end": "2026-08-05",
+      "venue": "Cayucos Library Meeting Room at Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Recurring family program at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-read-dogprograma-de-lectura-con-perros-30931",
+      "confidence": 95
+    },
+    {
+      "title": "Paint a Watercolor Fairy Door!",
+      "start": "2026-07-11T10:00:00-07:00",
+      "venue": "Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Public event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/paint-watercolor-fairy-door-30649",
+      "confidence": 90
+    },
+    {
+      "title": "Summer Reading Program: Reptile Ron",
+      "start": "2026-07-18T10:30:00-07:00",
+      "venue": "Cayucos Library Patio at Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Family event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/reptile-ron-ou-27822",
+      "confidence": 90
+    }
+  ]
+}
