@@ -1,43 +1,8 @@
 {
-  "updated": "2026-06-22T12:26:47.634011+00:00",
+  "updated": "2026-06-22T17:51:12.692849+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-06-22T05:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-22T06:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-22T07:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-22T08:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 60,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-22T09:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 63,
-      "short": "Patchy Fog"
-    },
     {
       "t": "2026-06-22T10:00:00-07:00",
       "sky": 90,
@@ -422,6 +387,41 @@
       "pop": 4,
       "tempF": 67,
       "short": "Sunny"
+    },
+    {
+      "t": "2026-06-24T17:00:00-07:00",
+      "sky": 62,
+      "pop": 0,
+      "tempF": 66,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-06-24T18:00:00-07:00",
+      "sky": 62,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-06-24T19:00:00-07:00",
+      "sky": 62,
+      "pop": 0,
+      "tempF": 62,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-06-24T20:00:00-07:00",
+      "sky": 62,
+      "pop": 0,
+      "tempF": 60,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-06-24T21:00:00-07:00",
+      "sky": 62,
+      "pop": 0,
+      "tempF": 59,
+      "short": "Mostly Cloudy"
     }
   ]
 }
