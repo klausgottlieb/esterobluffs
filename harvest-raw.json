@@ -1,53 +1,98 @@
 {
-  "harvested_at": "2026-06-17T15:11:52.835494-07:00",
+  "harvested_at": "2026-06-22T10:58:02.637381-07:00",
   "events": [
     {
-      "title": "Cayucos Friday Farmers' Market",
+      "title": "Cayucos Friday Farmers Market",
       "recurrence": "weekly",
-      "window": "Every Friday, 10am to 12:30pm, June 5 through Labor Day weekend",
+      "window": "Every Friday, 10am to 12:30pm, June 5 through Labor Day (Sep 7, 2026)",
       "chip_top": "Fri",
       "chip_bottom": "10am",
-      "season_end": "2026-09-05",
+      "season_end": "2026-09-07",
       "venue": "Corner of D Street & Ocean Avenue, Cayucos",
       "area": "cayucos",
       "category": "market",
-      "organizer": "Cayucos Farmers' Market",
+      "organizer": "Cayucos Farmers Market",
       "source_url": "https://www.cayucosshorelineinn.com/things-to-do/cayucos-annual-events",
-      "summary": "Weekly open-air market at Ocean Ave & D St with local produce, flowers, and seafood. Runs every Friday through Labor Day weekend.",
+      "summary": "Fresh local produce, flowers & fish sold every Friday morning along Ocean Ave, running from early June through Labor Day weekend.",
       "confidence": 90
+    },
+    {
+      "title": "Schooners Open Mic Night",
+      "recurrence": "weekly",
+      "window": "Every Wednesday year-round, evening (doors ~7pm)",
+      "chip_top": "Wed",
+      "chip_bottom": "7pm",
+      "season_end": "2026-12-31",
+      "venue": "Schooners, 171 N Ocean Ave, Cayucos",
+      "area": "cayucos",
+      "category": "music",
+      "organizer": "Schooners Cayucos",
+      "source_url": "https://www.schoonerscayucos.com/live/",
+      "summary": "Weekly open-mic hosted by Kam Alton every Wednesday at Schooners beachfront bar & restaurant, year-round.",
+      "confidence": 88
+    },
+    {
+      "title": "Schooners Beachside Summer Concert Series",
+      "recurrence": "weekly",
+      "window": "Every Sunday, 6pm to 8pm, May through October",
+      "chip_top": "Sun",
+      "chip_bottom": "6pm",
+      "season_end": "2026-10-31",
+      "venue": "Schooners Patio, 171 N Ocean Ave, Cayucos",
+      "area": "cayucos",
+      "category": "music",
+      "organizer": "Schooners Cayucos",
+      "source_url": "https://www.schoonerscayucos.com/live/",
+      "summary": "Free rotating roster of local & touring acts performs outdoors on Schooners' beachside patio every Sunday evening, May–Oct.",
+      "confidence": 83
+    },
+    {
+      "title": "Old Cayucos Tavern Live Music Weekends",
+      "recurrence": "weekly",
+      "window": "Every Friday & Saturday, music starts ~8pm",
+      "chip_top": "Fri–Sat",
+      "chip_bottom": "8pm",
+      "season_end": "2026-12-31",
+      "venue": "Old Cayucos Tavern & Card Room, 130 N Ocean Ave, Cayucos",
+      "area": "cayucos",
+      "category": "music",
+      "organizer": "Old Cayucos Tavern",
+      "source_url": "https://www.oldcayucostavern.com/events",
+      "summary": "Local & traveling bands play Friday and Saturday nights at the historic 1906 tavern on Ocean Ave, with dancing and Texas Hold'em after.",
+      "confidence": 80
     },
     {
       "title": "Brian Waterbury Memorial Rock to Pier Fun Run & Half Marathon",
       "start": "2026-07-18T08:00:00-07:00",
-      "venue": "Starts at Morro Rock, finishes at Cayucos Pier",
+      "venue": "Starts: Morro Rock, Morro Bay — Finishes: Cayucos Pier",
       "area": "nearby",
       "category": "race",
-      "organizer": "City of Morro Bay Recreation Services",
+      "organizer": "Morro Bay Recreation Services",
       "source_url": "https://runsignup.com/Race/CA/MorroBay/BrianWaterburyMemorialRocktoPierRunandHalfMarathon",
-      "summary": "56th annual beach run: 6-mile fun run from Morro Rock to Cayucos Pier, plus a half marathon option. All ages welcome; post-race breakfast at Morro Rock.",
+      "summary": "56th annual 6-mile beach run from Morro Rock to Cayucos Pier (all ages/abilities), plus a 12th-annual half-marathon. Bus return from Cayucos Pier.",
       "confidence": 98
-    },
-    {
-      "title": "Cayucos Antique Street Faire — Fall",
-      "start": "2026-10-18T07:00:00-07:00",
-      "venue": "Ocean Avenue (Cayucos Drive to E Street), Cayucos",
-      "area": "cayucos",
-      "category": "market",
-      "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://www.cayucoschamber.com/antique-faire",
-      "summary": "40th edition of the semi-annual outdoor antique fair with ~100 vendors selling vintage, collectibles & art along Ocean Ave. Free admission, dogs on leash welcome.",
-      "confidence": 88
     },
     {
       "title": "Estero Bluffs Coastal Cleanup Day",
       "start": "2026-09-19T09:00:00-07:00",
-      "venue": "Killer's Surf Spot (Fig Tree Parking Lot), Estero Bluffs State Park, Cayucos",
+      "venue": "Killer's Surf Spot (Fig Tree Parking Lot), N. Ocean Ave, Cayucos",
       "area": "cayucos",
       "category": "community",
       "organizer": "Cayucos Land Conservancy / ECOSLO",
       "source_url": "https://www.cayucoslandconservancy.org/blogs/news/coastal-cleanup-day",
-      "summary": "Annual volunteer beach cleanup covering 4 miles of Estero Bluffs coastline, held in coordination with California Coastal Cleanup Day. Bring gloves and a bucket.",
-      "confidence": 80
+      "summary": "Annual volunteer beach & bluffs cleanup in coordination with California Coastal Cleanup Day. Meet at Fig Tree lot; spread over 4-mile Estero Bluffs stretch.",
+      "confidence": 78
+    },
+    {
+      "title": "Cayucos Fall Antique Street Faire",
+      "start": "2026-10-18T07:00:00-07:00",
+      "venue": "N. Ocean Avenue (Cayucos Dr. to E St.), Cayucos",
+      "area": "cayucos",
+      "category": "market",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.cayucoschamber.com/antique-faire",
+      "summary": "100+ antique, vintage & collectibles dealers line Ocean Ave 7am–3pm. Free admission, dog-friendly, rain or shine; food court at D St. intersection.",
+      "confidence": 93
     },
     {
       "title": "35th Annual Cayucos Car Show",
@@ -57,19 +102,8 @@
       "category": "festival",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
-      "summary": "Classic and custom cars fill downtown Ocean Ave for a full day with a live band, beer garden, and Lions Club BBQ lunch. Free to spectators; rain or shine.",
-      "confidence": 95
-    },
-    {
-      "title": "Christmas in Cayucos",
-      "start": "2026-12-12T17:00:00-08:00",
-      "venue": "Corner of D Street & Ocean Avenue, Downtown Cayucos",
-      "area": "cayucos",
-      "category": "festival",
-      "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Community tree lighting, carolers, and Santa arriving by fire engine, followed by a Wonderland Walk with open shops, free trolley rides, and holiday refreshments.",
-      "confidence": 60
+      "summary": "Classic car show fills downtown Ocean Ave 8am–4pm with a live band, beer garden, and Lions Club BBQ lunch. Check-in party Friday Nov 6 at Nelson's Garage.",
+      "confidence": 97
     }
   ]
 }
