@@ -1,43 +1,8 @@
 {
-  "updated": "2026-06-27T01:23:26.983468+00:00",
+  "updated": "2026-06-27T06:02:19.018722+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-06-26T18:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-26T19:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 61,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-26T20:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 60,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-26T21:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-06-26T22:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Patchy Fog"
-    },
     {
       "t": "2026-06-26T23:00:00-07:00",
       "sky": 90,
@@ -421,6 +386,41 @@
       "sky": 90,
       "pop": 0,
       "tempF": 52,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-06-29T06:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 52,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-06-29T07:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 53,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-06-29T08:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 55,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-06-29T09:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 56,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-06-29T10:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 58,
       "short": "Patchy Fog"
     }
   ]
