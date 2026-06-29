@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T04:20:27.570487+00:00",
+  "updated": "2026-06-29T04:25:25.163002+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -16,8 +16,8 @@
   "wind": {
     "station": "46011",
     "name": "Santa Maria, CA (open ocean)",
-    "time": "2026-06-29T03:50:00+00:00",
-    "wspd_kt": 13.6,
+    "time": "2026-06-29T04:00:00+00:00",
+    "wspd_kt": 15.6,
     "gst_kt": 17.5,
     "wdir_deg": 320.0
   },
@@ -33,7 +33,7 @@
     "swh_m": 0.8,
     "swh_ft": 2.62,
     "swp_s": 10.5,
-    "swd_deg": 270,
+    "swd_deg": 292.5,
     "wwh_m": 1.7,
     "wwh_ft": 5.58,
     "wwp_s": 9.9,
