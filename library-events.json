@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-06-22T10:58:06.247115-07:00",
+  "harvested_at": "2026-06-29T09:44:46.808126-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -7,15 +7,27 @@
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2026-08-19",
+      "season_end": "2026-08-26",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28752",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26517",
       "confidence": 95
+    },
+    {
+      "title": "Paint a Watercolor Fairy Door!",
+      "start": "2026-07-11T10:00:00-07:00",
+      "venue": "Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Public event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/paint-watercolor-fairy-door-30649",
+      "confidence": 90
     },
     {
       "title": "Read to a Dog/Programa de lectura con perros",
@@ -30,20 +42,8 @@
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-read-dogprograma-de-lectura-con-perros-30931",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-read-dogprograma-de-lectura-con-perros-30932",
       "confidence": 95
-    },
-    {
-      "title": "Paint a Watercolor Fairy Door!",
-      "start": "2026-07-11T10:00:00-07:00",
-      "venue": "Cayucos Library",
-      "area": "cayucos",
-      "town": null,
-      "category": "library",
-      "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Public event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/paint-watercolor-fairy-door-30649",
-      "confidence": 90
     },
     {
       "title": "Summer Reading Program: Reptile Ron",
