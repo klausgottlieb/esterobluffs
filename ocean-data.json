@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T23:46:16.386837+00:00",
+  "updated": "2026-06-30T23:51:14.981857+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -13,5 +13,12 @@
     "mwd_deg": 238.99426,
     "partition_measured": false
   },
-  "wind": {}
+  "wind": {
+    "station": "PSLC1",
+    "name": "Port San Luis, CA",
+    "time": "2026-06-30T22:48:00+00:00",
+    "wspd_kt": null,
+    "gst_kt": null,
+    "wdir_deg": null
+  }
 }
