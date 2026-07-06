@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T20:30:24.172313+00:00",
+  "updated": "2026-07-06T20:35:23.941850+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -18,7 +18,7 @@
     "name": "Santa Maria, CA (open ocean)",
     "time": "2026-07-06T20:00:00+00:00",
     "wspd_kt": 13.6,
-    "gst_kt": 15.6,
+    "gst_kt": 17.5,
     "wdir_deg": 310.0
   },
   "wave_offshore": {
