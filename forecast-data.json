@@ -1,57 +1,8 @@
 {
-  "updated": "2026-07-09T08:44:48.555336+00:00",
+  "updated": "2026-07-09T15:36:50.094730+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-07-09T01:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-07-09T02:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-07-09T03:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-07-09T04:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-07-09T05:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-07-09T06:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-07-09T07:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Patchy Fog"
-    },
     {
       "t": "2026-07-09T08:00:00-07:00",
       "sky": 90,
@@ -421,6 +372,55 @@
       "sky": 90,
       "pop": 0,
       "tempF": 70,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T13:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 70,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T14:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 71,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T15:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 71,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T16:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 71,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T17:00:00-07:00",
+      "sky": 90,
+      "pop": 1,
+      "tempF": 69,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T18:00:00-07:00",
+      "sky": 90,
+      "pop": 1,
+      "tempF": 67,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-07-11T19:00:00-07:00",
+      "sky": 90,
+      "pop": 1,
+      "tempF": 65,
       "short": "Patchy Fog"
     }
   ]
