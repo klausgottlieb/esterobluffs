@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-07-06T09:33:36.681673-07:00",
+  "harvested_at": "2026-07-13T09:02:18.673771-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -14,20 +14,8 @@
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28753",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26518",
       "confidence": 95
-    },
-    {
-      "title": "Paint a Watercolor Fairy Door!",
-      "start": "2026-07-11T10:00:00-07:00",
-      "venue": "Cayucos Library",
-      "area": "cayucos",
-      "town": null,
-      "category": "library",
-      "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Public event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/paint-watercolor-fairy-door-30649",
-      "confidence": 90
     },
     {
       "title": "Read to a Dog/Programa de lectura con perros",
@@ -82,15 +70,15 @@
       "confidence": 90
     },
     {
-      "title": "Summer Reading Program: Instrument Petting Zoo",
-      "start": "2026-07-11T11:00:00-07:00",
+      "title": "Manhattan Short Film Festival",
+      "start": "2026-10-03T09:30:00-07:00",
       "venue": "Cambria Library",
       "area": "nearby",
       "town": "Cambria",
       "category": "library",
       "organizer": "SLO County Library, Cambria Branch",
-      "summary": "Family event at the Cambria library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/instrument-petting-zoo-cambria-library-31067",
+      "summary": "Public event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32625",
       "confidence": 90
     }
   ]
