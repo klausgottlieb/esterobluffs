@@ -1,36 +1,8 @@
 {
-  "updated": "2026-07-14T00:08:41.764687+00:00",
+  "updated": "2026-07-14T03:34:17.966809+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-07-13T16:00:00-07:00",
-      "sky": 61,
-      "pop": 10,
-      "tempF": 71,
-      "short": "Partly Sunny"
-    },
-    {
-      "t": "2026-07-13T17:00:00-07:00",
-      "sky": 57,
-      "pop": 1,
-      "tempF": 73,
-      "short": "Partly Sunny"
-    },
-    {
-      "t": "2026-07-13T18:00:00-07:00",
-      "sky": 57,
-      "pop": 1,
-      "tempF": 70,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-07-13T19:00:00-07:00",
-      "sky": 57,
-      "pop": 1,
-      "tempF": 69,
-      "short": "Mostly Cloudy"
-    },
     {
       "t": "2026-07-13T20:00:00-07:00",
       "sky": 57,
@@ -422,6 +394,34 @@
       "pop": 0,
       "tempF": 62,
       "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-07-16T04:00:00-07:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-07-16T05:00:00-07:00",
+      "sky": 21,
+      "pop": 0,
+      "tempF": 61,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-07-16T06:00:00-07:00",
+      "sky": 21,
+      "pop": 0,
+      "tempF": 61,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-07-16T07:00:00-07:00",
+      "sky": 21,
+      "pop": 0,
+      "tempF": 61,
+      "short": "Sunny"
     }
   ]
 }
