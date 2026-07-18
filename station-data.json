@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T17:26:02.959689+00:00",
+  "updated": "2026-07-18T17:31:02.913430+00:00",
   "station": {
     "name": "Bluff House Station Cayucos",
     "id": "219965",
@@ -7,7 +7,7 @@
     "lat": 35.44921,
     "lon": -120.91595
   },
-  "time": "2026-07-18T17:25:55+00:00",
+  "time": "2026-07-18T17:30:55+00:00",
   "air_f": 56,
   "feels_f": 56,
   "dew_f": 54,
@@ -15,11 +15,11 @@
   "wind_mph": 5,
   "gust_mph": 6,
   "lull_mph": 3,
-  "wind_dir": 225,
-  "pressure_mb": 1015.3,
+  "wind_dir": 233,
+  "pressure_mb": 1012.4,
   "pressure_trend": "rising",
-  "uv": 5.95,
-  "solar_wm2": 559,
+  "uv": 6.72,
+  "solar_wm2": 631,
   "rain_in_today": 0.0,
   "lightning_count": 0,
   "lightning_mi": null
