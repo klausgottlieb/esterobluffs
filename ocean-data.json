@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T06:40:24.079527+00:00",
+  "updated": "2026-07-20T06:45:23.207180+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -16,10 +16,10 @@
   "wind": {
     "station": "46011",
     "name": "Santa Maria, CA (open ocean)",
-    "time": "2026-07-20T06:00:00+00:00",
-    "wspd_kt": 13.6,
+    "time": "2026-07-20T06:10:00+00:00",
+    "wspd_kt": 11.7,
     "gst_kt": 15.6,
-    "wdir_deg": 320.0
+    "wdir_deg": 330.0
   },
   "wave_offshore": {
     "provenance": "NDBC buoy 46215 (raw offshore)",
@@ -30,14 +30,14 @@
     "apd_s": 7.2,
     "mwd_deg": 203.0,
     "partition_measured": true,
-    "swh_m": 0.8,
-    "swh_ft": 2.62,
+    "swh_m": 0.9,
+    "swh_ft": 2.95,
     "swp_s": 11.8,
     "swd_deg": 202.5,
     "wwh_m": 0.8,
     "wwh_ft": 2.62,
-    "wwp_s": 7.7,
-    "wwd_deg": 292.5,
+    "wwp_s": 9.9,
+    "wwd_deg": 225,
     "steepness": "SWELL"
   }
 }
