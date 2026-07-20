@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-07-13T09:02:18.673771-07:00",
+  "harvested_at": "2026-07-20T08:24:15.609391-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -14,47 +14,31 @@
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26518",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28754",
       "confidence": 95
     },
     {
       "title": "Read to a Dog/Programa de lectura con perros",
-      "recurrence": "weekly",
-      "window": "Every Wednesday, 1:30pm at the Cayucos library",
-      "chip_top": "Wed",
-      "chip_bottom": "1:30pm",
-      "season_end": "2026-08-05",
+      "start": "2026-07-22T13:30:00-07:00",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-read-dogprograma-de-lectura-con-perros-30932",
-      "confidence": 95
+      "summary": "Family event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-read-dogprograma-de-lectura-con-perros-30933",
+      "confidence": 90
     },
     {
-      "title": "Summer Reading Program: Reptile Ron",
-      "start": "2026-07-18T10:30:00-07:00",
-      "venue": "Cayucos Library Patio at Cayucos Library",
+      "title": "Read to a Dog/Programa de lectura con perros",
+      "start": "2026-08-05T13:30:00-07:00",
+      "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Family event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/reptile-ron-ou-27822",
-      "confidence": 90
-    },
-    {
-      "title": "Summer Reading Program: Reptile Ron",
-      "start": "2026-07-15T15:00:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Family event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/summer-reading-program-reptile-ron-27673",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-read-dogprograma-de-lectura-con-perros-30934",
       "confidence": 90
     },
     {
@@ -67,6 +51,30 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Family event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/instrument-petting-zoo-30343",
+      "confidence": 90
+    },
+    {
+      "title": "Build with Legos",
+      "start": "2026-08-19T15:00:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Family event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/build-legos-32858",
+      "confidence": 90
+    },
+    {
+      "title": "Manhattan Short Film Festival",
+      "start": "2026-10-01T13:30:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32624",
       "confidence": 90
     },
     {
