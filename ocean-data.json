@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T22:40:24.101012+00:00",
+  "updated": "2026-07-21T22:45:22.427382+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -23,12 +23,12 @@
   },
   "wave_offshore": {
     "provenance": "NDBC buoy 46215 (raw offshore)",
-    "time": "2026-07-21T21:56:00+00:00",
+    "time": "2026-07-21T22:26:00+00:00",
     "wvht_m": 1.3,
     "wvht_ft": 4.27,
-    "dpd_s": 10.0,
+    "dpd_s": 11.0,
     "apd_s": 9.3,
-    "mwd_deg": 192.0,
+    "mwd_deg": 210.0,
     "partition_measured": true,
     "swh_m": 0.9,
     "swh_ft": 2.95,
