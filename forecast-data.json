@@ -1,56 +1,35 @@
 {
-  "updated": "2026-07-24T11:55:59.340255+00:00",
+  "updated": "2026-07-24T14:12:59.400893+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-07-24T04:00:00-07:00",
-      "sky": 35,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-07-24T05:00:00-07:00",
-      "sky": 14,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-07-24T06:00:00-07:00",
-      "sky": 14,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Sunny"
-    },
-    {
       "t": "2026-07-24T07:00:00-07:00",
-      "sky": 14,
+      "sky": 90,
       "pop": 0,
       "tempF": 61,
-      "short": "Sunny"
+      "short": "Patchy Fog"
     },
     {
       "t": "2026-07-24T08:00:00-07:00",
-      "sky": 14,
+      "sky": 90,
       "pop": 0,
       "tempF": 67,
-      "short": "Sunny"
+      "short": "Patchy Fog"
     },
     {
       "t": "2026-07-24T09:00:00-07:00",
-      "sky": 14,
+      "sky": 90,
       "pop": 0,
       "tempF": 72,
-      "short": "Sunny"
+      "short": "Patchy Fog"
     },
     {
       "t": "2026-07-24T10:00:00-07:00",
-      "sky": 14,
+      "sky": 90,
       "pop": 0,
       "tempF": 76,
-      "short": "Sunny"
+      "short": "Patchy Fog"
     },
     {
       "t": "2026-07-24T11:00:00-07:00",
@@ -96,42 +75,42 @@
     },
     {
       "t": "2026-07-24T17:00:00-07:00",
-      "sky": 8,
+      "sky": 9,
       "pop": 0,
       "tempF": 71,
       "short": "Sunny"
     },
     {
       "t": "2026-07-24T18:00:00-07:00",
-      "sky": 8,
+      "sky": 9,
       "pop": 0,
       "tempF": 69,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-07-24T19:00:00-07:00",
-      "sky": 8,
+      "sky": 9,
       "pop": 0,
       "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-07-24T20:00:00-07:00",
-      "sky": 8,
+      "sky": 9,
       "pop": 0,
       "tempF": 62,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-07-24T21:00:00-07:00",
-      "sky": 8,
+      "sky": 9,
       "pop": 0,
       "tempF": 59,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-07-24T22:00:00-07:00",
-      "sky": 8,
+      "sky": 9,
       "pop": 0,
       "tempF": 59,
       "short": "Mostly Clear"
@@ -422,6 +401,27 @@
       "pop": 0,
       "tempF": 79,
       "short": "Sunny"
+    },
+    {
+      "t": "2026-07-26T16:00:00-07:00",
+      "sky": 17,
+      "pop": 0,
+      "tempF": 78,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-07-26T17:00:00-07:00",
+      "sky": 20,
+      "pop": 0,
+      "tempF": 76,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-07-26T18:00:00-07:00",
+      "sky": 20,
+      "pop": 0,
+      "tempF": 74,
+      "short": "Mostly Clear"
     }
   ]
 }
