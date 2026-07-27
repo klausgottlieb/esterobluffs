@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-07-20T08:24:15.609391-07:00",
+  "harvested_at": "2026-07-27T08:57:00.756069-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -14,20 +14,8 @@
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28754",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28755",
       "confidence": 95
-    },
-    {
-      "title": "Read to a Dog/Programa de lectura con perros",
-      "start": "2026-07-22T13:30:00-07:00",
-      "venue": "Cayucos Library Meeting Room at Cayucos Library",
-      "area": "cayucos",
-      "town": null,
-      "category": "library",
-      "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Family event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-read-dogprograma-de-lectura-con-perros-30933",
-      "confidence": 90
     },
     {
       "title": "Read to a Dog/Programa de lectura con perros",
@@ -39,6 +27,18 @@
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Family event at the Cayucos library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-read-dogprograma-de-lectura-con-perros-30934",
+      "confidence": 90
+    },
+    {
+      "title": "Paint a Watercolor Fairy Door! *rescheduled*",
+      "start": "2026-08-08T10:00:00-07:00",
+      "venue": "Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Public event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/paint-watercolor-fairy-door-30649",
       "confidence": 90
     },
     {
@@ -75,6 +75,18 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Public event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32624",
+      "confidence": 90
+    },
+    {
+      "title": "Internet Safety 101",
+      "start": "2026-10-22T13:00:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/internet-safety-101-31543",
       "confidence": 90
     },
     {
