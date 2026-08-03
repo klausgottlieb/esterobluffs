@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-07-27T08:57:00.756069-07:00",
+  "harvested_at": "2026-08-03T08:58:54.340956-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -14,7 +14,7 @@
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28755",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26519",
       "confidence": 95
     },
     {
@@ -75,18 +75,6 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Public event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32624",
-      "confidence": 90
-    },
-    {
-      "title": "Internet Safety 101",
-      "start": "2026-10-22T13:00:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Public event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/internet-safety-101-31543",
       "confidence": 90
     },
     {
