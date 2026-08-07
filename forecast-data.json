@@ -1,427 +1,427 @@
 {
-  "updated": "2026-08-06T15:28:48.430510+00:00",
+  "updated": "2026-08-07T00:15:57.819917+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-08-06T08:00:00-07:00",
-      "sky": 76,
-      "pop": 1,
-      "tempF": 59,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-08-06T09:00:00-07:00",
-      "sky": 76,
-      "pop": 1,
-      "tempF": 61,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-08-06T10:00:00-07:00",
-      "sky": 76,
-      "pop": 1,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-08-06T11:00:00-07:00",
-      "sky": 35,
-      "pop": 1,
-      "tempF": 62,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-06T12:00:00-07:00",
-      "sky": 35,
-      "pop": 1,
-      "tempF": 63,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-06T13:00:00-07:00",
-      "sky": 35,
-      "pop": 1,
-      "tempF": 64,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-06T14:00:00-07:00",
-      "sky": 35,
-      "pop": 1,
-      "tempF": 63,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-06T15:00:00-07:00",
-      "sky": 35,
-      "pop": 1,
-      "tempF": 63,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-06T16:00:00-07:00",
-      "sky": 35,
-      "pop": 1,
-      "tempF": 63,
-      "short": "Mostly Sunny"
-    },
-    {
       "t": "2026-08-06T17:00:00-07:00",
-      "sky": 59,
-      "pop": 1,
-      "tempF": 62,
+      "sky": 67,
+      "pop": 0,
+      "tempF": 63,
       "short": "Partly Sunny"
     },
     {
       "t": "2026-08-06T18:00:00-07:00",
-      "sky": 59,
-      "pop": 1,
-      "tempF": 61,
+      "sky": 67,
+      "pop": 0,
+      "tempF": 62,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-06T19:00:00-07:00",
-      "sky": 59,
-      "pop": 1,
-      "tempF": 59,
+      "sky": 67,
+      "pop": 0,
+      "tempF": 60,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-06T20:00:00-07:00",
-      "sky": 59,
-      "pop": 1,
+      "sky": 67,
+      "pop": 0,
       "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-06T21:00:00-07:00",
-      "sky": 59,
-      "pop": 1,
-      "tempF": 56,
+      "sky": 67,
+      "pop": 0,
+      "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-06T22:00:00-07:00",
-      "sky": 59,
-      "pop": 1,
+      "sky": 67,
+      "pop": 0,
       "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-06T23:00:00-07:00",
-      "sky": 81,
+      "sky": 82,
       "pop": 1,
       "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T00:00:00-07:00",
-      "sky": 81,
+      "sky": 82,
       "pop": 1,
       "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T01:00:00-07:00",
-      "sky": 81,
+      "sky": 82,
       "pop": 1,
       "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T02:00:00-07:00",
-      "sky": 81,
+      "sky": 82,
       "pop": 1,
-      "tempF": 56,
+      "tempF": 55,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T03:00:00-07:00",
-      "sky": 81,
+      "sky": 82,
       "pop": 1,
       "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T04:00:00-07:00",
-      "sky": 81,
+      "sky": 82,
       "pop": 1,
-      "tempF": 55,
+      "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T05:00:00-07:00",
-      "sky": 74,
-      "pop": 0,
+      "sky": 79,
+      "pop": 1,
       "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T06:00:00-07:00",
-      "sky": 74,
-      "pop": 0,
-      "tempF": 56,
+      "sky": 79,
+      "pop": 1,
+      "tempF": 55,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T07:00:00-07:00",
-      "sky": 74,
-      "pop": 0,
+      "sky": 79,
+      "pop": 1,
       "tempF": 58,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T08:00:00-07:00",
-      "sky": 74,
-      "pop": 0,
+      "sky": 79,
+      "pop": 1,
       "tempF": 61,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T09:00:00-07:00",
-      "sky": 74,
-      "pop": 0,
-      "tempF": 64,
+      "sky": 79,
+      "pop": 1,
+      "tempF": 63,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T10:00:00-07:00",
-      "sky": 74,
-      "pop": 0,
-      "tempF": 66,
+      "sky": 79,
+      "pop": 1,
+      "tempF": 65,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-07T11:00:00-07:00",
-      "sky": 17,
-      "pop": 0,
+      "sky": 24,
+      "pop": 1,
       "tempF": 66,
       "short": "Sunny"
     },
     {
       "t": "2026-08-07T12:00:00-07:00",
-      "sky": 17,
-      "pop": 0,
+      "sky": 24,
+      "pop": 1,
       "tempF": 68,
       "short": "Sunny"
     },
     {
       "t": "2026-08-07T13:00:00-07:00",
-      "sky": 17,
-      "pop": 0,
-      "tempF": 69,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-08-07T14:00:00-07:00",
-      "sky": 17,
-      "pop": 0,
+      "sky": 24,
+      "pop": 1,
       "tempF": 68,
       "short": "Sunny"
     },
     {
-      "t": "2026-08-07T15:00:00-07:00",
-      "sky": 17,
-      "pop": 0,
+      "t": "2026-08-07T14:00:00-07:00",
+      "sky": 24,
+      "pop": 1,
       "tempF": 69,
       "short": "Sunny"
     },
     {
+      "t": "2026-08-07T15:00:00-07:00",
+      "sky": 24,
+      "pop": 1,
+      "tempF": 68,
+      "short": "Sunny"
+    },
+    {
       "t": "2026-08-07T16:00:00-07:00",
-      "sky": 17,
-      "pop": 0,
+      "sky": 24,
+      "pop": 1,
       "tempF": 67,
       "short": "Sunny"
     },
     {
       "t": "2026-08-07T17:00:00-07:00",
-      "sky": 33,
+      "sky": 45,
       "pop": 0,
-      "tempF": 65,
+      "tempF": 66,
       "short": "Mostly Sunny"
     },
     {
       "t": "2026-08-07T18:00:00-07:00",
-      "sky": 33,
+      "sky": 45,
       "pop": 0,
       "tempF": 64,
       "short": "Partly Cloudy"
     },
     {
       "t": "2026-08-07T19:00:00-07:00",
-      "sky": 33,
+      "sky": 45,
       "pop": 0,
-      "tempF": 63,
+      "tempF": 62,
       "short": "Partly Cloudy"
     },
     {
       "t": "2026-08-07T20:00:00-07:00",
-      "sky": 33,
+      "sky": 45,
       "pop": 0,
       "tempF": 59,
       "short": "Partly Cloudy"
     },
     {
       "t": "2026-08-07T21:00:00-07:00",
-      "sky": 33,
+      "sky": 45,
       "pop": 0,
-      "tempF": 59,
+      "tempF": 58,
       "short": "Partly Cloudy"
     },
     {
       "t": "2026-08-07T22:00:00-07:00",
-      "sky": 33,
+      "sky": 45,
       "pop": 0,
       "tempF": 58,
       "short": "Partly Cloudy"
     },
     {
       "t": "2026-08-07T23:00:00-07:00",
-      "sky": 66,
+      "sky": 67,
       "pop": 0,
-      "tempF": 58,
+      "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T00:00:00-07:00",
-      "sky": 66,
+      "sky": 67,
       "pop": 0,
-      "tempF": 58,
+      "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T01:00:00-07:00",
-      "sky": 66,
+      "sky": 67,
       "pop": 0,
-      "tempF": 58,
+      "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T02:00:00-07:00",
-      "sky": 66,
+      "sky": 67,
       "pop": 0,
       "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T03:00:00-07:00",
-      "sky": 66,
+      "sky": 67,
       "pop": 0,
       "tempF": 57,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T04:00:00-07:00",
-      "sky": 66,
+      "sky": 67,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T05:00:00-07:00",
-      "sky": 71,
+      "sky": 66,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 56,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-08-08T06:00:00-07:00",
-      "sky": 71,
+      "sky": 66,
       "pop": 0,
       "tempF": 57,
-      "short": "Mostly Cloudy"
+      "short": "Partly Sunny"
     },
     {
       "t": "2026-08-08T07:00:00-07:00",
-      "sky": 71,
+      "sky": 66,
       "pop": 0,
-      "tempF": 56,
-      "short": "Mostly Cloudy"
+      "tempF": 59,
+      "short": "Partly Sunny"
     },
     {
       "t": "2026-08-08T08:00:00-07:00",
-      "sky": 71,
+      "sky": 66,
       "pop": 0,
-      "tempF": 56,
-      "short": "Mostly Cloudy"
+      "tempF": 63,
+      "short": "Partly Sunny"
     },
     {
       "t": "2026-08-08T09:00:00-07:00",
-      "sky": 71,
+      "sky": 66,
       "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Cloudy"
+      "tempF": 67,
+      "short": "Partly Sunny"
     },
     {
       "t": "2026-08-08T10:00:00-07:00",
-      "sky": 71,
+      "sky": 66,
       "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
+      "tempF": 68,
+      "short": "Partly Sunny"
     },
     {
       "t": "2026-08-08T11:00:00-07:00",
-      "sky": 11,
+      "sky": 15,
       "pop": 0,
-      "tempF": 66,
+      "tempF": 70,
       "short": "Sunny"
     },
     {
       "t": "2026-08-08T12:00:00-07:00",
-      "sky": 11,
+      "sky": 15,
       "pop": 0,
-      "tempF": 69,
+      "tempF": 71,
       "short": "Sunny"
     },
     {
       "t": "2026-08-08T13:00:00-07:00",
-      "sky": 11,
+      "sky": 15,
       "pop": 0,
       "tempF": 72,
       "short": "Sunny"
     },
     {
       "t": "2026-08-08T14:00:00-07:00",
-      "sky": 11,
+      "sky": 15,
       "pop": 0,
-      "tempF": 73,
+      "tempF": 72,
       "short": "Sunny"
     },
     {
       "t": "2026-08-08T15:00:00-07:00",
-      "sky": 11,
+      "sky": 15,
       "pop": 0,
-      "tempF": 74,
+      "tempF": 71,
       "short": "Sunny"
     },
     {
       "t": "2026-08-08T16:00:00-07:00",
-      "sky": 11,
+      "sky": 15,
       "pop": 0,
-      "tempF": 74,
+      "tempF": 70,
       "short": "Sunny"
     },
     {
       "t": "2026-08-08T17:00:00-07:00",
-      "sky": 29,
+      "sky": 32,
       "pop": 0,
-      "tempF": 72,
+      "tempF": 69,
       "short": "Mostly Sunny"
     },
     {
       "t": "2026-08-08T18:00:00-07:00",
-      "sky": 29,
+      "sky": 32,
       "pop": 0,
-      "tempF": 70,
+      "tempF": 67,
       "short": "Partly Cloudy"
     },
     {
       "t": "2026-08-08T19:00:00-07:00",
-      "sky": 29,
+      "sky": 32,
       "pop": 0,
-      "tempF": 67,
+      "tempF": 64,
       "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-08-08T20:00:00-07:00",
+      "sky": 32,
+      "pop": 0,
+      "tempF": 61,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-08-08T21:00:00-07:00",
+      "sky": 32,
+      "pop": 0,
+      "tempF": 59,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-08-08T22:00:00-07:00",
+      "sky": 32,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-08-08T23:00:00-07:00",
+      "sky": 64,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-08-09T00:00:00-07:00",
+      "sky": 64,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-08-09T01:00:00-07:00",
+      "sky": 64,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-08-09T02:00:00-07:00",
+      "sky": 64,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-08-09T03:00:00-07:00",
+      "sky": 64,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-08-09T04:00:00-07:00",
+      "sky": 64,
+      "pop": 0,
+      "tempF": 57,
+      "short": "Mostly Cloudy"
     }
   ]
 }
