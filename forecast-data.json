@@ -1,32 +1,18 @@
 {
-  "updated": "2026-08-11T02:27:50.813501+00:00",
+  "updated": "2026-08-11T04:39:41.223601+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-08-10T19:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 63,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-08-10T20:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
       "t": "2026-08-10T21:00:00-07:00",
-      "sky": 90,
+      "sky": 33,
       "pop": 0,
       "tempF": 58,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-10T22:00:00-07:00",
-      "sky": 90,
+      "sky": 33,
       "pop": 0,
       "tempF": 58,
       "short": "Patchy Fog"
@@ -117,42 +103,42 @@
     },
     {
       "t": "2026-08-11T11:00:00-07:00",
-      "sky": 51,
+      "sky": 53,
       "pop": 10,
       "tempF": 68,
       "short": "Partly Sunny"
     },
     {
       "t": "2026-08-11T12:00:00-07:00",
-      "sky": 51,
+      "sky": 53,
       "pop": 10,
       "tempF": 70,
       "short": "Partly Sunny"
     },
     {
       "t": "2026-08-11T13:00:00-07:00",
-      "sky": 51,
+      "sky": 53,
       "pop": 10,
       "tempF": 70,
       "short": "Partly Sunny"
     },
     {
       "t": "2026-08-11T14:00:00-07:00",
-      "sky": 51,
+      "sky": 53,
       "pop": 10,
       "tempF": 69,
       "short": "Partly Sunny"
     },
     {
       "t": "2026-08-11T15:00:00-07:00",
-      "sky": 51,
+      "sky": 53,
       "pop": 10,
       "tempF": 69,
       "short": "Partly Sunny"
     },
     {
       "t": "2026-08-11T16:00:00-07:00",
-      "sky": 51,
+      "sky": 53,
       "pop": 10,
       "tempF": 69,
       "short": "Partly Sunny"
@@ -285,42 +271,42 @@
     },
     {
       "t": "2026-08-12T11:00:00-07:00",
-      "sky": 53,
+      "sky": 60,
       "pop": 15,
       "tempF": 65,
       "short": "Slight Chance T-storms"
     },
     {
       "t": "2026-08-12T12:00:00-07:00",
-      "sky": 53,
+      "sky": 60,
       "pop": 15,
       "tempF": 66,
       "short": "Slight Chance T-storms"
     },
     {
       "t": "2026-08-12T13:00:00-07:00",
-      "sky": 53,
+      "sky": 60,
       "pop": 15,
       "tempF": 65,
       "short": "Slight Chance T-storms"
     },
     {
       "t": "2026-08-12T14:00:00-07:00",
-      "sky": 53,
+      "sky": 60,
       "pop": 15,
       "tempF": 66,
       "short": "Slight Chance T-storms"
     },
     {
       "t": "2026-08-12T15:00:00-07:00",
-      "sky": 53,
+      "sky": 60,
       "pop": 15,
       "tempF": 65,
       "short": "Slight Chance T-storms"
     },
     {
       "t": "2026-08-12T16:00:00-07:00",
-      "sky": 53,
+      "sky": 60,
       "pop": 15,
       "tempF": 64,
       "short": "Slight Chance T-storms"
@@ -418,6 +404,20 @@
     },
     {
       "t": "2026-08-13T06:00:00-07:00",
+      "sky": 90,
+      "pop": 1,
+      "tempF": 55,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-08-13T07:00:00-07:00",
+      "sky": 90,
+      "pop": 1,
+      "tempF": 55,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-08-13T08:00:00-07:00",
       "sky": 90,
       "pop": 1,
       "tempF": 55,
