@@ -1,29 +1,8 @@
 {
-  "updated": "2026-08-13T02:47:19.010524+00:00",
+  "updated": "2026-08-13T05:05:49.153423+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-08-12T19:00:00-07:00",
-      "sky": 90,
-      "pop": 28,
-      "tempF": 57,
-      "short": "Chance Showers And Thunderstorms"
-    },
-    {
-      "t": "2026-08-12T20:00:00-07:00",
-      "sky": 90,
-      "pop": 28,
-      "tempF": 57,
-      "short": "Chance Showers And Thunderstorms"
-    },
-    {
-      "t": "2026-08-12T21:00:00-07:00",
-      "sky": 90,
-      "pop": 28,
-      "tempF": 57,
-      "short": "Chance Showers And Thunderstorms"
-    },
     {
       "t": "2026-08-12T22:00:00-07:00",
       "sky": 90,
@@ -421,6 +400,27 @@
       "sky": 90,
       "pop": 0,
       "tempF": 53,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-08-15T07:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 53,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-08-15T08:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 53,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-08-15T09:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 54,
       "short": "Patchy Fog"
     }
   ]
