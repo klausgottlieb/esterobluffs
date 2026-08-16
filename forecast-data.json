@@ -1,15 +1,8 @@
 {
-  "updated": "2026-08-16T04:50:14.029405+00:00",
+  "updated": "2026-08-16T05:43:29.423971+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-08-15T21:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Cloudy"
-    },
     {
       "t": "2026-08-15T22:00:00-07:00",
       "sky": 90,
@@ -21,21 +14,21 @@
       "t": "2026-08-15T23:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 55,
+      "tempF": 56,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T00:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 55,
+      "tempF": 56,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T01:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 55,
+      "tempF": 56,
       "short": "Cloudy"
     },
     {
@@ -49,14 +42,14 @@
       "t": "2026-08-16T03:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 55,
+      "tempF": 56,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T04:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 55,
+      "tempF": 56,
       "short": "Cloudy"
     },
     {
@@ -77,147 +70,147 @@
       "t": "2026-08-16T07:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 56,
+      "tempF": 57,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T08:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 59,
+      "tempF": 61,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T09:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 61,
+      "tempF": 63,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T10:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 63,
+      "tempF": 65,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T11:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 63,
+      "tempF": 65,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T12:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 64,
+      "tempF": 67,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T13:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 65,
+      "tempF": 66,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T14:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 65,
+      "tempF": 67,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T15:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 65,
+      "tempF": 66,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T16:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 63,
+      "tempF": 65,
       "short": "Cloudy"
     },
     {
       "t": "2026-08-16T17:00:00-07:00",
       "sky": 90,
-      "pop": 1,
-      "tempF": 62,
+      "pop": 0,
+      "tempF": 64,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-16T18:00:00-07:00",
       "sky": 90,
-      "pop": 1,
-      "tempF": 60,
+      "pop": 0,
+      "tempF": 62,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-16T19:00:00-07:00",
       "sky": 90,
-      "pop": 1,
-      "tempF": 59,
+      "pop": 0,
+      "tempF": 60,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-16T20:00:00-07:00",
       "sky": 90,
-      "pop": 1,
-      "tempF": 55,
+      "pop": 0,
+      "tempF": 56,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-16T21:00:00-07:00",
       "sky": 90,
-      "pop": 1,
-      "tempF": 54,
+      "pop": 0,
+      "tempF": 56,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-16T22:00:00-07:00",
       "sky": 90,
-      "pop": 1,
-      "tempF": 54,
+      "pop": 0,
+      "tempF": 57,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-16T23:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 54,
+      "tempF": 57,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T00:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 54,
+      "tempF": 56,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T01:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 54,
+      "tempF": 55,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T02:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 54,
+      "tempF": 55,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T03:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 54,
+      "tempF": 55,
       "short": "Patchy Fog"
     },
     {
@@ -230,83 +223,83 @@
     {
       "t": "2026-08-17T05:00:00-07:00",
       "sky": 90,
-      "pop": 0,
-      "tempF": 54,
+      "pop": 1,
+      "tempF": 55,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T06:00:00-07:00",
       "sky": 90,
-      "pop": 0,
+      "pop": 1,
       "tempF": 55,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T07:00:00-07:00",
       "sky": 90,
-      "pop": 0,
+      "pop": 1,
       "tempF": 55,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T08:00:00-07:00",
       "sky": 90,
-      "pop": 0,
-      "tempF": 59,
+      "pop": 1,
+      "tempF": 58,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T09:00:00-07:00",
       "sky": 90,
-      "pop": 0,
-      "tempF": 63,
+      "pop": 1,
+      "tempF": 64,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T10:00:00-07:00",
       "sky": 90,
-      "pop": 0,
-      "tempF": 66,
+      "pop": 1,
+      "tempF": 64,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T11:00:00-07:00",
-      "sky": 47,
+      "sky": 35,
       "pop": 0,
       "tempF": 67,
       "short": "Mostly Sunny"
     },
     {
       "t": "2026-08-17T12:00:00-07:00",
-      "sky": 47,
-      "pop": 0,
-      "tempF": 69,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-17T13:00:00-07:00",
-      "sky": 47,
-      "pop": 0,
-      "tempF": 69,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-08-17T14:00:00-07:00",
-      "sky": 47,
+      "sky": 35,
       "pop": 0,
       "tempF": 68,
       "short": "Mostly Sunny"
     },
     {
+      "t": "2026-08-17T13:00:00-07:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 68,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-08-17T14:00:00-07:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 69,
+      "short": "Mostly Sunny"
+    },
+    {
       "t": "2026-08-17T15:00:00-07:00",
-      "sky": 47,
+      "sky": 35,
       "pop": 0,
       "tempF": 68,
       "short": "Mostly Sunny"
     },
     {
       "t": "2026-08-17T16:00:00-07:00",
-      "sky": 47,
+      "sky": 35,
       "pop": 0,
       "tempF": 67,
       "short": "Mostly Sunny"
@@ -329,42 +322,42 @@
       "t": "2026-08-17T19:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 62,
+      "tempF": 61,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T20:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 61,
+      "tempF": 58,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T21:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 60,
+      "tempF": 57,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T22:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 59,
+      "tempF": 57,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-17T23:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 58,
+      "tempF": 57,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-18T00:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 58,
+      "tempF": 57,
       "short": "Patchy Fog"
     },
     {
@@ -392,21 +385,21 @@
       "t": "2026-08-18T04:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 58,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-18T05:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 58,
       "short": "Patchy Fog"
     },
     {
       "t": "2026-08-18T06:00:00-07:00",
       "sky": 90,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 58,
       "short": "Patchy Fog"
     },
     {
@@ -418,6 +411,13 @@
     },
     {
       "t": "2026-08-18T08:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 57,
+      "short": "Patchy Fog"
+    },
+    {
+      "t": "2026-08-18T09:00:00-07:00",
       "sky": 90,
       "pop": 0,
       "tempF": 59,
