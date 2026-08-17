@@ -1,34 +1,19 @@
 {
-  "harvested_at": "2026-08-10T07:34:55.395182-07:00",
+  "harvested_at": "2026-08-17T06:56:48.624406-07:00",
   "events": [
-    {
-      "title": "Cayucos Farmers Market",
-      "recurrence": "weekly",
-      "window": "Every Friday, 10am to 12:30pm, Memorial Day through Labor Day (through Sept 7, 2026)",
-      "chip_top": "Fri",
-      "chip_bottom": "10am",
-      "season_end": "2026-09-07",
-      "venue": "Corner of D Street & Ocean Avenue, Downtown Cayucos",
-      "area": "cayucos",
-      "category": "market",
-      "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://highway1roadtrip.com/things-to-do/cayucos-farmers-market/",
-      "summary": "Local farmers, ranchers, bakers & food vendors fill downtown Cayucos every summer Friday morning. Free to browse; great eats steps from the pier.",
-      "confidence": 92
-    },
     {
       "title": "Schooners Beachside Live Summer Concert Series",
       "recurrence": "weekly",
-      "window": "Sundays during summer 2026, through Labor Day weekend",
-      "chip_top": "Sun",
-      "chip_bottom": "Varies",
-      "season_end": "2026-09-07",
-      "venue": "Schooners Restaurant, 10 Cayucos Drive, Cayucos",
+      "window": "Every Saturday & Sunday, 1pm–4pm, through October 2026",
+      "chip_top": "Sat/Sun",
+      "chip_bottom": "1pm",
+      "season_end": "2026-10-31",
+      "venue": "Schooners Cayucos, 24 N. Ocean Ave, Cayucos",
       "area": "cayucos",
       "category": "music",
       "organizer": "Schooners Cayucos",
       "source_url": "https://www.schoonerscayucos.com/event/sunday-beachside-live/",
-      "summary": "Free outdoor Sunday concerts on the beach at Schooners featuring house bands, local talent, and touring artists. 2026 lineup confirmed.",
+      "summary": "Free outdoor beachside concerts every Sat & Sun at Schooners featuring local bands, touring artists, and house favorites through October.",
       "confidence": 88
     },
     {
@@ -38,46 +23,68 @@
       "chip_top": "Wed",
       "chip_bottom": "Evening",
       "season_end": "2026-12-31",
-      "venue": "Schooners Restaurant, 10 Cayucos Drive, Cayucos",
+      "venue": "Schooners Cayucos, 24 N. Ocean Ave, Cayucos",
       "area": "cayucos",
       "category": "music",
       "organizer": "Schooners Cayucos",
       "source_url": "https://www.schoonerscayucos.com/live/",
-      "summary": "Weekly open mic every Wednesday at Schooners — drop in and take the stage or enjoy local performers at this beachside Cayucos staple.",
+      "summary": "Weekly open mic at Schooners welcomes local musicians year-round. Last-Tuesday Kam's Jams and last-Thursday Song-A-Thon also run monthly.",
       "confidence": 85
     },
     {
       "title": "ECOSLO Cayucos Beach Cleanup",
       "start": "2026-09-19T09:00:00-07:00",
-      "venue": "Cayucos State Beach, Cayucos",
+      "venue": "Cayucos Beach / Cayucos Pier",
       "area": "cayucos",
       "category": "community",
-      "organizer": "ECOSLO",
-      "source_url": "https://highway1roadtrip.com/events/",
-      "summary": "Volunteer beach cleanup targeting peak-season litter along the Cayucos shoreline. Part of ECOSLO's 2026 four-cleanup series at this location.",
-      "confidence": 82
+      "organizer": "ECOSLO (Environmental Center of San Luis Obispo)",
+      "source_url": "https://highway1roadtrip.com/events/cayucos-beach-cleanups/",
+      "summary": "Volunteer beach litter cleanup near the Cayucos Pier, part of California Coastal Cleanup Day. ECOSLO provides gloves, bags & supplies.",
+      "confidence": 92
     },
     {
-      "title": "Cayucos Antique Street Faire — Fall Edition",
+      "title": "Cayucos Fall Antique Street Faire",
       "start": "2026-10-18T07:00:00-07:00",
-      "venue": "N. Ocean Avenue (Cayucos Drive to E Street), Cayucos",
+      "venue": "N. Ocean Ave (Cayucos Dr to E St), Downtown Cayucos",
       "area": "cayucos",
       "category": "market",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.cayucoschamber.com/antique-faire",
-      "summary": "Over 100 antique, vintage & collectibles vendors line Ocean Ave from 7am–3pm. Food court at N. Ocean & D St. Fall 2026 applications now open.",
+      "summary": "40th edition of this free outdoor antique faire with 100+ dealers selling vintage, collectibles & crafts steps from the beach. 7am–3pm, rain or shine.",
       "confidence": 96
     },
     {
       "title": "35th Annual Cayucos Car Show",
       "start": "2026-11-07T08:00:00-08:00",
-      "venue": "N. Ocean Avenue, Downtown Cayucos",
+      "venue": "N. Ocean Ave & Cayucos Dr, Downtown Cayucos",
       "area": "cayucos",
       "category": "festival",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
-      "summary": "Classic cars fill downtown Cayucos 8am–4pm, plus a live band, beer garden & Lions Club BBQ. Check-in party Fri Nov 6 at Nelson's Garage.",
-      "confidence": 98
+      "summary": "Classic cars cruise downtown Cayucos 8am–4pm with a live band, beer garden & Lions BBQ lunch. Friday check-in party at Nelson's Garage.",
+      "confidence": 97
+    },
+    {
+      "title": "Christmas in Cayucos – Tree Lighting",
+      "start": "2026-12-11T17:00:00-08:00",
+      "venue": "Downtown Cayucos (Ocean Ave)",
+      "area": "cayucos",
+      "category": "community",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://hellomorrobay.com/organizer/cayucos-chamber-of-commerce/",
+      "summary": "Free community tree lighting ceremony with Santa arriving by fire engine. Kicks off the Christmas in Cayucos weekend. 5–6:30pm.",
+      "confidence": 90
+    },
+    {
+      "title": "Christmas in Cayucos – Holiday Stroll",
+      "start": "2026-12-12T15:00:00-08:00",
+      "venue": "Ocean Ave, Downtown Cayucos",
+      "area": "cayucos",
+      "category": "festival",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://hellomorrobay.com/organizer/cayucos-chamber-of-commerce/",
+      "summary": "Free festive holiday stroll along Ocean Ave with seasonal activities and local shops. 3–6pm, part of the annual Christmas in Cayucos celebration.",
+      "confidence": 90
     }
   ]
 }

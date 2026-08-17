@@ -1,21 +1,29 @@
 {
-  "harvested_at": "2026-08-10T07:34:57.779161-07:00",
+  "harvested_at": "2026-08-17T06:56:50.642101-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
-      "recurrence": "weekly",
-      "window": "Every Wednesday, 10:30am at the Cayucos library",
-      "chip_top": "Wed",
-      "chip_bottom": "10:30am",
-      "season_end": "2026-08-26",
+      "start": "2026-08-19T10:30:00-07:00",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28756",
-      "confidence": 95
+      "summary": "Family event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26520",
+      "confidence": 90
+    },
+    {
+      "title": "Cayucos Library Storytime",
+      "start": "2026-08-26T10:30:00-07:00",
+      "venue": "Cayucos Library Meeting Room at Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Family event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28757",
+      "confidence": 90
     },
     {
       "title": "Build with Legos",
@@ -51,6 +59,30 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Family event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/games-patio-33384",
+      "confidence": 90
+    },
+    {
+      "title": "Manhattan Short Film Festival",
+      "start": "2026-10-01T13:30:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32624",
+      "confidence": 90
+    },
+    {
+      "title": "Hispanic Heritage Month Craft Fair",
+      "start": "2026-09-24T00:00:00-07:00",
+      "venue": "Cambria Library",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "library",
+      "organizer": "SLO County Library, Cambria Branch",
+      "summary": "Family event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/hispanic-heritage-month-craft-fair-33475",
       "confidence": 90
     },
     {
