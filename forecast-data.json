@@ -1,22 +1,8 @@
 {
-  "updated": "2026-08-18T11:41:12.697438+00:00",
+  "updated": "2026-08-18T13:08:10.752058+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-08-18T04:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-08-18T05:00:00-07:00",
-      "sky": 80,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Mostly Cloudy"
-    },
     {
       "t": "2026-08-18T06:00:00-07:00",
       "sky": 80,
@@ -422,6 +408,20 @@
       "pop": 0,
       "tempF": 69,
       "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-08-20T16:00:00-07:00",
+      "sky": 36,
+      "pop": 0,
+      "tempF": 69,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-08-20T17:00:00-07:00",
+      "sky": 90,
+      "pop": 0,
+      "tempF": 68,
+      "short": "Patchy Fog"
     }
   ]
 }
