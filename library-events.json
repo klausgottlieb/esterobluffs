@@ -1,18 +1,6 @@
 {
-  "harvested_at": "2026-08-17T06:56:50.642101-07:00",
+  "harvested_at": "2026-08-24T07:07:58.336094-07:00",
   "events": [
-    {
-      "title": "Cayucos Library Storytime",
-      "start": "2026-08-19T10:30:00-07:00",
-      "venue": "Cayucos Library Meeting Room at Cayucos Library",
-      "area": "cayucos",
-      "town": null,
-      "category": "library",
-      "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Family event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-26520",
-      "confidence": 90
-    },
     {
       "title": "Cayucos Library Storytime",
       "start": "2026-08-26T10:30:00-07:00",
@@ -23,18 +11,6 @@
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Family event at the Cayucos library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28757",
-      "confidence": 90
-    },
-    {
-      "title": "Build with Legos",
-      "start": "2026-08-19T15:00:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Family event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/build-legos-32858",
       "confidence": 90
     },
     {
@@ -74,6 +50,18 @@
       "confidence": 90
     },
     {
+      "title": "Internet Safety 101",
+      "start": "2026-10-29T13:00:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/internet-safety-101-31540",
+      "confidence": 90
+    },
+    {
       "title": "Hispanic Heritage Month Craft Fair",
       "start": "2026-09-24T00:00:00-07:00",
       "venue": "Cambria Library",
@@ -83,6 +71,30 @@
       "organizer": "SLO County Library, Cambria Branch",
       "summary": "Family event at the Cambria library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/hispanic-heritage-month-craft-fair-33475",
+      "confidence": 90
+    },
+    {
+      "title": "Cambria Library - Costume Exchange/Intercambio de Disfraces",
+      "start": "2026-10-03T00:00:00-07:00",
+      "venue": "Cambria Library",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "library",
+      "organizer": "SLO County Library, Cambria Branch",
+      "summary": "Family event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cambria-library-costume-exchangeintercambio-de-disfraces-33776",
+      "confidence": 90
+    },
+    {
+      "title": "Cambria Library - Costume Exchange/Intercambio de Disfraces",
+      "start": "2026-10-06T00:00:00-07:00",
+      "venue": "Cambria Library",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "library",
+      "organizer": "SLO County Library, Cambria Branch",
+      "summary": "Family event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cambria-library-costume-exchange-33618",
       "confidence": 90
     },
     {
