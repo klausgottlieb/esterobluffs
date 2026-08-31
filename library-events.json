@@ -1,16 +1,32 @@
 {
-  "harvested_at": "2026-08-24T07:07:58.336094-07:00",
+  "harvested_at": "2026-08-31T12:33:21.250887-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
-      "start": "2026-08-26T10:30:00-07:00",
+      "recurrence": "weekly",
+      "window": "Every Wednesday, 10:30am at the Cayucos library",
+      "chip_top": "Wed",
+      "chip_bottom": "10:30am",
+      "season_end": "2026-12-30",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Family event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/copy-cayucos-library-storytime-28757",
+      "summary": "Recurring family program at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33838",
+      "confidence": 95
+    },
+    {
+      "title": "Baby & Toddler Music Class",
+      "start": "2026-09-12T10:00:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Family event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/baby-toddler-music-class-33389",
       "confidence": 90
     },
     {
@@ -107,6 +123,18 @@
       "organizer": "SLO County Library, Cambria Branch",
       "summary": "Public event at the Cambria library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32625",
+      "confidence": 90
+    },
+    {
+      "title": "Spooky Craft Fair",
+      "start": "2026-10-22T00:00:00-07:00",
+      "venue": "Cambria Library",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "library",
+      "organizer": "SLO County Library, Cambria Branch",
+      "summary": "Family event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/spooky-craft-fair-33486",
       "confidence": 90
     }
   ]
