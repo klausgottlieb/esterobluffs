@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T07:25:35.727774+00:00",
+  "updated": "2026-09-01T07:30:39.338096+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -14,12 +14,12 @@
     "partition_measured": false
   },
   "wind": {
-    "station": "46011",
-    "name": "Santa Maria, CA (open ocean)",
-    "time": "2026-09-01T06:50:00+00:00",
-    "wspd_kt": 9.7,
-    "gst_kt": 11.7,
-    "wdir_deg": 320.0
+    "station": "PSLC1",
+    "name": "Port San Luis, CA",
+    "time": "2026-09-01T06:48:00+00:00",
+    "wspd_kt": null,
+    "gst_kt": null,
+    "wdir_deg": null
   },
   "wave_offshore": {
     "provenance": "NDBC buoy 46215 (raw offshore)",
