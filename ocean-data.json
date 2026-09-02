@@ -1,26 +1,17 @@
 {
-  "updated": "2026-09-02T13:10:36.852799+00:00",
+  "updated": "2026-09-02T13:15:36.513599+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
     "lon": -120.916,
-    "provenance": "NDBC buoy 46215 (raw offshore)",
-    "time": "2026-09-02T12:26:00+00:00",
-    "wvht_m": 0.7,
-    "wvht_ft": 2.3,
-    "dpd_s": 13.0,
-    "apd_s": 6.4,
-    "mwd_deg": 206.0,
-    "partition_measured": true,
-    "swh_m": 0.4,
-    "swh_ft": 1.31,
-    "swp_s": 12.5,
-    "swd_deg": 202.5,
-    "wwh_m": 0.5,
-    "wwh_ft": 1.64,
-    "wwp_s": 9.9,
-    "wwd_deg": 202.5,
-    "steepness": null
+    "provenance": "CDIP MOP SL405 (modeled nearshore)",
+    "time": "2026-09-02T12:00:00+00:00",
+    "wvht_m": 0.47,
+    "wvht_ft": 1.53,
+    "dpd_s": 13.333333,
+    "apd_s": null,
+    "mwd_deg": 207.98067,
+    "partition_measured": false
   },
   "wind": {
     "station": "46011",
@@ -29,5 +20,24 @@
     "wspd_kt": 11.7,
     "gst_kt": 13.6,
     "wdir_deg": 340.0
+  },
+  "wave_offshore": {
+    "provenance": "NDBC buoy 46215 (raw offshore)",
+    "time": "2026-09-02T12:56:00+00:00",
+    "wvht_m": 0.7,
+    "wvht_ft": 2.3,
+    "dpd_s": 11.0,
+    "apd_s": 6.4,
+    "mwd_deg": 267.0,
+    "partition_measured": true,
+    "swh_m": 0.4,
+    "swh_ft": 1.31,
+    "swp_s": 10.5,
+    "swd_deg": 270,
+    "wwh_m": 0.5,
+    "wwh_ft": 1.64,
+    "wwp_s": 9.1,
+    "wwd_deg": 202.5,
+    "steepness": null
   }
 }
