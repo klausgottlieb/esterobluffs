@@ -1,70 +1,35 @@
 {
-  "updated": "2026-09-02T09:38:38.791829+00:00",
+  "updated": "2026-09-02T14:30:11.159386+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-09-02T02:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 50,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-09-02T03:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 50,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-09-02T04:00:00-07:00",
-      "sky": 90,
-      "pop": 0,
-      "tempF": 50,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-09-02T05:00:00-07:00",
-      "sky": 79,
-      "pop": 0,
-      "tempF": 51,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-09-02T06:00:00-07:00",
-      "sky": 79,
-      "pop": 0,
-      "tempF": 51,
-      "short": "Mostly Cloudy"
-    },
-    {
       "t": "2026-09-02T07:00:00-07:00",
-      "sky": 79,
+      "sky": 1,
       "pop": 0,
       "tempF": 51,
-      "short": "Mostly Cloudy"
+      "short": "Sunny"
     },
     {
       "t": "2026-09-02T08:00:00-07:00",
-      "sky": 79,
+      "sky": 1,
       "pop": 0,
       "tempF": 58,
-      "short": "Mostly Cloudy"
+      "short": "Sunny"
     },
     {
       "t": "2026-09-02T09:00:00-07:00",
-      "sky": 79,
+      "sky": 1,
       "pop": 0,
       "tempF": 63,
-      "short": "Mostly Cloudy"
+      "short": "Sunny"
     },
     {
       "t": "2026-09-02T10:00:00-07:00",
-      "sky": 79,
+      "sky": 1,
       "pop": 0,
       "tempF": 65,
-      "short": "Mostly Cloudy"
+      "short": "Sunny"
     },
     {
       "t": "2026-09-02T11:00:00-07:00",
@@ -422,6 +387,41 @@
       "pop": 0,
       "tempF": 65,
       "short": "Sunny"
+    },
+    {
+      "t": "2026-09-04T14:00:00-07:00",
+      "sky": 8,
+      "pop": 0,
+      "tempF": 66,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-09-04T15:00:00-07:00",
+      "sky": 8,
+      "pop": 0,
+      "tempF": 67,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-09-04T16:00:00-07:00",
+      "sky": 8,
+      "pop": 0,
+      "tempF": 67,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-09-04T17:00:00-07:00",
+      "sky": 10,
+      "pop": 0,
+      "tempF": 66,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-09-04T18:00:00-07:00",
+      "sky": 10,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Mostly Clear"
     }
   ]
 }
