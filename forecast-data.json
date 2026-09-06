@@ -1,61 +1,33 @@
 {
-  "updated": "2026-09-06T10:58:37.293440+00:00",
+  "updated": "2026-09-06T14:11:23.465073+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-09-06T03:00:00-07:00",
-      "sky": 17,
-      "pop": 1,
-      "tempF": 55,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-09-06T04:00:00-07:00",
-      "sky": 17,
-      "pop": 1,
-      "tempF": 55,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-09-06T05:00:00-07:00",
-      "sky": 10,
-      "pop": 1,
-      "tempF": 55,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-09-06T06:00:00-07:00",
-      "sky": 10,
-      "pop": 1,
-      "tempF": 55,
-      "short": "Sunny"
-    },
-    {
       "t": "2026-09-06T07:00:00-07:00",
       "sky": 10,
-      "pop": 1,
+      "pop": 0,
       "tempF": 55,
       "short": "Sunny"
     },
     {
       "t": "2026-09-06T08:00:00-07:00",
       "sky": 10,
-      "pop": 1,
+      "pop": 0,
       "tempF": 60,
       "short": "Sunny"
     },
     {
       "t": "2026-09-06T09:00:00-07:00",
       "sky": 10,
-      "pop": 1,
+      "pop": 0,
       "tempF": 66,
       "short": "Sunny"
     },
     {
       "t": "2026-09-06T10:00:00-07:00",
       "sky": 10,
-      "pop": 1,
+      "pop": 0,
       "tempF": 66,
       "short": "Sunny"
     },
@@ -422,6 +394,34 @@
       "pop": 19,
       "tempF": 73,
       "short": "Slight Chance Rain Showers"
+    },
+    {
+      "t": "2026-09-08T15:00:00-07:00",
+      "sky": 45,
+      "pop": 19,
+      "tempF": 73,
+      "short": "Slight Chance Rain Showers"
+    },
+    {
+      "t": "2026-09-08T16:00:00-07:00",
+      "sky": 45,
+      "pop": 19,
+      "tempF": 71,
+      "short": "Slight Chance Rain Showers"
+    },
+    {
+      "t": "2026-09-08T17:00:00-07:00",
+      "sky": 85,
+      "pop": 7,
+      "tempF": 69,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-09-08T18:00:00-07:00",
+      "sky": 85,
+      "pop": 7,
+      "tempF": 68,
+      "short": "Mostly Cloudy"
     }
   ]
 }
