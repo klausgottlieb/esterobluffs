@@ -1,22 +1,8 @@
 {
-  "updated": "2026-09-05T22:57:18.707174+00:00",
+  "updated": "2026-09-06T00:59:06.322326+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-09-05T15:00:00-07:00",
-      "sky": 6,
-      "pop": 0,
-      "tempF": 69,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-09-05T16:00:00-07:00",
-      "sky": 6,
-      "pop": 0,
-      "tempF": 68,
-      "short": "Sunny"
-    },
     {
       "t": "2026-09-05T17:00:00-07:00",
       "sky": 12,
@@ -421,6 +407,20 @@
       "sky": 29,
       "pop": 2,
       "tempF": 58,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-09-08T03:00:00-07:00",
+      "sky": 29,
+      "pop": 2,
+      "tempF": 58,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-09-08T04:00:00-07:00",
+      "sky": 29,
+      "pop": 2,
+      "tempF": 57,
       "short": "Partly Cloudy"
     }
   ]
