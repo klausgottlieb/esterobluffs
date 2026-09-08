@@ -1,29 +1,8 @@
 {
-  "updated": "2026-09-08T18:41:20.829427+00:00",
+  "updated": "2026-09-08T21:52:06.005940+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-09-08T11:00:00-07:00",
-      "sky": 53,
-      "pop": 23,
-      "tempF": 72,
-      "short": "Slight Chance Showers And Thunderstorms"
-    },
-    {
-      "t": "2026-09-08T12:00:00-07:00",
-      "sky": 53,
-      "pop": 23,
-      "tempF": 74,
-      "short": "Slight Chance Showers And Thunderstorms"
-    },
-    {
-      "t": "2026-09-08T13:00:00-07:00",
-      "sky": 53,
-      "pop": 23,
-      "tempF": 74,
-      "short": "Slight Chance Showers And Thunderstorms"
-    },
     {
       "t": "2026-09-08T14:00:00-07:00",
       "sky": 53,
@@ -421,6 +400,27 @@
       "sky": 4,
       "pop": 0,
       "tempF": 63,
+      "short": "Clear"
+    },
+    {
+      "t": "2026-09-10T23:00:00-07:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 62,
+      "short": "Clear"
+    },
+    {
+      "t": "2026-09-11T00:00:00-07:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 62,
+      "short": "Clear"
+    },
+    {
+      "t": "2026-09-11T01:00:00-07:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 61,
       "short": "Clear"
     }
   ]
