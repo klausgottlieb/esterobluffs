@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-09-07T11:18:24.349361-07:00",
+  "harvested_at": "2026-09-14T11:43:27.137287-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -7,27 +7,15 @@
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2027-01-06",
+      "season_end": "2026-11-25",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33839",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33840",
       "confidence": 95
-    },
-    {
-      "title": "Baby & Toddler Music Class",
-      "start": "2026-09-12T10:00:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Family event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/baby-toddler-music-class-33389",
-      "confidence": 90
     },
     {
       "title": "Beginning Coding for Kids",
