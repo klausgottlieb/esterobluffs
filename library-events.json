@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-09-14T11:43:27.137287-07:00",
+  "harvested_at": "2026-09-21T11:47:32.416924-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -7,26 +7,50 @@
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2026-11-25",
+      "season_end": "2026-12-02",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33840",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33841",
       "confidence": 95
     },
     {
-      "title": "Beginning Coding for Kids",
-      "start": "2026-09-16T15:00:00-07:00",
+      "title": "Crafting Legacies - Build an Ofrenda!",
+      "start": "2026-10-17T10:30:00-07:00",
+      "venue": "Cayucos Library Meeting Room at Cayucos Library",
+      "area": "cayucos",
+      "town": null,
+      "category": "library",
+      "organizer": "SLO County Library, Cayucos Branch",
+      "summary": "Public event at the Cayucos library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/crafting-legacies-build-ofrenda-34648",
+      "confidence": 90
+    },
+    {
+      "title": "TLC - Creative Writing Workshop",
+      "start": "2026-09-23T10:30:00-07:00",
       "venue": "Morro Bay Library Program Room at Morro Bay Library",
       "area": "nearby",
       "town": "Morro Bay",
       "category": "library",
       "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Family event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/beginning-coding-kids-33380",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/creative-writing-workshop-33080",
+      "confidence": 90
+    },
+    {
+      "title": "TLC - Creative Writing Workshop",
+      "start": "2026-09-30T10:30:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/creative-writing-workshop-33081",
       "confidence": 90
     },
     {
@@ -51,6 +75,30 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Public event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32624",
+      "confidence": 90
+    },
+    {
+      "title": "Spooky Cartooning Workshop",
+      "start": "2026-10-14T15:00:00-07:00",
+      "venue": "Morro Bay Library Program Room at Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Public event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/comic-book-drawing-class-34304",
+      "confidence": 90
+    },
+    {
+      "title": "Morro Bay Library: Costume Exchange/Intercambio de Disfraces",
+      "start": "2026-10-20T00:00:00-07:00",
+      "venue": "Morro Bay Library",
+      "area": "nearby",
+      "town": "Morro Bay",
+      "category": "library",
+      "organizer": "SLO County Library, Morro Bay Branch",
+      "summary": "Family event at the Morro Bay library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/morro-bay-costume-exchange-34138",
       "confidence": 90
     },
     {
@@ -102,7 +150,7 @@
       "confidence": 90
     },
     {
-      "title": "Cambria Library - Costume Exchange/Intercambio de Disfraces",
+      "title": "Cambria Library: Costume Exchange/Intercambio de Disfraces",
       "start": "2026-10-03T00:00:00-07:00",
       "venue": "Cambria Library",
       "area": "nearby",
@@ -114,7 +162,7 @@
       "confidence": 90
     },
     {
-      "title": "Cambria Library - Costume Exchange/Intercambio de Disfraces",
+      "title": "Cambria Library: Costume Exchange/Intercambio de Disfraces",
       "start": "2026-10-06T00:00:00-07:00",
       "venue": "Cambria Library",
       "area": "nearby",
@@ -135,6 +183,18 @@
       "organizer": "SLO County Library, Cambria Branch",
       "summary": "Public event at the Cambria library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/manhattan-short-film-festival-32625",
+      "confidence": 90
+    },
+    {
+      "title": "Crafting Legacies - Build an Ofrenda!",
+      "start": "2026-10-15T13:30:00-07:00",
+      "venue": "Cambria Library",
+      "area": "nearby",
+      "town": "Cambria",
+      "category": "library",
+      "organizer": "SLO County Library, Cambria Branch",
+      "summary": "Public event at the Cambria library branch.",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/crafting-legacies-build-ofrenda-34644",
       "confidence": 90
     },
     {

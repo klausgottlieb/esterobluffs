@@ -1,60 +1,27 @@
 {
-  "harvested_at": "2026-09-14T11:43:24.005828-07:00",
+  "harvested_at": "2026-09-21T11:47:28.766634-07:00",
   "events": [
     {
-      "title": "ECOSLO Beach Cleanup at Cayucos Beach",
-      "start": "2026-09-19T09:00:00-07:00",
-      "venue": "Cayucos Beach",
-      "area": "cayucos",
-      "category": "community",
-      "organizer": "ECOSLO / California Coastal Commission",
-      "source_url": "https://highway1roadtrip.com/events/",
-      "summary": "Volunteer beach cleanup at Cayucos Beach for statewide Coastal Cleanup Day. Remove litter from this high-use stretch of Central Coast shoreline.",
-      "confidence": 88
-    },
-    {
-      "title": "Cayucos Endless Summer Festival",
-      "start": "2026-09-18T18:00:00-07:00",
-      "venue": "Cayucos Landing & Downtown Ocean Ave",
-      "area": "cayucos",
-      "category": "festival",
-      "organizer": "Friends of Cayucos / Cayucos Chamber of Commerce",
-      "source_url": "https://www.cayucoschamber.com/endlesssummerfestival",
-      "summary": "3-day community festival with live music, Lions BBQ, Lioness breakfast, Rotary beer & wine tasting, street faire, and coastal history talks.",
-      "confidence": 62
-    },
-    {
-      "title": "Cayucos Antique Street Faire (Fall)",
+      "title": "Cayucos Antique Street Faire – Fall Edition",
       "start": "2026-10-18T07:00:00-07:00",
-      "venue": "Ocean Ave between E St & Cayucos Dr",
+      "venue": "Ocean Avenue (Cayucos Drive to E Street), Cayucos",
       "area": "cayucos",
       "category": "market",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.cayucoschamber.com/antique-faire",
-      "summary": "Twice-yearly antique street fair takes over Ocean Ave 7am–3pm. Hundreds of booths with vintage furniture, collectibles, jewelry, and more.",
-      "confidence": 97
+      "summary": "100+ antique & collectible vendors fill pedestrian-only Ocean Ave, 7 am–3 pm. Street closed 3 am–5 pm for setup/breakdown.",
+      "confidence": 95
     },
     {
       "title": "35th Annual Cayucos Car Show",
       "start": "2026-11-07T08:00:00-08:00",
-      "venue": "N. Ocean Ave, Downtown Cayucos",
-      "area": "cayucos",
-      "category": "festival",
-      "organizer": "Cayucos Chamber of Commerce / Cayucos Lions Club",
-      "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
-      "summary": "Classic cars line downtown Cayucos 8am–4pm. Includes Lions BBQ lunch, live band, and beer garden. Friday check-in party at Nelson's Garage.",
-      "confidence": 97
-    },
-    {
-      "title": "Christmas in Cayucos — Holiday Open House & Tree Lighting",
-      "start": "2026-12-11T17:00:00-08:00",
-      "venue": "Downtown Cayucos / Ocean Ave",
+      "venue": "N. Ocean Avenue, Cayucos",
       "area": "cayucos",
       "category": "community",
-      "organizer": "Cayucos Chamber of Commerce / Cayucos Lioness Club",
-      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Annual holiday evening with merchant open house, carolers, Santa arriving by fire engine, carriage rides, and community tree lighting on Ocean Ave.",
-      "confidence": 52
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
+      "summary": "Classic cars line downtown Cayucos, 8 am–4 pm, rain or shine. Live band, beer garden & Lions BBQ lunch. Check-in party Fri Nov 6 at Nelson's Garage.",
+      "confidence": 97
     }
   ]
 }
