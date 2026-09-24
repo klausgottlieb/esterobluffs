@@ -1,43 +1,8 @@
 {
-  "updated": "2026-09-24T10:02:20.649488+00:00",
+  "updated": "2026-09-24T15:07:30.530364+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-09-24T03:00:00-07:00",
-      "sky": 44,
-      "pop": 0,
-      "tempF": 65,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-09-24T04:00:00-07:00",
-      "sky": 44,
-      "pop": 0,
-      "tempF": 65,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-09-24T05:00:00-07:00",
-      "sky": 43,
-      "pop": 0,
-      "tempF": 64,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-09-24T06:00:00-07:00",
-      "sky": 43,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-09-24T07:00:00-07:00",
-      "sky": 43,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Sunny"
-    },
     {
       "t": "2026-09-24T08:00:00-07:00",
       "sky": 43,
@@ -422,6 +387,41 @@
       "pop": 0,
       "tempF": 74,
       "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-09-26T15:00:00-07:00",
+      "sky": 32,
+      "pop": 0,
+      "tempF": 74,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-09-26T16:00:00-07:00",
+      "sky": 32,
+      "pop": 0,
+      "tempF": 73,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-09-26T17:00:00-07:00",
+      "sky": 45,
+      "pop": 0,
+      "tempF": 71,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-09-26T18:00:00-07:00",
+      "sky": 45,
+      "pop": 0,
+      "tempF": 68,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-09-26T19:00:00-07:00",
+      "sky": 45,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Partly Cloudy"
     }
   ]
 }
