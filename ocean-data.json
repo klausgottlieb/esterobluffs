@@ -1,22 +1,22 @@
 {
-  "updated": "2026-09-24T21:10:38.378303+00:00",
+  "updated": "2026-09-24T21:15:37.608572+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
     "lon": -120.916,
     "provenance": "CDIP MOP SL405 (modeled nearshore)",
-    "time": "2026-09-24T19:00:00+00:00",
-    "wvht_m": 0.88,
-    "wvht_ft": 2.89,
+    "time": "2026-09-24T20:00:00+00:00",
+    "wvht_m": 0.87,
+    "wvht_ft": 2.84,
     "dpd_s": 11.111111,
     "apd_s": null,
-    "mwd_deg": 236.96239,
+    "mwd_deg": 236.79422,
     "partition_measured": false
   },
   "wind": {
     "station": "46011",
     "name": "Santa Maria, CA (open ocean)",
-    "time": "2026-09-24T20:40:00+00:00",
+    "time": "2026-09-24T20:50:00+00:00",
     "wspd_kt": 3.9,
     "gst_kt": 5.8,
     "wdir_deg": 280.0
