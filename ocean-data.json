@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T16:15:39.463204+00:00",
+  "updated": "2026-09-25T16:20:39.837093+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
@@ -32,12 +32,12 @@
     "partition_measured": true,
     "swh_m": 1.0,
     "swh_ft": 3.28,
-    "swp_s": 11.8,
-    "swd_deg": 292.5,
+    "swp_s": 10.5,
+    "swd_deg": 270,
     "wwh_m": 0.9,
     "wwh_ft": 2.95,
     "wwp_s": 9.9,
-    "wwd_deg": 292.5,
+    "wwd_deg": 270,
     "steepness": "SWELL"
   }
 }
