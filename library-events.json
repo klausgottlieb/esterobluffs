@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-09-21T11:47:32.416924-07:00",
+  "harvested_at": "2026-09-28T13:09:48.026529-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -7,14 +7,14 @@
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2026-12-02",
+      "season_end": "2026-12-09",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33841",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33842",
       "confidence": 95
     },
     {
@@ -27,42 +27,6 @@
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Public event at the Cayucos library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/crafting-legacies-build-ofrenda-34648",
-      "confidence": 90
-    },
-    {
-      "title": "TLC - Creative Writing Workshop",
-      "start": "2026-09-23T10:30:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Public event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/creative-writing-workshop-33080",
-      "confidence": 90
-    },
-    {
-      "title": "TLC - Creative Writing Workshop",
-      "start": "2026-09-30T10:30:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Public event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/creative-writing-workshop-33081",
-      "confidence": 90
-    },
-    {
-      "title": "Games on the Patio",
-      "start": "2026-09-23T15:00:00-07:00",
-      "venue": "Morro Bay Library Patio at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Family event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/games-patio-33384",
       "confidence": 90
     },
     {
@@ -123,30 +87,6 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Public event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/internet-safety-101-31540",
-      "confidence": 90
-    },
-    {
-      "title": "Hispanic Heritage Month Craft Fair",
-      "start": "2026-09-22T00:00:00-07:00",
-      "venue": "Cambria Library",
-      "area": "nearby",
-      "town": "Cambria",
-      "category": "library",
-      "organizer": "SLO County Library, Cambria Branch",
-      "summary": "Family event at the Cambria library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/hispanic-heritage-month-craft-fair-33475",
-      "confidence": 90
-    },
-    {
-      "title": "Hispanic Heritage Month Craft Fair",
-      "start": "2026-09-26T00:00:00-07:00",
-      "venue": "Cambria Library",
-      "area": "nearby",
-      "town": "Cambria",
-      "category": "library",
-      "organizer": "SLO County Library, Cambria Branch",
-      "summary": "Family event at the Cambria library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/hispanic-heritage-month-craft-fair-34140",
       "confidence": 90
     },
     {
