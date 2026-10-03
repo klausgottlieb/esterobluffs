@@ -1,427 +1,427 @@
 {
-  "updated": "2026-10-03T01:58:40.920036+00:00",
+  "updated": "2026-10-03T08:07:14.758577+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-10-02T18:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-02T19:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 56,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-02T20:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 55,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-02T21:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 55,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-02T22:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 53,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-02T23:00:00-07:00",
-      "sky": 75,
-      "pop": 0,
-      "tempF": 54,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-03T00:00:00-07:00",
-      "sky": 75,
-      "pop": 0,
-      "tempF": 59,
-      "short": "Mostly Cloudy"
-    },
-    {
       "t": "2026-10-03T01:00:00-07:00",
-      "sky": 75,
-      "pop": 0,
-      "tempF": 55,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-03T02:00:00-07:00",
-      "sky": 75,
-      "pop": 0,
-      "tempF": 55,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-03T03:00:00-07:00",
-      "sky": 75,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-03T04:00:00-07:00",
-      "sky": 75,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-03T05:00:00-07:00",
-      "sky": 65,
+      "sky": 78,
       "pop": 0,
       "tempF": 60,
       "short": "Mostly Cloudy"
     },
     {
-      "t": "2026-10-03T06:00:00-07:00",
-      "sky": 65,
+      "t": "2026-10-03T02:00:00-07:00",
+      "sky": 78,
       "pop": 0,
-      "tempF": 59,
-      "short": "Partly Sunny"
+      "tempF": 61,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-03T03:00:00-07:00",
+      "sky": 78,
+      "pop": 0,
+      "tempF": 61,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-03T04:00:00-07:00",
+      "sky": 78,
+      "pop": 0,
+      "tempF": 62,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-03T05:00:00-07:00",
+      "sky": 70,
+      "pop": 0,
+      "tempF": 64,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-03T06:00:00-07:00",
+      "sky": 70,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-10-03T07:00:00-07:00",
-      "sky": 65,
+      "sky": 70,
       "pop": 0,
-      "tempF": 61,
-      "short": "Partly Sunny"
+      "tempF": 65,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-10-03T08:00:00-07:00",
-      "sky": 65,
+      "sky": 70,
       "pop": 0,
-      "tempF": 65,
-      "short": "Partly Sunny"
+      "tempF": 68,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-10-03T09:00:00-07:00",
-      "sky": 65,
+      "sky": 70,
       "pop": 0,
-      "tempF": 72,
-      "short": "Partly Sunny"
+      "tempF": 75,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-10-03T10:00:00-07:00",
-      "sky": 65,
+      "sky": 70,
       "pop": 0,
-      "tempF": 77,
-      "short": "Partly Sunny"
+      "tempF": 79,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-10-03T11:00:00-07:00",
-      "sky": 8,
+      "sky": 14,
       "pop": 0,
-      "tempF": 80,
+      "tempF": 82,
       "short": "Sunny"
     },
     {
       "t": "2026-10-03T12:00:00-07:00",
-      "sky": 8,
+      "sky": 14,
       "pop": 0,
-      "tempF": 84,
+      "tempF": 83,
       "short": "Sunny"
     },
     {
       "t": "2026-10-03T13:00:00-07:00",
-      "sky": 8,
+      "sky": 14,
       "pop": 0,
-      "tempF": 75,
+      "tempF": 79,
       "short": "Sunny"
     },
     {
       "t": "2026-10-03T14:00:00-07:00",
-      "sky": 8,
+      "sky": 14,
       "pop": 0,
-      "tempF": 72,
+      "tempF": 74,
       "short": "Sunny"
     },
     {
       "t": "2026-10-03T15:00:00-07:00",
-      "sky": 8,
+      "sky": 14,
       "pop": 0,
       "tempF": 72,
       "short": "Sunny"
     },
     {
       "t": "2026-10-03T16:00:00-07:00",
-      "sky": 8,
+      "sky": 14,
+      "pop": 0,
+      "tempF": 72,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-03T17:00:00-07:00",
+      "sky": 27,
+      "pop": 1,
+      "tempF": 71,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-10-03T18:00:00-07:00",
+      "sky": 27,
+      "pop": 1,
+      "tempF": 68,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-03T19:00:00-07:00",
+      "sky": 27,
+      "pop": 1,
+      "tempF": 63,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-03T20:00:00-07:00",
+      "sky": 27,
+      "pop": 1,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-03T21:00:00-07:00",
+      "sky": 27,
+      "pop": 1,
+      "tempF": 63,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-03T22:00:00-07:00",
+      "sky": 27,
+      "pop": 1,
+      "tempF": 63,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-03T23:00:00-07:00",
+      "sky": 34,
+      "pop": 1,
+      "tempF": 61,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-04T00:00:00-07:00",
+      "sky": 34,
+      "pop": 1,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-04T01:00:00-07:00",
+      "sky": 34,
+      "pop": 1,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-04T02:00:00-07:00",
+      "sky": 34,
+      "pop": 1,
+      "tempF": 61,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-04T03:00:00-07:00",
+      "sky": 34,
+      "pop": 1,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-04T04:00:00-07:00",
+      "sky": 34,
+      "pop": 1,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-04T05:00:00-07:00",
+      "sky": 24,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-10-04T06:00:00-07:00",
+      "sky": 24,
+      "pop": 0,
+      "tempF": 67,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T07:00:00-07:00",
+      "sky": 24,
+      "pop": 0,
+      "tempF": 67,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T08:00:00-07:00",
+      "sky": 24,
       "pop": 0,
       "tempF": 71,
       "short": "Sunny"
     },
     {
-      "t": "2026-10-03T17:00:00-07:00",
-      "sky": 19,
-      "pop": 0,
-      "tempF": 69,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-03T18:00:00-07:00",
-      "sky": 19,
-      "pop": 0,
-      "tempF": 64,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-03T19:00:00-07:00",
-      "sky": 19,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-03T20:00:00-07:00",
-      "sky": 19,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-03T21:00:00-07:00",
-      "sky": 19,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-03T22:00:00-07:00",
-      "sky": 19,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-03T23:00:00-07:00",
-      "sky": 16,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-04T00:00:00-07:00",
-      "sky": 16,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-04T01:00:00-07:00",
-      "sky": 16,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-04T02:00:00-07:00",
-      "sky": 16,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-04T03:00:00-07:00",
-      "sky": 16,
-      "pop": 0,
-      "tempF": 59,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-04T04:00:00-07:00",
-      "sky": 16,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-04T05:00:00-07:00",
-      "sky": 26,
-      "pop": 0,
-      "tempF": 61,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-10-04T06:00:00-07:00",
-      "sky": 26,
-      "pop": 0,
-      "tempF": 64,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-04T07:00:00-07:00",
-      "sky": 26,
-      "pop": 0,
-      "tempF": 65,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-04T08:00:00-07:00",
-      "sky": 26,
-      "pop": 0,
-      "tempF": 73,
-      "short": "Mostly Sunny"
-    },
-    {
       "t": "2026-10-04T09:00:00-07:00",
-      "sky": 26,
-      "pop": 0,
-      "tempF": 79,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-04T10:00:00-07:00",
-      "sky": 26,
-      "pop": 0,
-      "tempF": 83,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-04T11:00:00-07:00",
-      "sky": 5,
-      "pop": 0,
-      "tempF": 82,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-04T12:00:00-07:00",
-      "sky": 5,
-      "pop": 0,
-      "tempF": 80,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-04T13:00:00-07:00",
-      "sky": 5,
-      "pop": 0,
-      "tempF": 82,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-04T14:00:00-07:00",
-      "sky": 5,
-      "pop": 0,
-      "tempF": 80,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-04T15:00:00-07:00",
-      "sky": 5,
-      "pop": 0,
-      "tempF": 79,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-04T16:00:00-07:00",
-      "sky": 5,
+      "sky": 24,
       "pop": 0,
       "tempF": 78,
       "short": "Sunny"
     },
     {
-      "t": "2026-10-04T17:00:00-07:00",
+      "t": "2026-10-04T10:00:00-07:00",
+      "sky": 24,
+      "pop": 0,
+      "tempF": 82,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T11:00:00-07:00",
       "sky": 9,
       "pop": 0,
-      "tempF": 77,
+      "tempF": 83,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T12:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 82,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T13:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 83,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T14:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 83,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T15:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 80,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T16:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 79,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-04T17:00:00-07:00",
+      "sky": 19,
+      "pop": 0,
+      "tempF": 76,
       "short": "Sunny"
     },
     {
       "t": "2026-10-04T18:00:00-07:00",
-      "sky": 9,
+      "sky": 19,
       "pop": 0,
-      "tempF": 72,
+      "tempF": 71,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-04T19:00:00-07:00",
-      "sky": 9,
+      "sky": 19,
       "pop": 0,
       "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-04T20:00:00-07:00",
-      "sky": 9,
+      "sky": 19,
       "pop": 0,
-      "tempF": 60,
+      "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-04T21:00:00-07:00",
-      "sky": 9,
+      "sky": 19,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-04T22:00:00-07:00",
-      "sky": 9,
+      "sky": 19,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 64,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-04T23:00:00-07:00",
       "sky": 14,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 64,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-05T00:00:00-07:00",
       "sky": 14,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-05T01:00:00-07:00",
       "sky": 14,
       "pop": 0,
-      "tempF": 56,
+      "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-05T02:00:00-07:00",
       "sky": 14,
       "pop": 0,
-      "tempF": 56,
+      "tempF": 65,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-05T03:00:00-07:00",
       "sky": 14,
       "pop": 0,
-      "tempF": 56,
+      "tempF": 62,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-05T04:00:00-07:00",
       "sky": 14,
       "pop": 0,
-      "tempF": 57,
+      "tempF": 62,
       "short": "Mostly Clear"
     },
     {
       "t": "2026-10-05T05:00:00-07:00",
-      "sky": 4,
+      "sky": 11,
       "pop": 0,
-      "tempF": 58,
-      "short": "Clear"
+      "tempF": 62,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-10-05T06:00:00-07:00",
+      "sky": 11,
+      "pop": 0,
+      "tempF": 60,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-05T07:00:00-07:00",
+      "sky": 11,
+      "pop": 0,
+      "tempF": 57,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-05T08:00:00-07:00",
+      "sky": 11,
+      "pop": 0,
+      "tempF": 56,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-05T09:00:00-07:00",
+      "sky": 11,
+      "pop": 0,
+      "tempF": 60,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-05T10:00:00-07:00",
+      "sky": 11,
+      "pop": 0,
+      "tempF": 67,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-05T11:00:00-07:00",
+      "sky": 7,
+      "pop": 0,
+      "tempF": 74,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-05T12:00:00-07:00",
+      "sky": 7,
+      "pop": 0,
+      "tempF": 79,
+      "short": "Sunny"
     }
   ]
 }
