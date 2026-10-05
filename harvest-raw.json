@@ -1,38 +1,27 @@
 {
-  "harvested_at": "2026-09-28T13:09:45.522523-07:00",
+  "harvested_at": "2026-10-05T14:14:28.782900-07:00",
   "events": [
     {
       "title": "Cayucos Fall Antique Street Faire",
       "start": "2026-10-18T07:00:00-07:00",
-      "venue": "Ocean Ave between E St & Cayucos Dr, Cayucos CA",
+      "venue": "Ocean Ave between E St & Cayucos Dr, Cayucos",
       "area": "cayucos",
       "category": "market",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.cayucoschamber.com/antique-faire",
-      "summary": "Outdoor antique & collectibles street faire closing Ocean Ave to traffic, 7am–3pm. Rain or shine; leashed dogs welcome.",
-      "confidence": 97
+      "summary": "100+ vendors selling antiques, vintage & collectibles along Ocean Ave. Free admission & parking, food court, 7am–3pm.",
+      "confidence": 99
     },
     {
-      "title": "35th Annual Cayucos Car Show",
-      "start": "2026-11-07T08:00:00-08:00",
-      "venue": "N. Ocean Ave, Cayucos CA",
+      "title": "Fort Vine Live at Schooners",
+      "start": "2026-10-10T17:00:00-07:00",
+      "venue": "Schooners, 171 N Ocean Ave, Cayucos",
       "area": "cayucos",
-      "category": "festival",
-      "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
-      "summary": "Classic car show along downtown Cayucos, 8am–4pm, with live band, beer garden & Lions BBQ. Fri Nov 6 check-in party at Nelson's Garage.",
-      "confidence": 98
-    },
-    {
-      "title": "Christmas in Cayucos – Tree Lighting & Holiday Open House",
-      "start": "2026-12-11T17:00:00-08:00",
-      "venue": "Corner of D St & Ocean Ave / Ocean Ave businesses, Cayucos CA",
-      "area": "cayucos",
-      "category": "community",
-      "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Free community tree lighting at 5pm with carolers, Santa arriving by fire engine, plus holiday open house on Ocean Ave shops 4–7pm.",
-      "confidence": 82
+      "category": "music",
+      "organizer": "Schooners Cayucos",
+      "source_url": "https://www.wikido.com/us/ca/cayucos",
+      "summary": "Fort Vine performs live at Schooners' oceanfront patio in Cayucos, part of the Beachside Live concert series.",
+      "confidence": 72
     },
     {
       "title": "Schooners Open Mic Night",
@@ -41,27 +30,45 @@
       "chip_top": "Wed",
       "chip_bottom": "7pm",
       "season_end": "2026-12-31",
-      "venue": "Schooners, 171 N. Ocean Ave, Cayucos CA",
+      "venue": "Schooners, 171 N Ocean Ave, Cayucos",
       "area": "cayucos",
       "category": "music",
       "organizer": "Schooners Cayucos",
       "source_url": "https://www.schoonerscayucos.com/live/",
-      "summary": "Free weekly open mic every Wednesday at 7pm, year-round at Schooners' oceanview deck in Cayucos.",
-      "confidence": 90
+      "summary": "Free weekly open mic at Schooners' beachfront venue, open to all local & traveling musicians year-round.",
+      "confidence": 85
     },
     {
-      "title": "Schooners Beachside Live – Weekend Concert Series",
-      "recurrence": "weekly",
-      "window": "Saturdays & Sundays, free live music, May through October",
-      "chip_top": "Sat/Sun",
-      "chip_bottom": "aft.",
-      "season_end": "2026-10-31",
-      "venue": "Schooners, 171 N. Ocean Ave, Cayucos CA",
+      "title": "35th Annual Cayucos Car Show",
+      "start": "2026-11-07T08:00:00-08:00",
+      "venue": "N Ocean Ave, Downtown Cayucos",
       "area": "cayucos",
-      "category": "music",
-      "organizer": "Schooners Cayucos",
-      "source_url": "https://www.schoonerscayucos.com/live/",
-      "summary": "Free outdoor weekend concerts on Schooners' beachside patio featuring local & touring acts, Saturdays & Sundays through end of October.",
+      "category": "community",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.cayucoschamber.com/carshow",
+      "summary": "Classic cars fill downtown Cayucos with a live band, beer garden & BBQ. Free to attend, rain or shine, 8am–4pm.",
+      "confidence": 99
+    },
+    {
+      "title": "Christmas in Cayucos – Tree Lighting",
+      "start": "2026-12-11T17:00:00-08:00",
+      "venue": "Corner of D St & Ocean Ave, Downtown Cayucos",
+      "area": "cayucos",
+      "category": "community",
+      "organizer": "Cayucos Chamber of Commerce / Cayucos Rotary",
+      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
+      "summary": "Free community tree lighting with live music, carolers, Santa & Mrs. Claus arriving by fire engine, starting 5pm.",
+      "confidence": 98
+    },
+    {
+      "title": "Christmas in Cayucos – Wonderland Walk",
+      "start": "2026-12-12T16:00:00-08:00",
+      "venue": "Ocean Ave, Downtown Cayucos",
+      "area": "cayucos",
+      "category": "community",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
+      "summary": "Festive evening stroll through decorated downtown shops with Santa visits, free horse-drawn carriage rides & kids' crafts, 4–7pm.",
       "confidence": 88
     }
   ]
