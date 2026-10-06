@@ -1,36 +1,8 @@
 {
-  "updated": "2026-10-05T22:38:14.090350+00:00",
+  "updated": "2026-10-06T02:59:02.368045+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-05T15:00:00-07:00",
-      "sky": 13,
-      "pop": 0,
-      "tempF": 80,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-05T16:00:00-07:00",
-      "sky": 13,
-      "pop": 0,
-      "tempF": 77,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-05T17:00:00-07:00",
-      "sky": 41,
-      "pop": 1,
-      "tempF": 75,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-05T18:00:00-07:00",
-      "sky": 41,
-      "pop": 1,
-      "tempF": 65,
-      "short": "Partly Cloudy"
-    },
     {
       "t": "2026-10-05T19:00:00-07:00",
       "sky": 41,
@@ -422,6 +394,34 @@
       "pop": 0,
       "tempF": 60,
       "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-10-08T03:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 59,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-10-08T04:00:00-07:00",
+      "sky": 9,
+      "pop": 0,
+      "tempF": 58,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-10-08T05:00:00-07:00",
+      "sky": 12,
+      "pop": 0,
+      "tempF": 57,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-10-08T06:00:00-07:00",
+      "sky": 12,
+      "pop": 0,
+      "tempF": 57,
+      "short": "Sunny"
     }
   ]
 }
