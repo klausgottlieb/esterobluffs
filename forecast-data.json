@@ -1,50 +1,8 @@
 {
-  "updated": "2026-10-10T07:09:16.292214+00:00",
+  "updated": "2026-10-10T13:43:40.647265+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-10T00:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-10T01:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 58,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-10T02:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-10T03:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-10T04:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-10T05:00:00-07:00",
-      "sky": 90,
-      "pop": 2,
-      "tempF": 57,
-      "short": "Patchy Fog"
-    },
     {
       "t": "2026-10-10T06:00:00-07:00",
       "sky": 90,
@@ -422,6 +380,48 @@
       "pop": 38,
       "tempF": 53,
       "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T12:00:00-07:00",
+      "sky": 67,
+      "pop": 38,
+      "tempF": 55,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T13:00:00-07:00",
+      "sky": 67,
+      "pop": 38,
+      "tempF": 56,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T14:00:00-07:00",
+      "sky": 67,
+      "pop": 38,
+      "tempF": 58,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T15:00:00-07:00",
+      "sky": 67,
+      "pop": 38,
+      "tempF": 58,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T16:00:00-07:00",
+      "sky": 67,
+      "pop": 38,
+      "tempF": 59,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T17:00:00-07:00",
+      "sky": 31,
+      "pop": 6,
+      "tempF": 59,
+      "short": "Mostly Sunny"
     }
   ]
 }
