@@ -1,36 +1,8 @@
 {
-  "updated": "2026-10-09T20:56:47.501969+00:00",
+  "updated": "2026-10-10T00:52:34.021702+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-09T13:00:00-07:00",
-      "sky": 44,
-      "pop": 0,
-      "tempF": 67,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-09T14:00:00-07:00",
-      "sky": 44,
-      "pop": 0,
-      "tempF": 66,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-09T15:00:00-07:00",
-      "sky": 44,
-      "pop": 0,
-      "tempF": 66,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-09T16:00:00-07:00",
-      "sky": 44,
-      "pop": 0,
-      "tempF": 64,
-      "short": "Mostly Sunny"
-    },
     {
       "t": "2026-10-09T17:00:00-07:00",
       "sky": 90,
@@ -327,45 +299,45 @@
     },
     {
       "t": "2026-10-11T11:00:00-07:00",
-      "sky": 20,
+      "sky": 27,
       "pop": 2,
       "tempF": 60,
-      "short": "Sunny"
+      "short": "Mostly Sunny"
     },
     {
       "t": "2026-10-11T12:00:00-07:00",
-      "sky": 20,
+      "sky": 27,
       "pop": 2,
       "tempF": 59,
-      "short": "Sunny"
+      "short": "Mostly Sunny"
     },
     {
       "t": "2026-10-11T13:00:00-07:00",
-      "sky": 20,
+      "sky": 27,
       "pop": 2,
       "tempF": 60,
-      "short": "Sunny"
+      "short": "Mostly Sunny"
     },
     {
       "t": "2026-10-11T14:00:00-07:00",
-      "sky": 20,
+      "sky": 27,
       "pop": 2,
       "tempF": 60,
-      "short": "Sunny"
+      "short": "Mostly Sunny"
     },
     {
       "t": "2026-10-11T15:00:00-07:00",
-      "sky": 20,
+      "sky": 27,
       "pop": 2,
       "tempF": 60,
-      "short": "Sunny"
+      "short": "Mostly Sunny"
     },
     {
       "t": "2026-10-11T16:00:00-07:00",
-      "sky": 20,
+      "sky": 27,
       "pop": 2,
       "tempF": 59,
-      "short": "Sunny"
+      "short": "Mostly Sunny"
     },
     {
       "t": "2026-10-11T17:00:00-07:00",
@@ -421,6 +393,34 @@
       "sky": 72,
       "pop": 47,
       "tempF": 55,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T01:00:00-07:00",
+      "sky": 72,
+      "pop": 47,
+      "tempF": 54,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T02:00:00-07:00",
+      "sky": 72,
+      "pop": 47,
+      "tempF": 54,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T03:00:00-07:00",
+      "sky": 72,
+      "pop": 47,
+      "tempF": 54,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-12T04:00:00-07:00",
+      "sky": 72,
+      "pop": 47,
+      "tempF": 53,
       "short": "Chance Rain Showers"
     }
   ]
