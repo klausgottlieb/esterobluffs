@@ -1,75 +1,60 @@
 {
-  "harvested_at": "2026-10-05T14:14:28.782900-07:00",
+  "harvested_at": "2026-10-12T14:47:03.927526-07:00",
   "events": [
     {
-      "title": "Cayucos Fall Antique Street Faire",
+      "title": "Fall Antique Street Faire",
       "start": "2026-10-18T07:00:00-07:00",
-      "venue": "Ocean Ave between E St & Cayucos Dr, Cayucos",
+      "venue": "Ocean Avenue (E Street to Cayucos Drive)",
       "area": "cayucos",
       "category": "market",
       "organizer": "Cayucos Chamber of Commerce",
       "source_url": "https://www.cayucoschamber.com/antique-faire",
-      "summary": "100+ vendors selling antiques, vintage & collectibles along Ocean Ave. Free admission & parking, food court, 7am–3pm.",
-      "confidence": 99
+      "summary": "100+ vendors fill Ocean Ave with antiques, collectibles & vintage finds. Free admission & parking. Food court at N. Ocean Ave & D St. 7am–3pm.",
+      "confidence": 98
     },
     {
-      "title": "Fort Vine Live at Schooners",
-      "start": "2026-10-10T17:00:00-07:00",
-      "venue": "Schooners, 171 N Ocean Ave, Cayucos",
-      "area": "cayucos",
-      "category": "music",
-      "organizer": "Schooners Cayucos",
-      "source_url": "https://www.wikido.com/us/ca/cayucos",
-      "summary": "Fort Vine performs live at Schooners' oceanfront patio in Cayucos, part of the Beachside Live concert series.",
-      "confidence": 72
-    },
-    {
-      "title": "Schooners Open Mic Night",
-      "recurrence": "weekly",
-      "window": "Every Wednesday, 7pm, year-round",
-      "chip_top": "Wed",
-      "chip_bottom": "7pm",
-      "season_end": "2026-12-31",
-      "venue": "Schooners, 171 N Ocean Ave, Cayucos",
-      "area": "cayucos",
-      "category": "music",
-      "organizer": "Schooners Cayucos",
-      "source_url": "https://www.schoonerscayucos.com/live/",
-      "summary": "Free weekly open mic at Schooners' beachfront venue, open to all local & traveling musicians year-round.",
+      "title": "SLO County Open Studios Art Tour – Weekend 2",
+      "start": "2026-10-17T10:00:00-07:00",
+      "venue": "Various artist studios, SLO County",
+      "area": "nearby",
+      "category": "arts",
+      "organizer": "SLO County Arts Council",
+      "source_url": "https://slocountyarts.org/osat",
+      "summary": "Self-guided tour of 165+ open artist studios countywide, 10am–4pm both days. Free; some Cayucos-area artists participate. Also ran Oct 10–11.",
       "confidence": 85
     },
     {
       "title": "35th Annual Cayucos Car Show",
       "start": "2026-11-07T08:00:00-08:00",
-      "venue": "N Ocean Ave, Downtown Cayucos",
+      "venue": "Downtown Cayucos, N. Ocean Avenue",
       "area": "cayucos",
-      "category": "community",
+      "category": "festival",
       "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://www.cayucoschamber.com/carshow",
-      "summary": "Classic cars fill downtown Cayucos with a live band, beer garden & BBQ. Free to attend, rain or shine, 8am–4pm.",
+      "source_url": "https://www.my805tix.com/e/cayucoscarshow26",
+      "summary": "Classic cars line Ocean Ave 8am–4pm. Live band, beer garden & BBQ. Free to spectators, rain or shine. Friday check-in party at Nelson's Garage.",
       "confidence": 99
     },
     {
       "title": "Christmas in Cayucos – Tree Lighting",
       "start": "2026-12-11T17:00:00-08:00",
-      "venue": "Corner of D St & Ocean Ave, Downtown Cayucos",
+      "venue": "Corner of D Street & Ocean Avenue, Downtown Cayucos",
       "area": "cayucos",
       "category": "community",
-      "organizer": "Cayucos Chamber of Commerce / Cayucos Rotary",
+      "organizer": "Cayucos Chamber of Commerce, Cayucos Rotary & local merchants",
       "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Free community tree lighting with live music, carolers, Santa & Mrs. Claus arriving by fire engine, starting 5pm.",
-      "confidence": 98
+      "summary": "Free holiday tree lighting with live music, carolers, Santa & Mrs. Claus arriving by fire engine, hot refreshments. Kicks off the Christmas weekend.",
+      "confidence": 97
     },
     {
       "title": "Christmas in Cayucos – Wonderland Walk",
       "start": "2026-12-12T16:00:00-08:00",
-      "venue": "Ocean Ave, Downtown Cayucos",
+      "venue": "Ocean Avenue, Downtown Cayucos",
       "area": "cayucos",
       "category": "community",
-      "organizer": "Cayucos Chamber of Commerce",
+      "organizer": "Cayucos Chamber of Commerce, Cayucos Rotary & local merchants",
       "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Festive evening stroll through decorated downtown shops with Santa visits, free horse-drawn carriage rides & kids' crafts, 4–7pm.",
-      "confidence": 88
+      "summary": "Free evening shopping stroll 4–7pm with horse-drawn carriage rides, kids' craft workshop, snowy play area, Santa visits & Lioness Club refreshments.",
+      "confidence": 97
     }
   ]
 }
