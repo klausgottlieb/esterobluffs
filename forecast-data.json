@@ -1,50 +1,8 @@
 {
-  "updated": "2026-10-20T00:21:13.712092+00:00",
+  "updated": "2026-10-20T06:01:54.549901+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-19T17:00:00-07:00",
-      "sky": 38,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-10-19T18:00:00-07:00",
-      "sky": 38,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-10-19T19:00:00-07:00",
-      "sky": 38,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-10-19T20:00:00-07:00",
-      "sky": 38,
-      "pop": 0,
-      "tempF": 54,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-10-19T21:00:00-07:00",
-      "sky": 38,
-      "pop": 0,
-      "tempF": 53,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-10-19T22:00:00-07:00",
-      "sky": 38,
-      "pop": 0,
-      "tempF": 51,
-      "short": "Partly Cloudy"
-    },
     {
       "t": "2026-10-19T23:00:00-07:00",
       "sky": 90,
@@ -422,6 +380,48 @@
       "pop": 82,
       "tempF": 57,
       "short": "Rain Showers"
+    },
+    {
+      "t": "2026-10-22T05:00:00-07:00",
+      "sky": 68,
+      "pop": 52,
+      "tempF": 56,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T06:00:00-07:00",
+      "sky": 68,
+      "pop": 52,
+      "tempF": 56,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T07:00:00-07:00",
+      "sky": 68,
+      "pop": 52,
+      "tempF": 56,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T08:00:00-07:00",
+      "sky": 68,
+      "pop": 52,
+      "tempF": 57,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T09:00:00-07:00",
+      "sky": 68,
+      "pop": 52,
+      "tempF": 59,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T10:00:00-07:00",
+      "sky": 68,
+      "pop": 52,
+      "tempF": 61,
+      "short": "Chance Rain Showers"
     }
   ]
 }
