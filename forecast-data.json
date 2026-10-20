@@ -1,50 +1,8 @@
 {
-  "updated": "2026-10-20T11:38:54.577938+00:00",
+  "updated": "2026-10-20T17:08:29.582885+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-20T04:00:00-07:00",
-      "sky": 43,
-      "pop": 0,
-      "tempF": 52,
-      "short": "Partly Cloudy"
-    },
-    {
-      "t": "2026-10-20T05:00:00-07:00",
-      "sky": 90,
-      "pop": 1,
-      "tempF": 53,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-20T06:00:00-07:00",
-      "sky": 90,
-      "pop": 1,
-      "tempF": 52,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-20T07:00:00-07:00",
-      "sky": 90,
-      "pop": 1,
-      "tempF": 52,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-20T08:00:00-07:00",
-      "sky": 90,
-      "pop": 1,
-      "tempF": 55,
-      "short": "Patchy Fog"
-    },
-    {
-      "t": "2026-10-20T09:00:00-07:00",
-      "sky": 90,
-      "pop": 1,
-      "tempF": 60,
-      "short": "Patchy Fog"
-    },
     {
       "t": "2026-10-20T10:00:00-07:00",
       "sky": 90,
@@ -422,6 +380,48 @@
       "pop": 34,
       "tempF": 63,
       "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T16:00:00-07:00",
+      "sky": 62,
+      "pop": 34,
+      "tempF": 64,
+      "short": "Chance Rain Showers"
+    },
+    {
+      "t": "2026-10-22T17:00:00-07:00",
+      "sky": 42,
+      "pop": 3,
+      "tempF": 64,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-10-22T18:00:00-07:00",
+      "sky": 42,
+      "pop": 3,
+      "tempF": 64,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-22T19:00:00-07:00",
+      "sky": 42,
+      "pop": 3,
+      "tempF": 63,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-22T20:00:00-07:00",
+      "sky": 42,
+      "pop": 3,
+      "tempF": 62,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-22T21:00:00-07:00",
+      "sky": 42,
+      "pop": 3,
+      "tempF": 60,
+      "short": "Partly Cloudy"
     }
   ]
 }
