@@ -1,43 +1,8 @@
 {
-  "updated": "2026-10-23T10:04:55.060918+00:00",
+  "updated": "2026-10-23T15:05:13.483650+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-23T03:00:00-07:00",
-      "sky": 87,
-      "pop": 26,
-      "tempF": 54,
-      "short": "Chance Rain Showers"
-    },
-    {
-      "t": "2026-10-23T04:00:00-07:00",
-      "sky": 87,
-      "pop": 26,
-      "tempF": 54,
-      "short": "Chance Rain Showers"
-    },
-    {
-      "t": "2026-10-23T05:00:00-07:00",
-      "sky": 70,
-      "pop": 10,
-      "tempF": 55,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-23T06:00:00-07:00",
-      "sky": 70,
-      "pop": 10,
-      "tempF": 55,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-10-23T07:00:00-07:00",
-      "sky": 70,
-      "pop": 10,
-      "tempF": 55,
-      "short": "Mostly Cloudy"
-    },
     {
       "t": "2026-10-23T08:00:00-07:00",
       "sky": 70,
@@ -422,6 +387,41 @@
       "pop": 0,
       "tempF": 68,
       "short": "Sunny"
+    },
+    {
+      "t": "2026-10-25T15:00:00-07:00",
+      "sky": 21,
+      "pop": 0,
+      "tempF": 68,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-25T16:00:00-07:00",
+      "sky": 21,
+      "pop": 0,
+      "tempF": 68,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-10-25T17:00:00-07:00",
+      "sky": 29,
+      "pop": 0,
+      "tempF": 67,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-10-25T18:00:00-07:00",
+      "sky": 29,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-10-25T19:00:00-07:00",
+      "sky": 29,
+      "pop": 0,
+      "tempF": 64,
+      "short": "Partly Cloudy"
     }
   ]
 }
