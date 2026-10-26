@@ -1,5 +1,5 @@
 {
-  "harvested_at": "2026-10-19T12:22:58.912782-07:00",
+  "harvested_at": "2026-10-26T12:25:23.544080-07:00",
   "events": [
     {
       "title": "Cayucos Library Storytime",
@@ -7,39 +7,15 @@
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2026-12-30",
+      "season_end": "2027-01-06",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,
       "category": "library",
       "organizer": "SLO County Library, Cayucos Branch",
       "summary": "Recurring family program at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33845",
+      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33846",
       "confidence": 95
-    },
-    {
-      "title": "Morro Bay Library: Costume Exchange/Intercambio de Disfraces",
-      "start": "2026-10-20T00:00:00-07:00",
-      "venue": "Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Family event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/morro-bay-costume-exchange-34138",
-      "confidence": 90
-    },
-    {
-      "title": "Medicare Open Enrollment with HICAP",
-      "start": "2026-10-23T14:00:00-07:00",
-      "venue": "Morro Bay Library Program Room at Morro Bay Library",
-      "area": "nearby",
-      "town": "Morro Bay",
-      "category": "library",
-      "organizer": "SLO County Library, Morro Bay Branch",
-      "summary": "Public event at the Morro Bay library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/hicap-presentation-33909",
-      "confidence": 90
     },
     {
       "title": "TLC - Senior Fraud and Scam Prevention",
@@ -51,18 +27,6 @@
       "organizer": "SLO County Library, Morro Bay Branch",
       "summary": "Public event at the Morro Bay library branch.",
       "source_url": "https://sanluisobispo.librarycalendar.com/event/internet-safety-101-31540",
-      "confidence": 90
-    },
-    {
-      "title": "Spooky Craft Fair",
-      "start": "2026-10-22T00:00:00-07:00",
-      "venue": "Cambria Library",
-      "area": "nearby",
-      "town": "Cambria",
-      "category": "library",
-      "organizer": "SLO County Library, Cambria Branch",
-      "summary": "Family event at the Cambria library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/spooky-craft-fair-33486",
       "confidence": 90
     },
     {
