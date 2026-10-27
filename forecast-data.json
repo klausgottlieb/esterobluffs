@@ -1,50 +1,8 @@
 {
-  "updated": "2026-10-27T10:35:47.041176+00:00",
+  "updated": "2026-10-27T16:40:05.236478+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-10-27T03:00:00-07:00",
-      "sky": 8,
-      "pop": 0,
-      "tempF": 56,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-27T04:00:00-07:00",
-      "sky": 8,
-      "pop": 0,
-      "tempF": 54,
-      "short": "Mostly Clear"
-    },
-    {
-      "t": "2026-10-27T05:00:00-07:00",
-      "sky": 5,
-      "pop": 1,
-      "tempF": 54,
-      "short": "Clear"
-    },
-    {
-      "t": "2026-10-27T06:00:00-07:00",
-      "sky": 5,
-      "pop": 1,
-      "tempF": 54,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-27T07:00:00-07:00",
-      "sky": 5,
-      "pop": 1,
-      "tempF": 52,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-10-27T08:00:00-07:00",
-      "sky": 5,
-      "pop": 1,
-      "tempF": 54,
-      "short": "Sunny"
-    },
     {
       "t": "2026-10-27T09:00:00-07:00",
       "sky": 5,
@@ -422,6 +380,48 @@
       "pop": 0,
       "tempF": 72,
       "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-10-29T15:00:00-07:00",
+      "sky": 67,
+      "pop": 0,
+      "tempF": 71,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-10-29T16:00:00-07:00",
+      "sky": 67,
+      "pop": 0,
+      "tempF": 70,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-10-29T17:00:00-07:00",
+      "sky": 78,
+      "pop": 1,
+      "tempF": 68,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-29T18:00:00-07:00",
+      "sky": 78,
+      "pop": 1,
+      "tempF": 66,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-29T19:00:00-07:00",
+      "sky": 78,
+      "pop": 1,
+      "tempF": 64,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-10-29T20:00:00-07:00",
+      "sky": 78,
+      "pop": 1,
+      "tempF": 63,
+      "short": "Mostly Cloudy"
     }
   ]
 }
