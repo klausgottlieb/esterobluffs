@@ -1,57 +1,8 @@
 {
-  "updated": "2026-11-01T23:36:37.726038+00:00",
+  "updated": "2026-11-02T06:05:57.839711+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-11-01T15:00:00-08:00",
-      "sky": 29,
-      "pop": 1,
-      "tempF": 62,
-      "short": "Mostly Sunny"
-    },
-    {
-      "t": "2026-11-01T16:00:00-08:00",
-      "sky": 4,
-      "pop": 0,
-      "tempF": 61,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-11-01T17:00:00-08:00",
-      "sky": 4,
-      "pop": 0,
-      "tempF": 58,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-11-01T18:00:00-08:00",
-      "sky": 4,
-      "pop": 0,
-      "tempF": 57,
-      "short": "Clear"
-    },
-    {
-      "t": "2026-11-01T19:00:00-08:00",
-      "sky": 4,
-      "pop": 0,
-      "tempF": 55,
-      "short": "Clear"
-    },
-    {
-      "t": "2026-11-01T20:00:00-08:00",
-      "sky": 4,
-      "pop": 0,
-      "tempF": 55,
-      "short": "Clear"
-    },
-    {
-      "t": "2026-11-01T21:00:00-08:00",
-      "sky": 4,
-      "pop": 0,
-      "tempF": 55,
-      "short": "Clear"
-    },
     {
       "t": "2026-11-01T22:00:00-08:00",
       "sky": 18,
@@ -422,6 +373,55 @@
       "pop": 1,
       "tempF": 54,
       "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-11-04T03:00:00-08:00",
+      "sky": 20,
+      "pop": 1,
+      "tempF": 54,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-11-04T04:00:00-08:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 54,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-11-04T05:00:00-08:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 53,
+      "short": "Partly Cloudy"
+    },
+    {
+      "t": "2026-11-04T06:00:00-08:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 53,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-11-04T07:00:00-08:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 54,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-11-04T08:00:00-08:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 55,
+      "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-11-04T09:00:00-08:00",
+      "sky": 35,
+      "pop": 0,
+      "tempF": 57,
+      "short": "Mostly Sunny"
     }
   ]
 }
