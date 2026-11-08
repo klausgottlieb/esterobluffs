@@ -1,64 +1,8 @@
 {
-  "updated": "2026-11-08T07:22:28.550246+00:00",
+  "updated": "2026-11-08T15:13:30.903554+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-11-07T23:00:00-08:00",
-      "sky": 64,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T00:00:00-08:00",
-      "sky": 64,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T01:00:00-08:00",
-      "sky": 64,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T02:00:00-08:00",
-      "sky": 64,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T03:00:00-08:00",
-      "sky": 64,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T04:00:00-08:00",
-      "sky": 54,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T05:00:00-08:00",
-      "sky": 54,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Mostly Cloudy"
-    },
-    {
-      "t": "2026-11-08T06:00:00-08:00",
-      "sky": 54,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Partly Sunny"
-    },
     {
       "t": "2026-11-08T07:00:00-08:00",
       "sky": 54,
@@ -422,6 +366,62 @@
       "pop": 0,
       "tempF": 71,
       "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T11:00:00-08:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 73,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T12:00:00-08:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 76,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T13:00:00-08:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 77,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T14:00:00-08:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 78,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T15:00:00-08:00",
+      "sky": 1,
+      "pop": 0,
+      "tempF": 77,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T16:00:00-08:00",
+      "sky": 7,
+      "pop": 0,
+      "tempF": 76,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T17:00:00-08:00",
+      "sky": 7,
+      "pop": 0,
+      "tempF": 73,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-10T18:00:00-08:00",
+      "sky": 7,
+      "pop": 0,
+      "tempF": 69,
+      "short": "Mostly Clear"
     }
   ]
 }
