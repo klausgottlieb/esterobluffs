@@ -1,25 +1,13 @@
 {
-  "harvested_at": "2026-11-02T14:22:40.063263-08:00",
+  "harvested_at": "2026-11-09T15:02:14.834254-08:00",
   "events": [
-    {
-      "title": "Cayucos Library Dinosaur Storytime",
-      "start": "2026-11-04T10:30:00-08:00",
-      "venue": "Cayucos Library Meeting Room at Cayucos Library",
-      "area": "cayucos",
-      "town": null,
-      "category": "library",
-      "organizer": "SLO County Library, Cayucos Branch",
-      "summary": "Family event at the Cayucos library branch.",
-      "source_url": "https://sanluisobispo.librarycalendar.com/event/cayucos-library-storytime-33847",
-      "confidence": 90
-    },
     {
       "title": "Cayucos Library Storytime",
       "recurrence": "weekly",
       "window": "Every Wednesday, 10:30am at the Cayucos library",
       "chip_top": "Wed",
       "chip_bottom": "10:30am",
-      "season_end": "2027-01-13",
+      "season_end": "2027-01-20",
       "venue": "Cayucos Library Meeting Room at Cayucos Library",
       "area": "cayucos",
       "town": null,

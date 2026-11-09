@@ -1,49 +1,38 @@
 {
-  "harvested_at": "2026-11-02T14:22:37.426990-08:00",
+  "harvested_at": "2026-11-09T15:02:09.505445-08:00",
   "events": [
-    {
-      "title": "35th Annual Cayucos Car Show",
-      "start": "2026-11-07T08:00:00-08:00",
-      "venue": "Downtown Cayucos",
-      "area": "cayucos",
-      "category": "festival",
-      "organizer": "Cayucos Chamber of Commerce",
-      "source_url": "https://www.cayucoschamber.com/car-show",
-      "summary": "Classic cars fill downtown Cayucos 8am–4pm. Live band, beer garden & BBQ one block from the beach.",
-      "confidence": 97
-    },
     {
       "title": "Pacific Makers Market",
       "start": "2026-11-21T11:00:00-08:00",
-      "venue": "The Pacific | A Cayucos Motel",
+      "venue": "The Pacific – A Cayucos Motel",
       "area": "cayucos",
       "category": "market",
-      "organizer": "The Pacific – A Cayucos Motel",
-      "source_url": "https://highway1roadtrip.com/events/",
-      "summary": "3rd Annual artisan market 11am–4pm with local vendors, live music, food & drinks to kick off holiday shopping.",
+      "organizer": "The Pacific Cayucos",
+      "source_url": "https://www.slocal.com/blog/post/holiday-happenings-for-everyone-in-slo-cal/",
+      "summary": "3rd annual outdoor market at The Pacific motel; local handmade goods, jewelry, home décor, live music, food & drinks. Free entry.",
       "confidence": 90
     },
     {
       "title": "Shoreline Inn Holiday Light Display",
       "start": "2026-11-26T18:00:00-08:00",
-      "venue": "Shoreline Inn on the Beach, 1 N Ocean Ave, Cayucos",
+      "venue": "Shoreline Inn, Cayucos",
       "area": "cayucos",
       "category": "community",
       "organizer": "Shoreline Inn",
-      "source_url": "https://www.slocal.com/blog/post/holiday-happenings-for-everyone-in-slo-cal/",
-      "summary": "Over 25,000 lights illuminate the Shoreline Inn nightly 6–11:30pm from Thanksgiving through Jan 6. Free to view.",
-      "confidence": 93
+      "source_url": "https://www.cayucosshorelineinn.com/christmas-in-cayucos",
+      "summary": "25,000+ twinkling lights decorate the Shoreline Inn nightly 6–11:30 pm from Thanksgiving through Jan 6. Free to view.",
+      "confidence": 95
     },
     {
       "title": "Christmas in Cayucos – Tree Lighting",
       "start": "2026-12-11T17:00:00-08:00",
-      "venue": "Corner of D Street & Ocean Avenue, Cayucos",
+      "venue": "Corner of Ocean Ave & D Street, Cayucos",
       "area": "cayucos",
-      "category": "civic",
-      "organizer": "Cayucos Chamber of Commerce / Cayucos Rotary",
-      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Free outdoor tree lighting 5–6:30pm with live music, carolers from Cayucos Community Church & Santa's arrival by fire engine.",
-      "confidence": 98
+      "category": "community",
+      "organizer": "Cayucos Chamber of Commerce",
+      "source_url": "https://hellomorrobay.com/organizer/cayucos-chamber-of-commerce/",
+      "summary": "Community Christmas tree lighting with carolers, Santa & Mrs. Claus arriving by fire engine, and holiday cheer. Free event.",
+      "confidence": 95
     },
     {
       "title": "Christmas in Cayucos – Wonderland Walk",
@@ -52,9 +41,9 @@
       "area": "cayucos",
       "category": "festival",
       "organizer": "Cayucos Chamber of Commerce / Cayucos Lioness Club",
-      "source_url": "https://www.cayucoschamber.com/christmas-in-cayucos",
-      "summary": "Free holiday stroll along Ocean Ave 3–6pm: visit Santa, free horse-drawn carriage rides, kids' crafts & extended shop hours.",
-      "confidence": 98
+      "source_url": "https://hellomorrobay.com/organizer/cayucos-chamber-of-commerce/",
+      "summary": "Holiday stroll on Ocean Ave with snow play, Santa photos, free horse-drawn wagon rides, kids' craft workshop & merchants open house.",
+      "confidence": 95
     }
   ]
 }
