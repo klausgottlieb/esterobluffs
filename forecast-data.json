@@ -1,427 +1,427 @@
 {
-  "updated": "2026-11-14T03:16:48.380357+00:00",
+  "updated": "2026-11-14T10:39:06.452430+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
     {
-      "t": "2026-11-13T19:00:00-08:00",
-      "sky": 92,
-      "pop": 82,
-      "tempF": 59,
-      "short": "Light Rain"
-    },
-    {
-      "t": "2026-11-13T20:00:00-08:00",
-      "sky": 92,
-      "pop": 82,
-      "tempF": 57,
-      "short": "Light Rain"
-    },
-    {
-      "t": "2026-11-13T21:00:00-08:00",
-      "sky": 92,
-      "pop": 82,
-      "tempF": 56,
-      "short": "Light Rain"
-    },
-    {
-      "t": "2026-11-13T22:00:00-08:00",
-      "sky": 63,
-      "pop": 19,
-      "tempF": 56,
-      "short": "Slight Chance Light Rain"
-    },
-    {
-      "t": "2026-11-13T23:00:00-08:00",
-      "sky": 63,
-      "pop": 19,
-      "tempF": 55,
-      "short": "Slight Chance Light Rain"
-    },
-    {
-      "t": "2026-11-14T00:00:00-08:00",
-      "sky": 63,
-      "pop": 19,
-      "tempF": 55,
-      "short": "Slight Chance Light Rain"
-    },
-    {
-      "t": "2026-11-14T01:00:00-08:00",
-      "sky": 63,
-      "pop": 19,
-      "tempF": 55,
-      "short": "Slight Chance Light Rain"
-    },
-    {
       "t": "2026-11-14T02:00:00-08:00",
-      "sky": 63,
-      "pop": 19,
-      "tempF": 53,
-      "short": "Slight Chance Light Rain"
+      "sky": 74,
+      "pop": 8,
+      "tempF": 59,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-14T03:00:00-08:00",
-      "sky": 63,
-      "pop": 19,
-      "tempF": 53,
-      "short": "Slight Chance Light Rain"
+      "sky": 74,
+      "pop": 8,
+      "tempF": 59,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-14T04:00:00-08:00",
-      "sky": 61,
+      "sky": 14,
       "pop": 1,
-      "tempF": 53,
-      "short": "Mostly Cloudy"
+      "tempF": 59,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T05:00:00-08:00",
-      "sky": 61,
+      "sky": 14,
       "pop": 1,
-      "tempF": 52,
-      "short": "Mostly Cloudy"
+      "tempF": 58,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T06:00:00-08:00",
-      "sky": 61,
+      "sky": 14,
       "pop": 1,
-      "tempF": 52,
-      "short": "Partly Sunny"
+      "tempF": 59,
+      "short": "Sunny"
     },
     {
       "t": "2026-11-14T07:00:00-08:00",
-      "sky": 61,
+      "sky": 14,
       "pop": 1,
-      "tempF": 52,
-      "short": "Partly Sunny"
+      "tempF": 59,
+      "short": "Sunny"
     },
     {
       "t": "2026-11-14T08:00:00-08:00",
-      "sky": 61,
+      "sky": 14,
       "pop": 1,
-      "tempF": 55,
-      "short": "Partly Sunny"
+      "tempF": 59,
+      "short": "Sunny"
     },
     {
       "t": "2026-11-14T09:00:00-08:00",
-      "sky": 61,
+      "sky": 14,
       "pop": 1,
-      "tempF": 57,
-      "short": "Partly Sunny"
+      "tempF": 61,
+      "short": "Sunny"
     },
     {
       "t": "2026-11-14T10:00:00-08:00",
-      "sky": 15,
-      "pop": 0,
-      "tempF": 60,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-11-14T11:00:00-08:00",
-      "sky": 15,
-      "pop": 0,
-      "tempF": 62,
-      "short": "Sunny"
-    },
-    {
-      "t": "2026-11-14T12:00:00-08:00",
-      "sky": 15,
+      "sky": 5,
       "pop": 0,
       "tempF": 63,
       "short": "Sunny"
     },
     {
+      "t": "2026-11-14T11:00:00-08:00",
+      "sky": 5,
+      "pop": 0,
+      "tempF": 64,
+      "short": "Sunny"
+    },
+    {
+      "t": "2026-11-14T12:00:00-08:00",
+      "sky": 5,
+      "pop": 0,
+      "tempF": 65,
+      "short": "Sunny"
+    },
+    {
       "t": "2026-11-14T13:00:00-08:00",
-      "sky": 15,
+      "sky": 5,
       "pop": 0,
       "tempF": 65,
       "short": "Sunny"
     },
     {
       "t": "2026-11-14T14:00:00-08:00",
-      "sky": 15,
+      "sky": 5,
       "pop": 0,
       "tempF": 66,
       "short": "Sunny"
     },
     {
       "t": "2026-11-14T15:00:00-08:00",
-      "sky": 15,
+      "sky": 5,
       "pop": 0,
       "tempF": 66,
       "short": "Sunny"
     },
     {
       "t": "2026-11-14T16:00:00-08:00",
-      "sky": 50,
+      "sky": 7,
       "pop": 0,
       "tempF": 65,
-      "short": "Mostly Sunny"
+      "short": "Sunny"
     },
     {
       "t": "2026-11-14T17:00:00-08:00",
-      "sky": 50,
+      "sky": 7,
       "pop": 0,
       "tempF": 62,
-      "short": "Mostly Sunny"
+      "short": "Sunny"
     },
     {
       "t": "2026-11-14T18:00:00-08:00",
-      "sky": 50,
+      "sky": 7,
       "pop": 0,
       "tempF": 60,
-      "short": "Partly Cloudy"
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T19:00:00-08:00",
-      "sky": 50,
+      "sky": 7,
       "pop": 0,
-      "tempF": 57,
-      "short": "Partly Cloudy"
+      "tempF": 58,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T20:00:00-08:00",
-      "sky": 50,
+      "sky": 7,
       "pop": 0,
-      "tempF": 56,
-      "short": "Partly Cloudy"
+      "tempF": 57,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T21:00:00-08:00",
-      "sky": 50,
+      "sky": 7,
       "pop": 0,
       "tempF": 55,
-      "short": "Partly Cloudy"
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T22:00:00-08:00",
-      "sky": 63,
+      "sky": 24,
       "pop": 0,
-      "tempF": 53,
-      "short": "Mostly Cloudy"
+      "tempF": 54,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-14T23:00:00-08:00",
-      "sky": 63,
+      "sky": 24,
       "pop": 0,
-      "tempF": 52,
-      "short": "Mostly Cloudy"
+      "tempF": 54,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-15T00:00:00-08:00",
-      "sky": 63,
+      "sky": 24,
       "pop": 0,
-      "tempF": 52,
-      "short": "Mostly Cloudy"
+      "tempF": 54,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-15T01:00:00-08:00",
-      "sky": 63,
+      "sky": 24,
       "pop": 0,
-      "tempF": 53,
-      "short": "Mostly Cloudy"
+      "tempF": 54,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-15T02:00:00-08:00",
-      "sky": 63,
+      "sky": 24,
       "pop": 0,
-      "tempF": 53,
-      "short": "Mostly Cloudy"
+      "tempF": 54,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-15T03:00:00-08:00",
-      "sky": 63,
+      "sky": 24,
       "pop": 0,
-      "tempF": 53,
-      "short": "Mostly Cloudy"
+      "tempF": 54,
+      "short": "Mostly Clear"
     },
     {
       "t": "2026-11-15T04:00:00-08:00",
-      "sky": 57,
+      "sky": 72,
       "pop": 0,
-      "tempF": 53,
+      "tempF": 54,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T05:00:00-08:00",
-      "sky": 57,
+      "sky": 72,
       "pop": 0,
-      "tempF": 52,
+      "tempF": 53,
       "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T06:00:00-08:00",
-      "sky": 57,
+      "sky": 72,
       "pop": 0,
-      "tempF": 52,
-      "short": "Partly Sunny"
+      "tempF": 54,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T07:00:00-08:00",
-      "sky": 57,
+      "sky": 72,
       "pop": 0,
-      "tempF": 53,
-      "short": "Partly Sunny"
+      "tempF": 54,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T08:00:00-08:00",
-      "sky": 57,
+      "sky": 72,
       "pop": 0,
-      "tempF": 56,
-      "short": "Partly Sunny"
+      "tempF": 57,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T09:00:00-08:00",
-      "sky": 57,
+      "sky": 72,
       "pop": 0,
       "tempF": 60,
-      "short": "Partly Sunny"
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T10:00:00-08:00",
-      "sky": 52,
+      "sky": 79,
       "pop": 1,
       "tempF": 62,
-      "short": "Partly Sunny"
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T11:00:00-08:00",
-      "sky": 52,
+      "sky": 79,
       "pop": 1,
       "tempF": 64,
-      "short": "Partly Sunny"
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T12:00:00-08:00",
-      "sky": 52,
+      "sky": 79,
       "pop": 1,
       "tempF": 65,
-      "short": "Partly Sunny"
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T13:00:00-08:00",
-      "sky": 52,
+      "sky": 79,
       "pop": 1,
       "tempF": 65,
-      "short": "Partly Sunny"
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T14:00:00-08:00",
-      "sky": 52,
+      "sky": 79,
       "pop": 1,
-      "tempF": 65,
-      "short": "Partly Sunny"
+      "tempF": 66,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T15:00:00-08:00",
-      "sky": 52,
+      "sky": 79,
       "pop": 1,
-      "tempF": 64,
-      "short": "Partly Sunny"
+      "tempF": 66,
+      "short": "Mostly Cloudy"
     },
     {
       "t": "2026-11-15T16:00:00-08:00",
-      "sky": 60,
-      "pop": 11,
+      "sky": 90,
+      "pop": 7,
       "tempF": 63,
-      "short": "Partly Sunny"
+      "short": "Cloudy"
     },
     {
       "t": "2026-11-15T17:00:00-08:00",
-      "sky": 60,
-      "pop": 11,
-      "tempF": 62,
-      "short": "Partly Sunny"
+      "sky": 90,
+      "pop": 7,
+      "tempF": 61,
+      "short": "Cloudy"
     },
     {
       "t": "2026-11-15T18:00:00-08:00",
-      "sky": 60,
-      "pop": 11,
+      "sky": 90,
+      "pop": 7,
       "tempF": 60,
-      "short": "Mostly Cloudy"
+      "short": "Cloudy"
     },
     {
       "t": "2026-11-15T19:00:00-08:00",
-      "sky": 60,
-      "pop": 11,
+      "sky": 90,
+      "pop": 7,
       "tempF": 58,
-      "short": "Mostly Cloudy"
+      "short": "Cloudy"
     },
     {
       "t": "2026-11-15T20:00:00-08:00",
-      "sky": 60,
-      "pop": 11,
+      "sky": 90,
+      "pop": 7,
       "tempF": 57,
-      "short": "Mostly Cloudy"
+      "short": "Cloudy"
     },
     {
       "t": "2026-11-15T21:00:00-08:00",
-      "sky": 60,
-      "pop": 11,
-      "tempF": 57,
-      "short": "Mostly Cloudy"
+      "sky": 90,
+      "pop": 7,
+      "tempF": 56,
+      "short": "Cloudy"
     },
     {
       "t": "2026-11-15T22:00:00-08:00",
-      "sky": 88,
-      "pop": 68,
-      "tempF": 57,
-      "short": "Rain Likely"
+      "sky": 100,
+      "pop": 64,
+      "tempF": 56,
+      "short": "Light Rain Likely"
     },
     {
       "t": "2026-11-15T23:00:00-08:00",
-      "sky": 88,
-      "pop": 68,
+      "sky": 100,
+      "pop": 64,
       "tempF": 57,
-      "short": "Rain Likely"
+      "short": "Light Rain Likely"
     },
     {
       "t": "2026-11-16T00:00:00-08:00",
-      "sky": 88,
-      "pop": 68,
-      "tempF": 58,
-      "short": "Rain Likely"
+      "sky": 100,
+      "pop": 64,
+      "tempF": 57,
+      "short": "Light Rain Likely"
     },
     {
       "t": "2026-11-16T01:00:00-08:00",
-      "sky": 88,
-      "pop": 68,
+      "sky": 100,
+      "pop": 64,
       "tempF": 58,
-      "short": "Rain Likely"
+      "short": "Light Rain Likely"
     },
     {
       "t": "2026-11-16T02:00:00-08:00",
-      "sky": 88,
-      "pop": 68,
+      "sky": 100,
+      "pop": 64,
       "tempF": 58,
-      "short": "Rain Likely"
+      "short": "Light Rain Likely"
     },
     {
       "t": "2026-11-16T03:00:00-08:00",
-      "sky": 88,
-      "pop": 68,
+      "sky": 100,
+      "pop": 64,
       "tempF": 58,
-      "short": "Rain Likely"
+      "short": "Light Rain Likely"
     },
     {
       "t": "2026-11-16T04:00:00-08:00",
-      "sky": 89,
-      "pop": 75,
-      "tempF": 57,
+      "sky": 100,
+      "pop": 77,
+      "tempF": 58,
       "short": "Light Rain"
     },
     {
       "t": "2026-11-16T05:00:00-08:00",
-      "sky": 89,
-      "pop": 75,
-      "tempF": 56,
+      "sky": 100,
+      "pop": 77,
+      "tempF": 57,
       "short": "Light Rain"
     },
     {
       "t": "2026-11-16T06:00:00-08:00",
-      "sky": 89,
-      "pop": 75,
-      "tempF": 55,
+      "sky": 100,
+      "pop": 77,
+      "tempF": 57,
       "short": "Light Rain"
+    },
+    {
+      "t": "2026-11-16T07:00:00-08:00",
+      "sky": 100,
+      "pop": 77,
+      "tempF": 56,
+      "short": "Light Rain"
+    },
+    {
+      "t": "2026-11-16T08:00:00-08:00",
+      "sky": 100,
+      "pop": 77,
+      "tempF": 56,
+      "short": "Light Rain"
+    },
+    {
+      "t": "2026-11-16T09:00:00-08:00",
+      "sky": 100,
+      "pop": 77,
+      "tempF": 56,
+      "short": "Light Rain"
+    },
+    {
+      "t": "2026-11-16T10:00:00-08:00",
+      "sky": 57,
+      "pop": 35,
+      "tempF": 56,
+      "short": "Chance Light Rain"
+    },
+    {
+      "t": "2026-11-16T11:00:00-08:00",
+      "sky": 57,
+      "pop": 35,
+      "tempF": 58,
+      "short": "Chance Light Rain"
+    },
+    {
+      "t": "2026-11-16T12:00:00-08:00",
+      "sky": 57,
+      "pop": 35,
+      "tempF": 59,
+      "short": "Chance Light Rain"
+    },
+    {
+      "t": "2026-11-16T13:00:00-08:00",
+      "sky": 57,
+      "pop": 35,
+      "tempF": 61,
+      "short": "Chance Light Rain"
     }
   ]
 }
