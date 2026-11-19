@@ -1,50 +1,8 @@
 {
-  "updated": "2026-11-18T21:57:30.661603+00:00",
+  "updated": "2026-11-19T03:29:02.884564+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-11-18T13:00:00-08:00",
-      "sky": 87,
-      "pop": 71,
-      "tempF": 60,
-      "short": "Light Rain Likely"
-    },
-    {
-      "t": "2026-11-18T14:00:00-08:00",
-      "sky": 87,
-      "pop": 71,
-      "tempF": 61,
-      "short": "Light Rain Likely"
-    },
-    {
-      "t": "2026-11-18T15:00:00-08:00",
-      "sky": 87,
-      "pop": 71,
-      "tempF": 61,
-      "short": "Light Rain Likely"
-    },
-    {
-      "t": "2026-11-18T16:00:00-08:00",
-      "sky": 100,
-      "pop": 100,
-      "tempF": 60,
-      "short": "Rain"
-    },
-    {
-      "t": "2026-11-18T17:00:00-08:00",
-      "sky": 100,
-      "pop": 100,
-      "tempF": 61,
-      "short": "Rain"
-    },
-    {
-      "t": "2026-11-18T18:00:00-08:00",
-      "sky": 100,
-      "pop": 100,
-      "tempF": 61,
-      "short": "Rain"
-    },
     {
       "t": "2026-11-18T19:00:00-08:00",
       "sky": 100,
@@ -422,6 +380,48 @@
       "pop": 0,
       "tempF": 49,
       "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-11-21T01:00:00-08:00",
+      "sky": 23,
+      "pop": 0,
+      "tempF": 49,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-11-21T02:00:00-08:00",
+      "sky": 23,
+      "pop": 0,
+      "tempF": 49,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-11-21T03:00:00-08:00",
+      "sky": 23,
+      "pop": 0,
+      "tempF": 49,
+      "short": "Mostly Clear"
+    },
+    {
+      "t": "2026-11-21T04:00:00-08:00",
+      "sky": 56,
+      "pop": 0,
+      "tempF": 49,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-11-21T05:00:00-08:00",
+      "sky": 56,
+      "pop": 0,
+      "tempF": 48,
+      "short": "Mostly Cloudy"
+    },
+    {
+      "t": "2026-11-21T06:00:00-08:00",
+      "sky": 56,
+      "pop": 0,
+      "tempF": 48,
+      "short": "Partly Sunny"
     }
   ]
 }
