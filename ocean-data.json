@@ -1,16 +1,16 @@
 {
-  "updated": "2026-11-20T23:05:58.706486+00:00",
+  "updated": "2026-11-20T23:10:58.312216+00:00",
   "wave": {
     "name": "Estero Bluffs nearshore",
     "lat": 35.4492,
     "lon": -120.916,
     "provenance": "CDIP MOP SL405 (modeled nearshore)",
-    "time": "2026-11-20T21:00:00+00:00",
-    "wvht_m": 1.78,
-    "wvht_ft": 5.85,
+    "time": "2026-11-20T22:00:00+00:00",
+    "wvht_m": 1.6,
+    "wvht_ft": 5.26,
     "dpd_s": 12.300123,
     "apd_s": null,
-    "mwd_deg": 237.95718,
+    "mwd_deg": 236.89648,
     "partition_measured": false
   },
   "wind": {
