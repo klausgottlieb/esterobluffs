@@ -1,71 +1,8 @@
 {
-  "updated": "2026-11-22T06:49:52.963789+00:00",
+  "updated": "2026-11-22T15:17:57.346537+00:00",
   "source": "NWS api.weather.gov",
   "office": "LOX",
   "hours": [
-    {
-      "t": "2026-11-21T22:00:00-08:00",
-      "sky": 92,
-      "pop": 6,
-      "tempF": 54,
-      "short": "Cloudy"
-    },
-    {
-      "t": "2026-11-21T23:00:00-08:00",
-      "sky": 92,
-      "pop": 6,
-      "tempF": 52,
-      "short": "Cloudy"
-    },
-    {
-      "t": "2026-11-22T00:00:00-08:00",
-      "sky": 92,
-      "pop": 6,
-      "tempF": 52,
-      "short": "Cloudy"
-    },
-    {
-      "t": "2026-11-22T01:00:00-08:00",
-      "sky": 92,
-      "pop": 6,
-      "tempF": 52,
-      "short": "Cloudy"
-    },
-    {
-      "t": "2026-11-22T02:00:00-08:00",
-      "sky": 92,
-      "pop": 6,
-      "tempF": 51,
-      "short": "Cloudy"
-    },
-    {
-      "t": "2026-11-22T03:00:00-08:00",
-      "sky": 92,
-      "pop": 6,
-      "tempF": 51,
-      "short": "Cloudy"
-    },
-    {
-      "t": "2026-11-22T04:00:00-08:00",
-      "sky": 88,
-      "pop": 30,
-      "tempF": 51,
-      "short": "Chance Light Rain"
-    },
-    {
-      "t": "2026-11-22T05:00:00-08:00",
-      "sky": 88,
-      "pop": 30,
-      "tempF": 50,
-      "short": "Chance Light Rain"
-    },
-    {
-      "t": "2026-11-22T06:00:00-08:00",
-      "sky": 88,
-      "pop": 30,
-      "tempF": 50,
-      "short": "Chance Light Rain"
-    },
     {
       "t": "2026-11-22T07:00:00-08:00",
       "sky": 88,
@@ -422,6 +359,69 @@
       "pop": 1,
       "tempF": 58,
       "short": "Mostly Sunny"
+    },
+    {
+      "t": "2026-11-24T10:00:00-08:00",
+      "sky": 54,
+      "pop": 9,
+      "tempF": 61,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-11-24T11:00:00-08:00",
+      "sky": 54,
+      "pop": 9,
+      "tempF": 63,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-11-24T12:00:00-08:00",
+      "sky": 54,
+      "pop": 9,
+      "tempF": 63,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-11-24T13:00:00-08:00",
+      "sky": 54,
+      "pop": 9,
+      "tempF": 63,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-11-24T14:00:00-08:00",
+      "sky": 54,
+      "pop": 9,
+      "tempF": 63,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-11-24T15:00:00-08:00",
+      "sky": 54,
+      "pop": 9,
+      "tempF": 63,
+      "short": "Partly Sunny"
+    },
+    {
+      "t": "2026-11-24T16:00:00-08:00",
+      "sky": 94,
+      "pop": 25,
+      "tempF": 62,
+      "short": "Cloudy"
+    },
+    {
+      "t": "2026-11-24T17:00:00-08:00",
+      "sky": 94,
+      "pop": 25,
+      "tempF": 60,
+      "short": "Cloudy"
+    },
+    {
+      "t": "2026-11-24T18:00:00-08:00",
+      "sky": 94,
+      "pop": 25,
+      "tempF": 58,
+      "short": "Cloudy"
     }
   ]
 }
